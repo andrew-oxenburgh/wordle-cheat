@@ -1,23 +1,45 @@
 {
-  "name": "react-typescript",
+  "name": "wordle-cheat",
   "version": "1.0.0",
   "type": "module",
-  "description": "React TypeScript on Replit, using Vite bundler",
+  "description": "help me win wordle!!",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@types/jest": "^26.0.15",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
+    "jest": "^26.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "ts-jest": "^26.4.4",
     "typescript": "^4.7.4",
     "vite": "^3.0.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "jest-dom": "^4.0.0",
+    "ramda": "^0.29.1",
+    "react-bootstrap": "^2.9.1",
+    "react-jss": "^10.10.0",
+    "ts-node": "^10.9.1"
   }
 }
