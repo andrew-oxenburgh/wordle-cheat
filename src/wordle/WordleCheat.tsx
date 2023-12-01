@@ -22,20 +22,50 @@ import { createUseStyles } from 'react-jss'
 import WordList from './WordList'
 import React from 'react'
 
+const wcInput = {
+   background: 'green',
+   fontSize: '1.4em',
+   fontWeight: 'bold',
+   borderRadius: 0,
+   margin: 0,
+   transition: 'border-color 0.1s',
+   '&:not(:hover)': {
+      borderColor: 'transparent transparent rgb(206, 212, 218) transparent',
+      transition: 'border-color 0.1s'
+   },
+   '& span': {
+      // jss-plugin-nested applies this to a child span
+      fontWeight: 'bold' // jss-plugin-camel-case turns this into 'font-weight'
+   }
+}
+
 const useStyles = createUseStyles({
-   wcInput: {
-      fontSize: '1.4em',
-      fontWeight: 'bold',
-      borderRadius: 0,
-      margin: 0,
-      transition: 'border-color 0.1s',
-      '&:not(:hover)': {
-         borderColor: 'transparent transparent rgb(206, 212, 218) transparent',
-         transition: 'border-color 0.1s'
-      },
-      '& span': {
-         // jss-plugin-nested applies this to a child span
-         fontWeight: 'bold' // jss-plugin-camel-case turns this into 'font-weight'
+   wcInput,
+   doesntContain: {
+      ...wcInput,
+      background: 'slategrey',
+      color: 'white',
+      '&:focus': {
+         background: 'lightGrey',
+         colour: 'black'
+      }
+   },
+   containButNotHere: {
+      ...wcInput,
+      background: 'yellow',
+      color: 'black',
+      '&:focus': {
+         background: 'khaki',
+         colour: 'black'
+      }
+   },
+   here: {
+      ...wcInput,
+      background: 'green',
+      color: 'black',
+      '&:focus': {
+         background: 'lightGreen',
+         colour: 'black'
       }
    },
    myLabel: {
@@ -116,7 +146,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                         <Form.Group>
                            <Form.Label>definitely doesn&apos;t contain</Form.Label>
                            <Form.Control
-                              className={classes.wcInput}
+                              className={classes.doesntContain}
                               style={{
                                  width: '15em'
                               }}
@@ -131,6 +161,34 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                            </Form.Text>
                         </Form.Group>
                         <Form.Group>
+                           <Form.Label>contains, and position unknown</Form.Label>
+                           <Container fluid={true} style={{
+                              maxWidth: '50em',
+                           }}>
+                              <Row>
+                                 {R.map((ndx: number) => {
+                                    return (
+                                       <Col
+                                          key={`knownLetter-${ndx}`}
+                                       >
+                                          <Form.Control
+                                             className={classes.containButNotHere}
+                                             autoComplete="off"
+                                             type="text"
+                                             id={`knownLetter-unknownPlace-${ndx}`}
+                                             name={`knownLetter-${ndx}`}
+                                             value={form.position[ndx]['unknown']}
+                                             onChange={changeKnownLetters('unknown', ndx)} />
+                                       </Col>
+                                    )
+
+                                 })([0, 1, 2, 3, 4])
+                                 }
+                              </Row>
+                           </Container>
+                        </Form.Group>
+
+                        <Form.Group>
                            <Form.Label>contains, and position known</Form.Label>
                            <Container fluid="sm" style={{
                               maxWidth: '50em',
@@ -143,40 +201,12 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                                           key={`knownLetter-${ndx}`}
                                        >
                                           <Form.Control
-                                             className={classes.wcInput}
+                                             className={classes.here}
                                              type="text"
                                              autoComplete="off"
                                              name={`knownLetter-${ndx}`}
                                              value={form.position[ndx]['known']}
                                              onChange={changeKnownLetters('known', ndx)} />
-                                       </Col>
-                                    )
-
-                                 })([0, 1, 2, 3, 4])
-                                 }
-                              </Row>
-                           </Container>
-                        </Form.Group>
-                        <Form.Group>
-                           <Form.Label>contains, and position unknown</Form.Label>
-                           <Container fluid={true} style={{
-                              maxWidth: '50em',
-                           }}>
-                              <Row>
-                                 {R.map((ndx: number) => {
-                                    return (
-                                       <Col
-                                          key={`knownLetter-${ndx}`}
-                                       >
-                                          <Form.Control
-                                             style={{ padding: 0 }}
-                                             className={classes.wcInput}
-                                             autoComplete="off"
-                                             type="text"
-                                             id={`knownLetter-unknownPlace-${ndx}`}
-                                             name={`knownLetter-${ndx}`}
-                                             value={form.position[ndx]['unknown']}
-                                             onChange={changeKnownLetters('unknown', ndx)} />
                                        </Col>
                                     )
 
