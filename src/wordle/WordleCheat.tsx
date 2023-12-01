@@ -26,11 +26,13 @@ const wcInput = {
    background: 'green',
    fontSize: '1.4em',
    fontWeight: 'bold',
-   borderRadius: 0,
+   borderRadius: 20,
+   borderColor: 'black',
+   borderWidth: 2,
+   borderStyle: 'solid',
    margin: 0,
    transition: 'border-color 0.1s',
    '&:not(:hover)': {
-      borderColor: 'transparent transparent rgb(206, 212, 218) transparent',
       transition: 'border-color 0.1s'
    },
    '& span': {
@@ -62,7 +64,7 @@ const useStyles = createUseStyles({
    here: {
       ...wcInput,
       background: 'green',
-      color: 'black',
+      color: 'white',
       '&:focus': {
          background: 'lightGreen',
          colour: 'black'
