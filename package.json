@@ -36,6 +36,7 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
+    "bootstrap": "^5.3.2",
     "jest-dom": "^4.0.0",
     "ramda": "^0.29.1",
     "react-bootstrap": "^2.9.1",

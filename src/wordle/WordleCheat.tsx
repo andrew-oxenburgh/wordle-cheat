@@ -70,7 +70,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
       setForm({ ...form, unused: value })
    }
 
-   function changeKnownLetters(pos: any, number: number) {
+   function changeKnownLetters(pos: string, number: number) {
       return (evt: any) => {
          const value = evt.target.value
          if (pos === 'known' && value.length > 1) {
@@ -80,7 +80,11 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
             return
          }
          const newForm: WordleForm = { ...form }
-         // newForm.position[number][pos] = sanitise(value)
+         if (pos === 'known') {
+            newForm.position[number]['known'] = sanitise(value)
+         } else {
+            newForm.position[number]['unknown'] = sanitise(value)
+         }
          setForm(newForm)
       }
    }
