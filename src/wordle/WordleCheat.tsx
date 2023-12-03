@@ -147,6 +147,9 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                      }}>
                         <Form.Group>
                            <Form.Label>definitely doesn&apos;t contain</Form.Label>
+                           <p>
+                              Turns to lowercase and orders alphabetically
+                           </p>
                            <Form.Control
                               className={classes.doesntContain}
                               style={{
