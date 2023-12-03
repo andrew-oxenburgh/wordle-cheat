@@ -72,6 +72,11 @@ const useStyles = createUseStyles({
    },
    myLabel: {
       fontStyle: 'italic'
+   },
+   githubFloat: {
+      position: 'fixed',
+      left: 10,
+      bottom: 10
    }
 })
 
@@ -264,6 +269,9 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
             </Card>
             }
          </Container>
+         <div className={classes.githubFloat} >
+            <a href='https://github.com/andrew-oxenburgh/wordle-cheat' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/github-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black' /></a>
+         </div>
       </>
    )
 }
