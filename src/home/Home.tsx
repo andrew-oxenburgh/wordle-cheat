@@ -7,7 +7,7 @@ function Home() {
          <h1>Welcome to Wordle Helper!</h1>
          <p>This is a simple tool to assist you in solving Wordle puzzles.</p>
          <p>
-            <Button variant="primary" href="/cheat">Start Cheating</Button>
+            <Button variant="primary" href="#/cheat">Start Cheating</Button>
          </p>
       </Container>
    );
