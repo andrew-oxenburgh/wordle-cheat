@@ -42,6 +42,7 @@
     "ramda": "^0.29.1",
     "react-bootstrap": "^2.9.1",
     "react-jss": "^10.10.0",
+    "react-router-dom": "^6.20.1",
     "ts-node": "^10.9.1"
   }
 }
