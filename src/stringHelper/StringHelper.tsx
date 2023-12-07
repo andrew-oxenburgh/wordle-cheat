@@ -1,5 +1,5 @@
 import { Container, Card, Button } from 'react-bootstrap';
-
+import TextInputComponent from './TextInputComponent';
 const StringHelper = () => {
    // Add your string helper logic here
 
@@ -10,11 +10,11 @@ const StringHelper = () => {
             <Card.Body>
                <Card.Title>String Helper Tool</Card.Title>
                <Card.Text>
-                  This is where you can add your string helper tools and functionality.
-                 
-
+                  Put your text in here, and see what you get
                </Card.Text>
-               <Button variant="primary">Use String Helper</Button>
+               <Card.Text>
+                  <TextInputComponent />
+               </Card.Text>
             </Card.Body>
          </Card>
       </Container>
