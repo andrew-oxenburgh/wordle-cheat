@@ -1,6 +1,6 @@
 import WordleCheat from './wordleOne/WordleCheat';
 import Cheater from './wordleCheatTwo/Cheater';
-import StringHelper from './stringHelper/StringHelper'
+import TextHelper from './textHelper/TextHelper'
 
 import Home from './home/Home';
 import { Navbar, Container, Nav } from 'react-bootstrap';
@@ -36,7 +36,7 @@ export default function App() {
                   <Route path="/home" element={<Home />} />
                   <Route path="/cheat" element={<WordleCheat />} />
                   <Route path="/cheatTwo" element={<Cheater />} />
-                  <Route path="/stringHelper" element={<StringHelper />} />
+                  <Route path="/stringHelper" element={<TextHelper />} />
                   <Route path="*" element={<Cheater />} />
                </Routes>
             </main>

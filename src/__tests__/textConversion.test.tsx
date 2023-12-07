@@ -1,6 +1,6 @@
 import * as _ from 'lodash'
 import * as R from 'ramda'
-import {stringConversion} from '../stringHelper/textConversion'
+import {stringConversion} from '../textHelper/textUtils'
 
 describe('number conversions 2', () => {
    test('converts small number to locale string', () => {

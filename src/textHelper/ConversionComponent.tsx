@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { stringConversion, StringInspection } from './textConversion'
+import { stringConversion, StringInspection } from './textUtils'
 import { createUseStyles } from 'react-jss'
 
 const useStles = createUseStyles({
@@ -40,7 +40,7 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
 };
 
 
-const TextInputComponent = () => {
+const ConversionComponent = () => {
    const [text, setText] = useState('');
    const [conversions, setConversions] = useState<StringInspection>({
       input: '',
@@ -58,4 +58,4 @@ const TextInputComponent = () => {
    );
 };
 
-export default TextInputComponent;
+export default ConversionComponent;

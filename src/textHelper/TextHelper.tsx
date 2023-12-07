@@ -1,6 +1,6 @@
 import { Container, Card, Button } from 'react-bootstrap';
-import TextInputComponent from './TextInputComponent';
-const StringHelper = () => {
+import ConversionComponent from './ConversionComponent';
+const TextHelper = () => {
    // Add your string helper logic here
 
    return (
@@ -13,7 +13,7 @@ const StringHelper = () => {
                   Put your text in here, and see what you get
                </Card.Text>
                <Card.Text>
-                  <TextInputComponent />
+                  <ConversionComponent />
                </Card.Text>
             </Card.Body>
          </Card>
@@ -21,4 +21,4 @@ const StringHelper = () => {
    );
 };
 
-export default StringHelper;
+export default TextHelper;
