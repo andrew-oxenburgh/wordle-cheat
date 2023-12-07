@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { stringConversion, StringInspection } from './textUtils'
+import { stringConversion } from './lib/textUtils'
+import { StringInspection } from './lib/textHelper.types'
 import { createUseStyles } from 'react-jss'
 
 const useStles = createUseStyles({
