@@ -6,11 +6,11 @@ export function textConversions(s: string): Conversion[] {
 
    ret.push({
       name: 'upperCase',
-      value: s.toUpperCase()
+      value: _.upperCase(s)
    })
    ret.push({
       name: 'lowerCase',
-      value: s.toLowerCase()
+      value: _.lowerCase(s)
    })
    ret.push({
       name: 'kebabCase',
@@ -19,10 +19,6 @@ export function textConversions(s: string): Conversion[] {
    ret.push({
       name: 'camelCase',
       value: _.camelCase(s)
-   })
-   ret.push({
-      name: 'capitalize',
-      value: _.capitalize(s)
    })
    ret.push({
       name: 'escape',

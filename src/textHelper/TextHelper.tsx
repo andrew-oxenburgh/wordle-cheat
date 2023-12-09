@@ -5,20 +5,20 @@ const TextHelper = () => {
 
    return (
       <Container>
-         <h2>String Helper Page</h2>
          <Card>
             <Card.Body>
                <Card.Title>String Helper Tool</Card.Title>
                <Card.Text>
-                  Put your text in here, and see what you get
+                  Converts strings into a bunch of useful formats
                </Card.Text>
                <Card.Text>
-                  <ConversionComponent />
+                  Try numbers, words, sentences
                </Card.Text>
+               <ConversionComponent />
             </Card.Body>
          </Card>
       </Container>
    );
-};
+}
 
 export default TextHelper;
