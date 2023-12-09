@@ -11,7 +11,7 @@ function Navigation() {
    return (
       <Navbar bg="dark" variant="dark" expand="lg">
          <Container>
-            <Navbar.Brand href="#/">Wordle Helper</Navbar.Brand>
+            <Navbar.Brand href="#/">Andrew Oxenburgh</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav className="me-auto">
@@ -19,7 +19,7 @@ function Navigation() {
                   <Nav.Link href="#/cheat">Wordle Cheat One</Nav.Link>
                   <Nav.Link href="#/cheatTwo">Wordle Cheat Two</Nav.Link>
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
-                  <Nav.Link href="#/netflixGenre">Netflix Genre</Nav.Link> {/* NetflixGenre link */}
+                  <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link> {/* NetflixGenre link */}
                </Nav>
             </Navbar.Collapse>
          </Container>
@@ -34,7 +34,7 @@ export default function App() {
             <Navigation />
             <main>
                <Routes>
-                  <Route path="/" element={<TextHelper />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/cheat" element={<WordleCheat />} />
                   <Route path="/cheatTwo" element={<Cheater />} />
