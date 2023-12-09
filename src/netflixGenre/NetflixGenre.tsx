@@ -32,7 +32,7 @@ const NetflixGenre = () => {
                   </tbody>
                </table>
             </div>
-         ))}*/}
+         ))}
       </Container>
    );
 };
