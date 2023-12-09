@@ -16,6 +16,7 @@ const useStyles = createUseStyles({
 type CardType = {
    header: string
    text: string[]
+   bg?: string
    link?: {
       href: string
       text: string
@@ -25,6 +26,7 @@ type CardType = {
 const cards: CardType[] = [
    {
       header: 'Featured',
+      bg: "warning",
       text: [
          'A bunch of coolish utilities',
          'A rule of thumb might be "If it\'s not here, it\'s not cool."'
@@ -89,7 +91,10 @@ function Home() {
                R.map((card: CardType) => {
                   return (
                      <Col xs="12" sm="6" md="4" lg="3" xl="2" key={card.header}>
-                        <Card className={classes.cardContainer}>
+                        <Card
+                           className={classes.cardContainer}
+                           bg={card.bg}
+                        >
                            <Card.Header>{card.header}</Card.Header>
                            <Card.Body>
                               {
