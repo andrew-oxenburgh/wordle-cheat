@@ -1,7 +1,7 @@
 // filename: src/pages/SumnerTides.tsx
 
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import useSWR from 'swr'
 
 import niwaExample from './niwa-dummy-data'

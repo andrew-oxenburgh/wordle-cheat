@@ -1,11 +1,20 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import genres from './genres'
+
+import InfoThing from '../../components/InfoThing'
+
+const help = (
+   <InfoThing>
+      llkjdslkj
+   </InfoThing>
+)
 
 const NetflixGenre = () => {
    return (
       <Container>
+         {help}
          <h1>Netflix Genre</h1>
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (

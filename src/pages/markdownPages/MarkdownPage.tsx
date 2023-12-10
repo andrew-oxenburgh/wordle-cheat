@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import 'mvp.css' 
-import { Container } from 'react-bootstrap';
+
+import Container from 'react-bootstrap/Container';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
