@@ -108,7 +108,6 @@ function Home() {
    return (
       <Container className={classes.container}>
          {help}
-         <UnderConstructionThing/>
          <Row>
             {
                R.map((card: CardType) => {
