@@ -16,32 +16,7 @@ import Home from './pages/home/Home';
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'));
-
-import { createUseStyles } from 'react-jss';
-
-const useStyles = createUseStyles({
-   footer: {
-      backgroundColor: '#333',
-      color: 'white',
-      textAlign: 'center',
-      padding: '10px 0',
-      position: 'fixed',
-      height: '3em',
-      left: 0,
-      bottom: 0,
-      width: '100%',
-   },
-});
-
-function Footer() {
-   const classes = useStyles();
-
-   return (
-      <footer className={classes.footer}>
-               Andrew Oxenburgh - demo
-      </footer>
-   );
-}
+import Footer from './components/Footer';
 
 function Navigation() {
    const [expanded, setExpanded] = useState(false);
@@ -55,11 +30,11 @@ function Navigation() {
                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                   <Nav.Link href="#/home">Home</Nav.Link>
                   <Nav.Link href="#/cheat">Wordle One Cheat </Nav.Link>
-                  <Nav.Link href="#/cheatTwo">Wordle Cheat Two</Nav.Link>
+                  <Nav.Link href="#/cheatTwo">Wordle Cheat Two - dev</Nav.Link>
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
                   <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link>
                   <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link>
-                  <Nav.Link href="#/sumner-tides">Sumner Tides</Nav.Link>
+                  <Nav.Link href="#/sumner-tides">Sumner Tides - dev</Nav.Link>
                </Nav>
             </Navbar.Collapse>
          </Container>
@@ -94,7 +69,6 @@ export default function App() {
                      <Suspense fallback={<div>Loading...</div>}>
                         <MarkdownPage />
                      </Suspense>
-
                   } />
                </Routes>
             </main>
