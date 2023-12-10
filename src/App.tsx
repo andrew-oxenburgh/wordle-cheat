@@ -2,6 +2,7 @@ import WordleCheat from './wordleOne/WordleCheat';
 import Cheater from './wordleCheatTwo/Cheater';
 import TextHelper from './textHelper/TextHelper'
 import NetflixGenre from './netflixGenre/NetflixGenre'
+import MarkdownPage from './markdownPages/MarkdownPage'
 
 import Home from './home/Home';
 import { Navbar, Container, Nav } from 'react-bootstrap';
@@ -20,6 +21,7 @@ function Navigation() {
                   <Nav.Link href="#/cheatTwo">Wordle Cheat Two</Nav.Link>
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
                   <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link> {/* NetflixGenre link */}
+                  <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link> {/* NetflixGenre link */}
                </Nav>
             </Navbar.Collapse>
          </Container>
@@ -41,6 +43,7 @@ export default function App() {
                   <Route path="/textHelper" element={<TextHelper />} />
                   <Route path="*" element={<TextHelper />} />
                   <Route path="/netflixGenre" element={<NetflixGenre />} /> {/* NetflixGenre route */}
+                  <Route path="/markdown/:pageName" element={<MarkdownPage />} />
                </Routes>
             </main>
          </Router>
