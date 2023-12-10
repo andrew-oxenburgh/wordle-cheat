@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import WordleCheat from './wordleOne/WordleCheat';
-import Cheater from './wordleCheatTwo/Cheater';
-import TextHelper from './textHelper/TextHelper'
-import NetflixGenre from './netflixGenre/NetflixGenre'
-import MarkdownPage from './markdownPages/MarkdownPage'
-import SumnerTides from './sumnerTides/SumnerTides';
-
-import Home from './home/Home';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { useState } from 'react'
+import WordleCheat from './pages/wordleOne/WordleCheat';
+import Cheater from './pages/wordleCheatTwo/Cheater';
+import TextHelper from './pages/textHelper/TextHelper'
+import NetflixGenre from './pages/netflixGenre/NetflixGenre'
+import MarkdownPage from './pages/markdownPages/MarkdownPage'
+import SumnerTides from './pages/sumnerTides/SumnerTides';
+import Home from './pages/home/Home';
 
 function Navigation() {
    const [expanded, setExpanded] = useState(false);
