@@ -29,16 +29,16 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                   <Nav.Link href="#/home">Home</Nav.Link>
-                  <NavDropdown title="Wordle Cheats" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#/cheat">My first cheat</NavDropdown.Item>
-                     <NavDropdown.Item href="#/cheatTwo">My second cheat</NavDropdown.Item>
+                  <NavDropdown title="Wordle Cheats" id="wordle-cheats">
+                     <NavDropdown.Item href="#/cheat">My First Wordle Cheat</NavDropdown.Item>
+                     <NavDropdown.Item href="#/cheatTwo">My Second Wordle Cheat</NavDropdown.Item>
                   </NavDropdown>
-                  <NavDropdown title="Sundry" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#/textHelper">My first cheat</NavDropdown.Item>
-                     <NavDropdown.Item href="#/netflixGenre">My second cheat</NavDropdown.Item>
-                     <NavDropdown.Item href="#/sumner-tides">My second cheat</NavDropdown.Item>
+                  <NavDropdown title="Sundry" id="sundry">
+                     <NavDropdown.Item href="#/textHelper">Text Helper</NavDropdown.Item>
+                     <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
+                     <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                   </NavDropdown>
-                  <NavDropdown title="Blogs" id="basic-nav-dropdown">
+                  <NavDropdown title="Blogs" id="blogs">
                      <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
                   </NavDropdown>
                </Nav>

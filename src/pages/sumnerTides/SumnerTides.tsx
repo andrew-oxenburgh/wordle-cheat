@@ -23,7 +23,6 @@ const sumner = {
 
 const debug = true
 
-// Fetch data from a URL with credentials header
 const fetchData = (path: string) => {
    const url = 'https://api.niwa.co.nz' + path
    return async () => {
@@ -57,7 +56,7 @@ const SumnerTides = () => {
       <Container>
          {help}
          <UnderConstructionThing/>
-         <h1>Sumner Tides Information</h1>
+         <h1>Sumner Tides</h1>
          <hr />
          <img src="/public/niwa-dummy-chart.svg" />
          {JSON.stringify(data, null, 4)}

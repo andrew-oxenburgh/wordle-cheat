@@ -7,6 +7,7 @@ import genres from './genres'
 
 const help = (
    <InfoThing height="60%">
+      <h3>Netflix by Genre</h3>
       <p>
          Netflix has hundres of categories, a lot of which it doesn't show you,
          or, often are just empty. There's some gold here though, so I wrote this little app
@@ -36,7 +37,7 @@ const NetflixGenre = () => {
    return (
       <Container>
          {help}
-         <h1>Netflix Genre</h1>
+         <h1>Netflix By Genre</h1>
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (
                <Accordion.Item eventKey={category} key={category}>

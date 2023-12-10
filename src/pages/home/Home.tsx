@@ -15,7 +15,6 @@ const help = (
    </InfoThing>
 )
 
-
 const useStyles = createUseStyles({
    cardContainer: {
       margin: '0em 1em 1em 0em',
@@ -91,13 +90,23 @@ const cards: CardType[] = [
       }
    },
    {
+      header: 'Sumner Tides',
+      text: [
+         'Getting Sumner Tide info from NIWA'
+      ],
+      link: {
+         href: '#/sumner-tides',
+         text: 'Sumner Tides'
+      }
+   },
+   {
       header: 'Blog Post',
       text: [
          'Some thoughts on replit'
       ],
       link: {
          href: '#/markdown/examplePage',
-         text: 'Example Blog Post'
+         text: 'Some Thoughts on Replit'
       }
    },
 ]

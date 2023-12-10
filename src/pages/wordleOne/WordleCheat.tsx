@@ -147,121 +147,119 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                maxWidth: '30em',
             }}
          >
+            <h1>My First Wordle Cheat</h1>
             {help}
             <Card>
-               <Card.Body>
-                  <Card.Title as="h2">Total Wordle Cheat</Card.Title>
-                  <Card.Text as="div" style={{
+               <Card.Text as="div" style={{
+                  width: '100%',
+                  margin: 0,
+               }}>
+                  <Form style={{
                      width: '100%',
-                     margin: 0,
                   }}>
-                     <Form style={{
-                        width: '100%',
-                     }}>
-                        <Form.Group>
-                           <Form.Label>definitely doesn&apos;t contain</Form.Label>
-                           <p>
-                              Turns to lowercase and orders alphabetically
-                           </p>
-                           <Form.Control
-                              className={classes.doesntContain}
-                              style={{
-                                 width: '15em'
-                              }}
-                              type="text"
-                              autoComplete="off"
-                              name="unusedLetters"
-                              placeholder="put letters here"
-                              value={form.unused}
-                              onChange={changeUnusedLetters} />
-                           <Form.Text>
-                              lower case, no duplicates
-                           </Form.Text>
-                        </Form.Group>
-                        <Form.Group>
-                           <Form.Label>contains, and position unknown</Form.Label>
-                           <Container fluid={true} style={{
-                              maxWidth: '50em',
-                           }}>
-                              <Row>
-                                 {R.map((ndx: number) => {
-                                    return (
-                                       <Col
-                                          key={`knownLetter-${ndx}`}
-                                       >
-                                          <Form.Control
-                                             className={classes.containButNotHere}
-                                             autoComplete="off"
-                                             type="text"
-                                             id={`knownLetter-unknownPlace-${ndx}`}
-                                             name={`knownLetter-${ndx}`}
-                                             value={form.position[ndx]['unknown']}
-                                             onChange={changeKnownLetters('unknown', ndx)} />
-                                       </Col>
-                                    )
+                     <Form.Group>
+                        <Form.Label>definitely doesn&apos;t contain</Form.Label>
+                        <p>
+                           Turns to lowercase and orders alphabetically
+                        </p>
+                        <Form.Control
+                           className={classes.doesntContain}
+                           style={{
+                              width: '15em'
+                           }}
+                           type="text"
+                           autoComplete="off"
+                           name="unusedLetters"
+                           placeholder="put letters here"
+                           value={form.unused}
+                           onChange={changeUnusedLetters} />
+                        <Form.Text>
+                           lower case, no duplicates
+                        </Form.Text>
+                     </Form.Group>
+                     <Form.Group>
+                        <Form.Label>contains, and position unknown</Form.Label>
+                        <Container fluid={true} style={{
+                           maxWidth: '50em',
+                        }}>
+                           <Row>
+                              {R.map((ndx: number) => {
+                                 return (
+                                    <Col
+                                       key={`knownLetter-${ndx}`}
+                                    >
+                                       <Form.Control
+                                          className={classes.containButNotHere}
+                                          autoComplete="off"
+                                          type="text"
+                                          id={`knownLetter-unknownPlace-${ndx}`}
+                                          name={`knownLetter-${ndx}`}
+                                          value={form.position[ndx]['unknown']}
+                                          onChange={changeKnownLetters('unknown', ndx)} />
+                                    </Col>
+                                 )
 
-                                 })([0, 1, 2, 3, 4])
-                                 }
-                              </Row>
-                           </Container>
-                        </Form.Group>
+                              })([0, 1, 2, 3, 4])
+                              }
+                           </Row>
+                        </Container>
+                     </Form.Group>
 
-                        <Form.Group>
-                           <Form.Label>contains, and position known</Form.Label>
-                           <Container fluid="sm" style={{
-                              maxWidth: '50em',
-                           }}>
+                     <Form.Group>
+                        <Form.Label>contains, and position known</Form.Label>
+                        <Container fluid="sm" style={{
+                           maxWidth: '50em',
+                        }}>
 
-                              <Row>
-                                 {R.map((ndx: number) => {
-                                    return (
-                                       <Col
-                                          key={`knownLetter-${ndx}`}
-                                       >
-                                          <Form.Control
-                                             className={classes.here}
-                                             type="text"
-                                             autoComplete="off"
-                                             name={`knownLetter-${ndx}`}
-                                             value={form.position[ndx]['known']}
-                                             onChange={changeKnownLetters('known', ndx)} />
-                                       </Col>
-                                    )
+                           <Row>
+                              {R.map((ndx: number) => {
+                                 return (
+                                    <Col
+                                       key={`knownLetter-${ndx}`}
+                                    >
+                                       <Form.Control
+                                          className={classes.here}
+                                          type="text"
+                                          autoComplete="off"
+                                          name={`knownLetter-${ndx}`}
+                                          value={form.position[ndx]['known']}
+                                          onChange={changeKnownLetters('known', ndx)} />
+                                    </Col>
+                                 )
 
-                                 })([0, 1, 2, 3, 4])
-                                 }
-                              </Row>
-                           </Container>
-                        </Form.Group>
-                        <Form.Group>
-                           <Container style={{
-                              marginTop: '1em',
-                           }}>
-                              <Row>
-                                 <Col xs="3">
-                                    <Button aria-label="clear form" variant="warning"
-                                       onClick={() => setForm({ ...FORM })}>
-                                       clear form
-                                    </Button>
-                                 </Col>
-                                 <Col xs="3">
-                                    <Button aria-label="find words that fit" variant="primary"
-                                       onClick={onFindWords}>
-                                       find words
-                                    </Button>
-                                 </Col>
-                                 <Col xs="6">
-                                    <Button aria-label="find words using letters unchosen yet"
-                                       variant="primary" onClick={onFindUnchosen}>
-                                       find words using letters unchosen yet
-                                    </Button>
-                                 </Col>
-                              </Row>
-                           </Container>
-                        </Form.Group>
-                     </Form>
-                  </Card.Text>
-               </Card.Body>
+                              })([0, 1, 2, 3, 4])
+                              }
+                           </Row>
+                        </Container>
+                     </Form.Group>
+                     <Form.Group>
+                        <Container style={{
+                           marginTop: '1em',
+                        }}>
+                           <Row>
+                              <Col xs="3">
+                                 <Button aria-label="clear form" variant="warning"
+                                    onClick={() => setForm({ ...FORM })}>
+                                    clear form
+                                 </Button>
+                              </Col>
+                              <Col xs="3">
+                                 <Button aria-label="find words that fit" variant="primary"
+                                    onClick={onFindWords}>
+                                    find words
+                                 </Button>
+                              </Col>
+                              <Col xs="6">
+                                 <Button aria-label="find words using letters unchosen yet"
+                                    variant="primary" onClick={onFindUnchosen}>
+                                    find words using letters unchosen yet
+                                 </Button>
+                              </Col>
+                           </Row>
+                        </Container>
+                     </Form.Group>
+                  </Form>
+               </Card.Text>
             </Card>
             <WordList words={words} title="suggestions - for completion" />
             <WordList words={unchosen} title="suggestions - to discover unfound letters" />

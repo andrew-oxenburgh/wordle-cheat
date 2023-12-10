@@ -23,6 +23,7 @@ const Guesses = () => {
 
    return (
       <Container>
+         <h1>My Second Wordle Cheat</h1>
          {help}
          <UnderConstructionThing/>
          <Row>
