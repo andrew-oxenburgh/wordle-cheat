@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
-import 'mvp.css' 
 
 import Container from 'react-bootstrap/Container';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles({
-   markdownContainer: {
-      height: 'auto',
-      background: 'orange',
-      position: 'relative',
-      top: 0
-   }
-});
-
-
 const MarkdownPage = () => {
    const { pageName } = useParams();
    const [content, setContent] = useState('');
-   const classes = useStyles()
 
    useEffect(() => {
       const loadContent = async () => {

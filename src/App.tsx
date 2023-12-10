@@ -1,3 +1,5 @@
+import React, { Suspense } from 'react';
+
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,10 +10,12 @@ import { useState } from 'react'
 import WordleCheat from './pages/wordleOne/WordleCheat';
 import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
-import NetflixGenre from './pages/netflixGenre/NetflixGenre'
-import MarkdownPage from './pages/markdownPages/MarkdownPage'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
 import Home from './pages/home/Home';
+
+// dynamic because possibly big imports
+const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
+const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'));
 
 function Navigation() {
    const [expanded, setExpanded] = useState(false);
@@ -27,8 +31,8 @@ function Navigation() {
                   <Nav.Link href="#/cheat">Wordle One Cheat </Nav.Link>
                   <Nav.Link href="#/cheatTwo">Wordle Cheat Two</Nav.Link>
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
-                  <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link> {/* NetflixGenre link */}
-                  <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link> {/* NetflixGenre link */}
+                  <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link>
+                  <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link>
                   <Nav.Link href="#/sumner-tides">Sumner Tides</Nav.Link>
                </Nav>
             </Navbar.Collapse>
@@ -54,9 +58,18 @@ export default function App() {
                   <Route path="/cheatTwo" element={<Cheater />} />
                   <Route path="/textHelper" element={<TextHelper />} />
                   <Route path="*" element={<TextHelper />} />
-                  <Route path="/netflixGenre" element={<NetflixGenre />} /> {/* NetflixGenre route */}
+                  <Route path="/netflixGenre" element={
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <NetflixGenre />
+                     </Suspense>
+                  } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
-                  <Route path="/markdown/:pageName" element={<MarkdownPage />} />
+                  <Route path="/markdown/:pageName" element={
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <MarkdownPage />
+                     </Suspense>
+
+                  } />
                </Routes>
             </main>
          </Router>

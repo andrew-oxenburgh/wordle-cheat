@@ -15,8 +15,8 @@ interface HelpThingProps {
 const useStyles = createUseStyles({
    helpButton: {
       position: 'fixed',
-      top: '10px',
-      right: '65px',
+      top: '3.5em',
+      right: '1em',
       width: '3em',
       zIndex: 1000,
       borderRadius: '4em',

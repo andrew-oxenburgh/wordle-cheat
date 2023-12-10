@@ -16,11 +16,9 @@ import {
    sanitise,
    WORDLE_CHEAT_FORM,
    WordleForm,
-   PositionEntity
 } from './wordle-utils'
 import { createUseStyles } from 'react-jss'
 import WordList from './WordList'
-import React from 'react'
 
 const wcInput = {
    background: 'green',
@@ -36,8 +34,7 @@ const wcInput = {
       transition: 'border-color 0.1s'
    },
    '& span': {
-      // jss-plugin-nested applies this to a child span
-      fontWeight: 'bold' // jss-plugin-camel-case turns this into 'font-weight'
+      fontWeight: 'bold'
    }
 }
 
@@ -99,7 +96,6 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
    useEffect(() => {
       putJsonInStorage(WORDLE_CHEAT_FORM, form)
    }, [form])
-
 
    function changeUnusedLetters(evt: any) {
       let value = evt.target.value

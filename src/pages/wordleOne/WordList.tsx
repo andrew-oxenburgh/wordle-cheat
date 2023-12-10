@@ -2,8 +2,6 @@ import Card from 'react-bootstrap/Card'
 import * as R from 'ramda'
 import SuggestedWord from './SuggestedWord'
 import PropTypes from 'prop-types'
-import React from 'react'
-import './WordList.css'
 
 WordList.propTypes = {
     words: PropTypes.arrayOf(PropTypes.string),
@@ -12,7 +10,7 @@ WordList.propTypes = {
 
 function WordList({words, title}: { words: string[], title: string }): JSX.Element {
     return (
-        <Card className="WordList">
+        <Card style={{maxWidth: '40em'}}>
             <Card.Body>
                 <Card.Title as="h4">{title}</Card.Title>
                 <Card.Text>possible words = {words.length}</Card.Text>
