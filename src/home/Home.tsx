@@ -78,6 +78,16 @@ const cards: CardType[] = [
          text: 'Netflix Genre Codes'
       }
    },
+   {
+      header: 'Blog Post',
+      text: [
+         'Some thoughts on replit'
+      ],
+      link: {
+         href: '#/markdown/examplePage',
+         text: 'Example Blog Post'
+      }
+   },
 ]
 
 function Home() {
@@ -90,7 +100,7 @@ function Home() {
             {
                R.map((card: CardType) => {
                   return (
-                     <Col xs="12" sm="6" md="4" lg="3" xl="2" key={card.header}>
+                     <Col xs="12" sm="12" md="6" lg="3" xl="2" key={card.header}>
                         <Card
                            className={classes.cardContainer}
                            bg={card.bg}

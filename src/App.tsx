@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import WordleCheat from './wordleOne/WordleCheat';
 import Cheater from './wordleCheatTwo/Cheater';
 import TextHelper from './textHelper/TextHelper'
@@ -9,15 +10,17 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function Navigation() {
+   const [expanded, setExpanded] = useState(false);
+
    return (
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar expanded={expanded} bg="dark" variant="dark" expand="lg" style={{ margin: 0 }}>
          <Container>
             <Navbar.Brand href="#/">Andrew Oxenburgh</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-               <Nav className="me-auto">
+               <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                   <Nav.Link href="#/home">Home</Nav.Link>
-                  <Nav.Link href="#/cheat">Wordle Cheat One</Nav.Link>
+                  <Nav.Link href="#/cheat">Wordle One Cheat </Nav.Link>
                   <Nav.Link href="#/cheatTwo">Wordle Cheat Two</Nav.Link>
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
                   <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link> {/* NetflixGenre link */}
@@ -29,12 +32,16 @@ function Navigation() {
    )
 }
 
+const headerStyle = { margin: 0, padding: 0 }
+
 export default function App() {
    return (
       <>
          <Router>
-            <Navigation />
-            <main>
+            <header style={headerStyle}>
+               <Navigation />
+            </header>
+            <main style={{ padding: 0 }}>
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
