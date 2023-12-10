@@ -6,8 +6,29 @@ import InfoThing from '../../components/InfoThing'
 import genres from './genres'
 
 const help = (
-   <InfoThing>
-      llkjdslkj
+   <InfoThing height="60%">
+      <p>
+         Netflix has hundres of categories, a lot of which it doesn't show you,
+         or, often are just empty. There's some gold here though, so I wrote this little app
+         to help you choose.
+      </p>
+      <p>
+         It's been helpfully further categorized, but check this out.
+      </p>
+      <h4>Notes:</h4>
+      <ul>
+         <li>
+            Uses a dynamic import. The config file is a teeny big (6k), so just chunking it up.
+         </li>
+      </ul>
+      <h4>Thanks To:</h4>
+      <ul>
+         <li>
+            <a target="_blank" href="https://github.com/vrachieru/netflix-categories/blob//categories.json">
+               Victor Rachieru for his categorizations
+            </a>
+         </li>
+      </ul>
    </InfoThing>
 )
 

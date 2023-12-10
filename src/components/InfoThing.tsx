@@ -12,7 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfo as icon } from '@fortawesome/free-solid-svg-icons'
 
 interface HelpThingProps {
-   children?: ReactNode;
+   children?: ReactNode
+   height?: string
 }
 
 const useStyles = createUseStyles({
@@ -43,7 +44,7 @@ const useStyles = createUseStyles({
    }
 });
 
-const InfoThing: React.FC<HelpThingProps> = ({ children }) => {
+const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
    const [showHelp, setShowHelp] = useState(false);
    const toggleHelp = () => setShowHelp(!showHelp);
 
@@ -67,6 +68,7 @@ const InfoThing: React.FC<HelpThingProps> = ({ children }) => {
                show={showHelp}
                onHide={toggleHelp}
                placement="top"
+               style={{height}}
             >
                <Offcanvas.Header closeButton>
                   <Offcanvas.Title>About</Offcanvas.Title>

@@ -3,6 +3,7 @@ import React, { Suspense, useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -21,19 +22,25 @@ function Navigation() {
    const [expanded, setExpanded] = useState(false);
 
    return (
-      <Navbar expanded={expanded} bg="dark" variant="dark" expand="lg" style={{ margin: 0 }}>
+      <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: 0 }}>
          <Container>
             <Navbar.Brand href="#/">Andrew Oxenburgh</Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                   <Nav.Link href="#/home">Home</Nav.Link>
-                  <Nav.Link href="#/cheat">Wordle One Cheat </Nav.Link>
-                  <Nav.Link href="#/cheatTwo">Wordle Cheat Two - dev</Nav.Link>
-                  <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
-                  <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link>
-                  <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link>
-                  <Nav.Link href="#/sumner-tides">Sumner Tides - dev</Nav.Link>
+                  <NavDropdown title="Wordle Cheats" id="basic-nav-dropdown">
+                     <NavDropdown.Item href="#/cheat">My first cheat</NavDropdown.Item>
+                     <NavDropdown.Item href="#/cheatTwo">My second cheat</NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Sundry" id="basic-nav-dropdown">
+                     <NavDropdown.Item href="#/textHelper">My first cheat</NavDropdown.Item>
+                     <NavDropdown.Item href="#/netflixGenre">My second cheat</NavDropdown.Item>
+                     <NavDropdown.Item href="#/sumner-tides">My second cheat</NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Blogs" id="basic-nav-dropdown">
+                     <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
+                  </NavDropdown>
                </Nav>
             </Navbar.Collapse>
          </Container>
@@ -50,7 +57,7 @@ export default function App() {
             <header style={headerStyle}>
                <Navigation />
             </header>
-            <main style={{ padding: 0 }}>
+            <main style={{ padding: 0, marginBottom: '25px' }}>
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
