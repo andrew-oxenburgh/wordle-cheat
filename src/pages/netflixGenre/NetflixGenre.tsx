@@ -1,9 +1,9 @@
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
-import genres from './genres'
 
 import InfoThing from '../../components/InfoThing'
+
+import genres from './genres'
 
 const help = (
    <InfoThing>

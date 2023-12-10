@@ -1,11 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { stringConversion } from './lib/textUtils'
-import { Conversion, StringInspection } from './lib/textHelper.types'
+
 import { createUseStyles } from 'react-jss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard as icon } from '@fortawesome/free-solid-svg-icons'
 
+import { stringConversion } from './lib/textUtils'
+import { Conversion, StringInspection } from './lib/textHelper.types'
 
 type StringInspectionProps = {
    inspection: StringInspection;
@@ -64,16 +65,16 @@ const ConversionElement: React.FC<ConversionElementProps> = ({ conversion }) => 
    return (
       <>
          <div key={conversion.name}
-            onMouseEnter={()=>setHover(true)}
-            onMouseLeave={()=>setHover(false)}
-            className={classes.element} 
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            className={classes.element}
             onClick={onClick(conversion.value)}
          >
             <div className={classes.kindTitle}>{camelCaseToWords(conversion.name)}</div>
             {
                hover &&
                <FontAwesomeIcon icon={icon} className={classes.icon} />
-            }   
+            }
             <div className={classes.kindValue}>
                {conversion.value}
             </div>

@@ -1,12 +1,17 @@
+import { useEffect, useState } from 'react'
+import * as R from 'ramda'
+
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
-import { useEffect, useState } from 'react'
-import * as R from 'ramda'
-import PropTypes from 'prop-types'
 import Button from 'react-bootstrap/Button'
+
+import { createUseStyles } from 'react-jss'
+
+import PropTypes from 'prop-types'
+
 import {
    createRegEx,
    findWordsWithoutTheseLetters,
@@ -17,7 +22,6 @@ import {
    WORDLE_CHEAT_FORM,
    WordleForm,
 } from './wordle-utils'
-import { createUseStyles } from 'react-jss'
 import WordList from './WordList'
 import InfoThing from '../../components/InfoThing'
 
@@ -26,7 +30,6 @@ const help = (
       First Wordle Cheat
    </InfoThing>
 )
-
 
 const wcInput = {
    background: 'green',

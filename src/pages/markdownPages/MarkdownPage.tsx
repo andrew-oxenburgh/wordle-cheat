@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown'
 
 import Container from 'react-bootstrap/Container';
 import InfoThing from '../../components/InfoThing'
+
+import { useParams } from 'react-router-dom';
+
+import ReactMarkdown from 'react-markdown'
 
 const help = (
    <InfoThing>
       Markdown info (well, blogs!!)
    </InfoThing>
 )
-
 
 const MarkdownPage = () => {
    const { pageName } = useParams();

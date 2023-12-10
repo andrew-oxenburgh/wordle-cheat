@@ -1,6 +1,5 @@
 import Badge from 'react-bootstrap/Badge'
 import PropTypes from 'prop-types'
-import React from 'react'
 
 SuggestedWord.propTypes = {
     word: PropTypes.string,

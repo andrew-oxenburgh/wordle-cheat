@@ -1,7 +1,9 @@
 import Card from 'react-bootstrap/Card'
-import * as R from 'ramda'
-import SuggestedWord from './SuggestedWord'
 import PropTypes from 'prop-types'
+
+import * as R from 'ramda'
+
+import SuggestedWord from './SuggestedWord'
 
 WordList.propTypes = {
     words: PropTypes.arrayOf(PropTypes.string),

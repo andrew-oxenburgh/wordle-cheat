@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/Nav';
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { useState } from 'react'
 import WordleCheat from './pages/wordleOne/WordleCheat';
 import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'

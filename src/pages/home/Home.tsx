@@ -1,11 +1,12 @@
+import * as R from 'ramda'
+
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import * as R from 'ramda'
-import UnderConstructionThing from '../../components/UnderConstructionThing'
 import { createUseStyles } from 'react-jss';
+
 import InfoThing from '../../components/InfoThing'
 
 const help = (

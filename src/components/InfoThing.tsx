@@ -1,20 +1,19 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { createUseStyles } from 'react-jss';
-import { faInfo as icon } from '@fortawesome/free-solid-svg-icons'
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
-import { ReactNode } from 'react';
+import { createUseStyles } from 'react-jss';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfo as icon } from '@fortawesome/free-solid-svg-icons'
 
 interface HelpThingProps {
    children?: ReactNode;
 }
-
-
 
 const useStyles = createUseStyles({
    helpButton: {

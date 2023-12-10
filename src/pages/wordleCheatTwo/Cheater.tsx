@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import React, { useState } from 'react';
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
 
@@ -12,7 +13,6 @@ const help = (
       Wordle 2!!!
    </InfoThing>
 )
-
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');

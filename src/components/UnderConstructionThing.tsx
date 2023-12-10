@@ -1,13 +1,13 @@
-// UnderConstructionBanner.tsx
 import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons'
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
-const useStyles = createUseStyles({
+import { createUseStyles } from 'react-jss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons'
+
+const useStyles = createUseStyles({
    '@keyframes bounce': {
       '0%': { transform: 'translateY(0)' },
       '50%': { transform: 'translateY(-25px)' },
