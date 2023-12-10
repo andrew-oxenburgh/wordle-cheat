@@ -5,6 +5,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { createUseStyles } from 'react-jss';
 import { faInfo as icon } from '@fortawesome/free-solid-svg-icons'
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 import { ReactNode } from 'react';
 
@@ -12,11 +14,13 @@ interface HelpThingProps {
    children?: ReactNode;
 }
 
+
+
 const useStyles = createUseStyles({
    helpButton: {
       position: 'fixed',
-      top: '3.5em',
-      right: '1em',
+      bottom: '0em',
+      left: '0em',
       width: '3em',
       zIndex: 1000,
       borderRadius: '4em',
@@ -35,6 +39,9 @@ const useStyles = createUseStyles({
       borderRadius: '5px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
    },
+   helpIcon: {
+
+   }
 });
 
 const InfoThing: React.FC<HelpThingProps> = ({ children }) => {
@@ -49,8 +56,12 @@ const InfoThing: React.FC<HelpThingProps> = ({ children }) => {
             onClick={toggleHelp}
             className={classes.helpButton}
             variant="warning"
+            id="info"
          >
-            <FontAwesomeIcon size="2x" icon={icon} />
+            <OverlayTrigger delay={500} overlay={<Tooltip id='info'>About this page</Tooltip>}>
+               <FontAwesomeIcon size="1x" icon={icon} />
+            </OverlayTrigger>
+
          </Button>
          {showHelp && (
             <Offcanvas

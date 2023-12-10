@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import * as R from 'ramda'
-
+import UnderConstructionThing from '../../components/UnderConstructionThing'
 import { createUseStyles } from 'react-jss';
 import InfoThing from '../../components/InfoThing'
 
@@ -108,6 +108,7 @@ function Home() {
    return (
       <Container className={classes.container}>
          {help}
+         <UnderConstructionThing/>
          <Row>
             {
                R.map((card: CardType) => {

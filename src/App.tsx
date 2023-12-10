@@ -17,6 +17,32 @@ import Home from './pages/home/Home';
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'));
 
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles({
+   footer: {
+      backgroundColor: '#333',
+      color: 'white',
+      textAlign: 'center',
+      padding: '10px 0',
+      position: 'fixed',
+      height: '3em',
+      left: 0,
+      bottom: 0,
+      width: '100%',
+   },
+});
+
+function Footer() {
+   const classes = useStyles();
+
+   return (
+      <footer className={classes.footer}>
+               Andrew Oxenburgh - demo
+      </footer>
+   );
+}
+
 function Navigation() {
    const [expanded, setExpanded] = useState(false);
 
@@ -72,6 +98,7 @@ export default function App() {
                   } />
                </Routes>
             </main>
+            <Footer />
          </Router>
       </>
    );

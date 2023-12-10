@@ -1,36 +1,46 @@
 // UnderConstructionBanner.tsx
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-
-const centerBannerStyle = {
-   left: '50%',
-   transform: 'translateX(-50%)',
-};
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons'
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 const useStyles = createUseStyles({
-   banner: {
-      ...centerBannerStyle,
-      position: 'fixed',
-      bottom: 10,
-      width: '80%',
-      backgroundColor: 'yellow',
-      padding: '10px',
-      textAlign: 'center',
-      fontSize: '20px',
-      fontWeight: 'bold',
-      zIndex: 0,
-      marginBottom: '',
-      border: '1px solid black',
-      borderRadius: '2em'
+
+   '@keyframes bounce': {
+      '0%': { transform: 'translateY(0)' },
+      '50%': { transform: 'translateY(-25px)' },
    },
+   banner: {
+      animation: '$bounce 1s 3',
+      animationTimingFunction: 'ease-in-out',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'fixed',
+      bottom: '0em',
+      left: '3em',
+      height: '2.9em',
+      color: 'black',
+      background: 'yellow',
+      width: '3em',
+      zIndex: 1000,
+      borderRadius: '4em',
+      border: '4px solid black',
+   },
+   icon: {
+   }
 });
 
 const UnderConstructionThing: React.FC = () => {
    const classes = useStyles();
 
    return (
-      <div className={classes.banner}>
-         This page still in dev
+      <div id='banner' className={classes.banner}>
+         <OverlayTrigger delay={500} overlay={<Tooltip id='banner'>This Page still under construction</Tooltip>}>
+            <FontAwesomeIcon className={classes.icon} size="1x" icon={icon} />
+         </OverlayTrigger>
       </div>
    );
 };
