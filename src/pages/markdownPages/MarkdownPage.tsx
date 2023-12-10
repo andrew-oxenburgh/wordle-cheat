@@ -3,7 +3,14 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 
 import Container from 'react-bootstrap/Container';
-import { createUseStyles } from 'react-jss';
+import InfoThing from '../../components/InfoThing'
+
+const help = (
+   <InfoThing>
+      Markdown info (well, blogs!!)
+   </InfoThing>
+)
+
 
 const MarkdownPage = () => {
    const { pageName } = useParams();
@@ -25,6 +32,7 @@ const MarkdownPage = () => {
    return (
       <Container
       >
+         {help}
          <ReactMarkdown
             children={content}
          />

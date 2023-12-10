@@ -19,6 +19,14 @@ import {
 } from './wordle-utils'
 import { createUseStyles } from 'react-jss'
 import WordList from './WordList'
+import InfoThing from '../../components/InfoThing'
+
+const help = (
+   <InfoThing>
+      First Wordle Cheat
+   </InfoThing>
+)
+
 
 const wcInput = {
    background: 'green',
@@ -136,6 +144,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                maxWidth: '30em',
             }}
          >
+            {help}
             <Card>
                <Card.Body>
                   <Card.Title as="h2">Total Wordle Cheat</Card.Title>

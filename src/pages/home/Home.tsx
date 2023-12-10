@@ -6,6 +6,14 @@ import Col from 'react-bootstrap/Col';
 import * as R from 'ramda'
 
 import { createUseStyles } from 'react-jss';
+import InfoThing from '../../components/InfoThing'
+
+const help = (
+   <InfoThing>
+      Home Page Info!!!
+   </InfoThing>
+)
+
 
 const useStyles = createUseStyles({
    cardContainer: {
@@ -99,6 +107,7 @@ function Home() {
 
    return (
       <Container className={classes.container}>
+         {help}
          <Row>
             {
                R.map((card: CardType) => {

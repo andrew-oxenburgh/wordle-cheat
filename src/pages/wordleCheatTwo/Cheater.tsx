@@ -4,6 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import React, { useState } from 'react';
+import InfoThing from '../../components/InfoThing'
+import UnderConstructionThing from '../../components/UnderConstructionThing';
+
+const help = (
+   <InfoThing>
+      Wordle 2!!!
+   </InfoThing>
+)
+
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');
@@ -14,6 +23,8 @@ const Guesses = () => {
 
    return (
       <Container>
+         {help}
+         <UnderConstructionThing/>
          <Row>
             <Col>
                <Form>

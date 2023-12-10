@@ -1,11 +1,15 @@
-// filename: src/pages/SumnerTides.tsx
-
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import useSWR from 'swr'
 
 import niwaExample from './niwa-dummy-data'
+import InfoThing from '../../components/InfoThing'
+import UnderConstructionThing from '../../components/UnderConstructionThing';
 
+const help = (
+   <InfoThing>
+      Niwa Data
+   </InfoThing>
+)
 
 // "lat" is required. 
 // "long" must be larger than or equal to 160. 
@@ -40,7 +44,6 @@ const fetchData = (path: string) => {
    }
 };
 
-
 const SumnerTides = () => {
    const url = `/tides/data?lat=${sumner.lat}&long=${sumner.long}`
    const { data, error, isLoading } = useSWR(url, fetchData(url))
@@ -50,6 +53,8 @@ const SumnerTides = () => {
 
    return (
       <Container>
+         {help}
+         <UnderConstructionThing/>
          <h1>Sumner Tides Information</h1>
          <hr />
          <img src="/public/niwa-dummy-chart.svg" />
