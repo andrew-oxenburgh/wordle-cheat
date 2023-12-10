@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
    helpButton: {
       position: 'fixed',
       bottom: '0em',
-      left: '0em',
+      left: '0.5em',
       width: '3em',
       zIndex: 1000,
       borderRadius: '4em',
@@ -71,7 +71,7 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
                style={{height}}
             >
                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>About</Offcanvas.Title>
+                  <Offcanvas.Title>About this page</Offcanvas.Title>
                </Offcanvas.Header>
                <Offcanvas.Body>
                   {children}

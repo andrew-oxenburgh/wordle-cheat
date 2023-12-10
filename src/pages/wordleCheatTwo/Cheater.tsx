@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Badge from 'react-bootstrap/Badge';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
@@ -23,9 +24,16 @@ const Guesses = () => {
 
    return (
       <Container>
-         <h1>My Second Wordle Cheat</h1>
+         <h1>
+            My Second Wordle Cheat &nbsp;
+            <Badge as="span" bg="danger" pill>
+               dev
+            </Badge>
+         </h1>
+         <h3>Seriously, don't even look at me!!!</h3>
+
          {help}
-         <UnderConstructionThing/>
+         <UnderConstructionThing />
          <Row>
             <Col>
                <Form>

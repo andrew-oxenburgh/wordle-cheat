@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown'
 
 const help = (
    <InfoThing>
+      <h3>Markdown Pages</h3>
       This is my blog posting stuff using react-markdown and dynamic links
    </InfoThing>
 )
