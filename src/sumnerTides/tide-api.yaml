@@ -1,0 +1,217 @@
+---
+definitions: {}
+info:
+  description: "API for NIWA's tide model. Data (json or CSV) and charts (SVG or PNG)\
+    \ for NZ tides from 1830 until 2030.\n\nThis current version does not cover tides\
+    \ inside harbours and estuaries. If you try specifying a harbour or dry-land location\
+    \ that is not part of the model domain the nearest valid open-coast location will\
+    \ be used. The response from the API will include the coordinates that have been\
+    \ used.\n\n\nAll coordinates used by the Tide API are in [NZGD1949](https://www.linz.govt.nz/data/geodetic-system/datums-projections-and-heights/geodetic-datums/new-zealand-geodetic-datum-1949-nzgd1949),\
+    \ which has a latitude difference of about 200m from [WGS84](https://www.linz.govt.nz/data/geodetic-system/datums-projections-and-heights/geodetic-datums/world-geodetic-system-1984-wgs84).\n\
+    \n\nThe Tide Forecaster uses a computer tide model developed by NIWA under various\
+    \ contracts from the New Zealand Foundation for Research, Science & Technology\
+    \ and with assistance from LINZ. For most coastal locations the forecasts of high\
+    \ and low tides will be accurate within 0.1 m in height and 5-10 minutes in time.\n\
+    \n\nA simple [PHP example script](https://github.com/niwa/nexttides) is available\
+    \ on GitHub."
+  title: "TIDE API"
+  version: "1.1.1"
+parameters: {}
+paths:
+  /chart.png:
+    get:
+      description: "Get chart"
+      parameters:
+      - description: "latitude range -29 to -53 (- eg: -30.876)"
+        in: "query"
+        name: "lat"
+        required: true
+        type: "string"
+      - description: "longitude range 160 to 180 and -175 to -180 (- eg: -175.543)"
+        in: "query"
+        name: "long"
+        required: true
+        type: "string"
+      - description: "number of days, range (1-31), default: 7 (-eg: 7)"
+        in: "query"
+        name: "numberOfDays"
+        required: false
+        type: "number"
+      - description: "start date, format ('yyyy-mm-dd'), default: today (-eg: 2018-05-30)"
+        in: "query"
+        name: "startDate"
+        required: false
+        type: "string"
+      - description: "LAT: Lowest astronomical tide; MSL: Mean sea level, default:\
+          \ LAT   (-eg: LAT)"
+        in: "query"
+        name: "datum"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "return chart"
+        default:
+          description: "Unexpected error"
+      tags:
+      - "default"
+      security:
+      - APIKeyQueryParam: []
+        APIKeyHeader: []
+  /chart.svg:
+    get:
+      description: "Get chart"
+      parameters:
+      - description: "latitude range -29 to -53 (- eg: -30.876)"
+        in: "query"
+        name: "lat"
+        required: true
+        type: "string"
+      - description: "longitude range 160 to 180 and -175 to -180 (- eg: -175.543)"
+        in: "query"
+        name: "long"
+        required: true
+        type: "string"
+      - description: "number of days, range (1-31), default: 7 (-eg: 7)"
+        in: "query"
+        name: "numberOfDays"
+        required: false
+        type: "number"
+      - description: "start date, format ('yyyy-mm-dd'), default: today (-eg: 2018-05-30)"
+        in: "query"
+        name: "startDate"
+        required: false
+        type: "string"
+      - description: "LAT: Lowest astronomical tide; MSL: Mean sea level, default:\
+          \ LAT   (-eg: LAT)"
+        in: "query"
+        name: "datum"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "return chart"
+        default:
+          description: "Unexpected error"
+      tags:
+      - "default"
+      security:
+      - APIKeyQueryParam: []
+        APIKeyHeader: []
+  /data:
+    get:
+      description: "Get data"
+      parameters:
+      - description: "latitude range -29 to -53 (- eg: -30.876)"
+        in: "query"
+        name: "lat"
+        required: true
+        type: "string"
+      - description: "longitude range 160 to 180 and -175 to -180 (- eg: -175.543)"
+        in: "query"
+        name: "long"
+        required: true
+        type: "string"
+      - description: "number of days, range (1-31), default: 7"
+        in: "query"
+        name: "numberOfDays"
+        required: false
+        type: "number"
+      - description: "start date, format ('yyyy-mm-dd'), default: today (-eg: 2018-05-30)"
+        in: "query"
+        name: "startDate"
+        required: false
+        type: "string"
+      - description: "LAT: Lowest astronomical tide; MSL: Mean sea level, default:\
+          \ LAT"
+        in: "query"
+        name: "datum"
+        required: false
+        type: "string"
+      - description: "Output time interval in minutes, range from 10 to 1440 minutes\
+          \ (1 day). Omit to get only high and low tide times"
+        in: "query"
+        name: "interval"
+        required: false
+        type: "number"
+      responses:
+        "200":
+          description: "Tide metadata and values (time is UTC, value of tide height\
+            \ is in meter) in json or download as csv file"
+        default:
+          description: "Unexpected error"
+      tags:
+      - "default"
+      security:
+      - APIKeyQueryParam: []
+        APIKeyHeader: []
+  /data.csv:
+    get:
+      description: "Get data"
+      parameters:
+      - description: "latitude range -29 to -53 (- eg: -30.876)"
+        in: "query"
+        name: "lat"
+        required: true
+        type: "string"
+      - description: "longitude range 160 to 180 and -175 to -180 (- eg: -175.543)"
+        in: "query"
+        name: "long"
+        required: true
+        type: "string"
+      - description: "number of days, range (1-31), default: 7"
+        in: "query"
+        name: "numberOfDays"
+        required: false
+        type: "number"
+      - description: "start date, format ('yyyy-mm-dd'), default: today (-eg: 2018-05-30)"
+        in: "query"
+        name: "startDate"
+        required: false
+        type: "string"
+      - description: "LAT: Lowest astronomical tide; MSL: Mean sea level, default:\
+          \ LAT"
+        in: "query"
+        name: "datum"
+        required: false
+        type: "string"
+      - description: "Output time interval in minutes, range from 10 to 1440 minutes\
+          \ (1 day). Omit to get only high and low tide times"
+        in: "query"
+        name: "interval"
+        required: false
+        type: "number"
+      responses:
+        "200":
+          description: "Tide metadata and values (time is UTC, value of tide height\
+            \ is in meter) in json or download as csv file"
+        default:
+          description: "Unexpected error"
+      tags:
+      - "default"
+      security:
+      - APIKeyQueryParam: []
+        APIKeyHeader: []
+produces:
+- "application/json"
+- "image/svg+xml"
+- "image/png"
+- "text/csv"
+responses: {}
+schemes:
+- "https"
+securityDefinitions:
+  APIKeyHeader:
+    in: "header"
+    name: "x-apikey"
+    type: "apiKey"
+  APIKeyQueryParam:
+    in: "query"
+    name: "apikey"
+    type: "apiKey"
+swagger: "2.0"
+host: "api.niwa.co.nz"
+basePath: "/tides"
+tags:
+- description: ""
+  name: "default"

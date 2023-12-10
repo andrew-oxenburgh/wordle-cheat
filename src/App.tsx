@@ -4,6 +4,7 @@ import Cheater from './wordleCheatTwo/Cheater';
 import TextHelper from './textHelper/TextHelper'
 import NetflixGenre from './netflixGenre/NetflixGenre'
 import MarkdownPage from './markdownPages/MarkdownPage'
+import SumnerTides from './sumnerTides/SumnerTides';
 
 import Home from './home/Home';
 import { Navbar, Container, Nav } from 'react-bootstrap';
@@ -25,6 +26,7 @@ function Navigation() {
                   <Nav.Link href="#/textHelper">Text Helper</Nav.Link>
                   <Nav.Link href="#/netflixGenre">Netflix By Genre</Nav.Link> {/* NetflixGenre link */}
                   <Nav.Link href="#/markdown/examplePage">My First Markdown!!!</Nav.Link> {/* NetflixGenre link */}
+                  <Nav.Link href="#/sumner-tides">Sumner Tides</Nav.Link>
                </Nav>
             </Navbar.Collapse>
          </Container>
@@ -50,6 +52,7 @@ export default function App() {
                   <Route path="/textHelper" element={<TextHelper />} />
                   <Route path="*" element={<TextHelper />} />
                   <Route path="/netflixGenre" element={<NetflixGenre />} /> {/* NetflixGenre route */}
+                  <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/markdown/:pageName" element={<MarkdownPage />} />
                </Routes>
             </main>
