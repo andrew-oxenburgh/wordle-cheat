@@ -27,7 +27,8 @@ import InfoThing from '../../components/InfoThing'
 
 const help = (
    <InfoThing>
-      First Wordle Cheat
+      <h3>Wordle Cheat</h3>
+
    </InfoThing>
 )
 
@@ -35,7 +36,6 @@ const wcInput = {
    background: 'green',
    fontSize: '1.4em',
    fontWeight: 'bold',
-   borderRadius: 20,
    borderColor: 'black',
    borderWidth: 2,
    borderStyle: 'solid',
@@ -63,7 +63,11 @@ const useStyles = createUseStyles({
    containButNotHere: {
       ...wcInput,
       background: 'yellow',
+      width: '3em !important',
+      fontSize: "1.1em",
       color: 'black',
+      margin: 0,
+      padding: '0 0 0 0.2em ',
       '&:focus': {
          background: 'khaki',
          colour: 'black'
@@ -71,6 +75,9 @@ const useStyles = createUseStyles({
    },
    here: {
       ...wcInput,
+      minWidth: '100%',
+      margin: 0,
+      padding: '0 0 0 0.6em ',
       background: 'green',
       color: 'white',
       '&:focus': {
@@ -83,8 +90,8 @@ const useStyles = createUseStyles({
    },
    githubFloat: {
       position: 'fixed',
-      left: 10,
-      bottom: 10
+      left: '1em',
+      bottom: '3em'
    }
 })
 
@@ -158,6 +165,8 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                      width: '100%',
                   }}>
                      <Form.Group>
+
+                        {/* UNUSED LETTERS */}
                         <Form.Label>definitely doesn&apos;t contain</Form.Label>
                         <p>
                            Turns to lowercase and orders alphabetically
@@ -179,14 +188,21 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                      </Form.Group>
                      <Form.Group>
                         <Form.Label>contains, and position unknown</Form.Label>
-                        <Container fluid={true} style={{
-                           maxWidth: '50em',
-                        }}>
-                           <Row>
+                        {/* USED, BUT NOT HERE */}
+                        <Container fluid={true} >
+                           <Row style={{
+                              padding: 0,
+                              margin: 0
+                           }}
+                           >
                               {R.map((ndx: number) => {
                                  return (
                                     <Col
                                        key={`knownLetter-${ndx}`}
+                                       style={{
+                                          padding: 0,
+                                          margin: 0
+                                       }}
                                     >
                                        <Form.Control
                                           className={classes.containButNotHere}
@@ -207,15 +223,14 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
 
                      <Form.Group>
                         <Form.Label>contains, and position known</Form.Label>
-                        <Container fluid="sm" style={{
-                           maxWidth: '50em',
-                        }}>
-
+                        {/* USED and HERE!!! */}
+                        <Container fluid="sm">
                            <Row>
                               {R.map((ndx: number) => {
                                  return (
                                     <Col
                                        key={`knownLetter-${ndx}`}
+                                       style={{ margin: 0 }}
                                     >
                                        <Form.Control
                                           className={classes.here}
