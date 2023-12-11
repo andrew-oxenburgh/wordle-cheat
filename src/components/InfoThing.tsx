@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
       position: 'fixed',
       top: '70px',
       right: '20px',
-      zIndex: 1000,
+      // zIndex: 1000,
       backgroundColor: 'white',
       padding: '10px',
       borderRadius: '5px',
@@ -68,7 +68,7 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
                show={showHelp}
                onHide={toggleHelp}
                placement="top"
-               style={{height}}
+               style={{ height }}
             >
                <Offcanvas.Header closeButton>
                   <Offcanvas.Title>About this page</Offcanvas.Title>
