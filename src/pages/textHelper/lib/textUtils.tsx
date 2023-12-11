@@ -11,13 +11,14 @@ function isInteger(s: string): boolean {
    return !isNaN(parseInt(s.trim()))
 }
 
-function isGeo(s: string): boolean {
-   return !isNaN(parseInt(s.trim()))
-}
-
-const isLatLong = (s: string): boolean => {
+export const isLatLong = (s: string): boolean => {
    const latLongRegex = /\b([-+]?([1-8]?\d(\.\d+)?|90(\.0+)?))\s*([nNsS])\b\s+([-+]?([1-9]?\d(\.\d+)?|1[0-7]\d(\.\d+)?|180(\.0+)?))\s*([eEwW])\b/g;
-   return !! s.match(latLongRegex);
+   return !!s.match(latLongRegex);
+};
+
+export const getLatLong = (s: string) => {
+   const latLongRegex = /\b([-+]?([1-8]?\d(\.\d+)?|90(\.0+)?))\s*([nNsS])\b\s+([-+]?([1-9]?\d(\.\d+)?|1[0-7]\d(\.\d+)?|180(\.0+)?))\s*([eEwW])\b/g;
+   return s.match(latLongRegex)
 };
 
 export function stringConversion(s: string): StringInspection {

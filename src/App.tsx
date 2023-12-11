@@ -10,6 +10,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import WordleCheat from './pages/wordleOne/WordleCheat';
 import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
+import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
 import Home from './pages/home/Home';
 
@@ -37,6 +38,7 @@ function Navigation() {
                      <NavDropdown.Item href="#/textHelper">Text Helper</NavDropdown.Item>
                      <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
                      <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
+                     <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown title="Blogs" id="blogs">
                      <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
@@ -71,6 +73,7 @@ export default function App() {
                      </Suspense>
                   } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
+                  <Route path="/draggy-gamey" element={<DraggyGamey />} />
                   <Route path="/markdown/:pageName" element={
                      <Suspense fallback={<div>Loading...</div>}>
                         <MarkdownPage />

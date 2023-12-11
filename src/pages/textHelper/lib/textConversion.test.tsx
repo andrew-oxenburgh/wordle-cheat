@@ -1,6 +1,30 @@
 import * as _ from 'lodash'
 import * as R from 'ramda'
-import { stringConversion } from './textUtils'
+import { stringConversion, getLatLong } from './textUtils'
+
+describe('check for lat long', () => {
+   xdescribe('good value', () => {
+      type FromToType = [string, [string, string]]
+      const fromTos: FromToType[] = [
+         ['90N 90E', ['90N', '90E']]
+      ]
+      R.map((fromTo: FromToType) => {
+         const from: string = fromTo[0]
+         const to: [string, string] = fromTo[1]
+         const title = `should return ${from} for ${to}`
+         test(title, () => {
+            console.log("from=" + from)
+            console.log("to=" + to)
+            expect(getLatLong(from)).toEqual(to)
+         })
+      }, fromTos)
+   })
+
+   test('dummy test', ()=>{
+      expect(getLatLong('10N 10E')).toEqual(['10N', '10E'])
+
+   })
+})
 
 describe('number conversions 2', () => {
    test('converts small number to locale string', () => {

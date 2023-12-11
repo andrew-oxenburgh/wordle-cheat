@@ -43,8 +43,8 @@ const cards: CardType[] = [
          'A rule of thumb might be "If it\'s not here, it\'s not cool."'
       ],
       link: {
-         href: '#/netflixGenre',
-         text: 'Netflix Genre Codes'
+         href: '#/draggy-gamey',
+         text: 'Draggy Gamey'
       }
    },
    {
