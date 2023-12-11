@@ -12,6 +12,12 @@ const help = (
       <p>
          This is a "game" where you can drag the pointer around, or click on squares to do things!!!
       </p>
+      <p>
+         Click to change the colors of that square
+      </p>
+      <p>
+         Press and drag to change the colors of the square you drag over
+      </p>
    </InfoThing>
 )
 
@@ -32,14 +38,16 @@ const useStyles = createUseStyles({
       display: 'grid',
       gridTemplateColumns: `repeat(${width}, 1fr)`,
       gridTemplateRows: `repeat(${height}, 1fr)`,
-      width: '20em',
-      height: '20em',
+      width: '22em',
+      height: '22em',
       padding: 0,
       border: '1px solid black',
    },
    container: {
-      width: '100%',
-      height: 'auto',
+      display: 'flex',
+      justifyContent: 'center'
+      // width: '100em',
+      // height: '100em',
    }
 });
 
@@ -108,9 +116,14 @@ const ClickCounter: React.FC = () => {
 
 const GridComponent: React.FC = () => {
    const classes = useStyles();
+   const handleUndragMe = () => {
+      isBeingDragged.value = -1
+   }
 
    return (
-      <div className={classes.grid}>
+      <div className={classes.grid}
+         onMouseLeave={handleUndragMe}
+      >
          {Array(numOfCells).fill(null).map((_, index) => (
             <ClickCounter key={index} />
          ))}
@@ -120,12 +133,14 @@ const GridComponent: React.FC = () => {
 
 const DraggyGamey: React.FC = () => {
    const classes = useStyles();
-   return (
+   return (<>
+      {help}
+      <h2>Draggy Gamey</h2>
       <Container className={classes.container}>
-         <h2>Draggy Gamey</h2>
-         {help}
+         {/* {help} */}
          <GridComponent />
       </Container>
+   </>
    );
 };
 

@@ -29,19 +29,6 @@ const useStyles = createUseStyles({
          border: '4px solid black',
       }
    },
-   helpContent: {
-      position: 'fixed',
-      top: '70px',
-      right: '20px',
-      // zIndex: 1000,
-      backgroundColor: 'white',
-      padding: '10px',
-      borderRadius: '5px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-   },
-   helpIcon: {
-
-   }
 });
 
 const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
@@ -77,7 +64,6 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
                   {children}
                </Offcanvas.Body>
             </Offcanvas>
-
          )
          }
       </Container >
