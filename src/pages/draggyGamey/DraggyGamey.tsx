@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import UnderConstructionThing from '../../components/UnderConstructionThing'
+import { signal } from "@preact/signals-react";
 import InfoThing from '../../components/InfoThing'
 import { createUseStyles } from 'react-jss';
 import Container from 'react-bootstrap/Container'
@@ -15,14 +15,17 @@ const help = (
    </InfoThing>
 )
 
-const colors: string[] = ['blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia'];
+const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia'];
 // const colors: string[] = ['#000', '#444', '#888', '#aaa', '#eee']
 
-const numColors = colors.length
+const numColors = 4
 
-const width = 20
-const height = 20
+const width = 8
+const height = width
 const numOfCells = width * height
+const colors = R.take(numColors, colorList)
+
+const isBeingDragged = signal(-1);
 
 const useStyles = createUseStyles({
    grid: {
@@ -45,7 +48,7 @@ const reduceWithIndex = R.addIndex(R.reduce)
 const colorCss = reduceWithIndex(
    (acc: any, color: string, idx: number) => {
       acc['color_' + idx] = {
-         backgroundColor: color,
+         background: color,
          width: '100%',
          height: '100%',
          borderRadius: 0,
@@ -57,11 +60,9 @@ const colorCss = reduceWithIndex(
             transition: '0.1s'
          },
          '&:not(:hover)': {
-            border: '1px solid none',
-            transition: '30s'
+            border: '1px solid transparent',
+            transition: 'border 3s ease',
          },
-         transition: '0.1s'
-
       }
       return acc
    }, {}, colors)
@@ -71,14 +72,37 @@ const useStylesClicks = createUseStyles(colorCss);
 
 const ClickCounter: React.FC = () => {
    const [clickCount, setClickCount] = useState(0);
+   const [dragged, setDragged] = useState(false);
    const classes = useStylesClicks();
 
    const handleButtonClick = () => {
       setClickCount((clickCount + 1) % numColors);
    };
 
+   const handleDraggedOver = () => {
+      if (isBeingDragged.value > -1) {
+         setClickCount(isBeingDragged.value);
+      }
+   };
+
+   const handleDragMe = () => {
+      isBeingDragged.value = clickCount
+      setDragged(true)
+   }
+
+   const handleUndragMe = () => {
+      isBeingDragged.value = -1
+      setDragged(false)
+   }
+
    return (
-      <div className={classes['color_' + clickCount]} onClick={handleButtonClick}>{' '}</div>
+      <div
+         className={classes['color_' + clickCount]}
+         onClick={handleButtonClick}
+         onMouseEnter={handleDraggedOver}
+         onMouseDown={handleDragMe}
+         onMouseUp={handleUndragMe}
+      />
    );
 };
 
@@ -96,20 +120,11 @@ const GridComponent: React.FC = () => {
 
 const DraggyGamey: React.FC = () => {
    const classes = useStyles();
-   const [clear, setClear] = useState(0)
-   const onClear = () => {
-      setClear(clear + 1)
-   }
-
    return (
       <Container className={classes.container}>
          <h2>Draggy Gamey</h2>
-         <p>
-            <i>(should be Clicky Gamey)</i>
-         </p>
          {help}
          <GridComponent />
-         <UnderConstructionThing />
       </Container>
    );
 };
