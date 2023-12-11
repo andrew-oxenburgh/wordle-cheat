@@ -21,6 +21,10 @@ export function textConversions(s: string): Conversion[] {
       value: _.camelCase(s)
    })
    ret.push({
+      name: 'capitalize',
+      value: _.capitalize(s)
+   })
+ret.push({
       name: 'escape',
       value: _.escape(s)
    })
