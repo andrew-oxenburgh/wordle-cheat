@@ -12,6 +12,7 @@ const useStyles = createUseStyles({
       borderRadius: '0.5em',
       border: '1px solid darkblue',
       padding: '10px',
+      margin: '1em 0 2em 0',
       cursor: 'pointer',
       '&:hover': {
          backgroundColor: 'skyblue',
@@ -52,10 +53,10 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
       showAlert()
    }
 
-  useInterval(
-    closeAlert,
-    2000
-  )
+   useInterval(
+      closeAlert,
+      2000
+   )
 
    return (
       <div>
