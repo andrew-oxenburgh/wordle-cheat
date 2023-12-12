@@ -15,7 +15,7 @@ import InfoThing from '../../components/InfoThing'
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
 words = R.uniq(words)
-const separators: string = '-_$@0123456789'
+const separators: string = '-_~.@'
 const numWords = words.length
 
 const help = (
@@ -42,13 +42,9 @@ const help = (
 
 const useStyles = createUseStyles({
    button: {
-      backgroundColor: 'lightblue',
       padding: '10px',
       border: 'none',
       cursor: 'pointer',
-      '&:hover': {
-         backgroundColor: 'skyblue',
-      },
    },
    password: {
       fontFamily: 'monospace',
@@ -108,7 +104,7 @@ const JSSComponent: React.FC = () => {
                      <p>
                         I created it as fun little project
                      </p>
-                     <CopyablText text={password} warning="please don't use this!!!" />
+                     <CopyablText text={password} warning="please don't use this password!" />
                   </Card.Text>
                   <Card.Footer>
                      <button className={classes.button} onClick={handleButtonClick}>create new password</button>

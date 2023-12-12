@@ -43,8 +43,19 @@ const cards: CardType[] = [
          'A rule of thumb might be "If it\'s not here, it\'s not cool."'
       ],
       link: {
-         href: '#/draggy-gamey',
-         text: 'Draggy Gamey'
+         href: '#/password-generator',
+         text: 'Password Generator'
+      }
+   },
+   {
+      header: 'Password Generator',
+      text: [
+         'This is really just a toy!!!!',
+         'It\'ll create quite strong password\'s, but please don\'t trust it with your life.'
+      ],
+      link: {
+         href: '#/password-generator',
+         text: 'Password Generator'
       }
    },
    {
