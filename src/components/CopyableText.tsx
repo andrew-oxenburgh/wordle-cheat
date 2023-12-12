@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy as icon } from '@fortawesome/free-solid-svg-icons';
 import Alert from 'react-bootstrap/Alert'
+import { useInterval } from 'usehooks-ts'
 
 const useStyles = createUseStyles({
    button: {
@@ -51,6 +52,11 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
       showAlert()
    }
 
+  useInterval(
+    closeAlert,
+    2000
+  )
+
    return (
       <div>
          <div className={classes.button} onClick={onCopy}>
@@ -62,7 +68,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
                {text}
             </div>
          </div>
-         <Alert className={classes.alert} dismissible show={show} onClose={closeAlert} variant="success">
+         <Alert className={classes.alert} dismissible show={show} onClose={closeAlert} variant="warning">
             {warning && <Alert.Heading>{warning}</Alert.Heading>}
             Copied to clipboard!
          </Alert>
