@@ -16,7 +16,7 @@ const help = (
          Click to change the colors of that square
       </p>
       <p>
-         Press and drag to change the colors of the square you drag over
+         Press and drag to change the colors of the square you drag over. This doesn't work on a mobile yet.
       </p>
    </InfoThing>
 )
@@ -88,18 +88,22 @@ const ClickCounter: React.FC = () => {
    };
 
    const handleDraggedOver = () => {
+      console.log('dragged over')
       if (isBeingDragged.value > -1) {
+         console.log('changing color')
          setClickCount(isBeingDragged.value);
       }
    };
 
    const handleDragMe = () => {
       isBeingDragged.value = clickCount
+      console.log('begin dragging')
       setDragged(true)
    }
 
    const handleUndragMe = () => {
       isBeingDragged.value = -1
+      console.log('end dragging')
       setDragged(false)
    }
 
@@ -107,11 +111,14 @@ const ClickCounter: React.FC = () => {
       <div
          className={classes['color_' + clickCount]}
          onClick={handleButtonClick}
-         onMouseEnter={handleDraggedOver}
+
          onMouseDown={handleDragMe}
+         onMouseEnter={handleDraggedOver}
          onMouseUp={handleUndragMe}
+
+      //todo: make it work for mobile
       />
-   );
+   )
 };
 
 const GridComponent: React.FC = () => {

@@ -25,7 +25,7 @@ function Navigation() {
    return (
       <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: 0 }}>
          <Container>
-            <Navbar.Brand href="#/">Andrew Oxenburgh</Navbar.Brand>
+            <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.2)</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
@@ -61,7 +61,7 @@ export default function App() {
             </header>
             <main style={{ padding: 0, marginBottom: '25px' }}>
                <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<DraggyGamey />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/cheat" element={<WordleCheat />} />
                   <Route path="/cheatTwo" element={<Cheater />} />
