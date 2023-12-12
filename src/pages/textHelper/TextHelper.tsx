@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 import ConversionComponent from './ConversionComponent';
 import InfoThing from '../../components/InfoThing'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 const help = (
    <InfoThing>
@@ -10,10 +11,22 @@ const help = (
    </InfoThing>
 )
 
+const header: HeaderType = {
+   title: 'text helper',
+   prev: {
+      name: 'wordle 2',
+      link: '#/cheatTwo'
+   },
+   next: {
+      name: 'netflix by genre',
+      link: '#/netflixGenre'
+   },
+}
+
 const TextHelper = () => {
    return (
       <Container>
-         <h1>Text Helper</h1>
+         <PageHeader header={header} />
          {help}
          <Card>
             <Card.Text>

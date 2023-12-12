@@ -11,6 +11,7 @@ import * as R from 'ramda'
 
 import CopyablText from '../../components/CopyableText';
 import InfoThing from '../../components/InfoThing'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
@@ -89,11 +90,24 @@ const JSSComponent: React.FC = () => {
       setCopyCount(copyCount + 1)
    }
 
+   const header: HeaderType = {
+      title: 'password generator',
+      prev: {
+         name: 'draggy gamey',
+         link: '#/draggy-gamey'
+      },
+      next: {
+         name: 'home',
+         link: '/'
+      },
+   }
+
+
    return (
       <>
          <Container>
             {help}
-            <h1>Password Generator</h1>
+            <PageHeader header={header} />
             <Card>
                <Card.Body>
                   <Card.Title>A suggested password</Card.Title>

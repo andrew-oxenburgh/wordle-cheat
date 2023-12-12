@@ -8,12 +8,25 @@ import Badge from 'react-bootstrap/Badge';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 const help = (
    <InfoThing>
       Wordle 2!!!
    </InfoThing>
 )
+
+const header: HeaderType = {
+   title: 'Wordle 2',
+   prev: {
+      name: 'wordle 1',
+      link: '#/cheat'
+   },
+   next: {
+      name: 'text helper',
+      link: '#/text-helper'
+   },
+}
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');
@@ -24,12 +37,7 @@ const Guesses = () => {
 
    return (
       <Container>
-         <h1>
-            My Second Wordle Cheat &nbsp;
-            <Badge as="span" bg="danger" pill>
-               dev
-            </Badge>
-         </h1>
+         <PageHeader header={header} />
          <h3>Seriously, don't even look at me!!!</h3>
 
          {help}

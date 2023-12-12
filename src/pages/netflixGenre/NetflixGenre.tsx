@@ -2,12 +2,24 @@ import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 
 import InfoThing from '../../components/InfoThing'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 import genres from './genres'
 
+const header: HeaderType = {
+   title: 'netflix by genre',
+   prev: {
+      name: 'text-helper',
+      link: '#/text-helper'
+   },
+   next: {
+      name: 'sumner-tides',
+      link: '#/sumner-tides'
+   },
+}
+
 const help = (
    <InfoThing height="60%">
-      <h3>Netflix by Genre</h3>
       <p>
          Netflix has hundres of categories, a lot of which it doesn't show you,
          or, often are just empty. There's some gold here though, so I wrote this little app
@@ -37,7 +49,7 @@ const NetflixGenre = () => {
    return (
       <Container>
          {help}
-         <h1>Netflix By Genre</h1>
+         <PageHeader header={header} />
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (
                <Accordion.Item eventKey={category} key={category}>

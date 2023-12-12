@@ -9,6 +9,7 @@ import { createUseStyles } from 'react-jss';
 import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InfoThing from '../../components/InfoThing'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 const help = (
    <InfoThing>
@@ -132,8 +133,22 @@ function Home() {
    const classes = useStyles()
    const mapIndexed = R.addIndex(R.map);
 
+
+   const header: HeaderType = {
+      title: 'Home',
+      next: {
+         name: 'wordle cheat one',
+         link: '#/cheat'
+      },
+      prev: {
+         name: 'blog',
+         link: '#/markdown/examplePage'
+      }
+   }
+
    return (
       <Container className={classes.container}>
+         <PageHeader header={header} />
          {help}
          <Row>
             {

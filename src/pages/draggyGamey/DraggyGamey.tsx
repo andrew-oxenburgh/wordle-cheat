@@ -5,6 +5,7 @@ import InfoThing from '../../components/InfoThing'
 import { createUseStyles } from 'react-jss';
 import Container from 'react-bootstrap/Container'
 import * as R from 'ramda'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 const help = (
    <InfoThing height="50%">
@@ -138,11 +139,23 @@ const GridComponent: React.FC = () => {
    );
 };
 
+const header: HeaderType = {
+   title: 'draggy gamey',
+   prev: {
+      name: 'sumner tides',
+      link: '#/sumner-tides'
+   },
+   next: {
+      name: 'password generator',
+      link: '#/password-generator'
+   },
+}
+
 const DraggyGamey: React.FC = () => {
    const classes = useStyles();
    return (<>
       {help}
-      <h2>Draggy Gamey</h2>
+      <PageHeader header={header} />
       <Container className={classes.container}>
          {/* {help} */}
          <GridComponent />

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 import niwaExample from './niwa-dummy-data'
 
@@ -45,6 +46,19 @@ const fetchData = (path: string) => {
    }
 };
 
+const header: HeaderType = {
+   title: 'sumner tides',
+   prev: {
+      name: 'netflix by genre',
+      link: '#/netflixGenre'
+   },
+   next: {
+      name: 'draggy gamey',
+      link: '#/draggy-gamey'
+   },
+}
+
+
 const SumnerTides = () => {
    const url = `/tides/data?lat=${sumner.lat}&long=${sumner.long}`
    const { data, error, isLoading } = useSWR(url, fetchData(url))
@@ -56,7 +70,7 @@ const SumnerTides = () => {
       <Container>
          {help}
          <UnderConstructionThing/>
-         <h1>Sumner Tides</h1>
+         <PageHeader header={header} />
          <hr />
          <img src="/public/niwa-dummy-chart.svg" />
          {JSON.stringify(data, null, 4)}
