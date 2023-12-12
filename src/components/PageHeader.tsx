@@ -8,15 +8,23 @@ const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
    },
+   leftArrow: {
+      position: 'absolute',
+      left: '1em'
+   },
+   rightArrow: {
+      position: 'absolute',
+      right: '1em'
+   }
 });
 
 export type HeaderType = {
    title: string;
-   next?: {
+   next: {
       name: string;
       link: string;
    };
-   prev?: {
+   prev: {
       name: string;
       link: string;
    };
@@ -31,13 +39,16 @@ const PageHeader: React.FC<Props> = ({ header }) => {
    return (
       <h1 className={classes.pageHeader}>
          {header.next?.link &&
-            <a href={header.prev?.link}>
+            <a href={header.prev?.link}
+               className={classes.leftArrow}>
                <FontAwesomeIcon icon={leftArrow} />
             </a>
-         }&nbsp;
-         {header.title}&nbsp;
+         }
+         {header.title}
          {
-            <a href={header.next?.link}>
+            <a href={header.next?.link}
+               className={classes.rightArrow}>
+
                <FontAwesomeIcon icon={rightArrow} />
             </a>
          }
