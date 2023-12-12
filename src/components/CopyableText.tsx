@@ -21,8 +21,9 @@ const useStyles = createUseStyles({
    },
    alert: {
       position: 'absolute',
-      bottom: '10em',
-      left: '1em',
+      top: '1em',
+      right: '0',
+      zIndex: 10,
    },
    title: {
       position: 'absolute',

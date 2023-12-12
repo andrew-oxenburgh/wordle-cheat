@@ -13,6 +13,7 @@ import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
 import Home from './pages/home/Home';
+import './mvp-override.css'
 
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
@@ -63,7 +64,7 @@ export default function App() {
             </header>
             <main style={{ padding: 0, marginBottom: '25px' }}>
                <Routes>
-                  <Route path="/" element={<DraggyGamey />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/cheat" element={<WordleCheat />} />
                   <Route path="/cheatTwo" element={<Cheater />} />

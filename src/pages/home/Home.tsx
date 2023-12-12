@@ -6,7 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { createUseStyles } from 'react-jss';
-
+import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InfoThing from '../../components/InfoThing'
 
 const help = (
@@ -21,6 +22,11 @@ const useStyles = createUseStyles({
    },
    container: {
       marginTop: '1em'
+   },
+   arrow: {
+      position: 'relative',
+      right: '1em',
+      bottom: '0.5em',
    }
 });
 
@@ -138,7 +144,12 @@ function Home() {
                            className={classes.cardContainer}
                            bg={card.bg}
                         >
-                           <Card.Header>{card.header}</Card.Header>
+                           <Card.Header>
+                              <Card.Link href={card.link?.href}>
+                                 <FontAwesomeIcon icon={arrow} size="xl" />
+                              </Card.Link>
+                              &nbsp;{card.header}
+                           </Card.Header>
                            <Card.Body>
                               {
                                  mapIndexed((line: string, idx: number) => {
@@ -148,7 +159,8 @@ function Home() {
                                  }, card.text)
                               }
                               {card.link &&
-                                 <Card.Link href={card.link.href}>{card.link.text}</Card.Link>
+                                 <Card.Link href={card.link.href}>
+                                 </Card.Link>
                               }
                            </Card.Body>
                         </Card>
