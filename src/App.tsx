@@ -12,6 +12,7 @@ import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
+import PasswordGenerator from './pages/passwordGenerator/PasswordGenerator';
 import Home from './pages/home/Home';
 
 // dynamic because possibly big imports
@@ -39,6 +40,7 @@ function Navigation() {
                      <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
                      <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                      <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
+                     <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown title="Blogs" id="blogs">
                      <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
@@ -74,6 +76,7 @@ export default function App() {
                   } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/draggy-gamey" element={<DraggyGamey />} />
+                  <Route path="/password-generator" element={<PasswordGenerator />} />
                   <Route path="/markdown/:pageName" element={
                      <Suspense fallback={<div>Loading...</div>}>
                         <MarkdownPage />
