@@ -15,6 +15,7 @@ const useStyles = createUseStyles({
       '&:hover': {
          backgroundColor: 'skyblue',
       },
+      fontFamily: 'monospace',
    },
    alert: {
       position: 'absolute',

@@ -12,12 +12,12 @@ import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
-import PasswordGenerator from './pages/passwordGenerator/PasswordGenerator';
 import Home from './pages/home/Home';
 
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'));
+const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'));
 import Footer from './components/Footer';
 
 function Navigation() {
@@ -26,7 +26,7 @@ function Navigation() {
    return (
       <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: 0 }}>
          <Container>
-            <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.3)</span></Navbar.Brand>
+            <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.4)</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
@@ -74,9 +74,13 @@ export default function App() {
                         <NetflixGenre />
                      </Suspense>
                   } />
+                  <Route path="/password-generator" element={
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <PasswordGenerator />
+                     </Suspense>
+                  } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/draggy-gamey" element={<DraggyGamey />} />
-                  <Route path="/password-generator" element={<PasswordGenerator />} />
                   <Route path="/markdown/:pageName" element={
                      <Suspense fallback={<div>Loading...</div>}>
                         <MarkdownPage />
