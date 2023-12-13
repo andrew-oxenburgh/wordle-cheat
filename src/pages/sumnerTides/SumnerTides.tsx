@@ -69,11 +69,12 @@ const SumnerTides = () => {
    return (
       <PageBody>
          {help}
-         <UnderConstructionThing/>
+         <UnderConstructionThing />
          <PageHeader header={header} />
-         <hr />
-         <img src="/public/niwa-dummy-chart.svg" />
-         {JSON.stringify(data, null, 4)}
+         <Container>
+            <img src="/public/niwa-dummy-chart.svg" />
+            {JSON.stringify(data, null, 4)}
+         </Container>
       </PageBody>
    );
 };

@@ -25,7 +25,7 @@ function Navigation() {
    const [expanded, setExpanded] = useState(false);
 
    return (
-      <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto' }}>
+      <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto', paddingLeft: '1em' }}>
          <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.4)</span></Navbar.Brand>
          <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
          <Navbar.Collapse id="basic-navbar-nav">

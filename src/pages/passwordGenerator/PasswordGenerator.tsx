@@ -112,14 +112,15 @@ const JSSComponent: React.FC = () => {
                <Card.Body>
                   <Card.Title>A suggested password</Card.Title>
                   <Card.Text>
-                     <p>
-                        I strongly recommend you don't use this password generator!!
-                     </p>
-                     <p>
-                        I created it as fun little project
-                     </p>
-                     <CopyablText text={password} warning="please don't use this password!" />
+                     I strongly recommend you don't use this password generator!!
+
                   </Card.Text>
+
+                  <Card.Text>
+                     I created it as fun little project
+
+                  </Card.Text>
+                  <CopyablText text={password} warning="please don't use this password!" />
                   <Card.Footer>
                      <button className={classes.button} onClick={handleButtonClick}>create new password</button>
                   </Card.Footer>

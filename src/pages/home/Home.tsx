@@ -160,6 +160,7 @@ function Home() {
                      <Col xs="12" sm="12" md="6" lg="3" xl="2" key={card.header}>
                         <Card
                            bg={card.bg}
+                           style={{margin:'0.5em 0'}}
                         >
                            <Card.Header>
                               <Card.Link href={card.link?.href}>

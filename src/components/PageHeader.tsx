@@ -7,16 +7,27 @@ import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
-      maxWidth: 'var(--width-content)',
-      margin: '0 auto'
+      textAnchor: 'middle',
+      maxWidth: '100%',
+      margin: '0 auto',
+      padding: '0.5em',
+      overflow: 'none',
+      height: 'fit-content',
+   },
+   arrows : {
+      
    },
    leftArrow: {
       float: 'left',
-      marginLeft: '3em'
+      marginLeft: '2em'
    },
    rightArrow: {
       float: 'right',
-      marginRight: '3em'
+      marginRight: '2em'
+   },
+   title: {
+      color: 'black',
+      fontSize: '2em'
    }
 });
 
@@ -39,22 +50,24 @@ interface Props {
 const PageHeader: React.FC<Props> = ({ header }) => {
    const classes = useStyles();
    return (
-      <h1 className={classes.pageHeader}>
-         {header.next?.link &&
-            <a href={header.prev?.link}
-               className={classes.leftArrow}>
-               <FontAwesomeIcon icon={leftArrow} />
-            </a>
-         }
-         {header.title}
-         {
-            <a href={header.next?.link}
-               className={classes.rightArrow}>
+      <div className={classes.pageHeader}>
+         <div className={classes.arrows}>
+            {header.next?.link &&
+               <a href={header.prev?.link}
+                  className={classes.leftArrow}>
+                  <FontAwesomeIcon icon={leftArrow} size="xl" />
+               </a>
+            }
+            {
+               <a href={header.next?.link}
+                  className={classes.rightArrow}>
 
-               <FontAwesomeIcon icon={rightArrow} />
-            </a>
-         }
-      </h1>
+                  <FontAwesomeIcon icon={rightArrow} size="xl" />
+               </a>
+            }
+         </div>
+         <span className={classes.title}>{header.title}</span>
+      </div>
    );
 }
 
