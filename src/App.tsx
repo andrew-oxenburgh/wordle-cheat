@@ -55,10 +55,10 @@ export default function App() {
    return (
       <>
          <Router>
-            <header style={{padding: 0}}>
+            <header style={{ padding: 0 }}>
                <Navigation />
             </header>
-            <main style={{ padding: 0, marginBottom: '25px' }}>
+            <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
