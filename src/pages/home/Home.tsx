@@ -18,12 +18,6 @@ const help = (
 )
 
 const useStyles = createUseStyles({
-   cardContainer: {
-      margin: '0em 1em 1em 0em',
-   },
-   container: {
-      marginTop: '1em'
-   },
    arrow: {
       position: 'relative',
       right: '1em',
@@ -159,13 +153,12 @@ function Home() {
       <PageBody>
          <PageHeader header={header} />
          {help}
-         <Row>
+         <Row style={{width: '100%', margin:'0 auto', padding: 0}}>
             {
                R.map((card: CardType) => {
                   return (
                      <Col xs="12" sm="12" md="6" lg="3" xl="2" key={card.header}>
                         <Card
-                           className={classes.cardContainer}
                            bg={card.bg}
                         >
                            <Card.Header>
