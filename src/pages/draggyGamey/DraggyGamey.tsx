@@ -6,7 +6,7 @@ import { createUseStyles } from 'react-jss';
 import Container from 'react-bootstrap/Container'
 import * as R from 'ramda'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing height="50%">
       <h2>Draggy Gamey</h2>
@@ -154,12 +154,12 @@ const header: HeaderType = {
 const DraggyGamey: React.FC = () => {
    const classes = useStyles();
    return (<>
-      {help}
-      <PageHeader header={header} />
-      <Container className={classes.container}>
+      <PageBody>
+         {help}
+         <PageHeader header={header} />
          {/* {help} */}
          <GridComponent />
-      </Container>
+      </PageBody>
    </>
    );
 };

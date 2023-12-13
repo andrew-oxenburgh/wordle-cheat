@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import InfoThing from '../../components/InfoThing'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 import genres from './genres'
 
 const header: HeaderType = {
@@ -47,7 +47,7 @@ const help = (
 
 const NetflixGenre = () => {
    return (
-      <Container>
+      <PageBody>
          {help}
          <PageHeader header={header} />
          <Accordion defaultActiveKey="0" flush>
@@ -82,7 +82,7 @@ const NetflixGenre = () => {
                </Accordion.Item>
             ))}
          </Accordion>
-      </Container>
+      </PageBody>
    );
 };
 

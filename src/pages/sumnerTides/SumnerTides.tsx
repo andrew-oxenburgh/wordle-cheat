@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 import niwaExample from './niwa-dummy-data'
 
 const help = (
@@ -67,14 +67,14 @@ const SumnerTides = () => {
    if (isLoading) return <div>loading...</div>
 
    return (
-      <Container>
+      <PageBody>
          {help}
          <UnderConstructionThing/>
          <PageHeader header={header} />
          <hr />
          <img src="/public/niwa-dummy-chart.svg" />
          {JSON.stringify(data, null, 4)}
-      </Container>
+      </PageBody>
    );
 };
 

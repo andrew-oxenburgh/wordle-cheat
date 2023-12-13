@@ -12,12 +12,12 @@ const useStyles = createUseStyles({
       width: '100%',
    },
    leftArrow: {
-      position: 'relative',
-      left: '-3em'
+      float: 'left',
+      marginLeft: '3em'
    },
    rightArrow: {
-      position: 'relative',
-      right: '-3em'
+      float: 'right',
+      marginRight: '3em'
    }
 });
 

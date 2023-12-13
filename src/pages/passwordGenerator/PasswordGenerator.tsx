@@ -12,7 +12,7 @@ import * as R from 'ramda'
 import CopyablText from '../../components/CopyableText';
 import InfoThing from '../../components/InfoThing'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
 words = R.uniq(words)
@@ -105,7 +105,7 @@ const JSSComponent: React.FC = () => {
 
    return (
       <>
-         <Container>
+         <PageBody>
             {help}
             <PageHeader header={header} />
             <Card>
@@ -125,7 +125,7 @@ const JSSComponent: React.FC = () => {
                   </Card.Footer>
                </Card.Body>
             </Card>
-         </Container>
+         </PageBody>
       </>
    );
 };

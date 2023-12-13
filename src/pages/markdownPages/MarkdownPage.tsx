@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 import ReactMarkdown from 'react-markdown'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageBody from '../../components/PageBody'
 
 const help = (
    <InfoThing>
@@ -27,9 +28,6 @@ const header: HeaderType = {
    },
 }
 
-
-
-
 const MarkdownPage = () => {
    const { pageName } = useParams();
    const [content, setContent] = useState('');
@@ -48,15 +46,14 @@ const MarkdownPage = () => {
    }, [pageName]);
 
    return (
-      <Container
-      >
+      <PageBody    >
          {help}
          <PageHeader header={header} />
 
          <ReactMarkdown
             children={content}
          />
-      </Container>
+      </PageBody>
    );
 };
 

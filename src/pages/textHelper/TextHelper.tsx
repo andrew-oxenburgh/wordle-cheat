@@ -1,10 +1,9 @@
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
 import ConversionComponent from './ConversionComponent';
 import InfoThing from '../../components/InfoThing'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing>
       Text Helper
@@ -25,7 +24,7 @@ const header: HeaderType = {
 
 const TextHelper = () => {
    return (
-      <Container>
+      <PageBody>
          <PageHeader header={header} />
          {help}
          <Card>
@@ -37,7 +36,7 @@ const TextHelper = () => {
             </Card.Text>
             <ConversionComponent />
          </Card>
-      </Container>
+      </PageBody>
    );
 }
 

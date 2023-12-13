@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageBody from '../../components/PageBody'
 import { createUseStyles } from 'react-jss'
 
 import PropTypes from 'prop-types'
@@ -156,7 +157,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
 
    return (
       <>
-         <Container fluid={true}         
+         <PageBody
          >
             <PageHeader header={header} />
             {help}
@@ -293,7 +294,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                </Card.Body>
             </Card>
             }
-         </Container>
+         </PageBody>
       </>
    )
 }

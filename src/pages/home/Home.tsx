@@ -10,7 +10,7 @@ import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InfoThing from '../../components/InfoThing'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing>
       Home Page Info!!!
@@ -55,6 +55,15 @@ const cards: CardType[] = [
       }
    },
    {
+      header: 'Draggy Gamey',
+      text: [
+      ],
+      link: {
+         href: '#/draggy-gamey',
+         text: 'draggy gamey'
+      }
+   },
+   {
       header: 'Password Generator',
       text: [
          'This is really just a toy!!!!',
@@ -65,7 +74,7 @@ const cards: CardType[] = [
          text: 'Password Generator'
       }
    },
-   {
+{
       header: 'Wordle One',
       text: [
          'This was my first attempt at a Wordle Cheat',
@@ -147,7 +156,7 @@ function Home() {
    }
 
    return (
-      <Container className={classes.container}>
+      <PageBody>
          <PageHeader header={header} />
          {help}
          <Row>
@@ -184,7 +193,7 @@ function Home() {
                }, cards)
             }
          </Row>
-      </Container>
+      </PageBody>
    );
 };
 

@@ -9,7 +9,7 @@ import Badge from 'react-bootstrap/Badge';
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
 import PageHeader, { HeaderType } from '../../components/PageHeader'
-
+import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing>
       Wordle 2!!!
@@ -36,7 +36,7 @@ const Guesses = () => {
    };
 
    return (
-      <Container>
+      <PageBody>
          <PageHeader header={header} />
          <h3>Seriously, don't even look at me!!!</h3>
 
@@ -57,7 +57,7 @@ const Guesses = () => {
                </Form>
             </Col>
          </Row>
-      </Container>
+      </PageBody>
    );
 };
 
