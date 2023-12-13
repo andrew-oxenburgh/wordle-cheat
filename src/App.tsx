@@ -25,41 +25,37 @@ function Navigation() {
    const [expanded, setExpanded] = useState(false);
 
    return (
-      <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: 0 }}>
-         <Container>
-            <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.4)</span></Navbar.Brand>
-            <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-               <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
-                  <Nav.Link href="#/home">Home</Nav.Link>
-                  <NavDropdown title="Wordle Cheats" id="wordle-cheats">
-                     <NavDropdown.Item href="#/cheat">My First Wordle Cheat</NavDropdown.Item>
-                     <NavDropdown.Item href="#/cheatTwo">My Second Wordle Cheat</NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Sundry" id="sundry">
-                     <NavDropdown.Item href="#/textHelper">Text Helper</NavDropdown.Item>
-                     <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
-                     <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
-                     <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-                     <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Blogs" id="blogs">
-                     <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
-                  </NavDropdown>
-               </Nav>
-            </Navbar.Collapse>
-         </Container>
+      <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto' }}>
+         <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.0.4)</span></Navbar.Brand>
+         <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
+         <Navbar.Collapse id="basic-navbar-nav">
+            <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
+               <Nav.Link href="#/home">Home</Nav.Link>
+               <NavDropdown title="Wordle Cheats" id="wordle-cheats">
+                  <NavDropdown.Item href="#/cheat">My First Wordle Cheat</NavDropdown.Item>
+                  <NavDropdown.Item href="#/cheatTwo">My Second Wordle Cheat</NavDropdown.Item>
+               </NavDropdown>
+               <NavDropdown title="Sundry" id="sundry">
+                  <NavDropdown.Item href="#/textHelper">Text Helper</NavDropdown.Item>
+                  <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
+                  <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
+                  <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
+                  <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
+               </NavDropdown>
+               <NavDropdown title="Blogs" id="blogs">
+                  <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
+               </NavDropdown>
+            </Nav>
+         </Navbar.Collapse>
       </Navbar>
    )
 }
-
-const headerStyle = { margin: 0, padding: 0 }
 
 export default function App() {
    return (
       <>
          <Router>
-            <header style={headerStyle}>
+            <header style={{padding: 0}}>
                <Navigation />
             </header>
             <main style={{ padding: 0, marginBottom: '25px' }}>

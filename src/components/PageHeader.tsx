@@ -7,9 +7,8 @@ import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
-      maxWidth: '100%',
-      minWidth: '100%',
-      width: '100%',
+      maxWidth: 'var(--width-content)',
+      margin: '0 auto'
    },
    leftArrow: {
       float: 'left',
