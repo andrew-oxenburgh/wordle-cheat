@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button'
 const ReplitThing: React.FC = () => {
    return (
       <span >
-         <Button variant="info" href="https://replit.com/@andrew_oxenburg/wordle-cheat" target="_blank">
+         <Button 
+            aria-label="Open in Repl.it"
+            variant="info" href="https://replit.com/@andrew_oxenburg/wordle-cheat" target="_blank">
             <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                <defs></defs>
                <path d="M7 5.5C7 4.67157 7.67157 4 8.5 4H15.5C16.3284 4 17 4.67157 17 5.5V12H8.5C7.67157 12 7 11.3284 7 10.5V5.5Z" fill="#F26207"></path>

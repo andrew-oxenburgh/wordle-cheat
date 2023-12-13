@@ -1,7 +1,6 @@
 import React, { Suspense, useState } from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
@@ -12,13 +11,14 @@ import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
-import Home from './pages/home/Home';
+import 'bootstrap/dist/css/bootstrap.css';
 import './mvp-override.css'
 
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'));
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'));
+const Home = React.lazy(() => import('./pages/home/Home'));
 import Footer from './components/Footer';
 
 function Navigation() {
@@ -60,8 +60,12 @@ export default function App() {
             </header>
             <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/" element={
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <Home />
+                     </Suspense>
+
+                  } />
                   <Route path="/cheat" element={<WordleCheat />} />
                   <Route path="/cheatTwo" element={<Cheater />} />
                   <Route path="/textHelper" element={<TextHelper />} />

@@ -61,7 +61,11 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
 
    return (
       <div>
-         <div className={classes.button} onClick={onCopy}>
+         <button 
+            className={classes.button} 
+            onClick={onCopy}
+            aria-label={"Copy to clipboard button"}
+            >
             <div className={classes.title}>
                copyable text
             </div>
@@ -69,7 +73,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
                <FontAwesomeIcon icon={icon} /> &nbsp;
                {text}
             </div>
-         </div>
+         </button>
          <Alert className={classes.alert} dismissible show={show} onClose={closeAlert} variant="warning">
             {warning && <Alert.Heading>{warning}</Alert.Heading>}
             Copied to clipboard!

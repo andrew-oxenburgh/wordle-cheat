@@ -17,7 +17,9 @@ const GithubThing: React.FC = () => {
    const classes = useStyles()
    return (
       <span >
-         <Button className={classes.button} variant="dark" href={url} target="_blank">
+         <Button 
+            aria-label={"View source in GitHub"}
+            className={classes.button} variant="dark" href={url} target="_blank">
             <svg
                width={edge}
                height={edge}

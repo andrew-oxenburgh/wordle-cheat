@@ -122,7 +122,9 @@ const JSSComponent: React.FC = () => {
                   </Card.Text>
                   <CopyablText text={password} warning="please don't use this password!" />
                   <Card.Footer>
-                     <button className={classes.button} onClick={handleButtonClick}>create new password</button>
+                     <button
+                        aria-label="create a new password"
+                        className={classes.button} onClick={handleButtonClick}>create new password</button>
                   </Card.Footer>
                </Card.Body>
             </Card>

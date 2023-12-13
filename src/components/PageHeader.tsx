@@ -14,20 +14,22 @@ const useStyles = createUseStyles({
       overflow: 'none',
       height: 'fit-content',
    },
-   arrows : {
-      
+   arrows: {
+
    },
    leftArrow: {
       float: 'left',
-      marginLeft: '2em'
+      marginLeft: '2em',
+      marginTop: '0.2em',
    },
    rightArrow: {
       float: 'right',
-      marginRight: '2em'
+      marginRight: '2em',
+      marginTop: '0.2em',
    },
    title: {
       color: 'black',
-      fontSize: '2em'
+      fontSize: '1.5em',
    }
 });
 
@@ -55,14 +57,14 @@ const PageHeader: React.FC<Props> = ({ header }) => {
             {header.next?.link &&
                <a href={header.prev?.link}
                   className={classes.leftArrow}>
-                  <FontAwesomeIcon icon={leftArrow} size="xl" />
+                  <FontAwesomeIcon icon={leftArrow} size="2xl" />
                </a>
             }
             {
                <a href={header.next?.link}
                   className={classes.rightArrow}>
 
-                  <FontAwesomeIcon icon={rightArrow} size="xl" />
+                  <FontAwesomeIcon icon={rightArrow} size="2xl" />
                </a>
             }
          </div>

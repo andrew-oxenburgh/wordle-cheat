@@ -41,6 +41,7 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
       <Container>
          <Button
             onClick={toggleHelp}
+            aria-label={"Help button"}
             className={classes.helpButton}
             variant="warning"
             id="info"

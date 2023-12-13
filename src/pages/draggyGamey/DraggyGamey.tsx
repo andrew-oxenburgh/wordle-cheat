@@ -109,10 +109,10 @@ const ClickCounter: React.FC = () => {
    }
 
    return (
-      <div
+      <button
          className={classes['color_' + clickCount]}
          onClick={handleButtonClick}
-
+         aria-label={"Click me button " + clickCount}
          onMouseDown={handleDragMe}
          onMouseEnter={handleDraggedOver}
          onMouseUp={handleUndragMe}

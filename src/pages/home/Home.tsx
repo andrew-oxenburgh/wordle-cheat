@@ -1,11 +1,7 @@
 import * as R from 'ramda'
-
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import { createUseStyles } from 'react-jss';
 import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InfoThing from '../../components/InfoThing'
@@ -17,13 +13,17 @@ const help = (
    </InfoThing>
 )
 
-const useStyles = createUseStyles({
-   arrow: {
-      position: 'relative',
-      right: '1em',
-      bottom: '0.5em',
+const header: HeaderType = {
+   title: 'Home',
+   next: {
+      name: 'wordle cheat one',
+      link: '#/cheat'
+   },
+   prev: {
+      name: 'blog',
+      link: '#/markdown/examplePage'
    }
-});
+}
 
 type CardType = {
    header: string
@@ -68,7 +68,7 @@ const cards: CardType[] = [
          text: 'Password Generator'
       }
    },
-{
+   {
       header: 'Wordle One',
       text: [
          'This was my first attempt at a Wordle Cheat',
@@ -132,61 +132,52 @@ const cards: CardType[] = [
    },
 ]
 
-function Home() {
-   const classes = useStyles()
+const HomeContent = () => {
    const mapIndexed = R.addIndex(R.map);
+   return (
+      <Row style={{ width: '100%', margin: '0 auto', padding: 0 }}>
+         {
+            R.map((card: CardType) => {
+               return (
+                  <Col xs="12" sm="12" md="6" lg="3" xl="2" key={card.header}>
+                     <Card
+                        bg={card.bg}
+                        style={{ margin: '0.5em 0' }}
+                     >
+                        <Card.Header>
+                           <Card.Link href={card.link?.href}>
+                              <FontAwesomeIcon icon={arrow} size="xl" />
+                           </Card.Link>
+                           &nbsp;{card.header}
+                        </Card.Header>
+                        <Card.Body>
+                           {
+                              mapIndexed((line: string, idx: number) => {
+                                 return (<Card.Text key={idx}>
+                                    {line}
+                                 </Card.Text>)
+                              }, card.text)
+                           }
+                           {card.link &&
+                              <Card.Link href={card.link.href}>
+                              </Card.Link>
+                           }
+                        </Card.Body>
+                     </Card>
+                  </Col>
+               )
+            }, cards)
+         }
+      </Row>
+   )
+}
 
-
-   const header: HeaderType = {
-      title: 'Home',
-      next: {
-         name: 'wordle cheat one',
-         link: '#/cheat'
-      },
-      prev: {
-         name: 'blog',
-         link: '#/markdown/examplePage'
-      }
-   }
-
+function Home() {
    return (
       <PageBody>
          <PageHeader header={header} />
          {help}
-         <Row style={{width: '100%', margin:'0 auto', padding: 0}}>
-            {
-               R.map((card: CardType) => {
-                  return (
-                     <Col xs="12" sm="12" md="6" lg="3" xl="2" key={card.header}>
-                        <Card
-                           bg={card.bg}
-                           style={{margin:'0.5em 0'}}
-                        >
-                           <Card.Header>
-                              <Card.Link href={card.link?.href}>
-                                 <FontAwesomeIcon icon={arrow} size="xl" />
-                              </Card.Link>
-                              &nbsp;{card.header}
-                           </Card.Header>
-                           <Card.Body>
-                              {
-                                 mapIndexed((line: string, idx: number) => {
-                                    return (<Card.Text key={idx}>
-                                       {line}
-                                    </Card.Text>)
-                                 }, card.text)
-                              }
-                              {card.link &&
-                                 <Card.Link href={card.link.href}>
-                                 </Card.Link>
-                              }
-                           </Card.Body>
-                        </Card>
-                     </Col>
-                  )
-               }, cards)
-            }
-         </Row>
+         <HomeContent />
       </PageBody>
    );
 };
