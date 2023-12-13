@@ -6,6 +6,7 @@ import InfoThing from '../../components/InfoThing'
 import { useParams } from 'react-router-dom';
 
 import ReactMarkdown from 'react-markdown'
+import PageHeader, { HeaderType } from '../../components/PageHeader'
 
 const help = (
    <InfoThing>
@@ -13,6 +14,21 @@ const help = (
       This is my blog posting stuff using react-markdown and dynamic links
    </InfoThing>
 )
+
+const header: HeaderType = {
+   title: 'Blogs',
+   prev: {
+      name: 'password generator',
+      link: '#/password-generator'
+   },
+   next: {
+      name: 'home',
+      link: '#/'
+   },
+}
+
+
+
 
 const MarkdownPage = () => {
    const { pageName } = useParams();
@@ -35,6 +51,8 @@ const MarkdownPage = () => {
       <Container
       >
          {help}
+         <PageHeader header={header} />
+
          <ReactMarkdown
             children={content}
          />

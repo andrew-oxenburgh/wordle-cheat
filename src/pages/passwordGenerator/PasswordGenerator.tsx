@@ -97,8 +97,8 @@ const JSSComponent: React.FC = () => {
          link: '#/draggy-gamey'
       },
       next: {
-         name: 'home',
-         link: '/'
+         name: 'blog',
+         link: '#/markdown/examplePage'
       },
    }
 

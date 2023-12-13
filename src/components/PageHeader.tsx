@@ -7,14 +7,17 @@ import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
+      maxWidth: '100%',
+      minWidth: '100%',
+      width: '100%',
    },
    leftArrow: {
-      position: 'absolute',
-      left: '1em'
+      position: 'relative',
+      left: '-3em'
    },
    rightArrow: {
-      position: 'absolute',
-      right: '1em'
+      position: 'relative',
+      right: '-3em'
    }
 });
 

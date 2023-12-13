@@ -28,7 +28,6 @@ import InfoThing from '../../components/InfoThing'
 const help = (
    <InfoThing>
       <h3>Wordle Cheat</h3>
-
    </InfoThing>
 )
 
@@ -107,6 +106,7 @@ const header: HeaderType = {
    },
 }
 
+
 function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
    const [form, setForm] = useState<WordleForm>(retrieveJsonFromStorageWithDefault(WORDLE_CHEAT_FORM, FORM))
    const [words, setWords] = useState<string[]>([])
@@ -156,10 +156,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
 
    return (
       <>
-         <Container fluid={true}
-            style={{
-               maxWidth: '30em',
-            }}
+         <Container fluid={true}         
          >
             <PageHeader header={header} />
             {help}
