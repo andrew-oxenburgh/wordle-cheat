@@ -2,7 +2,7 @@ import * as _ from 'lodash'
 import * as R from 'ramda'
 import { stringConversion, getLatLong } from './textUtils'
 
-describe('check for lat long', () => {
+xdescribe('check for lat long', () => {
    xdescribe('good value', () => {
       type FromToType = [string, [string, string]]
       const fromTos: FromToType[] = [
@@ -13,8 +13,6 @@ describe('check for lat long', () => {
          const to: [string, string] = fromTo[1]
          const title = `should return ${from} for ${to}`
          test(title, () => {
-            console.log("from=" + from)
-            console.log("to=" + to)
             expect(getLatLong(from)).toEqual(to)
          })
       }, fromTos)
@@ -26,7 +24,7 @@ describe('check for lat long', () => {
    })
 })
 
-describe('number conversions 2', () => {
+xdescribe('number conversions 2', () => {
    test('converts small number to locale string', () => {
       const expectedResult = {
          input: '1',

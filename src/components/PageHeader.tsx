@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft as leftArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleLeft';
 import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleRight';
-
+import * as config from '../pages/config'
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
@@ -33,40 +33,30 @@ const useStyles = createUseStyles({
    }
 });
 
-export type HeaderType = {
-   title: string;
-   next: {
-      name: string;
-      link: string;
-   };
-   prev: {
-      name: string;
-      link: string;
-   };
-};
-
 interface Props {
-   header: HeaderType
+   name: string
 }
 
-const PageHeader: React.FC<Props> = ({ header }) => {
+const PageHeader: React.FC<Props> = ({ name }) => {
    const classes = useStyles();
+   const header: config.PageInfoType = config.findPageInfo(name)
+
+   const nextLink: string = config.findPageInfo(header.nextPage).link;
+   const prevLink: string = config.findPageInfo(header.prevPage).link;
    return (
       <div className={classes.pageHeader}>
          <div className={classes.arrows}>
-            {header.next?.link &&
-               <a href={header.prev?.link}
-                  className={classes.leftArrow}>
-                  <FontAwesomeIcon icon={leftArrow} size="2xl" />
-               </a>
-            }
-            {
-               <a href={header.next?.link}
-                  className={classes.rightArrow}>
+            <a href={prevLink}
+               className={classes.leftArrow}>
+               <FontAwesomeIcon icon={leftArrow} size="2xl" />
+            </a>
 
-                  <FontAwesomeIcon icon={rightArrow} size="2xl" />
-               </a>
-            }
+            <a href={nextLink}
+               className={classes.rightArrow}>
+
+               <FontAwesomeIcon icon={rightArrow} size="2xl" />
+            </a>
+
          </div>
          <span className={classes.title}>{header.title}</span>
       </div>

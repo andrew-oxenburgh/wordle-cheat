@@ -2,21 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 
 import InfoThing from '../../components/InfoThing'
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 import genres from './genres'
-
-const header: HeaderType = {
-   title: 'netflix by genre',
-   prev: {
-      name: 'text-helper',
-      link: '#/text-helper'
-   },
-   next: {
-      name: 'sumner-tides',
-      link: '#/sumner-tides'
-   },
-}
 
 const help = (
    <InfoThing height="60%">
@@ -49,7 +37,7 @@ const NetflixGenre = () => {
    return (
       <PageBody>
          {help}
-         <PageHeader header={header} />
+         <PageHeader name="netflix-genre" />
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (
                <Accordion.Item eventKey={category} key={category}>

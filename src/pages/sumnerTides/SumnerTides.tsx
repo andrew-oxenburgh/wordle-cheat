@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 import niwaExample from './niwa-dummy-data'
 
@@ -39,25 +39,10 @@ const fetchData = (path: string) => {
             'Authorization': 'Bearer gKg3KIWByMdd6WZ1aXYnUa8QFIAW7FHa'
          },
       });
-      console.log('resp = ' + JSON.stringify(response))
       const data = await response.json();
-      console.log('data = ' + JSON.stringify(data))
       return data;
    }
 };
-
-const header: HeaderType = {
-   title: 'sumner tides',
-   prev: {
-      name: 'netflix by genre',
-      link: '#/netflixGenre'
-   },
-   next: {
-      name: 'draggy gamey',
-      link: '#/draggy-gamey'
-   },
-}
-
 
 const SumnerTides = () => {
    const url = `/tides/data?lat=${sumner.lat}&long=${sumner.long}`
@@ -70,7 +55,7 @@ const SumnerTides = () => {
       <PageBody>
          {help}
          <UnderConstructionThing />
-         <PageHeader header={header} />
+         <PageHeader name="sumner-tides" />
          <Container>
             <img src="/public/niwa-dummy-chart.svg" />
             {JSON.stringify(data, null, 4)}

@@ -32,12 +32,12 @@ function Navigation() {
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                <Nav.Link href="#/">Home</Nav.Link>
                <NavDropdown title="Wordle Cheats" id="wordle-cheats">
-                  <NavDropdown.Item href="#/cheat">My First Wordle Cheat</NavDropdown.Item>
-                  <NavDropdown.Item href="#/cheatTwo">My Second Wordle Cheat</NavDropdown.Item>
+                  <NavDropdown.Item href="#/wordle-one">My First Wordle Cheat</NavDropdown.Item>
+                  <NavDropdown.Item href="#/wordle-two">My Second Wordle Cheat</NavDropdown.Item>
                </NavDropdown>
                <NavDropdown title="Sundry" id="sundry">
-                  <NavDropdown.Item href="#/textHelper">Text Helper</NavDropdown.Item>
-                  <NavDropdown.Item href="#/netflixGenre">Netflix By Genre</NavDropdown.Item>
+                  <NavDropdown.Item href="#/text-helper">Text Helper</NavDropdown.Item>
+                  <NavDropdown.Item href="#/netflix-genre">Netflix By Genre</NavDropdown.Item>
                   <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
                   <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
@@ -66,11 +66,11 @@ export default function App() {
                      </Suspense>
 
                   } />
-                  <Route path="/cheat" element={<WordleCheat />} />
-                  <Route path="/cheatTwo" element={<Cheater />} />
-                  <Route path="/textHelper" element={<TextHelper />} />
+                  <Route path="/wordle-one" element={<WordleCheat />} />
+                  <Route path="/wordle-two" element={<Cheater />} />
+                  <Route path="/text-helper" element={<TextHelper />} />
                   <Route path="*" element={<TextHelper />} />
-                  <Route path="/netflixGenre" element={
+                  <Route path="/netflix-genre" element={
                      <Suspense fallback={<div>Loading...</div>}>
                         <NetflixGenre />
                      </Suspense>

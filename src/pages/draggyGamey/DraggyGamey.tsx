@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { signal } from "@preact/signals-react";
 import InfoThing from '../../components/InfoThing'
 import { createUseStyles } from 'react-jss';
-import Container from 'react-bootstrap/Container'
 import * as R from 'ramda'
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing height="50%">
@@ -89,22 +88,18 @@ const ClickCounter: React.FC = () => {
    };
 
    const handleDraggedOver = () => {
-      console.log('dragged over')
       if (isBeingDragged.value > -1) {
-         console.log('changing color')
          setClickCount(isBeingDragged.value);
       }
    };
 
    const handleDragMe = () => {
       isBeingDragged.value = clickCount
-      console.log('begin dragging')
       setDragged(true)
    }
 
    const handleUndragMe = () => {
       isBeingDragged.value = -1
-      console.log('end dragging')
       setDragged(false)
    }
 
@@ -139,24 +134,12 @@ const GridComponent: React.FC = () => {
    );
 };
 
-const header: HeaderType = {
-   title: 'draggy gamey',
-   prev: {
-      name: 'sumner tides',
-      link: '#/sumner-tides'
-   },
-   next: {
-      name: 'password generator',
-      link: '#/password-generator'
-   },
-}
-
 const DraggyGamey: React.FC = () => {
    const classes = useStyles();
    return (<>
       <PageBody>
          {help}
-         <PageHeader header={header} />
+         <PageHeader name="draggy-gamey" />
          {/* {help} */}
          <GridComponent />
       </PageBody>

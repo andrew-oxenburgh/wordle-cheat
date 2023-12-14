@@ -7,25 +7,13 @@ import Col from 'react-bootstrap/Col';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 const help = (
    <InfoThing>
       Wordle 2!!!
    </InfoThing>
 )
-
-const header: HeaderType = {
-   title: 'Wordle 2',
-   prev: {
-      name: 'wordle 1',
-      link: '#/cheat'
-   },
-   next: {
-      name: 'text helper',
-      link: '#/text-helper'
-   },
-}
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');
@@ -36,7 +24,7 @@ const Guesses = () => {
 
    return (
       <PageBody>
-         <PageHeader header={header} />
+         <PageHeader name="wordle-two" />
          <h3>Seriously, don't even look at me!!!</h3>
 
          {help}

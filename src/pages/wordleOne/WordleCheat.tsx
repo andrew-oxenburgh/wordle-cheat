@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 import { createUseStyles } from 'react-jss'
 
@@ -95,19 +95,6 @@ WordleCheat.propTypes = {
    debug: PropTypes.bool
 }
 
-const header: HeaderType = {
-   title: 'Wordle 1',
-   prev: {
-      name: 'home',
-      link: '/'
-   },
-   next: {
-      name: 'wordle cheat two',
-      link: '#/cheatTwo'
-   },
-}
-
-
 function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
    const [form, setForm] = useState<WordleForm>(retrieveJsonFromStorageWithDefault(WORDLE_CHEAT_FORM, FORM))
    const [words, setWords] = useState<string[]>([])
@@ -159,7 +146,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
       <>
          <PageBody
          >
-            <PageHeader header={header} />
+            <PageHeader name='wordle-one' />
             {help}
             <Card>
                <Card.Text as="div" style={{

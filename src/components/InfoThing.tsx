@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfo as icon } from '@fortawesome/free-solid-svg-icons/faInfo'
 
 interface HelpThingProps {
-   children?: ReactNode
+   children: ReactNode
    height?: string
 }
 

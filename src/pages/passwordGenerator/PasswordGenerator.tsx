@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 import fiveLetterwords from '../../wordle-words'
 import fourLetterWords from '../../four-letter-words'
@@ -11,7 +11,7 @@ import * as R from 'ramda'
 
 import CopyablText from '../../components/CopyableText';
 import InfoThing from '../../components/InfoThing'
-import PageHeader, { HeaderType } from '../../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
@@ -77,37 +77,16 @@ const createPassword = () => {
 const JSSComponent: React.FC = () => {
    const classes = useStyles();
    const [password, setPassword] = useState(createPassword());;
-   const [copyCount, setCopyCount] = useState(1);;
-   const [show, setShow] = useState(false);
 
    const handleButtonClick = () => {
       setPassword(createPassword())
    };
 
-   const copy = () => {
-      navigator.clipboard.writeText(password)
-      setShow(true)
-      setCopyCount(copyCount + 1)
-   }
-
-   const header: HeaderType = {
-      title: 'password generator',
-      prev: {
-         name: 'draggy gamey',
-         link: '#/draggy-gamey'
-      },
-      next: {
-         name: 'blog',
-         link: '#/markdown/examplePage'
-      },
-   }
-
-
    return (
       <>
          <PageBody>
             {help}
-            <PageHeader header={header} />
+            <PageHeader name="password-generator"/>
             <Card>
                <Card.Body>
                   <Card.Title>A suggested password</Card.Title>
@@ -122,9 +101,10 @@ const JSSComponent: React.FC = () => {
                   </Card.Text>
                   <CopyablText text={password} warning="please don't use this password!" />
                   <Card.Footer>
-                     <button
+                     <Button
                         aria-label="create a new password"
-                        className={classes.button} onClick={handleButtonClick}>create new password</button>
+                        className={classes.button} onClick={handleButtonClick}>create new password
+                     </Button>
                   </Card.Footer>
                </Card.Body>
             </Card>
