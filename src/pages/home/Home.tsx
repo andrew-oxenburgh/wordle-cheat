@@ -8,7 +8,7 @@ import InfoThing from '../../components/InfoThing'
 import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 
-import pageInfo, { PageInfoType } from '../config'
+import pageInfo, { PageInfoType } from '../../config/config'
 
 const help = (
    <InfoThing>

@@ -12,7 +12,7 @@ import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
 import 'bootstrap/dist/css/bootstrap.css';
-import './mvp-override.css'
+import './config/mvp-override.css'
 
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));

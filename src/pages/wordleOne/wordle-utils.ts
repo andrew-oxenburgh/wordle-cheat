@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 
 const getWords = async (): Promise<string[]> => {
-   const ret = await import('../../wordle-words')
+   const ret = await import('../../config/five-letter-words')
    return ret.default
 }
 

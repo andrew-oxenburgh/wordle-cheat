@@ -3,9 +3,9 @@ import { createUseStyles } from 'react-jss';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-import fiveLetterwords from '../../wordle-words'
-import fourLetterWords from '../../four-letter-words'
-import commonWords from '../../common-words'
+import fiveLetterwords from '../../config/five-letter-words'
+import fourLetterWords from '../../config/four-letter-words'
+import commonWords from '../../config/common-words'
 
 import * as R from 'ramda'
 

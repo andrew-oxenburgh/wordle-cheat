@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft as leftArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleLeft';
 import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleRight';
-import * as config from '../pages/config'
+import * as config from '../config/config'
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
