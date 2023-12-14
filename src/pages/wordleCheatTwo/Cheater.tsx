@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
@@ -29,21 +30,26 @@ const Guesses = () => {
 
          {help}
          <UnderConstructionThing />
-         <Row>
-            <Col>
-               <Form>
-                  <Form.Group controlId="exampleForm.ControlTextarea1">
-                     <Form.Label>Multi-line Input</Form.Label>
-                     <Form.Control
-                        as="textarea"
-                        rows={3}
-                        value={inputValue}
-                        onChange={handleChange}
-                     />
-                  </Form.Group>
-               </Form>
-            </Col>
-         </Row>
+         <Card>
+            <Card.Body>
+               <Row>
+                  <Col>
+                     <Form>
+                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                           <Form.Label>Multi-line Input</Form.Label>
+                           <Form.Control
+                              as="textarea"
+                              rows={3}
+                              value={inputValue}
+                              onChange={handleChange}
+                           />
+                        </Form.Group>
+                     </Form>
+                  </Col>
+               </Row>
+            </Card.Body>
+         </Card>
+
       </PageBody>
    );
 };
