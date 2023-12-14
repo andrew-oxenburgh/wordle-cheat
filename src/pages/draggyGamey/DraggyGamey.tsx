@@ -39,16 +39,16 @@ const useStyles = createUseStyles({
       display: 'grid',
       gridTemplateColumns: `repeat(${width}, 1fr)`,
       gridTemplateRows: `repeat(${height}, 1fr)`,
-      width: '22em',
-      height: '22em',
+      width: 'auto',
+      maxWidth: '24em',
+      minHeight: '24em',
+      margin: 'auto',
       padding: 0,
       border: '1px solid black',
    },
    container: {
       display: 'flex',
-      justifyContent: 'center'
-      // width: '100em',
-      // height: '100em',
+      alignContent: 'center'
    }
 });
 
@@ -136,7 +136,6 @@ const GridComponent: React.FC = () => {
 };
 
 const DraggyGamey: React.FC = () => {
-   const classes = useStyles();
    return (<>
       <PageBody>
          {help}
