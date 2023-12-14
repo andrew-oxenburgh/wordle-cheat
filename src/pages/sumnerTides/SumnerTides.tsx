@@ -36,6 +36,7 @@ const fetchData = (path: string) => {
             'Content-Type': 'application/json',
             'cache-control': 'max-age=600',
             'x-apikey': 'XXXXXXX',
+            
             'Authorization': 'Bearer XXXXXXXX'
          },
       });
