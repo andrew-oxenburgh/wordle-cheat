@@ -10,9 +10,13 @@ const useStyles = createUseStyles({
       position: 'relative',
       backgroundColor: 'lightblue',
       borderRadius: '0.5em',
+      minHeight: '3em',
+      minWidth: '15em',
+      maxWidth: '100%',
+      height: 'fit-content',
       border: '1px solid darkblue',
-      padding: '10px',
-      margin: '1em 0 2em 0',
+      padding: '0 10px 0 10px',
+      margin: '1em 0 1.5em 0',
       cursor: 'pointer',
       '&:hover': {
          backgroundColor: 'skyblue',
@@ -32,7 +36,7 @@ const useStyles = createUseStyles({
       padding: '0 0.5em 0 0.5em',
       color: 'blue',
       borderRadius: '1em',
-      fontSize: '75%',
+      fontSize: '60%',
       fontWeight: 'bold',
       background: 'lightblue',
       border: '1px solid blue',
@@ -61,17 +65,21 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
 
    return (
       <div>
-         <button 
-            className={classes.button} 
+         <button
+            className={classes.button}
             onClick={onCopy}
             aria-label={"Copy to clipboard button"}
-            >
+         >
             <div className={classes.title}>
                copyable text
             </div>
             <div>
-               <FontAwesomeIcon icon={icon} /> &nbsp;
-               {text}
+               <span>
+                  <FontAwesomeIcon icon={icon} />
+               </span>
+               <span>
+                  &nbsp;{text}
+               </span>
             </div>
          </button>
          <Alert className={classes.alert} dismissible show={show} onClose={closeAlert} variant="warning">

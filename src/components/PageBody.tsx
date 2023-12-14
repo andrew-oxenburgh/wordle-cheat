@@ -6,11 +6,12 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
    container: {
-      color: 'red',
       backgroundColor: '#eae4ff',
       alignContent: 'center',
       justifyContent: 'center',
       height: '100%',
+      maxWidth: '50em',
+      cursor: 'default'
    },
 });
 

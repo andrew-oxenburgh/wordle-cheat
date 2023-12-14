@@ -150,10 +150,6 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
             {help}
             <Card>
                <Card.Body>
-                  <Card.Text as="div" style={{
-                     width: '100%',
-                     margin: 0,
-                  }}>
                      <Form style={{
                         width: '100%',
                      }}>
@@ -166,9 +162,6 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                            </p>
                            <Form.Control
                               className={classes.doesntContain}
-                              style={{
-                                 width: '15em'
-                              }}
                               type="text"
                               autoComplete="off"
                               name="unusedLetters"
@@ -267,7 +260,6 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
                            </Container>
                         </Form.Group>
                      </Form>
-                  </Card.Text>
                </Card.Body>
             </Card>
             <WordList words={words} title="suggestions - for completion" />

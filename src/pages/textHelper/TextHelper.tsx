@@ -13,18 +13,18 @@ const help = (
 const TextHelper = () => {
    return (
       <PageBody>
-         <PageHeader name="text-helper"/>
+         <PageHeader name="text-helper" />
          {help}
          <Card>
             <Card.Body>
-            <Card.Text>
-                     Converts strings into a bunch of useful formats
-            </Card.Text>
-            <Card.Text>
-               Try numbers, words, sentences
-            </Card.Text>
-            <ConversionComponent />
-               </Card.Body>
+               <Card.Text>
+                  Converts strings into a bunch of useful formats
+               </Card.Text>
+               <Card.Text>
+                  Try numbers, words, sentences
+               </Card.Text>
+               <ConversionComponent />
+            </Card.Body>
          </Card>
       </PageBody>
    );

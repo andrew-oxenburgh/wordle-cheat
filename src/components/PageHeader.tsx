@@ -1,8 +1,5 @@
 import { createUseStyles } from 'react-jss';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft as leftArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleLeft';
-import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleRight';
+import Button from 'react-bootstrap/Button';
 import * as config from '../config/config'
 const useStyles = createUseStyles({
    pageHeader: {
@@ -14,22 +11,29 @@ const useStyles = createUseStyles({
       overflow: 'none',
       height: 'fit-content',
    },
-   arrows: {
-
-   },
    leftArrow: {
       float: 'left',
-      marginLeft: '2em',
+      marginLeft: '1em',
       marginTop: '0.2em',
+      fontWeight: 'bold',
+      fontSize: '2em',
+      padding: '0 0.3em',
+      margin: 0,
+      borderRadius: '2em',
    },
    rightArrow: {
       float: 'right',
-      marginRight: '2em',
+      marginLeft: '1em',
       marginTop: '0.2em',
+      fontWeight: 'bold',
+      fontSize: '2em',
+      padding: '0 0.3em',
+      margin: 0,
+      borderRadius: '2em',
    },
    title: {
       color: 'black',
-      fontSize: '1.5em',
+      fontSize: '2em',
    }
 });
 
@@ -46,17 +50,15 @@ const PageHeader: React.FC<Props> = ({ name }) => {
    return (
       <div className={classes.pageHeader}>
          <div className={classes.arrows}>
-            <a href={prevLink}
+            <Button as="a" href={prevLink}
                className={classes.leftArrow}>
-               <FontAwesomeIcon icon={leftArrow} size="2xl" />
-            </a>
+               &larr;
+            </Button>
 
-            <a href={nextLink}
+            <Button as="a" href={nextLink}
                className={classes.rightArrow}>
-
-               <FontAwesomeIcon icon={rightArrow} size="2xl" />
-            </a>
-
+               &rarr;
+            </Button>
          </div>
          <span className={classes.title}>{header.title}</span>
       </div>
