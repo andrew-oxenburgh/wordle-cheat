@@ -10,7 +10,8 @@ import PageBody from '../../components/PageBody'
 
 const help = (
    <InfoThing>
-      Home Page Info!!!
+      <h3>App Info</h3>
+      This has not been really optimised. Lighthouse scores are not great.
    </InfoThing>
 )
 
