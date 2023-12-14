@@ -5,7 +5,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import { createUseStyles } from 'react-jss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons'
+import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons/faHardHat'
 
 const useStyles = createUseStyles({
    '@keyframes bounce': {

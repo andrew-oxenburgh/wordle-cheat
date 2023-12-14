@@ -1,8 +1,8 @@
 import { createUseStyles } from 'react-jss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft as leftArrow } from '@fortawesome/free-solid-svg-icons';
-import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleLeft as leftArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleLeft';
+import { faArrowAltCircleRight as rightArrow } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleRight';
 
 const useStyles = createUseStyles({
    pageHeader: {

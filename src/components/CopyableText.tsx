@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy as icon } from '@fortawesome/free-solid-svg-icons';
+import { faCopy as icon } from '@fortawesome/free-solid-svg-icons/faCopy';
 import Alert from 'react-bootstrap/Alert'
 import { useInterval } from 'usehooks-ts'
 

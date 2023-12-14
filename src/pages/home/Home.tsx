@@ -2,11 +2,12 @@ import * as R from 'ramda'
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InfoThing from '../../components/InfoThing'
 import PageHeader, { HeaderType } from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
+
 const help = (
    <InfoThing>
       Home Page Info!!!

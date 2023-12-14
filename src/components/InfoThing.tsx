@@ -9,7 +9,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import { createUseStyles } from 'react-jss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo as icon } from '@fortawesome/free-solid-svg-icons'
+import { faInfo as icon } from '@fortawesome/free-solid-svg-icons/faInfo'
 
 interface HelpThingProps {
    children?: ReactNode
