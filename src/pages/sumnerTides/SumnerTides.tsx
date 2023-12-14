@@ -35,8 +35,8 @@ const fetchData = (path: string) => {
          headers: {
             'Content-Type': 'application/json',
             'cache-control': 'max-age=600',
-            'x-apikey': 'gKg3KIWByMdd6WZ1aXYnUa8QFIAW7FHa',
-            'Authorization': 'Bearer gKg3KIWByMdd6WZ1aXYnUa8QFIAW7FHa'
+            'x-apikey': 'XXXXXXX',
+            'Authorization': 'Bearer XXXXXXXX'
          },
       });
       const data = await response.json();
