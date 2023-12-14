@@ -53,6 +53,7 @@ const cards: CardType[] = [
    {
       header: 'Draggy Gamey',
       text: [
+         'a silly game. check it out!'
       ],
       link: {
          href: '#/draggy-gamey',
