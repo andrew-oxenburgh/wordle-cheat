@@ -49,7 +49,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
    const prevLink: string = config.findPageInfo(header.prevPage).link;
    return (
       <div className={classes.pageHeader}>
-         <div className={classes.arrows}>
+         <div>
             <Button as="a" href={prevLink}
                className={classes.leftArrow}>
                &larr;
