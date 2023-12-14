@@ -49,7 +49,6 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
             <OverlayTrigger delay={500} overlay={<Tooltip id='info'>About this page</Tooltip>}>
                <FontAwesomeIcon size="1x" icon={icon} />
             </OverlayTrigger>
-
          </Button>
          {showHelp && (
             <Offcanvas

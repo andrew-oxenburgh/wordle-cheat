@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';

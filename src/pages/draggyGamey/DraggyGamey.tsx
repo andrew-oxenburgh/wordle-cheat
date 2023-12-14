@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { signal } from "@preact/signals-react";
 import InfoThing from '../../components/InfoThing'
 import { createUseStyles } from 'react-jss';
