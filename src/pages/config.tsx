@@ -14,7 +14,7 @@ const pageList: PageName[] = [
       longDesc: [
          'Home Page. An intro and what not'
       ],
-      link: '/',
+      link: '#/home',
       bg: 'warning'
    },
    {

@@ -1,5 +1,5 @@
-import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
 import InfoThing from '../../components/InfoThing'
 import PageHeader from '../../components/PageHeader'
@@ -38,6 +38,8 @@ const NetflixGenre = () => {
       <PageBody>
          {help}
          <PageHeader name="netflix-genre" />
+         <Card>
+            <Card.Body>
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (
                <Accordion.Item eventKey={category} key={category}>
@@ -70,6 +72,8 @@ const NetflixGenre = () => {
                </Accordion.Item>
             ))}
          </Accordion>
+            </Card.Body>
+         </Card>
       </PageBody>
    );
 };

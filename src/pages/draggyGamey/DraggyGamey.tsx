@@ -6,6 +6,7 @@ import { createUseStyles } from 'react-jss';
 import * as R from 'ramda'
 import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
+import Card from 'react-bootstrap/Card';
 const help = (
    <InfoThing height="50%">
       <h2>Draggy Gamey</h2>
@@ -141,7 +142,11 @@ const DraggyGamey: React.FC = () => {
          {help}
          <PageHeader name="draggy-gamey" />
          {/* {help} */}
-         <GridComponent />
+         <Card>
+            <Card.Body>
+               <GridComponent />
+            </Card.Body>
+         </Card>
       </PageBody>
    </>
    );

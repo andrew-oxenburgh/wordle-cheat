@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import InfoThing from '../../components/InfoThing'
 
 import { useParams } from 'react-router-dom';
@@ -36,11 +36,14 @@ const MarkdownPage = () => {
    return (
       <PageBody>
          {help}
-         <PageHeader name="blogs"/>
-
-         <ReactMarkdown
-            children={content}
-         />
+         <PageHeader name="blogs" />
+         <Card>
+            <Card.Body>
+               <ReactMarkdown
+                  children={content}
+               />
+            </Card.Body>
+         </Card>
       </PageBody>
    );
 };

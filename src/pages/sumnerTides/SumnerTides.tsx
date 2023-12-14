@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 
-import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
@@ -56,10 +56,12 @@ const SumnerTides = () => {
          {help}
          <UnderConstructionThing />
          <PageHeader name="sumner-tides" />
-         <Container>
-            <img src="/public/niwa-dummy-chart.svg" />
-            {JSON.stringify(data, null, 4)}
-         </Container>
+         <Card>
+            <Card.Body style={{ objectFit: 'cover' }}>
+               <img src="/public/niwa-dummy-chart.svg" style={{ objectFit: 'cover', width: '100%' }} />
+               {JSON.stringify(data, null, 4)}
+            </Card.Body>
+         </Card>
       </PageBody>
    );
 };

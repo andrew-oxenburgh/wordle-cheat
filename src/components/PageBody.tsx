@@ -11,9 +11,6 @@ const useStyles = createUseStyles({
       alignContent: 'center',
       justifyContent: 'center',
       height: '100%',
-      padding: '0 0 2em 0',
-      margin: 'auto'
-      // add more styles here
    },
 });
 

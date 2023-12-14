@@ -60,6 +60,12 @@ export default function App() {
             </header>
             <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
+                  <Route path="/home" element={
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <Home />
+                     </Suspense>
+
+                  } />
                   <Route path="/" element={
                      <Suspense fallback={<div>Loading...</div>}>
                         <Home />
