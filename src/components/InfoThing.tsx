@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
    },
 })
 
-const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
+const InfoThing: React.FC<HelpThingProps> = ({ children, height = '30%' }) => {
    const [showHelp, setShowHelp] = useState(false)
    const toggleHelp = () => setShowHelp(!showHelp)
 
@@ -41,12 +41,12 @@ const InfoThing: React.FC<HelpThingProps> = ({ children, height = "30%" }) => {
       <Container>
          <Button
             onClick={toggleHelp}
-            aria-label={"Help button"}
+            aria-label={'Help button'}
             className={classes.helpButton}
             variant="warning"
             id="info"
          >
-            <OverlayTrigger delay={500} overlay={<Tooltip id='info'>About this page</Tooltip>}>
+            <OverlayTrigger delay={500} overlay={<Tooltip id="info">About this page</Tooltip>}>
                <FontAwesomeIcon size="1x" icon={icon} />
             </OverlayTrigger>
          </Button>

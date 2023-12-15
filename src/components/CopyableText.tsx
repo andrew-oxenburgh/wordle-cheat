@@ -68,7 +68,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
          <button
             className={classes.button}
             onClick={onCopy}
-            aria-label={"Copy to clipboard button"}
+            aria-label={'Copy to clipboard button'}
          >
             <div className={classes.title}>
                copyable text

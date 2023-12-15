@@ -10,14 +10,14 @@ const useStyles = createUseStyles({
       marginLeft: '0.2em',
    },
 })
-const url = "https://github.com/andrew-oxenburgh/wordle-cheat"
-const edge = "30"
+const url = 'https://github.com/andrew-oxenburgh/wordle-cheat'
+const edge = '30'
 const GithubThing: React.FC = () => {
    const classes = useStyles()
    return (
       <span >
          <Button
-            aria-label={"View source in GitHub"}
+            aria-label={'View source in GitHub'}
             className={classes.button} variant="dark" href={url} target="_blank">
             <svg
                width={edge}

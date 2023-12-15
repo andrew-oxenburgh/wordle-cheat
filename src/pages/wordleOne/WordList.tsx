@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card'
 import PropTypes from 'prop-types'
 
-import * as R from 'ramda'
+import * as R from 'ramda'   
 
 import SuggestedWord from './SuggestedWord'
 
@@ -34,4 +34,9 @@ function WordList({words, title}: { words: string[], title: string }): JSX.Eleme
     )
 }
 
-export default WordList
+export default WordList     
+
+
+
+
+

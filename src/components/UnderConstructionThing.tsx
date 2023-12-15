@@ -36,8 +36,8 @@ const UnderConstructionThing: React.FC = () => {
    const classes = useStyles()
 
    return (
-      <div id='banner' className={classes.banner}>
-         <OverlayTrigger delay={500} overlay={<Tooltip id='banner'>This Page still under construction</Tooltip>}>
+      <div id="banner" className={classes.banner}>
+         <OverlayTrigger delay={500} overlay={<Tooltip id="banner">This Page still under construction</Tooltip>}>
             <FontAwesomeIcon className={classes.icon} size="1x" icon={icon} />
          </OverlayTrigger>
       </div>
