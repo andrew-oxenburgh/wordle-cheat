@@ -126,5 +126,5 @@ export default pageInfo
 export {
    pageInfo,
    findPageInfo,
-   version
+   version,
 }

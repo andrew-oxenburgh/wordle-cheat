@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "tslint": "tslint ./src/**.ts[x] --fix "
+    "tslint": "tslint src/*.tsx src/**/*.tsx --fix"
   },
   "keywords": ["react", "bootstrap", "demo", "wordle", "password","generator"],
   "author": "",

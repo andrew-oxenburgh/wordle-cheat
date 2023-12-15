@@ -13,8 +13,8 @@ const useStyles = createUseStyles({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '20em'
-   }
+      height: '20em',
+   },
 })
 
 const Loader = () => {
