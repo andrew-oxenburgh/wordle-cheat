@@ -6,27 +6,27 @@ const useStyles = createUseStyles({
       textAlign: 'center',
       textAnchor: 'middle',
       maxWidth: 'var(--thing-width)',
-      margin: '0 auto',
-      padding: '0.5em',
+      marginBottom: '1em',
+      // paddingBottom: '0.5em',
       overflow: 'none',
       height: 'fit-content',
    },
    leftArrow: {
       float: 'left',
-      marginLeft: '1em',
+      // marginLeft: '1em',
       marginTop: '0.2em',
       fontWeight: 'bold',
-      fontSize: '2em',
+      fontSize: '1em',
       padding: '0 0.3em',
       margin: 0,
       borderRadius: '2em',
    },
    rightArrow: {
       float: 'right',
-      marginLeft: '1em',
+      // marginRight: '1em',
       marginTop: '0.2em',
       fontWeight: 'bold',
-      fontSize: '2em',
+      fontSize: '1em',
       padding: '0 0.3em',
       margin: 0,
       borderRadius: '2em',
@@ -60,7 +60,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
                &rarr;
             </Button>
          </div>
-         <span className={classes.title}>{header.title}</span>
+         <h3>{header.title}</h3>
       </div>
    );
 }
