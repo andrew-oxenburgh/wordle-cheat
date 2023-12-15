@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
       alignContent: 'center',
       justifyContent: 'center',
       height: '100%',
-      maxWidth: '50em',
+      // maxWidth: '50em',
       cursor: 'default'
    },
 });

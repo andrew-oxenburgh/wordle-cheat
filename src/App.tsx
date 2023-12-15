@@ -11,8 +11,8 @@ import Cheater from './pages/wordleCheatTwo/Cheater';
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides';
-import 'bootstrap/dist/css/bootstrap.css';
-import './config/mvp-override.css'
+// import 'bootstrap/dist/css/bootstrap.css';
+import './config/mvp-override.scss'
 
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'));

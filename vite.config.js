@@ -20,5 +20,12 @@ export default defineConfig({
    ],
    server: {
       host: '0.0.0.0',
+   },
+   css: {
+      preprocessorOptions: {
+         scss: {
+            // additionalData: `@import "./src/config/mvp-override.scss";`
+         }
+      }
    }
 })
