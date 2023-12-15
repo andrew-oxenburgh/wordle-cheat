@@ -1,7 +1,7 @@
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons/faHardHat'
@@ -30,10 +30,10 @@ const useStyles = createUseStyles({
    },
    icon: {
    }
-});
+})
 
 const UnderConstructionThing: React.FC = () => {
-   const classes = useStyles();
+   const classes = useStyles()
 
    return (
       <div id='banner' className={classes.banner}>
@@ -41,7 +41,7 @@ const UnderConstructionThing: React.FC = () => {
             <FontAwesomeIcon className={classes.icon} size="1x" icon={icon} />
          </OverlayTrigger>
       </div>
-   );
-};
+   )
+}
 
-export default UnderConstructionThing;
+export default UnderConstructionThing

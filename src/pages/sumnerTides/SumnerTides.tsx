@@ -1,7 +1,5 @@
 import useSWR from 'swr'
 
-import Card from 'react-bootstrap/Card';
-
 import InfoThing from '../../components/InfoThing'
 import UnderConstructionThing from '../../components/UnderConstructionThing';
 import PageHeader from '../../components/PageHeader'

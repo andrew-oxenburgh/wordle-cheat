@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { createUseStyles } from 'react-jss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy as icon } from '@fortawesome/free-solid-svg-icons/faCopy';
+import React, { useState } from 'react'
+import { createUseStyles } from 'react-jss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy as icon } from '@fortawesome/free-solid-svg-icons/faCopy'
 import Alert from 'react-bootstrap/Alert'
 import { useInterval } from 'usehooks-ts'
 
@@ -41,7 +41,7 @@ const useStyles = createUseStyles({
       background: 'lightblue',
       border: '1px solid blue',
    }
-});
+})
 
 interface Props {
    text: string
@@ -49,10 +49,10 @@ interface Props {
 }
 
 const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
-   const classes = useStyles();
-   const [show, setShow] = useState(false);
-   const closeAlert = () => setShow(false);
-   const showAlert = () => setShow(true);
+   const classes = useStyles()
+   const [show, setShow] = useState(false)
+   const closeAlert = () => setShow(false)
+   const showAlert = () => setShow(true)
    const onCopy = () => {
       navigator.clipboard.writeText(text)
       showAlert()
@@ -87,7 +87,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
             Copied to clipboard!
          </Alert>
       </div >
-   );
-};
+   )
+}
 
-export default CopyableText;
+export default CopyableText

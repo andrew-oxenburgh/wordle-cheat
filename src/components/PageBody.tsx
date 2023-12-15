@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
-import Container from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container'
 
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
    container: {
@@ -18,19 +18,19 @@ const useStyles = createUseStyles({
       padding: '1em',
       overflow: 'none',
    },
-});
+})
 
 interface ChildrenProps {
    children?: ReactNode
 }
 
 const PageBody: React.FC<ChildrenProps> = ({ children }) => {
-   const classes = useStyles();
+   const classes = useStyles()
    return (
       <Container className={classes.container}>
          {children}
       </Container>
-   );
-};
+   )
+}
 
-export default PageBody;
+export default PageBody

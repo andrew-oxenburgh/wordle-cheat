@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from 'ramda'
 
 type PageName = {
    name: string
@@ -6,7 +6,7 @@ type PageName = {
    shortDesc?: string
    link?: string
    bg?: string
-};
+}
 
 const pageList: PageName[] = [
    {
@@ -70,7 +70,7 @@ const pageList: PageName[] = [
 ]
 
 function kebabCaseToTitleCase(str: string): string {
-   return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+   return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 }
 
 export type PageInfoType = {
@@ -83,11 +83,11 @@ export type PageInfoType = {
    underConstruction: boolean;
    shortDesc: string;
    longDesc: string[];
-};
+}
 
 const pageInfo: PageInfoType[] = R.reduce((acc: any, page: PageName) => {
-   const title = kebabCaseToTitleCase(page.name);
-   const placeInList = R.findIndex(R.propEq(page.name, 'name'))(pageList);
+   const title = kebabCaseToTitleCase(page.name)
+   const placeInList = R.findIndex(R.propEq(page.name, 'name'))(pageList)
    let prevPos = (placeInList - 1)
    prevPos = prevPos < 0 ? (pageList.length - 1) : prevPos
    const prev = pageList[prevPos].name ? pageList[prevPos].name : pageList[prevPos]
@@ -110,9 +110,9 @@ const pageInfo: PageInfoType[] = R.reduce((acc: any, page: PageName) => {
    return acc
 }, [], pageList)
 
-const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo); //=> {a: 2}
+const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo) // => {a: 2}
 
-export default pageInfo;
+export default pageInfo
 export {
    pageInfo,
    findPageInfo

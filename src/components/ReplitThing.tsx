@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 const ReplitThing: React.FC = () => {
    return (
       <span >
-         <Button 
+         <Button
             aria-label="Open in Repl.it"
             variant="info" href="https://replit.com/@andrew_oxenburg/wordle-cheat" target="_blank">
             <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@ const ReplitThing: React.FC = () => {
             <span>replit</span>
          </Button>
       </span>
-   );
-};
+   )
+}
 
-export default ReplitThing;
+export default ReplitThing

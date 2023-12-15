@@ -1,5 +1,5 @@
 
-import pageInfo from './config';
+import pageInfo from './config'
 export { }
 describe('thingy', () => {
    test('renders learn react link', () => {
@@ -30,7 +30,7 @@ describe('thingy', () => {
             ],
             underConstruction: false
          },
-      });
+      })
    })
 })
 

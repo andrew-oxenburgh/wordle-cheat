@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button'
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
    button: {
@@ -9,14 +9,14 @@ const useStyles = createUseStyles({
    text: {
       marginLeft: '0.2em'
    }
-});
+})
 const url = "https://github.com/andrew-oxenburgh/wordle-cheat"
 const edge = "30"
 const GithubThing: React.FC = () => {
    const classes = useStyles()
    return (
       <span >
-         <Button 
+         <Button
             aria-label={"View source in GitHub"}
             className={classes.button} variant="dark" href={url} target="_blank">
             <svg
@@ -29,7 +29,7 @@ const GithubThing: React.FC = () => {
             <span className={classes.text}>github</span>
          </Button>
       </span>
-   );
-};
+   )
+}
 
-export default GithubThing;
+export default GithubThing

@@ -1,5 +1,5 @@
-import { createUseStyles } from 'react-jss';
-import Button from 'react-bootstrap/Button';
+import { createUseStyles } from 'react-jss'
+import Button from 'react-bootstrap/Button'
 import * as config from '../config/config'
 const useStyles = createUseStyles({
    pageHeader: {
@@ -35,18 +35,18 @@ const useStyles = createUseStyles({
       color: 'black',
       fontSize: '2em',
    }
-});
+})
 
 interface Props {
    name: string
 }
 
 const PageHeader: React.FC<Props> = ({ name }) => {
-   const classes = useStyles();
+   const classes = useStyles()
    const header: config.PageInfoType = config.findPageInfo(name)
 
-   const nextLink: string = config.findPageInfo(header.nextPage).link;
-   const prevLink: string = config.findPageInfo(header.prevPage).link;
+   const nextLink: string = config.findPageInfo(header.nextPage).link
+   const prevLink: string = config.findPageInfo(header.prevPage).link
    return (
       <div className={classes.pageHeader}>
          <div>
@@ -62,7 +62,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
          </div>
          <h3>{header.title}</h3>
       </div>
-   );
+   )
 }
 
 export default PageHeader

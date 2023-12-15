@@ -1,5 +1,4 @@
 import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
 
 import InfoThing from '../../components/InfoThing'
 import PageHeader from '../../components/PageHeader'

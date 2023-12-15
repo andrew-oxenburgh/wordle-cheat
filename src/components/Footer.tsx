@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 import ReplitThing from './ReplitThing'
 import GithubThing from './GithubThing'
 const useStyles = createUseStyles({
@@ -17,17 +17,17 @@ const useStyles = createUseStyles({
       maxWidth: 'var(--width-content)',
       justifyContent: 'flex-end'
    },
-});
+})
 
 function Footer() {
-   const classes = useStyles();
+   const classes = useStyles()
    return (
       <footer className={classes.footer}>
          <ReplitThing />
          &nbsp;
          <GithubThing />
       </footer>
-   );
+   )
 }
 
 export default Footer
