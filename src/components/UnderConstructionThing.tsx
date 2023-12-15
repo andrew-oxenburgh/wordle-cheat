@@ -29,7 +29,7 @@ const useStyles = createUseStyles({
       border: '4px solid black',
    },
    icon: {
-   }
+   },
 })
 
 const UnderConstructionThing: React.FC = () => {

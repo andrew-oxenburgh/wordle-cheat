@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
    title: {
       color: 'black',
       fontSize: '2em',
-   }
+   },
 })
 
 interface Props {

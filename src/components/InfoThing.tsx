@@ -27,7 +27,7 @@ const useStyles = createUseStyles({
       border: '4px solid black',
       '&:hover': {
          border: '4px solid black',
-      }
+      },
    },
 })
 

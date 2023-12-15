@@ -5,67 +5,67 @@ type PageName = {
    longDesc?: string[],
    shortDesc?: string
    link?: string
-   bg?: string
+   bg?: string,
 }
 
 const pageList: PageName[] = [
    {
       name: 'home',
       longDesc: [
-         'Home Page. An intro and what not'
+         'Home Page. An intro and what not',
       ],
       link: '#/home',
-      bg: 'warning'
+      bg: 'warning',
    },
    {
       name: 'wordle-one',
       longDesc: [
          'My first attempt at a Wordle Cheat.',
-         'It works, but it\'s a bit dodgy'
-      ]
+         'It works, but it\'s a bit dodgy',
+      ],
    },
    {
       name: 'wordle-two',
       longDesc: [
          'My second attempt at a Wordle Cheat.',
-         'Still very much a work in progress'
-      ]
+         'Still very much a work in progress',
+      ],
 
    },
    {
       name: 'text-helper',
       longDesc: [
          'Paste in some text and it\'ll make suggestions about what to do with it.',
-         'It works, but it\'s a bit dodgy'
-      ]
+         'It works, but it\'s a bit dodgy',
+      ],
    },
    {
       name: 'netflix-genre',
       longDesc: [
          'Netflix provides a bunch of codes that aren\'t in their app',
-      ]
+      ],
    },
    {
       name: 'sumner-tides',
       longDesc: [
          'Still a WIP',
-      ]
+      ],
    },
    {
       name: 'draggy-gamey',
       longDesc: [
          'Play with this. It doesn\'t quite work on mobile',
-      ]
+      ],
    },
    {
       name: 'password-generator',
       longDesc: [
-         'Generate a "good" password.'
-      ]
+         'Generate a "good" password.',
+      ],
    },
    {
       name: 'blogs',
-      link: '#/markdown/examplePage'
+      link: '#/markdown/examplePage',
    },
 ]
 
@@ -105,7 +105,7 @@ const pageInfo: PageInfoType[] = R.reduce((acc: any, page: PageName) => {
       shortDesc: `This is a ${title} page`,
       longDesc: [`This is a ${title} page`,
          'with a longer description'],
-      ...page
+      ...page,
    })
    return acc
 }, [], pageList)
@@ -115,5 +115,5 @@ const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo) 
 export default pageInfo
 export {
    pageInfo,
-   findPageInfo
+   findPageInfo,
 }

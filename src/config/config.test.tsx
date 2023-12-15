@@ -13,9 +13,9 @@ describe('thingy', () => {
             shortDesc: 'This is a Wordle One page',
             longDesc: [
                'This is a Wordle One page',
-               'with a longer description'
+               'with a longer description',
             ],
-            underConstruction: false
+            underConstruction: false,
          },
          'home': {
             name: 'home',
@@ -26,9 +26,9 @@ describe('thingy', () => {
             shortDesc: 'This is a Home page',
             longDesc: [
                'This is a Home page',
-               'with a longer description'
+               'with a longer description',
             ],
-            underConstruction: false
+            underConstruction: false,
          },
       })
    })

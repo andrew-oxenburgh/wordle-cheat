@@ -7,8 +7,8 @@ const useStyles = createUseStyles({
       paddingLeft: '0.5em',
    },
    text: {
-      marginLeft: '0.2em'
-   }
+      marginLeft: '0.2em',
+   },
 })
 const url = "https://github.com/andrew-oxenburgh/wordle-cheat"
 const edge = "30"

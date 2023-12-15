@@ -40,7 +40,7 @@ const useStyles = createUseStyles({
       fontWeight: 'bold',
       background: 'lightblue',
       border: '1px solid blue',
-   }
+   },
 })
 
 interface Props {
@@ -60,7 +60,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
 
    useInterval(
       closeAlert,
-      2000
+      2000,
    )
 
    return (
