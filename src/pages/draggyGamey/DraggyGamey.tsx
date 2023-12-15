@@ -141,11 +141,7 @@ const DraggyGamey: React.FC = () => {
          {help}
          <PageHeader name="draggy-gamey" />
          {/* {help} */}
-         <Card>
-            <Card.Body>
-               <GridComponent />
-            </Card.Body>
-         </Card>
+         <GridComponent />
       </PageBody>
    </>
    );

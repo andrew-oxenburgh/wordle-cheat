@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
       textAnchor: 'middle',
-      // width: '100%',
+      maxWidth: 'var(--thing-width)',
       margin: '0 auto',
       padding: '0.5em',
       overflow: 'none',

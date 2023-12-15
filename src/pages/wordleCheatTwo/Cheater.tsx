@@ -24,41 +24,37 @@ const Guesses = () => {
    };
 
    return (
-      <PageBody>
-         <PageHeader name="wordle-two" />
-         <h3>Seriously, don't even look at me!!!</h3>
-
-         {help}
-         <UnderConstructionThing />
-         <Card>
-            <Card.Body>
-               <Row>
-                  <Col>
-                     <Form>
-                        <Form.Group controlId="exampleForm.ControlTextarea1">
-                           <Form.Label>Multi-line Input</Form.Label>
-                           <Form.Control
-                              as="textarea"
-                              rows={3}
-                              value={inputValue}
-                              onChange={handleChange}
-                           />
-                        </Form.Group>
-                     </Form>
-                  </Col>
-               </Row>
-            </Card.Body>
-         </Card>
-
-      </PageBody>
+      <>
+         <Row>
+            <Col>
+               <Form>
+                  <Form.Group controlId="exampleForm.ControlTextarea1">
+                     <Form.Label>Multi-line Input</Form.Label>
+                     <Form.Control
+                        as="textarea"
+                        rows={3}
+                        value={inputValue}
+                        onChange={handleChange}
+                     />
+                  </Form.Group>
+               </Form>
+            </Col>
+         </Row>
+      </>
    );
 };
 
 function Cheater() {
    return (
       <>
-         <Guesses />
-         <Container>
+         <PageBody>
+            <PageHeader name="wordle-two" />
+            <h3>Seriously, don't even look at me!!!</h3>
+
+            {help}
+            <UnderConstructionThing />
+
+            <Guesses />
             {Array.from({ length: 4 }).map((_, rowIndex) => (
                <Row key={rowIndex} className="mb-4">
                   {Array.from({ length: 5 }).map((_, colIndex) => (
@@ -70,7 +66,7 @@ function Cheater() {
                   ))}
                </Row>
             ))}
-         </Container>
+         </PageBody>
       </>
    );
 }

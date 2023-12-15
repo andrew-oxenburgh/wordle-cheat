@@ -6,12 +6,17 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
    container: {
-      backgroundColor: '#eae4ff',
+      backgroundColor: 'white',
+      borderRadius: '1em',
+      border: '1px solid black',
+      margin: '0 auto 4em auto',
       alignContent: 'center',
       justifyContent: 'center',
       height: '100%',
-      // maxWidth: '50em',
-      cursor: 'default'
+      maxWidth: 'var(--thing-width)',
+      cursor: 'default',
+      padding: '1em',
+      overflow: 'none',
    },
 });
 

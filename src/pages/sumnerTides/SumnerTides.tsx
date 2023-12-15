@@ -36,7 +36,7 @@ const fetchData = (path: string) => {
             'Content-Type': 'application/json',
             'cache-control': 'max-age=600',
             'x-apikey': 'XXXXXXX',
-            
+
             'Authorization': 'Bearer XXXXXXXX'
          },
       });
@@ -57,12 +57,8 @@ const SumnerTides = () => {
          {help}
          <UnderConstructionThing />
          <PageHeader name="sumner-tides" />
-         <Card>
-            <Card.Body style={{ objectFit: 'cover' }}>
-               <img src="/public/niwa-dummy-chart.svg" style={{ objectFit: 'cover', width: '100%' }} />
-               {JSON.stringify(data, null, 4)}
-            </Card.Body>
-         </Card>
+         <img src="/public/niwa-dummy-chart.svg" style={{ objectFit: 'cover', width: '100%' }} />
+         {JSON.stringify(data, null, 4)}
       </PageBody>
    );
 };

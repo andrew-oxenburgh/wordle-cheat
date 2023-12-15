@@ -38,8 +38,6 @@ const NetflixGenre = () => {
       <PageBody>
          {help}
          <PageHeader name="netflix-genre" />
-         <Card>
-            <Card.Body>
          <Accordion defaultActiveKey="0" flush>
             {Object.entries(genres).map(([category, genreCodes]) => (
                <Accordion.Item eventKey={category} key={category}>
@@ -72,8 +70,6 @@ const NetflixGenre = () => {
                </Accordion.Item>
             ))}
          </Accordion>
-            </Card.Body>
-         </Card>
       </PageBody>
    );
 };

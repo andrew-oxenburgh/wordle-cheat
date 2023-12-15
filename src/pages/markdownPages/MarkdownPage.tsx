@@ -37,13 +37,9 @@ const MarkdownPage = () => {
       <PageBody>
          {help}
          <PageHeader name="blogs" />
-         <Card>
-            <Card.Body>
-               <ReactMarkdown
-                  children={content}
-               />
-            </Card.Body>
-         </Card>
+         <ReactMarkdown
+            children={content}
+         />
       </PageBody>
    );
 };
