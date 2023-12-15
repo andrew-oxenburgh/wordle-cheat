@@ -10,7 +10,7 @@
     "test": "jest",
     "tslint": "tslint ./src/**.ts[x] --fix "
   },
-  "keywords": [],
+  "keywords": ["react", "bootstrap", "demo", "wordle", "password","generator"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
