@@ -11,6 +11,9 @@ import Cheater from './pages/wordleCheatTwo/Cheater'
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
+import Welcome from './pages/welcome/Welcome'
+import Loader from './components/Loader'
+
 // import 'bootstrap/dist/css/bootstrap.css';
 import './config/mvp-override.scss'
 
@@ -40,8 +43,9 @@ function Navigation() {
                   <NavDropdown.Item href="#/netflix-genre">Netflix By Genre</NavDropdown.Item>
                   <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-                  <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
-               </NavDropdown>
+               <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
+               <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
+</NavDropdown>
                <NavDropdown title="Blogs" id="blogs">
                   <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
                </NavDropdown>
@@ -61,35 +65,32 @@ export default function App() {
             <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
                   <Route path="/home" element={
-                     <Suspense fallback={<div>Loading...</div>}>
+                     <Suspense fallback={<Loader/>}>
                         <Home />
                      </Suspense>
 
                   } />
-                  <Route path="/" element={
-                     <Suspense fallback={<div>Loading...</div>}>
-                        <Home />
-                     </Suspense>
 
-                  } />
+                  <Route path="/" element={<Welcome/>}/>
+                  <Route path="/Welcome" element={<Welcome />} />
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
                   <Route path="/text-helper" element={<TextHelper />} />
                   <Route path="*" element={<TextHelper />} />
                   <Route path="/netflix-genre" element={
-                     <Suspense fallback={<div>Loading...</div>}>
+                     <Suspense fallback={<Loader/>}>
                         <NetflixGenre />
                      </Suspense>
                   } />
                   <Route path="/password-generator" element={
-                     <Suspense fallback={<div>Loading...</div>}>
+                     <Suspense fallback={<Loader/>}>
                         <PasswordGenerator />
                      </Suspense>
                   } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/draggy-gamey" element={<DraggyGamey />} />
                   <Route path="/markdown/:pageName" element={
-                     <Suspense fallback={<div>Loading...</div>}>
+                     <Suspense fallback={<Loader/>}>
                         <MarkdownPage />
                      </Suspense>
                   } />

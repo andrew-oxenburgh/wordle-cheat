@@ -10,6 +10,14 @@ type PageName = {
 
 const pageList: PageName[] = [
    {
+      name: 'welcome',
+      longDesc: [
+         'Welcome Page',
+         'Just a thing',
+      ],
+      link: '#/welcome',
+   },
+   {
       name: 'home',
       longDesc: [
          'Home Page. An intro and what not',
@@ -17,7 +25,7 @@ const pageList: PageName[] = [
       link: '#/home',
       bg: 'warning',
    },
-   {
+{
       name: 'wordle-one',
       longDesc: [
          'My first attempt at a Wordle Cheat.',
