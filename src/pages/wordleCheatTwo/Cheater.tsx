@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import InfoThing from '../../components/InfoThing'
-import UnderConstructionThing from '../../components/UnderConstructionThing';
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
-const help = (
-   <InfoThing>
-      Wordle 2!!!
-   </InfoThing>
-)
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');
@@ -46,13 +37,8 @@ const Guesses = () => {
 function Cheater() {
    return (
       <>
-         <PageBody>
-            <PageHeader name="wordle-two" />
+         <PageBody name="wordle-two">
             <h3>Seriously, don't even look at me!!!</h3>
-
-            {help}
-            <UnderConstructionThing />
-
             <Guesses />
             {Array.from({ length: 4 }).map((_, rowIndex) => (
                <Row key={rowIndex} className="mb-4">

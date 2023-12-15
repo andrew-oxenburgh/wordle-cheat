@@ -1,25 +1,9 @@
 
 import { useState } from 'react';
 import { signal } from "@preact/signals-react";
-import InfoThing from '../../components/InfoThing'
 import { createUseStyles } from 'react-jss';
 import * as R from 'ramda'
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
-const help = (
-   <InfoThing height="50%">
-      <h2>Draggy Gamey</h2>
-      <p>
-         This is a "game" where you can drag the pointer around, or click on squares to do things!!!
-      </p>
-      <p>
-         Click to change the colors of that square
-      </p>
-      <p>
-         Press and drag to change the colors of the square you drag over. This doesn't work on a mobile yet.
-      </p>
-   </InfoThing>
-)
 
 const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia'];
 // const colors: string[] = ['#000', '#444', '#888', '#aaa', '#eee']
@@ -135,14 +119,12 @@ const GridComponent: React.FC = () => {
 };
 
 const DraggyGamey: React.FC = () => {
-   return (<>
-      <PageBody>
-         {help}
-         <PageHeader name="draggy-gamey" />
-         {/* {help} */}
-         <GridComponent />
-      </PageBody>
-   </>
+   return (
+      <>
+         <PageBody name="draggy-gamey">
+            <GridComponent />
+         </PageBody>
+      </>
    );
 };
 

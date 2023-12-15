@@ -4,18 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import InfoThing from '../../components/InfoThing'
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 
 import pageInfo, { PageInfoType } from '../../config/config'
-
-const help = (
-   <InfoThing>
-      <h3>App Info</h3>
-      This has not been really optimised. Lighthouse scores are not great.
-   </InfoThing>
-)
 
 const HomeContent = () => {
    const mapIndexed = R.addIndex(R.map);
@@ -60,9 +51,7 @@ const HomeContent = () => {
 
 function Home() {
    return (
-      <PageBody>
-         <PageHeader name="home" />
-         {help}
+      <PageBody name="home">
          <HomeContent />
       </PageBody>
    );

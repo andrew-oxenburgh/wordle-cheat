@@ -1,16 +1,7 @@
 import useSWR from 'swr'
 
-import InfoThing from '../../components/InfoThing'
-import UnderConstructionThing from '../../components/UnderConstructionThing';
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 import niwaExample from './niwa-dummy-data'
-
-const help = (
-   <InfoThing>
-      Niwa Data
-   </InfoThing>
-)
 
 // "lat" is required. 
 // "long" must be larger than or equal to 160. 
@@ -51,10 +42,7 @@ const SumnerTides = () => {
    if (isLoading) return <div>loading...</div>
 
    return (
-      <PageBody>
-         {help}
-         <UnderConstructionThing />
-         <PageHeader name="sumner-tides" />
+      <PageBody name="sumner-tides">
          <img src="/public/niwa-dummy-chart.svg" style={{ objectFit: 'cover', width: '100%' }} />
          {JSON.stringify(data, null, 4)}
       </PageBody>

@@ -3,7 +3,9 @@ import { ReactNode } from 'react'
 import Container from 'react-bootstrap/Container'
 
 import { createUseStyles } from 'react-jss'
-
+import InfoThing from './InfoThing'
+import PageHeader from './PageHeader'
+import { PageInfoType, findPageInfo } from '../config/config'
 const useStyles = createUseStyles({
    container: {
       backgroundColor: 'white',
@@ -21,13 +23,25 @@ const useStyles = createUseStyles({
 })
 
 interface ChildrenProps {
-   children?: ReactNode
+   children: ReactNode,
+   name: string,
 }
 
-const PageBody: React.FC<ChildrenProps> = ({ children }) => {
+const PageBody: React.FC<ChildrenProps> = ({ children, name }) => {
    const classes = useStyles()
+   const header: PageInfoType = findPageInfo(name)
    return (
       <Container className={classes.container}>
+         <PageHeader name={name} />
+         <InfoThing height="50%">
+            <h3>{header.shortDesc}</h3>
+
+            <Container>
+               {header.longDesc.map((desc, index) => (
+                  <p key={index}>{desc}</p>
+               ))}
+            </Container>
+         </InfoThing>
          {children}
       </Container>
    )

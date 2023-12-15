@@ -7,7 +7,6 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 import { createUseStyles } from 'react-jss'
 
@@ -24,13 +23,6 @@ import {
    WordleForm,
 } from './wordle-utils'
 import WordList from './WordList'
-import InfoThing from '../../components/InfoThing'
-
-const help = (
-   <InfoThing>
-      <h3>Wordle Cheat</h3>
-   </InfoThing>
-)
 
 const wcInput = {
    background: 'green',
@@ -144,10 +136,7 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
 
    return (
       <>
-         <PageBody
-         >
-            <PageHeader name='wordle-one' />
-            {help}
+         <PageBody name='wordle-one'>
             <Form style={{
                width: '100%',
             }}>

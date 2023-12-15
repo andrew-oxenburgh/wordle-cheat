@@ -10,36 +10,12 @@ import commonWords from '../../config/common-words'
 import * as R from 'ramda'
 
 import CopyablText from '../../components/CopyableText';
-import InfoThing from '../../components/InfoThing'
-import PageHeader from '../../components/PageHeader'
 import PageBody from '../../components/PageBody'
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
 words = R.uniq(words)
 const separators: string = '-_~.@'
 const numWords = words.length
-
-const help = (
-   <InfoThing height="50%">
-      <h3>Password Generator</h3>
-      <p>
-         Just a fun little app.
-      </p>
-      <ol>
-         <li>
-            I used a couple of 4 and 5 letter word lists I found on the web.
-         </li>
-         <li>
-            There are {numWords.toLocaleString()} seed words.
-         </li>
-
-         <li>
-            I get 3 random words from the concatenated list, add a random separator, and make the outer words lower case, and the middle word uppercase.
-         </li>
-      </ol>
-   </InfoThing >
-)
-
 
 const useStyles = createUseStyles({
    button: {
@@ -84,9 +60,7 @@ const JSSComponent: React.FC = () => {
 
    return (
       <>
-         <PageBody>
-            {help}
-            <PageHeader name="password-generator"/>
+         <PageBody name="password-generator">
             <Card>
                <Card.Body>
                   <Card.Title>A suggested password</Card.Title>
