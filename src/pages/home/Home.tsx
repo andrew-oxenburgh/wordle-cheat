@@ -15,7 +15,7 @@ const HomeContent = () => {
          {
             R.reduce((acc: any, card: PageInfoType) => {
                acc.push (
-                  <Col xs="6" sm="6" md="3" lg="3" xl="2" key={card.title} >
+                  <Col xs="6" sm="6" md="6" lg="6" xl="6" key={card.title} >
                      <Card
                         bg={card.bg}
                         style={{ margin: '0.5em 0' }}
