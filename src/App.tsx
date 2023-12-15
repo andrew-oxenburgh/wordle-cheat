@@ -16,7 +16,7 @@ import Loader from './components/Loader'
 
 // import 'bootstrap/dist/css/bootstrap.css';
 import './config/mvp-override.scss'
-
+import {version} from './config/config'
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'))
@@ -26,10 +26,9 @@ import Footer from './components/Footer'
 
 function Navigation() {
    const [expanded, setExpanded] = useState(false)
-
    return (
       <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto', paddingLeft: '1em' }}>
-         <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>(3.1.0)</span></Navbar.Brand>
+         <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
          <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">

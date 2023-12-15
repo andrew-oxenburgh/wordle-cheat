@@ -15,6 +15,7 @@ const Welcome = () => {
    return (
       <PageBody>
          <PageHeader name="welcome" />
+         <i>Here's the loading spinner you see around</i>
          <Loader/>
       </PageBody>
    )

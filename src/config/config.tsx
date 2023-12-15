@@ -1,5 +1,7 @@
 import * as R from 'ramda'
 
+const version = '4.0.1'
+
 type PageName = {
    name: string
    longDesc?: string[],
@@ -124,4 +126,5 @@ export default pageInfo
 export {
    pageInfo,
    findPageInfo,
+   version
 }
