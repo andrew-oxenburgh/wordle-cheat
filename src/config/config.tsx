@@ -20,13 +20,20 @@ const pageList: PageName[] = [
       link: '#/welcome',
    },
    {
+      name: 'emoji-search',
+      longDesc: [
+         'Emoji Search',
+      ],
+      link: '#/emoji-search',
+   },
+   {
       name: 'print-page',
       longDesc: [
          'Print Page',
       ],
       link: '#/print-page',
    },
-   {
+{
       name: 'home',
       longDesc: [
          'Home Page. An intro and what not',

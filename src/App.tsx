@@ -23,7 +23,7 @@ const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
 const Home = React.lazy(() => import('./pages/home/Home'))
 const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
-
+const EmojiSearch = React.lazy(() => import('./pages/emojiSearch/EmojiSearch'))
 import Footer from './components/Footer'
 
 function Navigation() {
@@ -47,6 +47,7 @@ function Navigation() {
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
                   <NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
                   <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
+                  <NavDropdown.Item href="#/emoji-search">Welcome</NavDropdown.Item>
                </NavDropdown>
                <NavDropdown title="Blogs" id="blogs">
                   <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
@@ -92,6 +93,11 @@ export default function App() {
                   <Route path="/password-generator" element={
                      <Suspense fallback={<Loader />}>
                         <PasswordGenerator />
+                     </Suspense>
+                  } />
+                  <Route path="/emoji-search" element={
+                     <Suspense fallback={<Loader />}>
+                        <EmojiSearch />
                      </Suspense>
                   } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
