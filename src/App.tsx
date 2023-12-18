@@ -74,7 +74,7 @@ export default function App() {
 
                   } />
 
-                  <Route path="/" element={<Welcome />} />
+                  {/* <Route path="/" element={<Welcome />} /> */}
                   <Route path="/Welcome" element={<Welcome />} />
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
@@ -96,6 +96,11 @@ export default function App() {
                      </Suspense>
                   } />
                   <Route path="/emoji-search" element={
+                     <Suspense fallback={<Loader />}>
+                        <EmojiSearch />
+                     </Suspense>
+                  } />
+                  <Route path="/" element={
                      <Suspense fallback={<Loader />}>
                         <EmojiSearch />
                      </Suspense>
