@@ -12,6 +12,7 @@ import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
 import Welcome from './pages/welcome/Welcome'
+import PrintPage from './pages/printPage/PrintPage'
 import Loader from './components/Loader'
 
 // import 'bootstrap/dist/css/bootstrap.css';
@@ -42,7 +43,8 @@ function Navigation() {
                   <NavDropdown.Item href="#/netflix-genre">Netflix By Genre</NavDropdown.Item>
                   <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-               <NavDropdown.Item href="#/password-generator">Password Generator</NavDropdown.Item>
+                  <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
+<NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
                <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
 </NavDropdown>
                <NavDropdown title="Blogs" id="blogs">
@@ -75,7 +77,8 @@ export default function App() {
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
                   <Route path="/text-helper" element={<TextHelper />} />
-                  <Route path="*" element={<TextHelper />} />
+                  <Route path="/print-page" element={<PrintPage />} />
+<Route path="*" element={<TextHelper />} />
                   <Route path="/netflix-genre" element={
                      <Suspense fallback={<Loader/>}>
                         <NetflixGenre />
