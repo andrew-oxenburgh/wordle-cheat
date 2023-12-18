@@ -6,17 +6,12 @@ import 'react-markdown-editor-lite/lib/index.css';
 import './printPage.css'
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
-function handleEditorChange({ html, text }) {
-  console.log('handleEditorChange', html, text);
-}
-
 const PrintPage = () => {
    return (
       <PageBody name="print-page" >
        <MdEditor 
           style={{ height: '500px' }} 
           renderHTML={text => mdParser.render(text)} 
-          onChange={handleEditorChange} 
           />
       </PageBody>
    );

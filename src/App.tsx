@@ -12,17 +12,18 @@ import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
 import Welcome from './pages/welcome/Welcome'
-import PrintPage from './pages/printPage/PrintPage'
 import Loader from './components/Loader'
 
 // import 'bootstrap/dist/css/bootstrap.css';
 import './config/mvp-override.scss'
-import {version} from './config/config'
+import { version } from './config/config'
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'))
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
 const Home = React.lazy(() => import('./pages/home/Home'))
+const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
+
 import Footer from './components/Footer'
 
 function Navigation() {
@@ -44,9 +45,9 @@ function Navigation() {
                   <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-<NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
-               <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
-</NavDropdown>
+                  <NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
+                  <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
+               </NavDropdown>
                <NavDropdown title="Blogs" id="blogs">
                   <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
                </NavDropdown>
@@ -66,33 +67,37 @@ export default function App() {
             <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
                   <Route path="/home" element={
-                     <Suspense fallback={<Loader/>}>
+                     <Suspense fallback={<Loader />}>
                         <Home />
                      </Suspense>
 
                   } />
 
-                  <Route path="/" element={<Welcome/>}/>
+                  <Route path="/" element={<Welcome />} />
                   <Route path="/Welcome" element={<Welcome />} />
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
                   <Route path="/text-helper" element={<TextHelper />} />
-                  <Route path="/print-page" element={<PrintPage />} />
-<Route path="*" element={<TextHelper />} />
+                  <Route path="*" element={<TextHelper />} />
                   <Route path="/netflix-genre" element={
-                     <Suspense fallback={<Loader/>}>
+                     <Suspense fallback={<Loader />}>
                         <NetflixGenre />
                      </Suspense>
                   } />
+                  <Route path="/print-page" element={
+                     <Suspense fallback={<Loader />}>
+                        <PrintPage />
+                     </Suspense>
+                  } />
                   <Route path="/password-generator" element={
-                     <Suspense fallback={<Loader/>}>
+                     <Suspense fallback={<Loader />}>
                         <PasswordGenerator />
                      </Suspense>
                   } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/draggy-gamey" element={<DraggyGamey />} />
                   <Route path="/markdown/:pageName" element={
-                     <Suspense fallback={<Loader/>}>
+                     <Suspense fallback={<Loader />}>
                         <MarkdownPage />
                      </Suspense>
                   } />
