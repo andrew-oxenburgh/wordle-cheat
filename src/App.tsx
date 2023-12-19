@@ -13,7 +13,6 @@ import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
 import Welcome from './pages/welcome/Welcome'
 import Loader from './components/Loader'
-
 // import 'bootstrap/dist/css/bootstrap.css';
 import './config/mvp-override.scss'
 import { version } from './config/config'
@@ -23,7 +22,8 @@ const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
 const Home = React.lazy(() => import('./pages/home/Home'))
 const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
-const EmojiSearch = React.lazy(() => import('./pages/emojiSearch/EmojiSearch'))
+const Desktop = React.lazy(() => import('./Desktop'))
+
 import Footer from './components/Footer'
 
 function Navigation() {
@@ -47,7 +47,6 @@ function Navigation() {
                   <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
                   <NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
                   <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
-                  <NavDropdown.Item href="#/emoji-search">Welcome</NavDropdown.Item>
                </NavDropdown>
                <NavDropdown title="Blogs" id="blogs">
                   <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
@@ -74,20 +73,21 @@ export default function App() {
 
                   } />
 
-                  {/* <Route path="/" element={<Welcome />} /> */}
+                  <Route path="/" element={<Welcome />} />
                   <Route path="/Welcome" element={<Welcome />} />
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
                   <Route path="/text-helper" element={<TextHelper />} />
+                  <Route path="/print-page" element={<PrintPage />} />
                   <Route path="*" element={<TextHelper />} />
                   <Route path="/netflix-genre" element={
                      <Suspense fallback={<Loader />}>
                         <NetflixGenre />
                      </Suspense>
                   } />
-                  <Route path="/print-page" element={
+                  <Route path="/netflix-genre" element={
                      <Suspense fallback={<Loader />}>
-                        <PrintPage />
+                        <NetflixGenre />
                      </Suspense>
                   } />
                   <Route path="/password-generator" element={
@@ -95,21 +95,16 @@ export default function App() {
                         <PasswordGenerator />
                      </Suspense>
                   } />
-                  <Route path="/emoji-search" element={
-                     <Suspense fallback={<Loader />}>
-                        <EmojiSearch />
-                     </Suspense>
-                  } />
-                  <Route path="/" element={
-                     <Suspense fallback={<Loader />}>
-                        <EmojiSearch />
-                     </Suspense>
-                  } />
                   <Route path="/sumner-tides" element={<SumnerTides />} />
                   <Route path="/draggy-gamey" element={<DraggyGamey />} />
                   <Route path="/markdown/:pageName" element={
                      <Suspense fallback={<Loader />}>
                         <MarkdownPage />
+                     </Suspense>
+                  } />
+                  <Route path="/desktop" element={
+                     <Suspense fallback={<Loader />}>
+                        <Desktop />
                      </Suspense>
                   } />
                </Routes>
