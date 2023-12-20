@@ -20,7 +20,11 @@ import Col from 'react-bootstrap/Col';
 import Loader from './components/Loader'
 
 const useStyles = createUseStyles({
-   chacter: {
+   page: {
+      paddingTop: '1em',
+      maxWidth: '50em',
+      maxHeight: '50em',
+      overflow: 'scroll'
       // fontSize: "150%"
    },
 });
@@ -35,19 +39,20 @@ const pages = [
    NetflixGenre,
    MarkdownPage,
    PasswordGenerator,
-   Home,
+   // Home,
    PrintPage
 ];
 
 
 
 const Desktop = () => {
+   const classes = useStyles();
    return (
       <Container fluid>
          <Row>
             {pages.map((Page, index) =>
             (<>
-               <Col sm="6" md="4" lg="3" xl="2"  style={{ paddingTop: '1em' }}>
+               <Col sm="6" md="4" lg="3" xl="2" className={classes.page}>
                   <Suspense key={index} fallback={<Loader />}>
                      <Page key={index} />
                   </Suspense>

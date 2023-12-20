@@ -41,10 +41,10 @@ function Cheater() {
             <h3>Seriously, don't even look at me!!!</h3>
             <Guesses />
             {Array.from({ length: 4 }).map((_, rowIndex) => (
-               <Row key={rowIndex} className="mb-4">
+               <Row key={rowIndex}>
                   {Array.from({ length: 5 }).map((_, colIndex) => (
                      <Col key={colIndex}>
-                        <div className="p-3 border bg-light">
+                        <div>
                            Row {rowIndex + 1} Col {colIndex + 1}
                         </div>
                      </Col>
