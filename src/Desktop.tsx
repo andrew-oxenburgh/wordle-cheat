@@ -1,57 +1,63 @@
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { createUseStyles } from 'react-jss';
-import WordleCheat from './pages/wordleOne/WordleCheat'
-import Cheater from './pages/wordleCheatTwo/Cheater'
+
+const WordleCheat = React.lazy(() => import('./pages/wordleOne/WordleCheat'))
+const Cheater = React.lazy(() => import('./pages/wordleCheatTwo/Cheater'))
+const TextHelper = React.lazy(() => import('./pages/textHelper/TextHelper'))
+const DraggyGamey = React.lazy(() => import('./pages/draggyGamey/DraggyGamey'))
+const SumnerTides = React.lazy(() => import('./pages/sumnerTides/SumnerTides'))
+const Welcome = React.lazy(() => import('./pages/welcome/Welcome'))
+const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
+const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'))
+const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
+const Home = React.lazy(() => import('./pages/home/Home'))
+const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
+
 import Container from 'react-bootstrap/Container';
-import TextHelper from './pages/textHelper/TextHelper'
-import DraggyGamey from './pages/draggyGamey/DraggyGamey'
-import SumnerTides from './pages/sumnerTides/SumnerTides'
-import Welcome from './pages/welcome/Welcome'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Loader from './components/Loader'
+
 const useStyles = createUseStyles({
    chacter: {
       // fontSize: "150%"
    },
 });
+
+const pages = [
+   WordleCheat,
+   Cheater,
+   TextHelper,
+   DraggyGamey,
+   SumnerTides,
+   Welcome,
+   NetflixGenre,
+   MarkdownPage,
+   PasswordGenerator,
+   Home,
+   PrintPage
+];
+
+
+
 const Desktop = () => {
-   const classes = useStyles();
-   const [alert, setAlert] = useState<string | null>(null);
-
-   const onCopy = (ch: string) => {
-      return () => {
-         navigator.clipboard.writeText(ch)
-         setAlert(ch + 'Copied to clipboard!')
-      }
-   }
-
    return (
-      <Container>
-         <WordleCheat/>
-         <Cheater/>
-         <Welcome/>
-         <TextHelper/>
-         <DraggyGamey/>
-         <SumnerTides/>
-
+      <Container fluid>
+         <Row>
+            {pages.map((Page, index) =>
+            (<>
+               <Col sm="6" md="4" lg="2" style={{ paddingTop: '1em' }}>
+                  <Suspense key={index} fallback={<Loader />}>
+                     <Page key={index} />
+                  </Suspense>
+               </Col>
+            </>
+            ))}
+         </Row>
       </Container>
    )
 }
 
 export default Desktop;
 
-/**
-            <a href="https://emoji-api.com/">emoji-api</a>
-            <p>This is a simple emoji search app.</p>
-            <a href={findAll()} target="_blank">all</a>
-            <br />
-            <a href={search('computer')} target="_blank">search for computer</a>
-            <br />
-            <p>{find('grinning-squinting-face')}</p>
-            <a href={find('grinning-squinting-face')} target="_blank">find grinning-squinting-face</a>
-            <br />
-            <a href="https://emoji-api.com/emojis/e0-7-desktop-computer?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">specific emoji</a>
-            <br />
-            <a href="https://emoji-api.com/categories/travel-places?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">all cetagories</a>
-            <br />
-            <a href="https://emoji-api.com/categories/travel-places?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">specific category</a>
-**/
