@@ -48,7 +48,7 @@ const pages = [
 const Desktop = () => {
    const classes = useStyles();
    return (
-      <Container fluid>
+      <Container fluid style={{ paddingBottom: "4em" }}>
          <Row>
             {pages.map((Page, index) =>
             (<>
