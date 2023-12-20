@@ -1,5 +1,5 @@
 
-import { useState, Suspense } from 'react'
+import React, { useState, Suspense } from 'react'
 import { createUseStyles } from 'react-jss';
 
 const WordleCheat = React.lazy(() => import('./pages/wordleOne/WordleCheat'))
