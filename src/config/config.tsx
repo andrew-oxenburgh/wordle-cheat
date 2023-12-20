@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 
-const version = '4.0.1'
+const version = '4.1.0'
 
 type PageName = {
    name: string
