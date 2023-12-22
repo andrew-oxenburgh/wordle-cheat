@@ -8,7 +8,7 @@ import PageBody from '../../components/PageBody'
 const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia'];
 // const colors: string[] = ['#000', '#444', '#888', '#aaa', '#eee']
 
-const numColors = 4
+const numColors = 5
 
 const width = 8
 const height = width
@@ -61,9 +61,13 @@ const colorCss = reduceWithIndex(
 
 
 const useStylesClicks = createUseStyles(colorCss);
+interface Props {
+   clicks: number
+}
 
-const ClickCounter: React.FC = () => {
-   const [clickCount, setClickCount] = useState(0);
+
+const ClickCounter: React.FC<Props> = ({ clicks = 0 }) => {
+   const [clickCount, setClickCount] = useState(clicks % numColors);
    const [dragged, setDragged] = useState(false);
    const classes = useStylesClicks();
 
@@ -112,7 +116,7 @@ const GridComponent: React.FC = () => {
          onMouseLeave={handleUndragMe}
       >
          {Array(numOfCells).fill(null).map((_, index) => (
-            <ClickCounter key={index} />
+            <ClickCounter key={index} clicks={index} />
          ))}
       </div>
    );

@@ -12,7 +12,6 @@ const NetflixGenre = React.lazy(() => import('./pages/netflix-genre'))
 const MarkdownPage = React.lazy(() => import('./pages/markdown-pages'))
 const PasswordGenerator = React.lazy(() => import('./pages/password-generator'))
 const EmojiSearch = React.lazy(() => import('./pages/emoji-search'))
-const Home = React.lazy(() => import('./pages/home'))
 const PrintPage = React.lazy(() => import('./pages/print-page'))
 
 import Container from 'react-bootstrap/Container'

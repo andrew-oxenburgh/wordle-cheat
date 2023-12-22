@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { pageDefinitions, version } from './config/config'
 
 import Welcome from './pages/welcome'
-import Home from './pages/home'
 
 import Loader from './components/Loader'
 import Desktop from './Desktop'
@@ -71,7 +70,7 @@ function Navigation() {
    const [expanded, setExpanded] = useState(false)
    return (
       <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto', paddingLeft: '1em' }}>
-         <Navbar.Brand href="#/">Andrew Oxenburgh <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
+         <Navbar.Brand href="#/">Andrew's Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
          <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
@@ -112,7 +111,6 @@ export default function App() {
                      }, lazyComponents)
                   }
 
-                  <Route path="/home" element={<Home />} />
                   <Route path="/welcome" element={<Welcome />} />
                   <Route path="/" element={<Welcome />} />
                   <Route path="*" element={<p >404 page not found </p>} />

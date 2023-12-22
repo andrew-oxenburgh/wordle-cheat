@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import { pageConfig, PageConfigType } from './_page-list'
 
-const version = '4.1.2'
+const version = '4.1.3'
 
 function kebabCaseToTitleCase(str: string): string {
    return str.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
@@ -53,7 +53,7 @@ const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageDefini
 export {
    pageDefinitions,
    findPageInfo,
-   version
+   version,
 }
 export type { PageConfigType }
 

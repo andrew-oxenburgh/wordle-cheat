@@ -18,6 +18,7 @@ export const _initPageList: Partial<PageConfigType>[] = [
       longDesc: [
          'This is a showcase of some doodles by me.',
          'Seriously, just sketches, you know, for fun.',
+         'I\'ve written heaps of these things, and it\'s nice to get them all under the one roof',
       ],
       link: '#/welcome',
    },
@@ -25,6 +26,7 @@ export const _initPageList: Partial<PageConfigType>[] = [
       name: 'emoji-search',
       longDesc: [
          'Very brutal look up.',
+         'I\'m using an API, but it\'s just a single call. Nothing complicated',
       ],
       link: '#/emoji-search',
    },
@@ -32,16 +34,10 @@ export const _initPageList: Partial<PageConfigType>[] = [
       name: 'print-page',
       longDesc: [
          'Print Page',
+         'Sometimes you just want to print off some text, a list or something. ',
+         'With this Doodle you can paste the text in and do some formatting using Markdown, and then print it out. ',
       ],
       link: '#/print-page',
-   },
-   {
-      name: 'home',
-      longDesc: [
-         'Home Page. An intro and what not',
-      ],
-      link: '#/home',
-      bg: 'warning',
    },
    {
       name: 'wordle-one',
@@ -62,13 +58,13 @@ export const _initPageList: Partial<PageConfigType>[] = [
       name: 'text-helper',
       longDesc: [
          'Paste in some text and it\'ll make suggestions about what to do with it.',
-         'It works, but it\'s a bit dodgy',
       ],
    },
    {
       name: 'netflix-genre',
       longDesc: [
-         'Netflix provides a bunch of codes that aren\'t in their app',
+         'Netflix provides a bunch of codes that aren\'t in their app.',
+         'Here they all, with links to Netflix.',
       ],
    },
    {
@@ -82,6 +78,8 @@ export const _initPageList: Partial<PageConfigType>[] = [
       name: 'draggey-gamey',
       longDesc: [
          'Play with this. It doesn\'t quite work on mobile',
+         'click on squares to change their colours. Drag a ' +
+         'square to change the squares over which you have dragged that colour',
       ],
    },
    {
@@ -104,7 +102,7 @@ const fulfilPageDefaults = (page: Partial<PageConfigType>) => {
          title,
       ],
       shortDesc: title,
-      link: '#/' + page.name,
+      link: '/#/' + page.name,
       underConstruction: false,
       ...page,
    }
