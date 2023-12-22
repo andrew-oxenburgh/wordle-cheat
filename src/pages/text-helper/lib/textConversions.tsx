@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
-import { Conversion } from './textHelper.types'
+import { ConversionType } from './textHelper.types'
 
-export function textConversions(s: string): Conversion[] {
+export function textConversions(s: string): ConversionType[] {
    const ret = []
 
    ret.push({
@@ -24,7 +24,7 @@ export function textConversions(s: string): Conversion[] {
       name: 'capitalize',
       value: _.capitalize(s)
    })
-ret.push({
+   ret.push({
       name: 'escape',
       value: _.escape(s)
    })

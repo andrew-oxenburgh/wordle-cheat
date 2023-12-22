@@ -1,9 +1,9 @@
 
-import pageInfo from './config'
+import {pageDefinitions} from './config'
 export { }
 describe('thingy', () => {
    test('renders learn react link', () => {
-      expect(pageInfo).toEqual({
+      expect(pageDefinitions).toEqual({
          'wordle-one': {
             name: 'wordle-one',
             title: 'Wordle One',

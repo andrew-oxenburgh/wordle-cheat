@@ -1,6 +1,17 @@
-import { PageName } from './page-list'
+import * as R from 'ramda'
+import startCase from 'lodash/startCase'
 
-export const initPageList: Partial<PageName>[] = [
+export type PageConfigType = {
+   name: string
+   title: string
+   longDesc: string[]
+   shortDesc: string
+   link: string
+   bg: string
+   underConstruction: boolean,
+}
+
+export const _initPageList: Partial<PageConfigType>[] = [
    {
       name: 'welcome',
       title: 'Andrew\'s Sketch Pad',
@@ -84,3 +95,18 @@ export const initPageList: Partial<PageName>[] = [
    //    link: '/markdown/examplePage',
    // },
 ]
+
+const fulfilPageDefaults = (page: Partial<PageConfigType>) => {
+   const title = startCase(page.name)
+   return {
+      title,
+      longDesc: [
+         title,
+      ],
+      shortDesc: title,
+      link: '#/' + page.name,
+      underConstruction: false,
+      ...page,
+   }
+}
+export const pageConfig: PageConfigType[] = R.map(fulfilPageDefaults, _initPageList)

@@ -1,6 +1,6 @@
 import { textConversions } from './textConversions'
 import { integerConversions } from './integerConversions'
-import { StringInspection, Conversion, Interpretation } from './textHelper.types'
+import { StringInspectionType, ConversionType, InterpretationType } from './textHelper.types'
 
 function notNumber(s: string): boolean {
    return isNaN(parseInt(s.trim()))
@@ -20,8 +20,8 @@ export const getLatLong = (s: string) => {
    return s.match(latLongRegex)
 };
 
-export function stringConversion(s: string): StringInspection {
-   const ret: StringInspection = {
+export function stringConversion(s: string): StringInspectionType {
+   const ret: StringInspectionType = {
       input: s,
       kinds: []
    }
@@ -29,7 +29,7 @@ export function stringConversion(s: string): StringInspection {
       return ret
    }
 
-   const kinds: Interpretation[] = []
+   const kinds: InterpretationType[] = []
 
    if (notNumber(s)) {
       kinds.push({

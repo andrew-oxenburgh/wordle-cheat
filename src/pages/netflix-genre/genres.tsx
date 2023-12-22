@@ -1,12 +1,12 @@
 // https://github.com/vrachieru/netflix-categories/blob/325d821211b6ed40ca0a03f70280678440f1f9af/categories.json
 
-export type GenreCodes = {
+export type GenreCodesType = {
   [category: string]: {
     [genre: string]: number;
   };
 };
 
-const genres: GenreCodes = {
+const genres: GenreCodesType = {
    "Action & Adventure": {
       "Action & Adventure": 1365,
       "Action Sci-Fi & Fantasy": 1568,

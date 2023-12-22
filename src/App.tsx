@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 // import './config/mvp-override.scss'
 import 'bootstrap/dist/css/bootstrap.css'
-import { version } from './config/config'
+import { pageDefinitions, version } from './config/config'
 
 import Welcome from './pages/welcome'
 import Home from './pages/home'
@@ -16,8 +16,6 @@ import Loader from './components/Loader'
 import Desktop from './Desktop'
 // dynamic because possibly big imports
 import Footer from './components/Footer'
-
-import { pageList, PageName } from './config/page-list'
 
 type LazyComponentType = {
    name: string
@@ -79,7 +77,7 @@ function Navigation() {
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                <Nav.Link href="#/">Home</Nav.Link>
                <NavDropdown title="Sketches" id="wordle-cheats">
-                  {pageList.map((page) => (
+                  {pageDefinitions.map((page) => (
                      <NavDropdown.Item key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
                   ))}
                </NavDropdown>

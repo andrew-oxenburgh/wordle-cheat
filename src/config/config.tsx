@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { pageList, PageName } from './page-list'
+import { pageConfig, PageConfigType } from './_page-list'
 
 const version = '4.1.2'
 
@@ -19,19 +19,19 @@ export type PageInfoType = {
    longDesc: string[];
 }
 
-const pageInfo: PageInfoType[] = R.reduce((acc: any, page: Partial<PageName>) => {
+const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageConfigType>) => {
    const name = page?.name
    if (!name) {
       return
    }
    const title = kebabCaseToTitleCase(name)
-   const placeInList = R.findIndex(R.propEq(page.name, 'name'))(pageList)
+   const placeInList = R.findIndex(R.propEq(page.name, 'name'))(pageConfig)
    let prevPos = (placeInList - 1)
-   prevPos = prevPos < 0 ? (pageList.length - 1) : prevPos
-   const prev = pageList[prevPos].name ? pageList[prevPos].name : pageList[prevPos]
+   prevPos = prevPos < 0 ? (pageConfig.length - 1) : prevPos
+   const prev = pageConfig[prevPos].name ? pageConfig[prevPos].name : pageConfig[prevPos]
 
-   const nextPos = (placeInList + 1) % pageList.length
-   const next = pageList[nextPos].name ? pageList[nextPos].name : pageList[nextPos]
+   const nextPos = (placeInList + 1) % pageConfig.length
+   const next = pageConfig[nextPos].name ? pageConfig[nextPos].name : pageConfig[nextPos]
 
    acc.push({
       title,
@@ -46,13 +46,15 @@ const pageInfo: PageInfoType[] = R.reduce((acc: any, page: Partial<PageName>) =>
       ...page,
    })
    return acc
-}, [], pageList)
+}, [], pageConfig)
 
-const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo)
+const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageDefinitions)
 
-export default pageInfo
 export {
-   pageInfo,
+   pageDefinitions,
    findPageInfo,
-   version,
+   version
 }
+export type { PageConfigType }
+
+export default {}

@@ -3,9 +3,9 @@ import capitalize from 'lodash/capitalize'
 import kebabCase from 'lodash/kebabCase'
 import escape from 'lodash/escape'
 
-import { Conversion } from './textHelper.types'
+import { ConversionType } from './textHelper.types'
 
-export function textConversions(s: string): Conversion[] {
+export function textConversions(s: string): ConversionType[] {
    const ret = []
 
    ret.push({

@@ -1,20 +1,20 @@
-export type Conversion = {
+export type ConversionType = {
    name: string,
    value: string
 }
 
-export type Interpretation = {
+export type InterpretationType = {
    kind: 'integer' | 'text' | 'geo'
-   conversions: Conversion[]
+   conversions: ConversionType[]
 }
 
-export type StringInspection = {
+export type StringInspectionType = {
    input: string,
-   kinds: Interpretation[]
+   kinds: InterpretationType[]
 }
 
 // @ts-ignore
-const exampleResult: StringInspection = {
+const exampleResult: StringInspectionType = {
    // input string
    input: '1',
    // all the different available types

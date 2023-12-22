@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
 
 import { stringConversion } from './lib/textUtils'
-import { StringInspection } from './lib/textHelper.types'
+import { StringInspectionType } from './lib/textHelper.types'
 import CopyableText from '../../components/CopyableText'
 
 import { createUseStyles } from 'react-jss';
@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
 });
 
 type StringInspectionProps = {
-   inspection: StringInspection;
+   inspection: StringInspectionType;
 };
 
 const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }) => {
@@ -42,7 +42,7 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
 
 export const ConversionComponent = () => {
    const [text, setText] = useState('hello, world');
-   const [conversions, setConversions] = useState<StringInspection>({
+   const [conversions, setConversions] = useState<StringInspectionType>({
       input: '',
       kinds: []
    });

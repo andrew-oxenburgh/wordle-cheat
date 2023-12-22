@@ -1,4 +1,4 @@
-import { Conversion } from './textHelper.types'
+import { ConversionType } from './textHelper.types'
 import toInteger from 'lodash/toInteger'
 
 const toDateTime = (s: string): string => {
@@ -9,7 +9,7 @@ const toDateTime = (s: string): string => {
    }
 }
 
-export function integerConversions(s: string): Conversion[] {
+export function integerConversions(s: string): ConversionType[] {
    const ret = []
 
    ret.push({

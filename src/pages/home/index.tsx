@@ -6,7 +6,7 @@ import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons/faArrow
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageBody from '../../components/PageBody'
 
-import pageInfo, { PageInfoType } from '../../config/config'
+import { PageInfoType, pageDefinitions } from '../../config/config'
 
 const HomeContent = () => {
    const mapIndexed = R.addIndex(R.map);
@@ -14,7 +14,7 @@ const HomeContent = () => {
       <Row style={{ width: '100%', margin: '0 auto', padding: 0 }}>
          {
             R.reduce((acc: any, card: PageInfoType) => {
-               acc.push (
+               acc.push(
                   <Col xs="6" sm="6" md="6" lg="6" xl="6" key={card.title} >
                      <Card
                         bg={card.bg}
@@ -43,7 +43,7 @@ const HomeContent = () => {
                   </Col>
                )
                return acc
-            }, [], pageInfo)
+            }, [], pageDefinitions)
          }
       </Row>
    )
