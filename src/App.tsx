@@ -15,6 +15,7 @@ import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
 import Welcome from './pages/welcome/Welcome'
 import Loader from './components/Loader'
+import Desktop from './Desktop'
 // import 'bootstrap/dist/css/bootstrap.css';
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
@@ -22,7 +23,7 @@ const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
 const Home = React.lazy(() => import('./pages/home/Home'))
 const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
-const Desktop = React.lazy(() => import('./Desktop'))
+// const Desktop = React.lazy(() => import('./Desktop'))
 
 import Footer from './components/Footer'
 
@@ -102,11 +103,7 @@ export default function App() {
                         <MarkdownPage />
                      </Suspense>
                   } />
-                  <Route path="/desktop" element={
-                     <Suspense fallback={<Loader />}>
-                        <Desktop />
-                     </Suspense>
-                  } />
+                  <Route path="/desktop" element={<Desktop/>} />
                </Routes>
             </main>
             <Footer />
