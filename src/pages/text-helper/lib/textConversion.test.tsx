@@ -1,4 +1,3 @@
-import * as _ from 'lodash'
 import * as R from 'ramda'
 import { stringConversion, getLatLong } from './textUtils'
 

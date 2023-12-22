@@ -1,6 +1,8 @@
-// textConversions.ts
+import camelCase from 'lodash/camelCase'
+import capitalize from 'lodash/capitalize'
+import kebabCase from 'lodash/kebabCase'
+import escape from 'lodash/escape'
 
-import * as _ from 'lodash'
 import { Conversion } from './textHelper.types'
 
 export function textConversions(s: string): Conversion[] {
@@ -16,19 +18,19 @@ export function textConversions(s: string): Conversion[] {
    })
    ret.push({
       name: 'kebabCase',
-      value: _.kebabCase(s)
+      value: kebabCase(s)
    })
    ret.push({
       name: 'camelCase',
-      value: _.camelCase(s)
+      value: camelCase(s)
    })
    ret.push({
       name: 'capitalize',
-      value: _.capitalize(s)
+      value: capitalize(s)
    })
    ret.push({
       name: 'escape',
-      value: _.escape(s)
+      value: escape(s)
    })
    return ret
 }

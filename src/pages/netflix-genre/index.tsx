@@ -2,7 +2,6 @@ import Accordion from 'react-bootstrap/Accordion';
 import PageBody from '../../components/PageBody'
 import genres from './genres'
 
-console.log('jkhkjhkjhkjhkjhdfs')
 const NetflixGenre = () => {
    return (
       <PageBody name="netflix-genre">

@@ -1,9 +1,9 @@
 import { Conversion } from './textHelper.types'
-import * as _ from 'lodash'
+import toInteger from 'lodash/toInteger'
 
 const toDateTime = (s: string): string => {
    try {
-      return new Date(_.toInteger(s)).toISOString()
+      return new Date(toInteger(s)).toISOString()
    } catch (e) {
       return 'invalid date ' + s
    }
@@ -14,7 +14,7 @@ export function integerConversions(s: string): Conversion[] {
 
    ret.push({
       name: 'locale',
-      value: _.toInteger(s).toLocaleString()
+      value: toInteger(s).toLocaleString()
    })
    ret.push({
       name: 'date',

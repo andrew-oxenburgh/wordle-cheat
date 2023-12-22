@@ -1,4 +1,3 @@
-import * as _ from 'lodash'
 import { textConversions } from './textConversions'
 import { integerConversions } from './integerConversions'
 import { StringInspection, Conversion, Interpretation } from './textHelper.types'

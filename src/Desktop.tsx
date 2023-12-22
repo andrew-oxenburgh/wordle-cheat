@@ -2,18 +2,18 @@
 import React, { useState, Suspense } from 'react'
 import { createUseStyles } from 'react-jss'
 
-const WordleCheat = React.lazy(() => import('./pages/wordleOne/WordleCheat'))
-const Cheater = React.lazy(() => import('./pages/wordleCheatTwo/Cheater'))
-const TextHelper = React.lazy(() => import('./pages/textHelper/TextHelper'))
-const DraggyGamey = React.lazy(() => import('./pages/draggyGamey/DraggyGamey'))
-const SumnerTides = React.lazy(() => import('./pages/sumnerTides/SumnerTides'))
-const Welcome = React.lazy(() => import('./pages/welcome/Welcome'))
-const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
-const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'))
-const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
-const EmojiSearch = React.lazy(() => import('./pages/emojiSearch/EmojiSearch'))
-const Home = React.lazy(() => import('./pages/home/Home'))
-const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
+const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
+const Cheater = React.lazy(() => import('./pages/wordle-cheat-two'))
+const TextHelper = React.lazy(() => import('./pages/text-helper'))
+const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey'))
+const SumnerTides = React.lazy(() => import('./pages/sumner-tides'))
+const Welcome = React.lazy(() => import('./pages/welcome'))
+const NetflixGenre = React.lazy(() => import('./pages/netflix-genre'))
+const MarkdownPage = React.lazy(() => import('./pages/markdown-pages'))
+const PasswordGenerator = React.lazy(() => import('./pages/password-generator'))
+const EmojiSearch = React.lazy(() => import('./pages/emoji-search'))
+const Home = React.lazy(() => import('./pages/home'))
+const PrintPage = React.lazy(() => import('./pages/print-page'))
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'

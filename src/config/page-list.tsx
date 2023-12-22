@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import * as _ from 'lodash'
+import startCase from 'lodash/startCase'
 import { initPageList } from './page-definitions'
 
 export type PageName = {
@@ -13,7 +13,7 @@ export type PageName = {
 }
 
 const fulfilPageDefaults = (page: Partial<PageName>) => {
-   const title = _.startCase(page.name)
+   const title = startCase(page.name)
    return {
       title,
       longDesc: [
