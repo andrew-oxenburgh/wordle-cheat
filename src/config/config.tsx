@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import { pageList, PageName } from './page-list'
 
-const version = '4.1.1'
+const version = '4.1.2'
 
 function kebabCaseToTitleCase(str: string): string {
    return str.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')

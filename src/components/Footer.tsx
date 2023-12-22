@@ -15,7 +15,7 @@ const useStyles = createUseStyles({
       bottom: 0,
       paddingRight: '0.5em',
       width: '100%',
-      maxWidth: 'var(--width-content)',
+      maxWidth: '40em',
       justifyContent: 'flex-end',
    },
 })
