@@ -1,0 +1,3 @@
+## dir's to ignore
+
+node_modules, dist, .config, .github, .upm

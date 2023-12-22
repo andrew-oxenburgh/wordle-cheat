@@ -6,6 +6,8 @@ import { createUseStyles } from 'react-jss'
 import InfoThing from './InfoThing'
 import PageHeader from './PageHeader'
 import { PageInfoType, findPageInfo } from '../config/config'
+import UnderConstructionThing from './UnderConstructionThing'
+import Footer from './Footer'
 const useStyles = createUseStyles({
    container: {
       backgroundColor: 'white',
@@ -15,7 +17,7 @@ const useStyles = createUseStyles({
       alignContent: 'center',
       justifyContent: 'center',
       height: '100%',
-      maxWidth: 'var(--thing-width)',
+      maxWidth: '30em',
       cursor: 'default',
       padding: '1em',
       overflow: 'none',
@@ -33,6 +35,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name }) => {
    return (
       <Container className={classes.container}>
          <PageHeader name={name} />
+
          <InfoThing height="50%">
             <h3>{header.shortDesc}</h3>
 
@@ -43,6 +46,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name }) => {
             </Container>
          </InfoThing>
          {children}
+         <Footer underConstruction={header.underConstruction} />
       </Container>
    )
 }

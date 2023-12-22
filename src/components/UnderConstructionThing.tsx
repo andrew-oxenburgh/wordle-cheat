@@ -1,32 +1,17 @@
-import Tooltip from 'react-bootstrap/Tooltip'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-
+import Toast from 'react-bootstrap/Toast'
 import { createUseStyles } from 'react-jss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHardHat as icon } from '@fortawesome/free-solid-svg-icons/faHardHat'
+import ToastContainer from 'react-bootstrap/ToastContainer'
+import { useEffect, useState } from 'react'
 
 const useStyles = createUseStyles({
-   '@keyframes bounce': {
-      '0%': { transform: 'translateY(0)' },
-      '50%': { transform: 'translateY(-25px)' },
-   },
    banner: {
-      animation: '$bounce 1s 3',
-      animationTimingFunction: 'ease-in-out',
-      display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
       position: 'fixed',
-      bottom: '0.4em',
-      left: '3.7em',
-      height: '2.9em',
-      color: 'black',
-      background: 'yellow',
-      width: '3em',
-      zIndex: 1000,
-      borderRadius: '4em',
-      border: '4px solid black',
+      bottom: '8em',
+      right: '3em',
    },
    icon: {
    },
@@ -35,12 +20,21 @@ const useStyles = createUseStyles({
 const UnderConstructionThing: React.FC = () => {
    const classes = useStyles()
 
-   return (
-      <div id="banner" className={classes.banner}>
-         <OverlayTrigger delay={500} overlay={<Tooltip id="banner">This Page still under construction</Tooltip>}>
-            <FontAwesomeIcon className={classes.icon} size="1x" icon={icon} />
-         </OverlayTrigger>
-      </div>
+   useEffect(()=>{
+      setOpen(true)
+   }, [])
+
+   const [open, setOpen] = useState<boolean>(true)
+
+   const onClose = () => {
+      setOpen(false)
+   }
+   
+      return (
+    <Toast bg="warning" show={open} className={classes.banner} onClose={onClose}>
+      <Toast.Header>Under Construction</Toast.Header>
+      <Toast.Body><em>This page has some work to be done on it.</em></Toast.Body>
+    </Toast>
    )
 }
 

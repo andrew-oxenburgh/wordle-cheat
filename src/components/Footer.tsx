@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss'
 import ReplitThing from './ReplitThing'
 import GithubThing from './GithubThing'
+import UnderConstructionThing from './UnderConstructionThing'
 const useStyles = createUseStyles({
    footer: {
       backgroundColor: '#333',
@@ -19,13 +20,18 @@ const useStyles = createUseStyles({
    },
 })
 
-function Footer() {
+function Footer({underConstruction}: {underConstruction: boolean}) {
    const classes = useStyles()
    return (
       <footer className={classes.footer}>
          <ReplitThing />
          &nbsp;
          <GithubThing />
+         {
+            underConstruction && (
+               <UnderConstructionThing/>
+            )
+         }
       </footer>
    )
 }

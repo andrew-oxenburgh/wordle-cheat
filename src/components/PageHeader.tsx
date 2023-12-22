@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',
       textAnchor: 'middle',
-      maxWidth: 'var(--thing-width)',
+      maxWidth: '30em',
       marginBottom: '1em',
       // paddingBottom: '0.5em',
       overflow: 'none',
@@ -44,7 +44,6 @@ interface Props {
 const PageHeader: React.FC<Props> = ({ name }) => {
    const classes = useStyles()
    const header: config.PageInfoType = config.findPageInfo(name)
-
    const nextLink: string = config.findPageInfo(header.nextPage).link
    const prevLink: string = config.findPageInfo(header.prevPage).link
    return (

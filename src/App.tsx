@@ -5,7 +5,8 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import './config/mvp-override.scss'
+// import './config/mvp-override.scss'
+import 'bootstrap/dist/css/bootstrap.css';
 import { version } from './config/config'
 
 import WordleCheat from './pages/wordleOne/WordleCheat'
@@ -16,7 +17,6 @@ import SumnerTides from './pages/sumnerTides/SumnerTides'
 import Welcome from './pages/welcome/Welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
-// import 'bootstrap/dist/css/bootstrap.css';
 // dynamic because possibly big imports
 const NetflixGenre = React.lazy(() => import('./pages/netflixGenre/NetflixGenre'))
 const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage'))
