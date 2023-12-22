@@ -9,17 +9,15 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import { version } from './config/config'
 
-// import WordleCheat from './pages/wordle-one'
-// import  from './pages/text-helper'
-import DraggyGamey from './pages/draggey-gamey'
-import SumnerTides from './pages/sumner-tides'
-import EmojiSearch from './pages/emoji-search'
 import Welcome from './pages/welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
 // dynamic because possibly big imports
 
 
+const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey'))
+const SumnerTides = React.lazy(() => import('./pages/sumner-tides'))
+const EmojiSearch = React.lazy(() => import('./pages/emoji-search'))
 const TextHelper = React.lazy(() => import('./pages/text-helper'))
 const WordleTwo = React.lazy(() => import('./pages/wordle-two'))
 const WordleOne = React.lazy(() => import('./pages/wordle-one'))
@@ -70,8 +68,6 @@ export default function App() {
 
                   <Route path="/" element={<Welcome />} />
                   <Route path="/Welcome" element={<Welcome />} />
-                  {/* <Route path="/text-helper" element={<TextHelper />} /> */}
-                  <Route path="/emoji-search" element={<EmojiSearch />} />
                   <Route path="*" element={<Welcome />} />
                   <Route path="/text-helper" element={
                      <Suspense fallback={<Loader />}>
@@ -88,7 +84,7 @@ export default function App() {
                         <WordleOne />
                      </Suspense>
                   } />
-                  <Route path="/print-page-genre" element={
+                  <Route path="/print-page" element={
                      <Suspense fallback={<Loader />}>
                         <PrintPage />
                      </Suspense>
@@ -103,8 +99,21 @@ export default function App() {
                         <PasswordGenerator />
                      </Suspense>
                   } />
-                  <Route path="/sumner-tides" element={<SumnerTides />} />
-                  <Route path="/draggy-gamey" element={<DraggyGamey />} />
+                  <Route path="/draggy-gamey" element={
+                     <Suspense fallback={<Loader />}>
+                        <DraggyGamey />
+                     </Suspense>
+                  } />
+                  <Route path="/emoji-search" element={
+                     <Suspense fallback={<Loader />}>
+                        <EmojiSearch />
+                     </Suspense>
+                  } />
+                  <Route path="/sumner-tides" element={
+                     <Suspense fallback={<Loader />}>
+                        <SumnerTides />
+                     </Suspense>
+                  } />
                   <Route path="/markdown/:pageName" element={
                      <Suspense fallback={<Loader />}>
                         <MarkdownPage />
