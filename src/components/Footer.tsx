@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
    },
 })
 
-function Footer({underConstruction}: {underConstruction: boolean}) {
+function Footer({underConstruction = false}) {
    const classes = useStyles()
    return (
       <footer className={classes.footer}>

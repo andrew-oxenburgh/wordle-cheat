@@ -9,7 +9,7 @@ export type PageName = {
    shortDesc: string
    link: string
    bg: string
-   underConstruction: boolean
+   underConstruction: boolean,
 }
 
 const fulfilPageDefaults = (page: Partial<PageName>) => {
@@ -17,13 +17,12 @@ const fulfilPageDefaults = (page: Partial<PageName>) => {
    return {
       title,
       longDesc: [
-         title
+         title,
       ],
       shortDesc: title,
       link: '#/' + page.name,
       underConstruction: false,
-      ...page
+      ...page,
    }
 }
 export const pageList: PageName[] = R.map(fulfilPageDefaults, initPageList)
-console.log(JSON.stringify(pageList, null, 2))

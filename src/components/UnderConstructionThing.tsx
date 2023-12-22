@@ -29,8 +29,8 @@ const UnderConstructionThing: React.FC = () => {
    const onClose = () => {
       setOpen(false)
    }
-   
-      return (
+
+   return (
     <Toast bg="warning" show={open} className={classes.banner} onClose={onClose}>
       <Toast.Header>Under Construction</Toast.Header>
       <Toast.Body><em>This page has some work to be done on it.</em></Toast.Body>

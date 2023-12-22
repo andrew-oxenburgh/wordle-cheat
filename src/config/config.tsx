@@ -19,8 +19,12 @@ export type PageInfoType = {
    longDesc: string[];
 }
 
-const pageInfo: PageInfoType[] = R.reduce((acc: any, page: PageName) => {
-   const title = kebabCaseToTitleCase(page.name)
+const pageInfo: PageInfoType[] = R.reduce((acc: any, page: Partial<PageName>) => {
+   const name = page?.name
+   if(!name){
+      return
+   }
+   const title = kebabCaseToTitleCase(name)
    const placeInList = R.findIndex(R.propEq(page.name, 'name'))(pageList)
    let prevPos = (placeInList - 1)
    prevPos = prevPos < 0 ? (pageList.length - 1) : prevPos
@@ -31,7 +35,7 @@ const pageInfo: PageInfoType[] = R.reduce((acc: any, page: PageName) => {
 
    acc.push({
       title,
-      link: '#/' + page.name,
+      link: '#/' + name,
       prevPage: prev,
       nextPage: next,
       underConstruction: false,

@@ -1,12 +1,12 @@
-import { PageName } from './page-list';
+import { PageName } from './page-list'
 
 export const initPageList: Partial<PageName>[] = [
    {
       name: 'welcome',
-      title: "Andrew's Sketch Pad",
+      title: 'Andrew\'s Sketch Pad',
       longDesc: [
          'This is a showcase of some doodles by me.',
-         'Seriously, just sketches',
+         'Seriously, just sketches, you know, for fun.',
       ],
       link: '#/welcome',
    },
@@ -65,6 +65,7 @@ export const initPageList: Partial<PageName>[] = [
       longDesc: [
          'Still a WIP',
       ],
+      underConstruction: true,
    },
    {
       name: 'draggy-gamey',
@@ -82,4 +83,4 @@ export const initPageList: Partial<PageName>[] = [
       name: 'blogs',
       link: '#/markdown/examplePage',
    },
-];
+]

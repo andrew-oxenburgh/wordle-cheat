@@ -1,13 +1,28 @@
+import ReactMarkdown from 'react-markdown';
 import PageBody from '../../components/PageBody'
-import Loader from '../../components/Loader'
+
 
 const Welcome = () => {
    return (
       <PageBody name="welcome">
-         <i>Here's the loading spinner you see around</i>
-         <Loader />
+         <ReactMarkdown children={`
+A Sketchpad, so I can try out a few different things.
+
+Like:
+ - replit
+ - react in a proper app
+ - replit extensions
+ - dynamic imports
+ - get better at Ramda
+ - Vite
+ - Make a couple of these things more public
+ - code chunking by using dynamic imports
+ - trying out various techniques, like 
+         `} />
       </PageBody>
    )
 }
 
 export default Welcome;
+
+

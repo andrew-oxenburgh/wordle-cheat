@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 // import './config/mvp-override.scss'
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import { version } from './config/config'
 
 import WordleCheat from './pages/wordleOne/WordleCheat'
@@ -14,6 +14,7 @@ import Cheater from './pages/wordleCheatTwo/Cheater'
 import TextHelper from './pages/textHelper/TextHelper'
 import DraggyGamey from './pages/draggyGamey/DraggyGamey'
 import SumnerTides from './pages/sumnerTides/SumnerTides'
+import EmojiSearch from './pages/emojiSearch/EmojiSearch'
 import Welcome from './pages/welcome/Welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
@@ -23,8 +24,7 @@ const MarkdownPage = React.lazy(() => import('./pages/markdownPages/MarkdownPage
 const PasswordGenerator = React.lazy(() => import('./pages/passwordGenerator/PasswordGenerator'))
 const Home = React.lazy(() => import('./pages/home/Home'))
 const PrintPage = React.lazy(() => import('./pages/printPage/PrintPage'))
-// const Desktop = React.lazy(() => import('./Desktop'))
-
+import {pageList} from './config/page-list'
 import Footer from './components/Footer'
 
 function Navigation() {
@@ -36,22 +36,11 @@ function Navigation() {
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                <Nav.Link href="#/">Home</Nav.Link>
-               <NavDropdown title="Wordle Cheats" id="wordle-cheats">
-                  <NavDropdown.Item href="#/wordle-one">My First Wordle Cheat</NavDropdown.Item>
-                  <NavDropdown.Item href="#/wordle-two">My Second Wordle Cheat</NavDropdown.Item>
-               </NavDropdown>
-               <NavDropdown title="Sundry" id="sundry">
-                  <NavDropdown.Item href="#/text-helper">Text Helper</NavDropdown.Item>
-                  <NavDropdown.Item href="#/netflix-genre">Netflix By Genre</NavDropdown.Item>
-                  <NavDropdown.Item href="#/sumner-tides">Sumner Tides</NavDropdown.Item>
-                  <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-                  <NavDropdown.Item href="#/draggy-gamey">Draggy Gamey</NavDropdown.Item>
-                  <NavDropdown.Item href="#/print-page">Print Page</NavDropdown.Item>
-                  <NavDropdown.Item href="#/welcome">Welcome</NavDropdown.Item>
-               </NavDropdown>
-               <NavDropdown title="Blogs" id="blogs">
-                  <NavDropdown.Item href="#/markdown/examplePage">Some Thoughts on Replit</NavDropdown.Item>
-               </NavDropdown>
+               <NavDropdown title="Sketches" id="wordle-cheats">
+                  {pageList.map((page, index) => (
+                     <NavDropdown.Item key={index} href={page.link}>{page.title}</NavDropdown.Item>
+                  ))}
+                  </NavDropdown>
             </Nav>
          </Navbar.Collapse>
       </Navbar>
@@ -79,11 +68,11 @@ export default function App() {
                   <Route path="/wordle-one" element={<WordleCheat />} />
                   <Route path="/wordle-two" element={<Cheater />} />
                   <Route path="/text-helper" element={<TextHelper />} />
-                  <Route path="/print-page" element={<PrintPage />} />
+                  <Route path="/emoji-search" element={<EmojiSearch />} />
                   <Route path="*" element={<TextHelper />} />
-                  <Route path="/netflix-genre" element={
+                  <Route path="/print-page-genre" element={
                      <Suspense fallback={<Loader />}>
-                        <NetflixGenre />
+                        <PrintPage />
                      </Suspense>
                   } />
                   <Route path="/netflix-genre" element={

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import Container from 'react-bootstrap/Container'
 
@@ -25,15 +25,15 @@ const useStyles = createUseStyles({
 })
 
 interface ChildrenProps {
-   children: ReactNode,
+   children?: ReactNode,
    name: string,
 }
 
-const PageBody: React.FC<ChildrenProps> = ({ children, name }) => {
+const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
    const classes = useStyles()
    const header: PageInfoType = findPageInfo(name)
    return (
-      <Container className={classes.container}>
+      <Container className={classes.container} {...args}>
          <PageHeader name={name} />
 
          <InfoThing height="50%">
