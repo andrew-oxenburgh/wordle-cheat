@@ -3,7 +3,7 @@ import React, { useState, Suspense } from 'react'
 import { createUseStyles } from 'react-jss'
 
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
-const Cheater = React.lazy(() => import('./pages/wordle-cheat-two'))
+const Cheater = React.lazy(() => import('./pages/wordle-two'))
 const TextHelper = React.lazy(() => import('./pages/text-helper'))
 const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey'))
 const SumnerTides = React.lazy(() => import('./pages/sumner-tides'))

@@ -34,7 +34,7 @@ const Guesses = () => {
    );
 };
 
-function Cheater() {
+export default function WordleTwo() {
    return (
       <>
          <PageBody name="wordle-two">
@@ -55,5 +55,3 @@ function Cheater() {
       </>
    );
 }
-
-export default Cheater;

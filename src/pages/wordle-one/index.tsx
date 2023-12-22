@@ -83,11 +83,11 @@ const useStyles = createUseStyles({
 })
 
 
-WordleCheat.propTypes = {
+WordleOne.propTypes = {
    debug: PropTypes.bool
 }
 
-function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
+export default function WordleOne({ debug = false }: { debug?: boolean }): JSX.Element {
    const [form, setForm] = useState<WordleForm>(retrieveJsonFromStorageWithDefault(WORDLE_CHEAT_FORM, FORM))
    const [words, setWords] = useState<string[]>([])
    const [unchosen, setUnchosen] = useState<string[]>([])
@@ -264,5 +264,3 @@ function WordleCheat({ debug = false }: { debug?: boolean }): JSX.Element {
       </>
    )
 }
-
-export default WordleCheat

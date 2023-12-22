@@ -9,9 +9,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import { version } from './config/config'
 
-import WordleCheat from './pages/wordle-one'
-import Cheater from './pages/wordle-cheat-two'
-import TextHelper from './pages/text-helper'
+// import WordleCheat from './pages/wordle-one'
+// import  from './pages/text-helper'
 import DraggyGamey from './pages/draggey-gamey'
 import SumnerTides from './pages/sumner-tides'
 import EmojiSearch from './pages/emoji-search'
@@ -19,11 +18,17 @@ import Welcome from './pages/welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
 // dynamic because possibly big imports
+
+
+const TextHelper = React.lazy(() => import('./pages/text-helper'))
+const WordleTwo = React.lazy(() => import('./pages/wordle-two'))
+const WordleOne = React.lazy(() => import('./pages/wordle-one'))
 const NetflixGenre = React.lazy(() => import('./pages/netflix-genre'))
 const MarkdownPage = React.lazy(() => import('./pages/markdown-pages'))
 const PasswordGenerator = React.lazy(() => import('./pages/password-generator'))
 const Home = React.lazy(() => import('./pages/home'))
 const PrintPage = React.lazy(() => import('./pages/print-page'))
+
 import {pageList} from './config/page-list'
 import Footer from './components/Footer'
 
@@ -65,11 +70,24 @@ export default function App() {
 
                   <Route path="/" element={<Welcome />} />
                   <Route path="/Welcome" element={<Welcome />} />
-                  <Route path="/wordle-one" element={<WordleCheat />} />
-                  <Route path="/wordle-two" element={<Cheater />} />
-                  <Route path="/text-helper" element={<TextHelper />} />
+                  {/* <Route path="/text-helper" element={<TextHelper />} /> */}
                   <Route path="/emoji-search" element={<EmojiSearch />} />
-                  <Route path="*" element={<TextHelper />} />
+                  <Route path="*" element={<Welcome />} />
+                  <Route path="/text-helper" element={
+                     <Suspense fallback={<Loader />}>
+                        <TextHelper />
+                     </Suspense>
+                  } />
+                  <Route path="/wordle-two" element={
+                     <Suspense fallback={<Loader />}>
+                        <WordleTwo />
+                     </Suspense>
+                  } />
+                  <Route path="/wordle-one" element={
+                     <Suspense fallback={<Loader />}>
+                        <WordleOne />
+                     </Suspense>
+                  } />
                   <Route path="/print-page-genre" element={
                      <Suspense fallback={<Loader />}>
                         <PrintPage />
