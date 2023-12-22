@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { pageList, PageName } from './pageList'
+import { pageList, PageName } from './page-list'
 
 const version = '4.1.1'
 
