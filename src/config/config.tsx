@@ -21,7 +21,7 @@ export type PageInfoType = {
 
 const pageInfo: PageInfoType[] = R.reduce((acc: any, page: Partial<PageName>) => {
    const name = page?.name
-   if(!name){
+   if (!name) {
       return
    }
    const title = kebabCaseToTitleCase(name)
@@ -48,7 +48,7 @@ const pageInfo: PageInfoType[] = R.reduce((acc: any, page: Partial<PageName>) =>
    return acc
 }, [], pageList)
 
-const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo) // => {a: 2}
+const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageInfo)
 
 export default pageInfo
 export {

@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react'
-
+import * as R from 'ramda'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -10,25 +10,64 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { version } from './config/config'
 
 import Welcome from './pages/welcome'
+import Home from './pages/home'
+
 import Loader from './components/Loader'
 import Desktop from './Desktop'
 // dynamic because possibly big imports
-
-
-const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey'))
-const SumnerTides = React.lazy(() => import('./pages/sumner-tides'))
-const EmojiSearch = React.lazy(() => import('./pages/emoji-search'))
-const TextHelper = React.lazy(() => import('./pages/text-helper'))
-const WordleTwo = React.lazy(() => import('./pages/wordle-two'))
-const WordleOne = React.lazy(() => import('./pages/wordle-one'))
-const NetflixGenre = React.lazy(() => import('./pages/netflix-genre'))
-const MarkdownPage = React.lazy(() => import('./pages/markdown-pages'))
-const PasswordGenerator = React.lazy(() => import('./pages/password-generator'))
-const Home = React.lazy(() => import('./pages/home'))
-const PrintPage = React.lazy(() => import('./pages/print-page'))
-
-import {pageList} from './config/page-list'
 import Footer from './components/Footer'
+
+import { pageList, PageName } from './config/page-list'
+
+type LazyComponentType = {
+   name: string
+   link?: string
+   lazyComponent: any,
+}
+
+const lazyComponents: LazyComponentType[] = [
+   // {
+   //    name: 'blogs',
+   //    link: '#/markdown/examplePage',
+   //    lazyComponent: React.lazy(() => (import('./pages/markdown-pages')))
+   // },
+   {
+      name: 'password-generator',
+      lazyComponent: React.lazy(() => (import('./pages/password-generator'))),
+   },
+   {
+      name: 'draggey-gamey',
+      lazyComponent: React.lazy(() => (import('./pages/draggey-gamey'))),
+   },
+   {
+      name: 'sumner-tides',
+      lazyComponent: React.lazy(() => (import('./pages/sumner-tides'))),
+   },
+   {
+      name: 'text-helper',
+      lazyComponent: React.lazy(() => (import('./pages/text-helper'))),
+   },
+   {
+      name: 'netflix-genre',
+      lazyComponent: React.lazy(() => (import('./pages/netflix-genre'))),
+   },
+   {
+      name: 'print-page',
+      lazyComponent: React.lazy(() => (import('./pages/print-page'))),
+   },
+   {
+      name: 'emoji-search',
+      lazyComponent: React.lazy(() => (import('./pages/emoji-search'))),
+   },
+   {
+      name: 'wordle-one',
+      lazyComponent: React.lazy(() => (import('./pages/wordle-one'))),
+   },
+   {
+      name: 'wordle-two',
+      lazyComponent: React.lazy(() => (import('./pages/wordle-two'))),
+   },
+]
 
 function Navigation() {
    const [expanded, setExpanded] = useState(false)
@@ -40,10 +79,10 @@ function Navigation() {
             <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                <Nav.Link href="#/">Home</Nav.Link>
                <NavDropdown title="Sketches" id="wordle-cheats">
-                  {pageList.map((page, index) => (
-                     <NavDropdown.Item key={index} href={page.link}>{page.title}</NavDropdown.Item>
+                  {pageList.map((page) => (
+                     <NavDropdown.Item key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
                   ))}
-                  </NavDropdown>
+               </NavDropdown>
             </Nav>
          </Navbar.Collapse>
       </Navbar>
@@ -59,67 +98,28 @@ export default function App() {
             </header>
             <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
                <Routes>
-                  <Route path="/home" element={
-                     <Suspense fallback={<Loader />}>
-                        <Home />
-                     </Suspense>
+                  {
+                     R.map((page: LazyComponentType) => {
+                        const path = page.link || '/' + page.name
+                        const Comp = page.lazyComponent
+                        return (
+                           <Route path={path} key={path} element={
+                              <Suspense fallback={<Loader />}>
+                                 <Comp />
+                              </Suspense>
 
-                  } />
+                           } />
 
+                        )
+                     }, lazyComponents)
+                  }
+
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/welcome" element={<Welcome />} />
                   <Route path="/" element={<Welcome />} />
-                  <Route path="/Welcome" element={<Welcome />} />
-                  <Route path="*" element={<Welcome />} />
-                  <Route path="/text-helper" element={
-                     <Suspense fallback={<Loader />}>
-                        <TextHelper />
-                     </Suspense>
-                  } />
-                  <Route path="/wordle-two" element={
-                     <Suspense fallback={<Loader />}>
-                        <WordleTwo />
-                     </Suspense>
-                  } />
-                  <Route path="/wordle-one" element={
-                     <Suspense fallback={<Loader />}>
-                        <WordleOne />
-                     </Suspense>
-                  } />
-                  <Route path="/print-page" element={
-                     <Suspense fallback={<Loader />}>
-                        <PrintPage />
-                     </Suspense>
-                  } />
-                  <Route path="/netflix-genre" element={
-                     <Suspense fallback={<Loader />}>
-                        <NetflixGenre />
-                     </Suspense>
-                  } />
-                  <Route path="/password-generator" element={
-                     <Suspense fallback={<Loader />}>
-                        <PasswordGenerator />
-                     </Suspense>
-                  } />
-                  <Route path="/draggy-gamey" element={
-                     <Suspense fallback={<Loader />}>
-                        <DraggyGamey />
-                     </Suspense>
-                  } />
-                  <Route path="/emoji-search" element={
-                     <Suspense fallback={<Loader />}>
-                        <EmojiSearch />
-                     </Suspense>
-                  } />
-                  <Route path="/sumner-tides" element={
-                     <Suspense fallback={<Loader />}>
-                        <SumnerTides />
-                     </Suspense>
-                  } />
-                  <Route path="/markdown/:pageName" element={
-                     <Suspense fallback={<Loader />}>
-                        <MarkdownPage />
-                     </Suspense>
-                  } />
-                  <Route path="/desktop" element={<Desktop/>} />
+                  <Route path="*" element={<p >404 page not found </p>} />
+                  <Route path="/desktop" element={<Desktop />} />
+
                </Routes>
             </main>
             <Footer />

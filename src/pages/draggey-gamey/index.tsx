@@ -121,7 +121,7 @@ const GridComponent: React.FC = () => {
 const DraggyGamey: React.FC = () => {
    return (
       <>
-         <PageBody name="draggy-gamey">
+         <PageBody name="draggey-gamey">
             <GridComponent />
          </PageBody>
       </>

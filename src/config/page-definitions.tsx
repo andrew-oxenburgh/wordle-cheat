@@ -68,7 +68,7 @@ export const initPageList: Partial<PageName>[] = [
       underConstruction: true,
    },
    {
-      name: 'draggy-gamey',
+      name: 'draggey-gamey',
       longDesc: [
          'Play with this. It doesn\'t quite work on mobile',
       ],
@@ -79,8 +79,8 @@ export const initPageList: Partial<PageName>[] = [
          'Generate a "good" password.',
       ],
    },
-   {
-      name: 'blogs',
-      link: '#/markdown/examplePage',
-   },
+   // {
+   //    name: 'blogs',
+   //    link: '/markdown/examplePage',
+   // },
 ]
