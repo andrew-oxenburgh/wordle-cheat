@@ -14,7 +14,7 @@ import Welcome from './pages/welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
 // dynamic because possibly big imports
-import Footer from './components/Footer'
+import PageFooter from './components/structural/PageFooter'
 
 type LazyComponentType = {
    name: string
@@ -118,7 +118,7 @@ export default function App() {
 
                </Routes>
             </main>
-            <Footer />
+            <PageFooter />
          </Router>
       </>
    )

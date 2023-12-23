@@ -1,5 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion';
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 import genres from './genres'
 
 const NetflixGenre = () => {

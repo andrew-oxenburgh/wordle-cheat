@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 import { createUseStyles } from 'react-jss'
 
 import PropTypes from 'prop-types'

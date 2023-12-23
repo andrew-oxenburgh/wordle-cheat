@@ -1,14 +1,13 @@
-import { CSSProperties, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import Container from 'react-bootstrap/Container'
 
 import { createUseStyles } from 'react-jss'
-import InfoThing from './InfoThing'
+import InfoThing from '../InfoThing'
 import PageHeader from './PageHeader'
-import { PageInfoType, findPageInfo } from '../config/config'
-import UnderConstructionThing from './UnderConstructionThing'
+import { PageInfoType, findPageInfo } from '../../config/config'
 import { ErrorBoundary } from './ErrorBoundary'
-import Footer from './Footer'
+import PageFooter from './PageFooter'
 const useStyles = createUseStyles({
    container: {
       backgroundColor: 'white',
@@ -49,7 +48,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
          <ErrorBoundary>
             {children}
          </ErrorBoundary>
-         <Footer underConstruction={header.underConstruction} />
+         <PageFooter underConstruction={header.underConstruction} />
       </Container>
    )
 }

@@ -7,7 +7,7 @@ import Table from 'react-bootstrap/Table';
 import Toast from 'react-bootstrap/Toast';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
-import PageBody from '../../components/PageBody';
+import PageBody from '../../components/structural/PageBody';
 const useStyles = createUseStyles({
    chacter: {
       // fontSize: "150%"
@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
       fontSize: "400%",
       textAlign: "center",
    },
-   alert : {
+   alert: {
       position: 'absolute',
       top: '1em',
       right: '1em',
@@ -96,7 +96,7 @@ const MyComponent = () => {
    const onCopy = (ch: string) => {
       return () => {
          navigator.clipboard.writeText(ch)
-         setAlert(ch +'Copied to clipboard!')
+         setAlert(ch + 'Copied to clipboard!')
       }
    }
 
@@ -116,7 +116,7 @@ const MyComponent = () => {
          </Toast>
 
          {alert && (
-            <Alert className={classes.alert} dismissible onClose={()=>{setAlert(null)}}>
+            <Alert className={classes.alert} dismissible onClose={() => { setAlert(null) }}>
                {alert}
             </Alert>
          )

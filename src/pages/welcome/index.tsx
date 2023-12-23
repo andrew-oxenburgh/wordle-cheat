@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 
 
 const Welcome = () => {

@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 
 const Guesses = () => {
    const [inputValue, setInputValue] = useState('');

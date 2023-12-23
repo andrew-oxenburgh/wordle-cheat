@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 import niwaExample from './niwa-dummy-data'
 
 // "lat" is required. 

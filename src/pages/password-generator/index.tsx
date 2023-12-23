@@ -10,7 +10,7 @@ import commonWords from '../../config/common-words'
 import * as R from 'ramda'
 
 import CopyablText from '../../components/CopyableText';
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
 words = R.uniq(words)

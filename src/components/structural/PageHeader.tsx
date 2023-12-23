@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import Button from 'react-bootstrap/Button'
-import * as config from '../config/config'
+import * as config from '../../config/config'
 const useStyles = createUseStyles({
    pageHeader: {
       textAlign: 'center',

@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 
 import ConversionComponent from './ConversionComponent';
-import PageBody from '../../components/PageBody'
+import PageBody from '../../components/structural/PageBody'
 
 const TextHelper = () => {
    return (
