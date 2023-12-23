@@ -50,8 +50,7 @@ interface Props {
 }
 
 /**
- * Create a field to show text, and if you click it, it copies that text into your clipboard
- * showing a message, with optional heading.
+ * Create a field to show text, and 
  */
 const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
    const classes = useStyles()

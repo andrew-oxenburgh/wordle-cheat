@@ -33,18 +33,32 @@ const meta: Meta<typeof CopyableText> = {
 export default meta;
 type Story = StoryObj<typeof CopyableText>;
 
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    text: 'lljlkjljlk',
+    text: 'button',
     // label: 'Button',
   },
+  render: () => (<>
+    <p>kjkjhkjhkhkh</p>
+    <CopyableText text="jjgjjgjhgh" />
+  </>)
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Warning: Story = {
   args: {
-    text: 'lljlkjljlk',
+    text: 'lljlkjbuttonljlk',
     warning: 'be careful',
+    time: 5000
   },
+  parameters: {
+    backgrounds: {
+      time: [
+        1000, 10000, 100000
+      ],
+    },
+  },
+
 };
