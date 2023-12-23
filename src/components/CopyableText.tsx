@@ -46,9 +46,14 @@ const useStyles = createUseStyles({
 interface Props {
    text: string
    warning?: string
+   time?: number
 }
 
-const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
+/**
+ * Create a field to show text, and if you click it, it copies that text into your clipboard
+ * showing a message, with optional heading.
+ */
+const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
    const classes = useStyles()
    const [show, setShow] = useState(false)
    const closeAlert = () => setShow(false)
@@ -60,7 +65,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '' }) => {
 
    useInterval(
       closeAlert,
-      2000,
+      time,
    )
 
    return (
