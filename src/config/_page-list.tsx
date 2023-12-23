@@ -1,17 +1,23 @@
 import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
-export type PageConfigType = {
-   name: string
-   title: string
-   longDesc: string[]
-   shortDesc: string
-   link: string
-   bg: string
-   underConstruction: boolean,
+export type PageNameType = 'home' | 'welcome' | 'emoji-search'
+   | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+   | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+
+export type PageInfoType = {
+   title: string;
+   link: string;
+   name: PageNameType;
+   bg: string,
+   nextPage: string;
+   prevPage: string;
+   underConstruction: boolean;
+   shortDesc: string;
+   longDesc: string[];
 }
 
-export const _initPageList: Partial<PageConfigType>[] = [
+export const _initPageList: Partial<PageInfoType>[] = [
    {
       name: 'welcome',
       title: 'Andrew\'s Sketch Pad',
@@ -94,7 +100,7 @@ export const _initPageList: Partial<PageConfigType>[] = [
    // },
 ]
 
-const fulfilPageDefaults = (page: Partial<PageConfigType>) => {
+const fulfilPageDefaults = (page: Partial<PageInfoType>) => {
    const title = startCase(page.name)
    return {
       title,
@@ -107,4 +113,4 @@ const fulfilPageDefaults = (page: Partial<PageConfigType>) => {
       ...page,
    }
 }
-export const pageConfig: PageConfigType[] = R.map(fulfilPageDefaults, _initPageList)
+export const pageConfig: PageInfoType[] = R.map(fulfilPageDefaults, _initPageList)

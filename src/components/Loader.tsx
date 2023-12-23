@@ -11,6 +11,7 @@ const useStyles = createUseStyles({
    },
    container: {
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       height: '20em',
@@ -21,6 +22,7 @@ const Loader = () => {
    const classes = useStyles()
    return (
       <div className={classes.container}>
+         <h1 className={classes.spinner} >Dynamic import!!!!</h1>
          <Spinner className={classes.spinner} animation="border" role="status" variant="primary">
             <span className="visually-hidden">Loading...</span>
          </Spinner>

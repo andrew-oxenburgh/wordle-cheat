@@ -7,6 +7,7 @@ import InfoThing from './InfoThing'
 import PageHeader from './PageHeader'
 import { PageInfoType, findPageInfo } from '../config/config'
 import UnderConstructionThing from './UnderConstructionThing'
+import { ErrorBoundary } from './ErrorBoundary'
 import Footer from './Footer'
 const useStyles = createUseStyles({
    container: {
@@ -45,7 +46,9 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
                ))}
             </Container>
          </InfoThing>
-         {children}
+         <ErrorBoundary>
+            {children}
+         </ErrorBoundary>
          <Footer underConstruction={header.underConstruction} />
       </Container>
    )

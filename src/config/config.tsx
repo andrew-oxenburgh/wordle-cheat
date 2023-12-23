@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { pageConfig, PageConfigType } from './_page-list'
+import { pageConfig, PageInfoType } from './_page-list'
 
 const version = '4.1.3'
 
@@ -7,19 +7,7 @@ function kebabCaseToTitleCase(str: string): string {
    return str.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 }
 
-export type PageInfoType = {
-   title: string;
-   link: string;
-   name: string;
-   bg: string,
-   nextPage: string;
-   prevPage: string;
-   underConstruction: boolean;
-   shortDesc: string;
-   longDesc: string[];
-}
-
-const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageConfigType>) => {
+const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageInfoType>) => {
    const name = page?.name
    if (!name) {
       return
@@ -55,6 +43,6 @@ export {
    findPageInfo,
    version,
 }
-export type { PageConfigType }
+export type { PageInfoType }
 
 export default {}
