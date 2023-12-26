@@ -50,7 +50,7 @@ interface Props {
 }
 
 /**
- * Create a field to show text, and 
+ * Create a field to show text, and
  */
 const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
    const classes = useStyles()

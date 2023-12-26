@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import CopyableText from '../components/CopyableText';
+import CopyableText from '../components/CopyableText'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof CopyableText> = {
@@ -28,11 +28,10 @@ const meta: Meta<typeof CopyableText> = {
       description: 'How long does the dialog show for, in ms.',
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof CopyableText>;
-
+export default meta
+type Story = StoryObj<typeof CopyableText>
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
@@ -43,22 +42,22 @@ export const Primary: Story = {
   render: () => (<>
     <p>kjkjhkjhkhkh</p>
     <CopyableText text="jjgjjgjhgh" />
-  </>)
-};
+  </>),
+}
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Warning: Story = {
   args: {
     text: 'lljlkjbuttonljlk',
     warning: 'be careful',
-    time: 5000
+    time: 5000,
   },
   parameters: {
     backgrounds: {
       time: [
-        1000, 10000, 100000
+        1000, 10000, 100000,
       ],
     },
   },
 
-};
+}
