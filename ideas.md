@@ -11,4 +11,6 @@ Jason explorere
 ### Game of life
 
 
-### Finish
+### Finish Wordle 2
+
+### Conways Game of Life 
