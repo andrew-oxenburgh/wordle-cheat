@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { pageConfig, PageInfoType } from './_page-list'
+import { pageConfig, PageInfoType, PageNameType } from './_page-list'
 
 const version = '4.1.3'
 
@@ -8,7 +8,7 @@ function kebabCaseToTitleCase(str: string): string {
 }
 
 const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageInfoType>) => {
-   const name = page?.name
+   const name: PageNameType | undefined = page?.name
    if (!name) {
       return
    }
