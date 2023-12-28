@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import express from './express-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,7 +17,8 @@ export default defineConfig({
                return `export default ${JSON.stringify(code)};`;
             }
          }
-      }
+      },
+      express('src/express/index')
    ],
    server: {
       host: '0.0.0.0',

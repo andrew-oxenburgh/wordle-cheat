@@ -16,13 +16,18 @@
       "tsc && vite build",
       "build"
     ],
-    "preview": "vite preview",
+    "old:preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "storybook-docs": "storybook dev --docs",
     "test": "jest",
     "lint": "eslint -c .eslintrc.cjs --ext .ts ./src --fix",
     "build-storybook": "storybook build --docs -o public/sb",
-    "up-version": "npm version patch --force"
+    "up-version": "npm version patch --force",
+    "dev:express": "node server-dev.js",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:express": "npm run build:client && npm run build:server",
+    "serve": "node ./src/express/dev-server.ts"
   },
   "keywords": [
     "react",
@@ -51,6 +56,7 @@
     "@storybook/test": "^7.6.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
+    "@types/express": "^4.17.21",
     "@types/jest": "^26.0.15",
     "@types/lodash": "^4.14.202",
     "@types/markdown-it": "^13.0.7",
@@ -82,9 +88,12 @@
     "storybook": "^7.6.6",
     "swr": "^2.2.4",
     "ts-jest": "^26.4.4",
-    "ts-node": "^10.9.1",
     "typescript": "^4.7.4",
     "usehooks-ts": "^2.9.1",
     "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "tsx": "^4.7.0"
   }
 }
