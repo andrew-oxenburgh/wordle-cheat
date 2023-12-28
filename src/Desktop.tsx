@@ -1,5 +1,5 @@
 
-import React, { useState, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { createUseStyles } from 'react-jss'
 
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
@@ -20,47 +20,47 @@ import Col from 'react-bootstrap/Col'
 import Loader from './components/Loader'
 
 const useStyles = createUseStyles({
-   page: {
-      paddingTop: '1em',
-      maxWidth: '50em',
-      maxHeight: '50em',
-      overflow: 'scroll',
-      // fontSize: "150%"
-   },
+    page: {
+        paddingTop: '1em',
+        maxWidth: '50em',
+        maxHeight: '50em',
+        overflow: 'scroll',
+        // fontSize: "150%"
+    },
 })
 
 const pages = [
-   WordleCheat,
-   Cheater,
-   TextHelper,
-   DraggyGamey,
-   SumnerTides,
-   Welcome,
-   NetflixGenre,
-   MarkdownPage,
-   PasswordGenerator,
-   EmojiSearch,
-   // Home,
-   PrintPage,
+    WordleCheat,
+    Cheater,
+    TextHelper,
+    DraggyGamey,
+    SumnerTides,
+    Welcome,
+    NetflixGenre,
+    MarkdownPage,
+    PasswordGenerator,
+    EmojiSearch,
+    // Home,
+    PrintPage,
 ]
 
 const Desktop = () => {
-   const classes = useStyles()
-   return (
-      <Container fluid style={{ paddingBottom: '4em' }}>
-         <Row>
-            {pages.map((Page, index) =>
-            (<>
-               <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
-                  <Suspense key={index} fallback={<Loader />}>
-                     <Page key={index} />
-                  </Suspense>
-               </Col>
-            </>
-            ))}
-         </Row>
-      </Container>
-   )
+    const classes = useStyles()
+    return (
+        <Container fluid style={{ paddingBottom: '4em' }}>
+            <Row>
+                {pages.map((Page, index) =>
+                    (<>
+                        <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
+                            <Suspense key={index} fallback={<Loader />}>
+                                <Page key={index} />
+                            </Suspense>
+                        </Col>
+                    </>
+                    ))}
+            </Row>
+        </Container>
+    )
 }
 
 export default Desktop

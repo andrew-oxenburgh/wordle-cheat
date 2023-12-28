@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
 
 import ReactMarkdown from 'react-markdown'
 import PageBody from '../../components/structural/PageBody'
 
 const MarkdownPage = () => {
-   const { pageName } = useParams();
-   const [content, setContent] = useState('');
+    const { pageName } = useParams()
+    const [content, setContent] = useState('')
 
-   useEffect(() => {
-      const loadContent = async () => {
-         try {
-            const markdownContent = await import(`./content/${pageName}.md`);
-            setContent(markdownContent.default);
-         } catch (error) {
-            setContent('# 404\nPage not found.');
-         }
-      };
+    useEffect(() => {
+        const loadContent = async () => {
+            try {
+                const markdownContent = await import(`./content/${pageName}.md`)
+                setContent(markdownContent.default)
+            } catch (error) {
+                setContent('# 404\nPage not found.')
+            }
+        }
 
-      loadContent();
-   }, [pageName]);
+        void loadContent()
+    }, [pageName])
 
-   return (
-      <PageBody name="blogs" >
-         <ReactMarkdown
-            children={content}
-         />
-      </PageBody>
-   );
-};
+    return (
+        <PageBody name="blogs" >
+            <ReactMarkdown
+                children={content}
+            />
+        </PageBody>
+    )
+}
 
-export default MarkdownPage;
+export default MarkdownPage

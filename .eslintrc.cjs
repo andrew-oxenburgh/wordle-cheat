@@ -41,6 +41,11 @@ module.exports = {
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/restrict-plus-operands": "off",
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_$" }],
+        // "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+
 
         /***/
         "@typescript-eslint/array-type": [
@@ -222,12 +227,6 @@ module.exports = {
         "one-var": [
             "error",
             "never"
-        ],
-        "prefer-arrow/prefer-arrow-functions": [
-            "error",
-            {
-                "allowStandaloneDeclarations": true
-            }
         ],
         "prefer-const": "error",
         "quotes": "off",

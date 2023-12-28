@@ -1,3 +1,8 @@
 ## dir's to ignore
 
 node_modules, dist, .config, .github, .upm, public
+
+
+// eslint-disable-next-line 
+
+to verbose eslint, prefix with DEBUG=eslint:cli-engine 

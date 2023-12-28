@@ -4,6 +4,6 @@ import{r as y,R as r}from"./index.6988984c.js";import{u as f,c as h}from"./Theme
     // label: 'Button',
   },
   render: () => <>
-    <Loader />
-  </>
+        <Loader />
+    </>
 }`,...(c=(m=t.parameters)==null?void 0:m.docs)==null?void 0:c.source}}};const B=["Primary"];export{t as Primary,B as __namedExportsOrder,w as default};

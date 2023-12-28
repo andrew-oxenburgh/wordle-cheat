@@ -1,11 +1,11 @@
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'
 import PageBody from '../../components/structural/PageBody'
 
 
 const Welcome = () => {
-   return (
-      <PageBody name="welcome">
-         <ReactMarkdown children={`
+    return (
+        <PageBody name="welcome">
+            <ReactMarkdown children={`
 A Sketchpad, so I can try out a few different things.
 
 Like:
@@ -19,10 +19,10 @@ Like:
  - code chunking by using dynamic imports
  - trying out various techniques, like 
          `} />
-      </PageBody>
-   )
+        </PageBody>
+    )
 }
 
-export default Welcome;
+export default Welcome
 
 

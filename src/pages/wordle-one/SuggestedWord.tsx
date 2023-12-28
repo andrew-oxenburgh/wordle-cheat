@@ -13,7 +13,7 @@ function SuggestedWord({word}: { word: string }): JSX.Element {
             style={{
                 fontSize: '150%',
                 marginLeft: '0.5em',
-                width: '5em'
+                width: '5em',
             }}
         >
             {word}
