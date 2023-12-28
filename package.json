@@ -7,28 +7,6 @@
   "scripts": {
     "scripts": "better-scripts"
   },
-  "better-scripts": {
-    "dev": [
-      "vite",
-      "run app"
-    ],
-    "build": [
-      "tsc && vite build",
-      "build"
-    ],
-    "old:preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "storybook-docs": "storybook dev --docs",
-    "test": "jest",
-    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix",
-    "build-storybook": "storybook build --docs -o public/sb",
-    "up-patch": "npm version patch --force",
-    "up-minor": "npm version minor --force",
-    "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
-    "build:express": "npm run build:client && npm run build:server",
-    "serve": "node ./src/express/dev-server.ts"
-  },
   "keywords": [
     "react",
     "bootstrap",
@@ -94,6 +72,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
+    "rimraf": "^5.0.5",
     "tsx": "^4.7.0"
   }
 }
