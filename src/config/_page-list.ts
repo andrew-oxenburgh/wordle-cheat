@@ -2,8 +2,9 @@ import * as R from 'ramda'
 import { startCase } from 'lodash'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'my-links'
 
 export type PageInfoType = {
     title: string
@@ -27,6 +28,14 @@ export const _initPageList: Partial<PageInfoType>[] = [
             'I\'ve written heaps of these things, and it\'s nice to get them all under the one roof',
         ],
         link: '#/welcome',
+    },
+    {
+        name: 'my-links',
+        title: 'Save Links here',
+        longDesc: [
+            'Show casing api and authorisation',
+        ],
+        link: '#/my-links',
     },
     {
         name: 'emoji-search',
@@ -85,7 +94,7 @@ export const _initPageList: Partial<PageInfoType>[] = [
         longDesc: [
             'Play with this. It doesn\'t quite work on mobile',
             'click on squares to change their colours. Drag a ' +
-         'square to change the squares over which you have dragged that colour',
+            'square to change the squares over which you have dragged that colour',
         ],
     },
     {
