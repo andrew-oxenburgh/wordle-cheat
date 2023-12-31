@@ -6,7 +6,7 @@ import express from './express-plugin'
 
 
 // https://vitejs.dev/config/
-const config = () => {
+const config = (props) => {
    return {
       plugins: [
          react({

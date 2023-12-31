@@ -1,0 +1,19 @@
+{
+	"files": [
+		{
+			"path": "src/pages/draggey-gamey/index.tsx",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 0,
+					"label": "import { useState } from 'react'\n"
+				},
+				{
+					"line": 10,
+					"column": 10,
+					"label": ""
+				}
+			]
+		}
+	]
+}
