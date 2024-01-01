@@ -1,3 +1,3 @@
-import MyLinks from "./MyLinks";
+import MyLinks from './MyLinks';
 
 export default MyLinks

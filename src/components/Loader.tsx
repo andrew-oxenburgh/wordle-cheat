@@ -18,11 +18,11 @@ const useStyles = createUseStyles({
     },
 })
 
-const Loader = () => {
+const Loader = ({ title = "Dynamic Import!!!!" }) => {
     const classes = useStyles()
     return (
         <div className={classes.container}>
-            <h1 className={classes.spinner} >Dynamic import!!!!</h1>
+            {title && <h1 className={classes.spinner} >{title}</h1>}
             <Spinner className={classes.spinner} animation="border" role="status" variant="primary">
                 <span className="visually-hidden">Loading...</span>
             </Spinner>

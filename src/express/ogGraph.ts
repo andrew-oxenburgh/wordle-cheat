@@ -1,54 +1,12 @@
 import ogs from 'open-graph-scraper'
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
 
-type Og = Partial<{
-    ogTitle: string
-    ogType: string
-    ogUrl: string
-    ogDescription: string
-    ogImage: Image[]
-    charset: string
-    requestUrl: string
-    success: boolean
-}>
-
-type Image = Partial<{
-    height: string | number
-    type: string
-    url: string
-    width: string | number
-}>
-
-export type NormalisedType = {
-    title: string
-    siteName: string
-    type: string
-    url: string
-    description: string
-    image: Image | null | undefined
-    favicon: string
-    success: boolean
-}
-
 export type FailType = {
     success: false
 }
 
-const normalise = (og: OgObject, url: string): NormalisedType => {
-    return {
-        title: og.ogTitle || og.twitterTitle || '',
-        type: og.ogType || 'website',
-        url: og.ogUrl || og.twitterUrl || url,
-        description: og.ogDescription || og.twitterDescription || '',
-        image: og.ogImage?.[0] || og.twitterImage?.[0] || null,
-        favicon: og.favicon || '',
-        success: true,
-        siteName: og.ogSiteName || og.twitterSite || ''
-    }
-}
-
 export default {
-    graph: async (url: string): Promise<NormalisedType | FailType> => {
+    graph: async (url: string): Promise<OgObject> => {
         try {
             const options = {
                 url,
@@ -59,7 +17,7 @@ export default {
                     success: false,
                 }
             }
-            return normalise(res.result, url)
+            return res.result
 
         } catch (e) {
             return {
