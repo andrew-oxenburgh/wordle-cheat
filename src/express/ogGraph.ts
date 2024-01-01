@@ -10,8 +10,8 @@ export default {
         try {
             const options = {
                 url,
-            };
-            const res = await ogs(options);
+            }
+            const res = await ogs(options)
             if (res.error) {
                 return {
                     success: false,
@@ -21,7 +21,7 @@ export default {
 
         } catch (e) {
             return {
-                success: false
+                success: false,
             }
         }
     },

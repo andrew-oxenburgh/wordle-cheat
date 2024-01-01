@@ -16,7 +16,7 @@ module.exports = {
     "upPatch": "npm version patch --force",
     "upMinor": "npm version minor --force",
     "build:client": "vite build",
-    "build:storybook": "storybook build --docs -o dist/storybook",
+    "build:storybook": "storybook build --docs -o public/sb",
     "build:clean": "rimraf dist/",
     "build:preview": "vite preview",
 }

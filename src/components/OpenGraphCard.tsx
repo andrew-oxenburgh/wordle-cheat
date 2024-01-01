@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import PageBody from './structural/PageBody';
-import { OgObject } from 'open-graph-scraper/dist/lib/types';
-import { NormalisedType, normalise } from '../pages/my-links/my-links.utils';
-import Loader from './Loader';
-import Card from 'react-bootstrap/esm/Card';
-import Image from 'react-bootstrap/esm/Image';
+import { NormalisedType } from '../pages/my-links/my-links.utils'
+import Loader from './Loader'
+import Card from 'react-bootstrap/esm/Card'
+import Image from 'react-bootstrap/esm/Image'
 
-const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean, normalisedGraph: NormalisedType | null }) => {
+const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean; normalisedGraph: NormalisedType | null }) => {
     // console.log(JSON.stringify(normalisedGraph, null, 4))
-
 
 
     if (loading) {
@@ -47,4 +43,4 @@ const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean, normali
     )
 }
 
-export default OpenGraphCard;
+export default OpenGraphCard

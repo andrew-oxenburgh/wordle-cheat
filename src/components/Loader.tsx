@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
     },
 })
 
-const Loader = ({ title = "Dynamic Import!!!!" }) => {
+const Loader = ({ title = 'Dynamic Import!!!!' }) => {
     const classes = useStyles()
     return (
         <div className={classes.container}>

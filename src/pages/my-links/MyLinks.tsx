@@ -5,12 +5,10 @@ import { NormalisedType, normalise, presets } from './my-links.utils'
 import OpenGraphCard from '../../components/OpenGraphCard'
 import Button from 'react-bootstrap/esm/Button'
 
-const regex = /^(https?:\/\/)?/i;
+const regex = /^(https?:\/\/)?/i
 export function removeProtocol(url: string) {
     return url.replace(regex, '')
 }
-
-
 
 
 const MyLinks: React.FC = () => {
@@ -37,6 +35,7 @@ const MyLinks: React.FC = () => {
 
             setOgGraph(json)
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error(error)
             setStatus(JSON.stringify(error))
         } finally {
@@ -64,15 +63,15 @@ const MyLinks: React.FC = () => {
                         <Button
                             key={preset}
                             variant="secondary"
-                            onClick={() => fillCard(preset)}>
+                            onClick={() => void fillCard(preset)}>
                             {preset}
                         </Button>
                     ))
                 }
                 <Button type="submit" className="btn btn-primary"
                     disabled={loading}
-                    onClick={() => onClick()}
-                >{loading ? "Loading..." : "Submit"}</Button>
+                    onClick={() => void onClick()}
+                >{loading ? 'Loading...' : 'Submit'}</Button>
 
                 <OpenGraphCard normalisedGraph={normalisedGraph} loading={loading} />
                 <pre>

@@ -1,4 +1,4 @@
-import { OgObject } from "open-graph-scraper/dist/lib/types"
+import { OgObject } from 'open-graph-scraper/dist/lib/types'
 
 type Image = Partial<{
     height: string | number
@@ -24,7 +24,7 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
     try {
         favicon = og.favicon ? new URL(og.favicon, og.ogUrl || og.requestUrl || url).toString() : ''
     } catch (error) {
-        // 
+        //
     }
 
     const ret = {
@@ -35,7 +35,7 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
         image: og.ogImage?.[0] || og.twitterImage?.[0] || null,
         favicon,
         success: true,
-        siteName: og.ogSiteName || og.twitterSite || ''
+        siteName: og.ogSiteName || og.twitterSite || '',
     }
     return ret
 }
@@ -44,7 +44,7 @@ export const ogTypeIcons: {
     [key: string]: string
 } = {
     'article': 'fa-newspaper-o',
-    "website": "fa-globe",
+    'website': 'fa-globe',
     'music': 'fa-music',
     'video': 'fa-video-camera',
     'image': 'fa-image',

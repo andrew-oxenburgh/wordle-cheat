@@ -1,0 +1,1 @@
+import{r as e}from"./index.6988984c.js";import{c as m}from"./ThemeProvider.27d7aa5f.js";import{j as o}from"./jsx-runtime.e697e4ce.js";const f=a=>e.exports.forwardRef((s,r)=>o.exports.jsx("div",{...s,ref:r,className:m(s.className,a)}));export{f as d};

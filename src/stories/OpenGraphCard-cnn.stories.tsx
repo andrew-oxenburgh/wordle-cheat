@@ -21,7 +21,7 @@ const meta: Meta<typeof OpenGraphCard> = {
         },
         loading: {
             control: 'boolean',
-        }
+        },
         // 👇 All Button stories expect a label arg
     },
 }
@@ -33,25 +33,25 @@ type Story = StoryObj<typeof OpenGraphCard>
 export const Initial: Story = {
     render: () => (
         <OpenGraphCard normalisedGraph={null} loading={false} />
-    )
+    ),
 }
 export const Loading: Story = {
     render: () => (
         <OpenGraphCard normalisedGraph={null} loading={true} />
-    )
+    ),
 }
 export const CnnRoot: Story = {
     name: 'cnn.com - home',
     render: () => (
-        <OpenGraphCard normalisedGraph={normalise(examples["cnn-home"].graph, 'https://www.cnn.com')} loading={false} />
-    )
+        <OpenGraphCard normalisedGraph={normalise(examples['cnn-home'].graph, 'https://www.cnn.com')} loading={false} />
+    ),
 }
 export const CnnStory: Story = {
     name: 'cnn.com - story',
     render: () => (
         <>
             <i>a cnn story</i>
-            <OpenGraphCard normalisedGraph={normalise(examples["cnn-story"].graph, 'https://www.cnn.com')} loading={false} />
+            <OpenGraphCard normalisedGraph={normalise(examples['cnn-story'].graph, 'https://www.cnn.com')} loading={false} />
         </>
-    )
+    ),
 }
