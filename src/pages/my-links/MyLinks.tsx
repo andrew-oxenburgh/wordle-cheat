@@ -29,7 +29,7 @@ const MyLinks: React.FC = () => {
 
             const path = '/api/graph?url=' + newUrl
             const response = await fetch(path)
-            const json = await response.json()
+            const json: OgObject = await response.json()
             const normalised = normalise(json, site)
             setNormalisedGraph(normalised)
 

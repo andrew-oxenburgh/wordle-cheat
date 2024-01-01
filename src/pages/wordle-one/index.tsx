@@ -23,6 +23,7 @@ import {
     WordleForm,
 } from './wordle-utils'
 import WordList from './WordList'
+import { GenericEventType } from '../../config/config-types'
 
 const wcInput = {
     background: 'green',
@@ -102,15 +103,15 @@ export default function WordleOne({ debug = false }: { debug?: boolean }): JSX.E
         putJsonInStorage(WORDLE_CHEAT_FORM, form)
     }, [form])
 
-    function changeUnusedLetters(evt: any) {
-        let value = evt.target.value
+    function changeUnusedLetters(evt: GenericEventType) {
+        let value: string = evt.target.value
         value = sanitise(value)
         setForm({ ...form, unused: value })
     }
 
     function changeKnownLetters(pos: string, n: number) {
-        return (evt: any) => {
-            const value = evt.target.value
+        return (evt: GenericEventType): void => {
+            const value: string = evt.target.value
             if (pos === 'known' && value.length > 1) {
                 return
             }

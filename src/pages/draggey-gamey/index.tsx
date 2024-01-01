@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { signal } from '@preact/signals-react'
-import { createUseStyles } from 'react-jss'
+import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 import PageBody from '../../components/structural/PageBody'
 
@@ -36,7 +36,7 @@ const useStyles = createUseStyles({
 
 const reduceWithIndex = R.addIndex(R.reduce)
 
-const colorCss = reduceWithIndex(
+const colorCss: Styles = reduceWithIndex(
     (acc: any, color: string, idx: number) => {
         acc['color_' + idx] = {
             background: color,

@@ -18,7 +18,7 @@ export const findWordsWithoutTheseLetters = async (form: WordleForm): Promise<st
     const letters = '[^' + R.uniq(ignoreLetters).join('') + ']'
     const re = new RegExp(`^${R.repeat(letters, 5).join('')}$`)
     const words = await getWords()
-    return R.reduce((acc: any, word: any) => {
+    return R.reduce((acc: string[], word: string) => {
         if (re.test(word)) {
             acc.push(word)
         }
@@ -101,7 +101,7 @@ export interface PositionEntity {
 }
 
 export interface WordleForm {
-    unused: (string)[]
+    unused: string
     position: (PositionEntity)[]
 }
 

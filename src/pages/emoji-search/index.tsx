@@ -75,7 +75,7 @@ const EmojiSearch = () => {
                     if (!data || data?.status === 'error') {
                         setResults([])
                     } else {
-                        setResults(data)
+                        setResults(data as EmojiType[])
                     }
                 } else {
                     throw new Error('Failed to fetch data')
