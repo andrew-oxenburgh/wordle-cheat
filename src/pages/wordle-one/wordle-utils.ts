@@ -11,7 +11,7 @@ const getWords = async (): Promise<string[]> => {
 const LOWERCASE_ALPHA = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 export const findWordsWithoutTheseLetters = async (form: WordleForm): Promise<string[]> => {
-    let ignoreLetters: string[] = form.unused
+    let ignoreLetters: string = form.unused
     ignoreLetters = ignoreLetters + R.map((pos: PositionEntity) => {
         return pos.known + pos.unknown
     })(form.position)
