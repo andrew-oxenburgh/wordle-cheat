@@ -107,7 +107,7 @@ export interface WordleForm {
 
 
 export const FORM: WordleForm = {
-    unused: [],
+    unused: '',
     position: [
         {
             known: '',
