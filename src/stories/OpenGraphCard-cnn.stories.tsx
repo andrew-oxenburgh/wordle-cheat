@@ -4,10 +4,6 @@ import OpenGraphCard from '../components/OpenGraphCard'
 import examples from './example-open-graph'
 import { normalise } from '../pages/my-links/my-links.utils'
 
-
-console.log(JSON.stringify(examples, null, 4))
-
-
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof OpenGraphCard> = {
     title: 'Sketches/OpenGraphCard/websites/cnn',

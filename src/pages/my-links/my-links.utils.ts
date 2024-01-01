@@ -19,7 +19,6 @@ export type NormalisedType = {
 }
 
 export const normalise = (og: OgObject, url: string): NormalisedType => {
-    console.log('entered Norm')
     let favicon = ''
 
     try {
@@ -27,7 +26,6 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
     } catch (error) {
         // 
     }
-    console.log('calced fav')
 
     const ret = {
         title: og.ogTitle || og.twitterTitle || '',
@@ -39,7 +37,6 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
         success: true,
         siteName: og.ogSiteName || og.twitterSite || ''
     }
-    console.log('NORMAISED', ret)
     return ret
 }
 
