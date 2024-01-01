@@ -95,7 +95,7 @@ const examples: ExamplesType = {
     'https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY': {
         "ogSiteName": "Spotify",
         "musicDuration": "163",
-        "musicAlbum": ["https://open.spotify.com/album/1xRcR4iSouBrfVhuqFkPAJ"],
+        "musicAlbum": ["https://open.spotify.com/album/1xRcR4iSouBrfVhuqFkPAJ"].join(', '),
         "musicAlbumTrack": "5",
         "musicReleaseDate": "2020-04-03",
         "alAndroidAppName": "Spotify",
@@ -108,7 +108,7 @@ const examples: ExamplesType = {
         "twitterTitle": "Body Like A Back Road",
         "twitterDescription": "Sam Hunt · Song · 2020",
         "twitterCard": "summary",
-        "musicMusician": ["https://open.spotify.com/artist/2kucQ9jQwuD8jWdtR9Ef38"],
+        "musicMusician": ["https://open.spotify.com/artist/2kucQ9jQwuD8jWdtR9Ef38"].join(', '),
         "ogTitle": "Body Like A Back Road",
         "ogDescription": "Sam Hunt · Song · 2020",
         "ogUrl": "https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY",
@@ -156,18 +156,18 @@ const examples: ExamplesType = {
         twitterAppUrlGooglePlay: "https://www.youtube.com/watch?v=jpXWl-skfuk",
         ogImage: [
             {
-                height: "720",
+                height: 720,
                 url: "https://i.ytimg.com/vi/jpXWl-skfuk/maxresdefault.jpg",
-                width: "1280",
+                width: 1280,
                 type: "jpg"
             }
         ],
         ogVideo: [
             {
-                height: "720",
+                height: 720,
                 type: "text/html",
                 url: "https://www.youtube.com/embed/jpXWl-skfuk",
-                width: "1280"
+                width: 1280
             }
         ],
         twitterImage: [
@@ -177,9 +177,9 @@ const examples: ExamplesType = {
         ],
         twitterPlayer: [
             {
-                height: "720",
+                height: 720,
                 url: "https://www.youtube.com/embed/jpXWl-skfuk",
-                width: "1280"
+                width: 1280
             }
         ],
         ogLocale: "en-GB",

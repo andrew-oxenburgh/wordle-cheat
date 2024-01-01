@@ -17,21 +17,25 @@ function removeProtocol(url: string) {
 
 const MyLinks: React.FC = () => {
     const [url, setUrl] = useState('')
+    const [loading, setLoading] = useState<boolean>(false)
     const [graph, setGraph] = useState<NormalisedType | null>(null)
     const [status, setStatus] = useState('')
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        const newUrl = removeProtocol(url);
-        // console.log(newUrl); // output: example.com
-
-        const path = '/api/graph?url=' + newUrl
         try {
+            setLoading(true)
+            const newUrl = removeProtocol(url);
+            // console.log(newUrl); // output: example.com
+
+            const path = '/api/graph?url=' + newUrl
             const response = await fetch(path)
             const json = await response.json()
             // console.log(json)
             setGraph(json)
         } catch (error) {
             setStatus(JSON.stringify(error))
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -68,7 +72,9 @@ const MyLinks: React.FC = () => {
                                     onChange={(event) => setUrl(event.target.value)}
                                 />
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary"
+                                disabled={loading}
+                            >{loading ? "Loading..." : "Submit"}</button>
                         </form>
                         <pre>
                             {status}

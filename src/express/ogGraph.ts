@@ -34,11 +34,11 @@ export type FailType = {
     success: false
 }
 
-const normalise = (og: OgObject): NormalisedType => {
+const normalise = (og: OgObject, url: string): NormalisedType => {
     return {
         title: og.ogTitle || og.twitterTitle || '',
-        type: og.ogType || '',
-        url: og.ogUrl || og.twitterUrl || '',
+        type: og.ogType || 'website',
+        url: og.ogUrl || og.twitterUrl || url,
         description: og.ogDescription || og.twitterDescription || '',
         image: og.ogImage?.[0] || og.twitterImage?.[0] || null,
         favicon: og.favicon || '',
@@ -59,7 +59,7 @@ export default {
                     success: false,
                 }
             }
-            return normalise(res.result)
+            return normalise(res.result, url)
 
         } catch (e) {
             return {
