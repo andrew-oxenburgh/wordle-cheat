@@ -84,7 +84,7 @@ function Navigation() {
                             <NavDropdown.Item key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
                         ))}
                     </NavDropdown>
-                    <Nav.Link href="/public/sb/" target="_blank" >Storybook</Nav.Link>
+                    <Nav.Link href="/sb/index.html" target="_blank" >Storybook</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
