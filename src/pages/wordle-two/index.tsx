@@ -34,7 +34,7 @@ const Guesses = () => {
     )
 }
 
-export default function WordleTwo() {
+const WordleTwo = (): JSX.Element => {
     return (
         <>
             <PageBody name="wordle-two">
@@ -55,3 +55,5 @@ export default function WordleTwo() {
         </>
     )
 }
+
+export default WordleTwo

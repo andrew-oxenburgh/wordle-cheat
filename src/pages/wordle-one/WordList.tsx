@@ -5,12 +5,7 @@ import * as R from 'ramda'
 
 import SuggestedWord from './SuggestedWord'
 
-WordList.propTypes = {
-    words: PropTypes.arrayOf(PropTypes.string),
-    title: PropTypes.string,
-}
-
-function WordList({ words, title }: { words: string[]; title: string }): JSX.Element {
+const WordList = ({ words, title }: { words: string[]; title: string }): JSX.Element => {
     return (
         <Card style={{ maxWidth: '40em' }}>
             <Card.Body>
@@ -32,6 +27,11 @@ function WordList({ words, title }: { words: string[]; title: string }): JSX.Ele
             </Card.Body>
         </Card>
     )
+}
+
+WordList.propTypes = {
+    words: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
 }
 
 export default WordList

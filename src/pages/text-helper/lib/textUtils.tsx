@@ -2,11 +2,11 @@ import { textConversions } from './textConversions'
 import { integerConversions } from './integerConversions'
 import { StringInspectionType, InterpretationType } from './textHelper.types'
 
-function notNumber(s: string): boolean {
+const notNumber = (s: string): boolean => {
     return isNaN(parseInt(s.trim(), 10))
 }
 
-function isInteger(s: string): boolean {
+const isInteger = (s: string): boolean => {
     return !isNaN(parseInt(s.trim(), 10))
 }
 
@@ -20,7 +20,7 @@ export const getLatLong = (s: string) => {
     return s.match(latLongRegex)
 }
 
-export function stringConversion(s: string): StringInspectionType {
+export const stringConversion = (s: string): StringInspectionType => {
     const ret: StringInspectionType = {
         input: s,
         kinds: [],

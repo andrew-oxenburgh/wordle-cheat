@@ -5,7 +5,7 @@ import escape from 'lodash/escape'
 
 import { ConversionType } from './textHelper.types'
 
-export function textConversions(s: string): ConversionType[] {
+export const textConversions = (s: string): ConversionType[] => {
     const ret = []
 
     ret.push({

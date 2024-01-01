@@ -1,4 +1,4 @@
-export default function express(path: string) {
+const express = (path: string) => {
     return {
         name: "vite3-plugin-express",
         configureServer: async (server: any) => {
@@ -14,3 +14,5 @@ export default function express(path: string) {
         },
     };
 }
+
+export default express

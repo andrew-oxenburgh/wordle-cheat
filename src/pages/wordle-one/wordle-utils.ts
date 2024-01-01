@@ -68,7 +68,7 @@ export const createRegEx = async (form: WordleForm): Promise<string[]> => {
     })([], words)
 }
 
-export function sanitise(value: string): string {
+export const sanitise = (value: string): string => {
     let v: string[] = value.toLowerCase().split('')
     v = R.uniq(v)
     v = R.without([','], v)
@@ -76,7 +76,7 @@ export function sanitise(value: string): string {
     return v.join('')
 }
 
-export function retrieveJsonFromStorageWithDefault(key: string, defaultValue: WordleForm): WordleForm {
+export const retrieveJsonFromStorageWithDefault = (key: string, defaultValue: WordleForm): WordleForm => {
     try {
         const item: (string | null) = window.localStorage.getItem(key)
         if (item) {
@@ -89,7 +89,7 @@ export function retrieveJsonFromStorageWithDefault(key: string, defaultValue: Wo
     }
 }
 
-export function putJsonInStorage(key: string, value: WordleForm): void {
+export const putJsonInStorage = (key: string, value: WordleForm): void => {
     window.localStorage.setItem(key, JSON.stringify(value))
 }
 

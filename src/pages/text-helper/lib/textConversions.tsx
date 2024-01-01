@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
 import { ConversionType } from './textHelper.types'
 
-export function textConversions(s: string): ConversionType[] {
+export const textConversions = (s: string): ConversionType[] => {
     const ret = []
 
     ret.push({

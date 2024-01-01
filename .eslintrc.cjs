@@ -41,9 +41,8 @@ module.exports = {
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/adjacent-overload-signatures": "error",
-        "prefer-arrow/prefer-arrow-functions": "off",
+        "prefer-arrow/prefer-arrow-functions": "error",
         "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_$" }],
-        // "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/ban-ts-comment": "off",
 
 

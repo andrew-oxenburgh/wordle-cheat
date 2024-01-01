@@ -20,12 +20,12 @@ const useStyles = createUseStyles({
     },
 })
 
-function PageFooter({ underConstruction = false }) {
+const PageFooter = ({ underConstruction = false }) => {
     const classes = useStyles()
     return (
         <footer className={classes.footer}>
             <ReplitThing />
-         &nbsp;
+            &nbsp;
             <GithubThing />
             {
                 underConstruction && (

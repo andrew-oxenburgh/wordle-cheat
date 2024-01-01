@@ -9,7 +9,7 @@ const toDateTime = (s: string): string => {
     }
 }
 
-export function integerConversions(s: string): ConversionType[] {
+export const integerConversions = (s: string): ConversionType[] => {
     const ret = []
 
     ret.push({

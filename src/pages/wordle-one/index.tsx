@@ -83,12 +83,7 @@ const useStyles = createUseStyles({
     },
 })
 
-
-WordleOne.propTypes = {
-    debug: PropTypes.bool,
-}
-
-export default function WordleOne({ debug = false }: { debug?: boolean }): JSX.Element {
+export const WordleOne = ({ debug = false }: { debug?: boolean }): JSX.Element => {
     const [form, setForm] = useState<WordleForm>(retrieveJsonFromStorageWithDefault(WORDLE_CHEAT_FORM, FORM))
     const [words, setWords] = useState<string[]>([])
     const [unchosen, setUnchosen] = useState<string[]>([])
@@ -103,13 +98,13 @@ export default function WordleOne({ debug = false }: { debug?: boolean }): JSX.E
         putJsonInStorage(WORDLE_CHEAT_FORM, form)
     }, [form])
 
-    function changeUnusedLetters(evt: GenericEventType) {
+    const changeUnusedLetters = (evt: GenericEventType) => {
         let value: string = evt.target.value
         value = sanitise(value)
         setForm({ ...form, unused: value })
     }
 
-    function changeKnownLetters(pos: string, n: number) {
+    const changeKnownLetters = (pos: string, n: number) => {
         return (evt: GenericEventType): void => {
             const value: string = evt.target.value
             if (pos === 'known' && value.length > 1) {
@@ -269,4 +264,8 @@ export default function WordleOne({ debug = false }: { debug?: boolean }): JSX.E
             </PageBody>
         </>
     )
+}
+
+WordleOne.propTypes = {
+    debug: PropTypes.bool,
 }

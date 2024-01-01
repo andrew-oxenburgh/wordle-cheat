@@ -70,7 +70,7 @@ const lazyComponents: LazyComponentType[] = [
     },
 ]
 
-function Navigation() {
+const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     return (
         <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto', paddingLeft: '1em' }}>
@@ -91,7 +91,7 @@ function Navigation() {
     )
 }
 
-export default function App() {
+const App = () => {
     return (
         <>
             <Router>
@@ -128,3 +128,5 @@ export default function App() {
         </>
     )
 }
+
+export default App

@@ -1,11 +1,7 @@
 import Badge from 'react-bootstrap/Badge'
 import PropTypes from 'prop-types'
 
-SuggestedWord.propTypes = {
-    word: PropTypes.string,
-}
-
-function SuggestedWord({word}: { word: string }): JSX.Element {
+const SuggestedWord = ({ word }: { word: string }): JSX.Element => {
     return (<span>
         <Badge
             as="h3"
@@ -19,6 +15,10 @@ function SuggestedWord({word}: { word: string }): JSX.Element {
             {word}
         </Badge>
     </span>)
+}
+
+SuggestedWord.propTypes = {
+    word: PropTypes.string,
 }
 
 export default SuggestedWord

@@ -6,7 +6,7 @@ import OpenGraphCard from '../../components/OpenGraphCard'
 import Button from 'react-bootstrap/esm/Button'
 
 const regex = /^(https?:\/\/)?/i
-export function removeProtocol(url: string) {
+export const removeProtocol = (url: string) => {
     return url.replace(regex, '')
 }
 
@@ -18,7 +18,7 @@ const MyLinks: React.FC = () => {
     const [ogGraph, setOgGraph] = useState<OgObject>({})
     const [status, setStatus] = useState('')
 
-    async function fillCard(site: string) {
+    const fillCard = async (site: string) => {
         try {
             if (site !== url) {
                 setUrl(site)
