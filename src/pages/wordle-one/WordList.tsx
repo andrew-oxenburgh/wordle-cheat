@@ -10,9 +10,9 @@ WordList.propTypes = {
     title: PropTypes.string,
 }
 
-function WordList({words, title}: { words: string[]; title: string }): JSX.Element {
+function WordList({ words, title }: { words: string[]; title: string }): JSX.Element {
     return (
-        <Card style={{maxWidth: '40em'}}>
+        <Card style={{ maxWidth: '40em' }}>
             <Card.Body>
                 <Card.Title as="h4">{title}</Card.Title>
                 <Card.Text>possible words = {words.length}</Card.Text>
@@ -24,7 +24,7 @@ function WordList({words, title}: { words: string[]; title: string }): JSX.Eleme
                     {
                         R.map((word: string) => {
                             return (
-                                <SuggestedWord key={word} word={word}/>
+                                <SuggestedWord key={word} word={word} />
                             )
                         })(R.take(40, words))
                     }

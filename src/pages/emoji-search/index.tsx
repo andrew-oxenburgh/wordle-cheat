@@ -69,10 +69,10 @@ const EmojiSearch = () => {
         const handle = async () => {
             try {
                 setLoading(true)
-                const response = await fetch(search(searchTerm))
+                const response: Response = await fetch(search(searchTerm))
                 if (response.ok) {
                     const data = await response.json()
-                    if (data?.status === 'error') {
+                    if (!data || data?.status === 'error') {
                         setResults([])
                     } else {
                         setResults(data)

@@ -6,3 +6,5 @@ node_modules, dist, .config, .github, .upm, public
 // eslint-disable-next-line 
 
 to verbose eslint, prefix with DEBUG=eslint:cli-engine 
+
+/* eslint @typescript-eslint/no-unsafe-member-access: "off" */

@@ -1,5 +1,8 @@
 import * as R from 'ramda'
 
+/* eslint @typescript-eslint/restrict-template-expressions: "off" */
+/* eslint @typescript-eslint/no-unsafe-return: "off" */
+
 const getWords = async (): Promise<string[]> => {
     const ret = await import('../../config/five-letter-words')
     return ret.default
@@ -9,7 +12,7 @@ const LOWERCASE_ALPHA = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 export const findWordsWithoutTheseLetters = async (form: WordleForm): Promise<string[]> => {
     let ignoreLetters: string[] = form.unused
-    ignoreLetters = ignoreLetters + R.map((pos: any) => {
+    ignoreLetters = ignoreLetters + R.map((pos: PositionEntity) => {
         return pos.known + pos.unknown
     })(form.position)
     const letters = '[^' + R.uniq(ignoreLetters).join('') + ']'
@@ -24,7 +27,7 @@ export const findWordsWithoutTheseLetters = async (form: WordleForm): Promise<st
 }
 
 export const createRegEx = async (form: WordleForm): Promise<string[]> => {
-    const unused = (fm: any, off: any) => {
+    const unused = (fm: WordleForm, off: number) => {
         if (fm.position[off].known) {
             return fm.position[off].known[0]
         }

@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { signal } from '@preact/signals-react'
 import { createUseStyles } from 'react-jss'
@@ -56,6 +55,7 @@ const colorCss = reduceWithIndex(
                 transition: 'border 3s ease',
             },
         }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return acc
     }, {}, colors)
 

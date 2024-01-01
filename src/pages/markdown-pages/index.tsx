@@ -12,7 +12,7 @@ const MarkdownPage = () => {
     useEffect(() => {
         const loadContent = async () => {
             try {
-                const markdownContent = await import(`./content/${pageName}.md`)
+                const markdownContent: { default: string } = await import(`./content/${pageName}.md`)
                 setContent(markdownContent.default)
             } catch (error) {
                 setContent('# 404\nPage not found.')

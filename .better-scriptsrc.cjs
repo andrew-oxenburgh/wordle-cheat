@@ -9,10 +9,15 @@ const scripts = (s) => {
 
 /**
  * For deploy:
- * 1. build:clean
- * 2. build:client
- * 3. build:storybook
- * 4. firebase:deploy
+ * jest
+ * lint
+ * build:clean
+ * build:client
+ * build:storybook
+ * commit
+ * upPatch
+ * commit
+ * firebase:deploy
  */
 
 module.exports = {
@@ -27,5 +32,5 @@ module.exports = {
     "build:storybook": "storybook build --docs -o dist/sb",
     "build:clean": "rimraf dist/",
     "build:preview": "vite preview",
-    "firebase:deploy": "firebase deploy --only hosting ",
+    "firebase:deploy": "firebase deploy --only hosting "
 }
