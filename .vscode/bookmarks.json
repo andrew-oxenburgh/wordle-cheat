@@ -1,17 +1,12 @@
 {
 	"files": [
 		{
-			"path": "src/pages/draggey-gamey/index.tsx",
+			"path": "src/pages/my-links/MyLinks.tsx",
 			"bookmarks": [
 				{
-					"line": 2,
+					"line": 53,
 					"column": 0,
-					"label": "import { useState } from 'react'\n"
-				},
-				{
-					"line": 10,
-					"column": 10,
-					"label": ""
+					"label": "const MyLinks: React.FC = () => {\n"
 				}
 			]
 		}
