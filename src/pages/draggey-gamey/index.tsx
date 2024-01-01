@@ -69,7 +69,6 @@ interface Props {
 const ClickCounter: React.FC<Props> = ({ clicks = 0 }) => {
     const [clickCount, setClickCount] = useState(clicks % numColors)
 
-    // @ts-ignore
     const [_, setDragged] = useState(false)
     const classes = useStylesClicks()
 
