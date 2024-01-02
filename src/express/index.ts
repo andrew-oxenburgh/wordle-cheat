@@ -1,6 +1,7 @@
 import express from 'express'
 import ogGraph from './ogGraph'
 export const app = express()
+const port = process.env.PORT || 3000
 app.get('/api/test', (_, res) =>
     res.json({ greeting: 'Hello' }
     ))
@@ -26,4 +27,8 @@ app.get('/api/graph', (req, res) => {
 
     }
     void r()
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
 })

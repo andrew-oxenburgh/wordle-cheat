@@ -7,6 +7,7 @@ import express from './express-plugin'
 
 // https://vitejs.dev/config/
 const config = (props) => {
+   console.log('props, props', props)
    return {
       plugins: [
          react({
@@ -22,10 +23,10 @@ const config = (props) => {
                }
             }
          },
-         express('src/express/index')
+         express('express.js')
       ],
       server: {
-         host: '0.0.0.0',
+         port: 5000,
       },
       css: {
          preprocessorOptions: {
