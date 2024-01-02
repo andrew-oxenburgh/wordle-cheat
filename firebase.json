@@ -3,12 +3,15 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "frameworksBackend": {
+      "region": "asia-east1"
+    }
   },
   "emulators": {
     "auth": {

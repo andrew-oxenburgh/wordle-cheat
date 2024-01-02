@@ -4,8 +4,18 @@
   "type": "module",
   "description": "A bunch of Sketches, from Andrew",
   "license": "MIT",
+  "main": "src/express/index.js",
+  "directories": {
+    "serve": "dist"
+  },
+  "files": [
+    "dist",
+    "src/express/index.js"
+  ],
   "scripts": {
-    "scripts": "better-scripts"
+    "scripts": "better-scripts",
+    "build": "vite build",
+    "ci": "echo 'put something here'"
   },
   "keywords": [
     "react",
