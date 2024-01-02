@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "scripts": "better-scripts",
-    "build": "vite",
+    "build": "vite build",
     "ci": "echo 'put something here'"
   },
   "keywords": [
