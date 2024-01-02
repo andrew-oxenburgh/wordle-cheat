@@ -1,4 +1,4 @@
-import { OgObject } from 'open-graph-scraper/dist/lib/types'
+import { MusicSongObject, OgObject } from 'open-graph-scraper/dist/lib/types'
 
 type Image = Partial<{
     height: string | number
@@ -6,6 +6,61 @@ type Image = Partial<{
     url: string
     width: string | number
 }>
+
+export type ArticleGraphType = {
+    author?: string
+    expirationTime?: string
+    modifiedTime?: string
+    publishedTime?: string
+    publisher?: string
+    section?: string
+    tag?: string
+}
+
+export const ArticleGraphFields: string[] = [
+    'author',
+    'expirationTime',
+    'modifiedTime',
+    'publishedTime',
+    'publisher',
+    'section',
+]
+
+export type MusicGraphType = {
+    album?: string
+    albumDisc?: string
+    albumTrack?: string
+    albumUrl?: string
+    creator?: string
+    duration?: string
+    musician?: string
+    releaseDate?: string
+    song?: MusicSongObject[] | null
+    audio?: string
+
+    /* These objects are ommitted */
+    // songDisc?: string | string[] | null[];
+    // songProperty?: string | string[] | null[];
+    // songTrack?: number | string[] | null[];
+    // songUrl?: string | string[] | null[];
+}
+
+export const MusicGraphFields: string[] = [
+    'album',
+    'albumDisc',
+    'albumTrack',
+    'albumUrl',
+    'creator',
+    'duration',
+    'musician',
+    'releaseDate',
+    'song',
+    'audio',
+    // 'songDisc',
+    // 'songProperty',
+    // 'songTrack',
+    // 'songUrl'
+]
 
 export type NormalisedType = {
     title: string
@@ -16,6 +71,8 @@ export type NormalisedType = {
     image: Image | null | undefined
     favicon: string
     success: boolean
+    article?: ArticleGraphType | null
+    music?: MusicGraphType | null
 }
 
 export const normalise = (og: OgObject, url: string): NormalisedType => {
@@ -27,7 +84,7 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
         //
     }
 
-    const ret = {
+    const ret: NormalisedType = {
         title: og.ogTitle || og.twitterTitle || '',
         type: og.ogType || 'website',
         url: og.ogUrl || og.twitterUrl || url,
@@ -37,6 +94,39 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
         success: true,
         siteName: og.ogSiteName || og.twitterSite || '',
     }
+
+    if (og?.ogType === 'article') {
+        ret.article = {
+            expirationTime: og.articleExpirationTime || '',
+            modifiedTime: og.articleModifiedTime || '',
+            publishedTime: og.articlePublishedTime || '',
+            publisher: og.articlePublisher || '',
+            section: og.articleSection || '',
+            tag: og.articleTag || '',
+            author: og.author || og.articleAuthor || '',
+        }
+    }
+
+    if (og?.ogType?.startsWith('music')) {
+        ret.music = {
+            album: og.musicAlbum || '',
+            albumDisc: og.musicAlbumDisc || '',
+            albumTrack: og.musicAlbumTrack || '',
+            albumUrl: og.musicAlbumUrl || '',
+            creator: og.musicCreator || '',
+            duration: og.musicDuration || '',
+            musician: og.musicMusician || '',
+            releaseDate: og.musicReleaseDate || '',
+            song: og.musicSong || null,
+            audio: og.ogAudio || '',
+            // songDisc: og.musicSongDisc || null,
+            // songProperty: og.musicSongProperty || '',
+            // songTrack: og.musicSongTrack || null,
+            // songUrl: og.musicSongUrl || null,
+        }
+    }
+
+
     return ret
 }
 

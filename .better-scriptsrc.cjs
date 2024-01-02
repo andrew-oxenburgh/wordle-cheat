@@ -14,6 +14,7 @@ const scripts = (s) => {
  * build:clean
  * build:client
  * build:storybook
+ * build:preview
  * commit
  * upPatch
  * commit
@@ -25,7 +26,7 @@ module.exports = {
     "storybook": "storybook dev",
     // "storybookDocs": "storybook dev --docs",
     "test": "jest",
-    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix",
+    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache",
     "upPatch": "npm version patch --force",
     "upMinor": "npm version minor --force",
     "build:client": "vite build",

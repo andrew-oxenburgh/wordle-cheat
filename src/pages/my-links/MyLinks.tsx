@@ -3,28 +3,39 @@ import PageBody from '../../components/structural/PageBody'
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
 import { NormalisedType, normalise, presets } from './my-links.utils'
 import OpenGraphCard from '../../components/OpenGraphCard'
-import Button from 'react-bootstrap/esm/Button'
+import Button from 'react-bootstrap/Button'
+import Dropdown from 'react-bootstrap/Dropdown'
+import Accordion from 'react-bootstrap/esm/Accordion'
+import JSONPretty from 'react-json-pretty'
+import 'react-json-pretty/themes/1337.css'
+import { createUseStyles } from 'react-jss'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
     return url.replace(regex, '')
 }
 
+const useStyles = createUseStyles({
+    accordianBody: {
+        padding: '0',
+    },
+})
+
 
 const MyLinks: React.FC = () => {
     const [url, setUrl] = useState('')
     const [loading, setLoading] = useState<boolean>(false)
     const [normalisedGraph, setNormalisedGraph] = useState<NormalisedType | null>(null)
-    const [ogGraph, setOgGraph] = useState<OgObject>({})
+    const [ogGraph, setOgGraph] = useState<OgObject | null>(null)
     const [status, setStatus] = useState('')
-
+    const classes = useStyles()
     const fillCard = async (site: string) => {
         try {
             if (site !== url) {
                 setUrl(site)
             }
             setLoading(true)
-            setOgGraph({})
+            setOgGraph(null)
             const newUrl = removeProtocol(site)
 
             const path = '/api/graph?url=' + newUrl
@@ -58,25 +69,43 @@ const MyLinks: React.FC = () => {
                     onChange={(event) => setUrl(event.target.value)}
                 />
 
-                {
-                    presets.map((preset) => (
-                        <Button
-                            key={preset}
-                            variant="secondary"
-                            onClick={() => void fillCard(preset)}>
-                            {preset}
-                        </Button>
-                    ))
-                }
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        Preset url's
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        {
+                            presets.map((preset) => (
+                                <Dropdown.Item
+                                    key={preset}
+                                    onClick={() => void fillCard(preset)}>
+                                    {preset}
+                                </Dropdown.Item>
+                            ))
+                        }
+                    </Dropdown.Menu>
+                </Dropdown>
+
                 <Button type="submit" className="btn btn-primary"
                     disabled={loading}
                     onClick={() => void onClick()}
                 >{loading ? 'Loading...' : 'Submit'}</Button>
 
                 <OpenGraphCard normalisedGraph={normalisedGraph} loading={loading} />
-                <pre>
-                    {JSON.stringify(ogGraph, null, 4)}
-                </pre>
+                {
+                    ogGraph && (
+                        <Accordion defaultActiveKey="0">
+                            <Accordion.Item eventKey="1">
+                                <Accordion.Header>Open Graph Data</Accordion.Header>
+                                <Accordion.Body className={classes.accordianBody}>
+                                    <JSONPretty id="json-pretty" data={ogGraph} />
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    )
+                }
                 <pre>
                     {status}
                 </pre>

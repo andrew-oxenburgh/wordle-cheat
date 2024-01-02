@@ -76,6 +76,7 @@
     "firebase": "^10.7.1",
     "node-fetch": "^3.3.2",
     "open-graph-scraper": "^6.3.2",
+    "react-json-pretty": "^2.2.0",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.0"
   }
