@@ -20,4 +20,4 @@ jobs:
           projectId: sketch-oxenburgh
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
-      -run: npm run preview
+      - run: npm run preview
