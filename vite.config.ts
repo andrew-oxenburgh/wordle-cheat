@@ -26,7 +26,7 @@ const config = (props) => {
          express('express.js')
       ],
       server: {
-         port: 5000,
+         // port: 5000,
       },
       css: {
          preprocessorOptions: {

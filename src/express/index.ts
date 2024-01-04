@@ -1,7 +1,10 @@
 import express from 'express'
 import ogGraph from './ogGraph'
 export const app = express()
-const port = process.env.PORT || 3000
+import ViteExpress from "vite-express";
+
+console.log('Starting EXPRESS')
+
 app.get('/api/test', (_, res) =>
     res.json({ greeting: 'Hello' }
     ))
@@ -29,6 +32,9 @@ app.get('/api/graph', (req, res) => {
     void r()
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+const server = app.listen(8088, () => {
+    console.log(`Example app listening on port 8088`)
 })
+
+// ViteExpress.bind(app, server);
+
