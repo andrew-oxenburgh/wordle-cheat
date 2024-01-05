@@ -41,34 +41,6 @@ exports.ogGraph = onRequest({
     }
 });
 
-exports.fnOgGraph = onCall({
-    cors: true,
-    origin: true,
-}, async (data, context) => {
-
-    return {
-        hello: 'https://cnn.com',
-    }
-
-    // try {
-    //     const userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
-    //     const url = data.url || 'https://cnn.com';
-    //     logger.log("fnOgGraph", url)
-    //     const fetchOptions = {
-    //         method: 'GET',
-    //         headers: {
-    //             'user-agent': userAgent,
-    //         },
-    //         cache: 'force-cache'
-    //     }
-    //     const qury = await ogs({ url, fetchOptions })
-    //     res.json(qury.result)
-    // } catch (err) {
-    //     logger.log("error", err)
-    //     res.json(err, 500)
-    // }
-})
-
 exports.ping = onRequest(async (req, res) => {
     // Grab the text parameter.
     const original = req.query.text;

@@ -12,6 +12,9 @@ import { connectFunctionsEmulator, getFunctions } from 'firebase/functions'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 
+    /**
+     * None of these keys need to be kept secret.
+     */
     // https://firebase.google.com/docs/projects/api-keys
     apiKey: 'AIzaSyD2MO4OB1SrqWP-8X1MKQUBEQ1Z2K1GP80',
     authDomain: 'sketch-oxenburgh.firebaseapp.com',
@@ -32,6 +35,6 @@ const app = initializeApp(firebaseConfig)
 // if (process.env.ENVIRONMENT === 'DEV') {
 //     console.log("DEV MODE")
 // console.log('connected to emulator');
-connectFunctionsEmulator(getFunctions(), 'localhost', 5001)
+// connectFunctionsEmulator(getFunctions(), 'localhost', 5001)
 
 // }
