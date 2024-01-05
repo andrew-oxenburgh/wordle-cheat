@@ -6,8 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 
 console.log('>>>> connecting to function emulator')
-
-connectFunctionsEmulator(getFunctions(), '127.0.0.1', 5001)
+import './config/firebase'
+// connectFunctionsEmulator(getFunctions(), '127.0.0.1', 5001)
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 // import './config/mvp-override.scss'

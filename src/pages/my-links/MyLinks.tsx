@@ -9,12 +9,8 @@ import Accordion from 'react-bootstrap/esm/Accordion'
 import JSONPretty from 'react-json-pretty'
 import 'react-json-pretty/themes/1337.css'
 import { createUseStyles } from 'react-jss'
-// import '../../config/firebase'
 // import { initializeApp } from 'firebase/app'
 // const app = initializeApp()
-import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
-
-connectFunctionsEmulator(getFunctions(), '127.0.0.1', 5001)
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -44,25 +40,20 @@ const MyLinks: React.FC = () => {
             setLoading(true)
             setOgGraph(null)
             const newUrl = removeProtocol(site)
-            const functions = getFunctions();
-            const callable = httpsCallable(functions, 'fnOgGraph');
-            const response = await callable({ url: newUrl }) as OgObject
-            console.log('response => ', response)
-            if (response.error) {
-                setStatus("some error")
-                setOgGraph(null)
-                return
-            }
-            const normalised = normalise(response, site)
+
+            const path = 'http://127.0.0.1:5001/sketch-oxenburgh/us-central1/ogGraph?url=' + newUrl
+
+
+            const response = await fetch(path)
+            const json: OgObject = await response.json()
+            const normalised = normalise(json, site)
             setNormalisedGraph(normalised)
-            setOgGraph(response)
+
+            setOgGraph(json)
         } catch (error) {
             // eslint-disable-next-line no-console
             console.error(error)
             setStatus(JSON.stringify(error))
-            setNormalisedGraph(null)
-            setOgGraph(null)
-
         } finally {
             setLoading(false)
         }
