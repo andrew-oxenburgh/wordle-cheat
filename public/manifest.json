@@ -1,6 +1,6 @@
 {
-  "name": "Andrew Oxenburgh's sandbox app",
-  "short_name": "Lot's of little tools.",
+  "name": "Andrew's Sketch Pad",
+  "short_name": "Like an artist!!",
   "start_url": "/",
   "background_color": "#eae4ff",
   "theme_color": "#eae4ff",
@@ -17,9 +17,9 @@
       "type": "image/png"
     },
     {
-    "src": "icon.svg",
-    "sizes": "any",
-    "type": "image/svg"
-  }
-]
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg"
+    }
+  ]
 }
