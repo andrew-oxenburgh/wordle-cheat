@@ -23,13 +23,6 @@ exports.ogGraph = onRequest({
     cors: true,
     origin: true,
 }, async (req, res) => {
-    logger.log('khjfdkjhdsfkhkjdsfhkjshdfkjhdskjfhkjsdhfkjhdskjh', {})
-
-    req.set('Access-Control-Allow-Origin', '*');
-
-
-    logger.log('khjfdkjhdsfkhkjdsfhkjshdfkjhdskjfhkjsdhfkjhdskjh')
-
     try {
         const userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         const url = req.query.url || 'https://cnn.com';

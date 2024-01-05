@@ -41,7 +41,7 @@ const MyLinks: React.FC = () => {
             setOgGraph(null)
             const newUrl = removeProtocol(site)
 
-            const path = 'http://127.0.0.1:5001/sketch-oxenburgh/us-central1/ogGraph?url=' + newUrl
+            const path = 'http://localhost:5001/sketch-oxenburgh/us-central1/ogGraph?url=' + newUrl
 
 
             const response = await fetch(path)

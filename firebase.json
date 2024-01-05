@@ -51,6 +51,16 @@
       "source": "**/*.*",
       "headers": [
         {
+          "key": "allowedHeaders",
+          "value": [
+            "Content-Type"
+          ]
+        },
+        {
+          "key": "origin",
+          "value": "*"
+        },
+        {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
         }

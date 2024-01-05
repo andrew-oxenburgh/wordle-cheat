@@ -32,6 +32,6 @@ const app = initializeApp(firebaseConfig)
 // if (process.env.ENVIRONMENT === 'DEV') {
 //     console.log("DEV MODE")
 // console.log('connected to emulator');
-connectFunctionsEmulator(getFunctions(), '127.0.0.1', 5001)
+connectFunctionsEmulator(getFunctions(), 'localhost', 5001)
 
 // }
