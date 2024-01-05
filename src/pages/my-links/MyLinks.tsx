@@ -9,6 +9,12 @@ import Accordion from 'react-bootstrap/esm/Accordion'
 import JSONPretty from 'react-json-pretty'
 import 'react-json-pretty/themes/1337.css'
 import { createUseStyles } from 'react-jss'
+// import '../../config/firebase'
+// import { initializeApp } from 'firebase/app'
+// const app = initializeApp()
+import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
+
+connectFunctionsEmulator(getFunctions(), '127.0.0.1', 5001)
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -30,6 +36,7 @@ const MyLinks: React.FC = () => {
     const [status, setStatus] = useState('')
     const classes = useStyles()
     const fillCard = async (site: string) => {
+        // app
         try {
             if (site !== url) {
                 setUrl(site)
@@ -37,18 +44,25 @@ const MyLinks: React.FC = () => {
             setLoading(true)
             setOgGraph(null)
             const newUrl = removeProtocol(site)
-
-            const path = '/api/graph?url=' + newUrl
-            const response = await fetch(path)
-            const json: OgObject = await response.json()
-            const normalised = normalise(json, site)
+            const functions = getFunctions();
+            const callable = httpsCallable(functions, 'fnOgGraph');
+            const response = await callable({ url: newUrl }) as OgObject
+            console.log('response => ', response)
+            if (response.error) {
+                setStatus("some error")
+                setOgGraph(null)
+                return
+            }
+            const normalised = normalise(response, site)
             setNormalisedGraph(normalised)
-
-            setOgGraph(json)
+            setOgGraph(response)
         } catch (error) {
             // eslint-disable-next-line no-console
             console.error(error)
             setStatus(JSON.stringify(error))
+            setNormalisedGraph(null)
+            setOgGraph(null)
+
         } finally {
             setLoading(false)
         }
