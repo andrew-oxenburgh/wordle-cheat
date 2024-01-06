@@ -4,9 +4,11 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { pageDefinitions, version } from './config/config'
 import { navBarStyle } from './App'
+import { useLocation, Location } from 'react-router-dom'
 
 export const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
+    const location: Location = useLocation()
     return (
         <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={navBarStyle}>
             <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
@@ -16,7 +18,9 @@ export const Navigation = () => {
                     <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
                         {pageDefinitions.map((page) => (
-                            <NavDropdown.Item key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
+                            <NavDropdown.Item
+                                active={true === page.link.endsWith(location.pathname)}
+                                key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
                         ))}
                     </NavDropdown>
                     <Nav.Link href="/sb/index.html" target="_blank">Storybook</Nav.Link>
