@@ -13,13 +13,18 @@ export const convertOgObjectToOgArray = (inp: any, prefix = ''): TwoStringColumn
         if (['string', 'number'].indexOf(typeof val) >= 0) {
             acc.push([(prefix + newKey).toString(), val.toString() as string])
         } else if (Array.isArray(val)) {
-            // val is array of objects
+            // val is array of strings
+            if (typeof val[0] === 'string') {
+                acc.push([newKey, val[0]])
+            } else {
+                // val is array of objects
 
-            const sub = R.map((img: any) => {
-                return [...convertOgObjectToOgArray(img, prefix + newKey + ':')]
-            }, val)
+                const sub = R.map((img: any) => {
+                    return [...convertOgObjectToOgArray(img, prefix + newKey + ':')]
+                }, val)
 
-            acc.push(...sub[0])
+                acc.push(...sub[0])
+            }
         }
         return acc
     }, [] as TwoStringColumns, R.keys(inp))

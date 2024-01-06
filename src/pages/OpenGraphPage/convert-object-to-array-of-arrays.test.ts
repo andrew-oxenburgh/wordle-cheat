@@ -2,6 +2,17 @@ import { OgObject } from 'open-graph-scraper/dist/lib/types'
 import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
 import { TwoStringColumns } from './open-graph.types'
 
+test('convert array', () => {
+    const input = {
+        'musicAlbum': ['https://example.com/image.png'],
+    }
+    const expectedOutput: TwoStringColumns = [
+        ['music:album', 'https://example.com/image.png'],
+    ]
+    const res = convertOgObjectToOgArray(input)
+    expect(res).toStrictEqual(expectedOutput)
+
+})
 test('convert images', () => {
     const input: OgObject = {
         'ogImage': [{
@@ -108,6 +119,10 @@ test('convert spotify', () => {
             '163',
         ],
         [
+            "music:album",
+            "https://open.spotify.com/album/1xRcR4iSouBrfVhuqFkPAJ"
+        ],
+        [
             'music:album:track',
             '5',
         ],
@@ -156,6 +171,10 @@ test('convert spotify', () => {
             'summary',
         ],
         [
+            "music:musician",
+            "https://open.spotify.com/artist/2kucQ9jQwuD8jWdtR9Ef38",
+        ],
+        [
             'og:title',
             'Body Like A Back Road',
         ],
@@ -193,6 +212,7 @@ test('convert spotify', () => {
         ],
     ]
     const newLocal = convertOgObjectToOgArray(spotify)
+    console.log('newLocal', newLocal)
     expect(newLocal).toStrictEqual(expectedOutput)
 })
 
