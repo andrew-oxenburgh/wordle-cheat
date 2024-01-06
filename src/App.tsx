@@ -75,7 +75,7 @@ const lazyComponents: LazyComponentType[] = [
 const navBarStyle = {
     padding: '0 3em',
     borderRadius: '3px',
-    width: 'fit-content',
+    width: '30em',
     margin: 'auto'
 }
 
@@ -107,7 +107,7 @@ const App = () => {
                 <header style={{ padding: 0 }}>
                     <Navigation />
                 </header>
-                <main style={{ padding: 0, marginBottom: '25px', backgroundColor: '#eae4ff' }}>
+                <main style={{ padding: 0, backgroundColor: '#eae4ff' }}>
                     <Routes>
                         {
                             R.map((page: LazyComponentType) => {

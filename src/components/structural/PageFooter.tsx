@@ -23,6 +23,7 @@ const useStyles = createUseStyles({
         maxWidth: '30em',
         justifyContent: 'flex-end',
         display: 'flex',
+        borderRadius: '3px',
     },
 })
 

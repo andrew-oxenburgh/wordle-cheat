@@ -12,9 +12,8 @@ import ReactMarkdown from 'react-markdown'
 const useStyles = createUseStyles({
     container: {
         backgroundColor: 'white',
-        borderRadius: '1em',
+        borderRadius: '3px',
         border: '1px solid black',
-        margin: '0 auto 4em auto',
         alignContent: 'center',
         justifyContent: 'center',
         height: '100%',
@@ -35,15 +34,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
     const header: PageInfoType = findPageInfo(name)
     return (
         <Container className={classes.container} {...args}>
-            <PageHeader name={name} />
-
-            <InfoThing height={header.height}>
-                <Container>
-                    <ReactMarkdown
-                        children={header.longDesc}
-                    />
-                </Container>
-            </InfoThing>
+            <PageHeader name={name} desc={header.longDesc} />
             <ErrorBoundary>
                 {children}
             </ErrorBoundary>
