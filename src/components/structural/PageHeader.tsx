@@ -1,12 +1,10 @@
 import { createUseStyles } from 'react-jss'
-import Button, { ButtonProps } from 'react-bootstrap/Button'
 import * as config from '../../config/config'
 import InfoThing from '../InfoThing'
 import Container from 'react-bootstrap/esm/Container'
 import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
-import OverlayTrigger from 'react-bootstrap/esm/OverlayTrigger'
-import Tooltip from 'react-bootstrap/esm/Tooltip'
+import { ButtonWithTooltip } from '../ButtonWithTooltip'
 
 const buttonStyle = {
     fontWeight: 'bold',
@@ -104,31 +102,3 @@ const PageHeader: React.FC<Props> = ({ name }) => {
 }
 
 export default PageHeader
-
-type ButtonWithTooltipProps = {
-    tipText: string | JSX.Element
-    children: string | JSX.Element
-    placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto'
-} & ButtonProps
-
-const ButtonWithTooltip: React.FC<ButtonWithTooltipProps> = (
-    { placement = 'bottom',
-        tipText,
-        children,
-        ...args }) => {
-
-    const tooltip = (
-        <Tooltip id="tooltip">
-            {tipText}
-        </Tooltip>
-    )
-
-    return <OverlayTrigger placement={placement} overlay={tooltip}>
-        <Button
-            {...args}
-        >
-            {children}
-        </Button>
-    </OverlayTrigger>
-}
-
