@@ -1,24 +1,18 @@
-import React, { Suspense, useState } from 'react'
-import * as R from 'ramda'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import React from 'react'
 
 import './config/firebase'
 
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 // import './config/mvp-override.scss'
 import 'bootstrap/dist/css/bootstrap.css'
-import { pageDefinitions, version } from './config/config'
 
-import Welcome from './pages/welcome'
 
-import Loader from './components/Loader'
-import Desktop from './Desktop'
 // dynamic because possibly big imports
 import PageFooter from './components/structural/PageFooter'
+import { Navigation } from './Navigation'
+import { WCRoutes } from './WCRoutes'
 
-type LazyComponentType = {
+export type LazyComponentType = {
     name: string
     link?: string
     lazyComponent: any
@@ -72,32 +66,11 @@ const lazyComponents: LazyComponentType[] = [
     },
 ]
 
-const navBarStyle = {
+export const navBarStyle = {
     padding: '0 3em',
     borderRadius: '3px',
     width: '30em',
     margin: 'auto',
-}
-
-const Navigation = () => {
-    const [expanded, setExpanded] = useState(false)
-    return (
-        <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={navBarStyle}>
-            <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
-            <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
-                    <Nav.Link href="#/">Home</Nav.Link>
-                    <NavDropdown title="Sketches" id="wordle-cheats">
-                        {pageDefinitions.map((page) => (
-                            <NavDropdown.Item key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
-                        ))}
-                    </NavDropdown>
-                    <Nav.Link href="/sb/index.html" target="_blank" >Storybook</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    )
 }
 
 const App = () => {
@@ -108,29 +81,7 @@ const App = () => {
                     <Navigation />
                 </header>
                 <main style={{ padding: 0, backgroundColor: '#eae4ff' }}>
-                    <Routes>
-                        {
-                            R.map((page: LazyComponentType) => {
-                                const path = page.link || '/' + page.name
-                                const Comp = page.lazyComponent
-                                return (
-                                    <Route path={path} key={path} element={
-                                        <Suspense fallback={<Loader />}>
-                                            <Comp />
-                                        </Suspense>
-
-                                    } />
-
-                                )
-                            }, lazyComponents)
-                        }
-
-                        <Route path="/welcome" element={<Welcome />} />
-                        <Route path="/" element={<Welcome />} />
-                        <Route path="*" element={<p >404 page not found </p>} />
-                        <Route path="/desktop" element={<Desktop />} />
-
-                    </Routes>
+                    <WCRoutes lazyComponents={lazyComponents} />
                 </main>
                 <PageFooter />
             </Router>
@@ -139,3 +90,5 @@ const App = () => {
 }
 
 export default App
+
+
