@@ -3,10 +3,16 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { pageDefinitions, version } from './config/config'
-import { navBarStyle } from './App'
 import { useLocation, Location } from 'react-router-dom'
 
-export const Navigation = () => {
+export const navBarStyle = {
+    padding: '0 3em',
+    borderRadius: '3px',
+    width: '30em',
+    margin: 'auto',
+}
+
+const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     const location: Location = useLocation()
     return (
@@ -29,3 +35,5 @@ export const Navigation = () => {
         </Navbar>
     )
 }
+
+export default Navigation

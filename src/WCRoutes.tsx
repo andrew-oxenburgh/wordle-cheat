@@ -4,9 +4,9 @@ import { Routes, Route } from 'react-router-dom'
 import Welcome from './pages/welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'
-import { LazyComponentType } from './App'
+import { LazyComponentType } from './lazyComponents'
 
-export const WCRoutes = ({ lazyComponents }: { lazyComponents: LazyComponentType[] }) => {
+const WCRoutes = ({ lazyComponents }: { lazyComponents: LazyComponentType[] }) => {
     return <Routes>
         {R.map((page: LazyComponentType) => {
             const path = page.link || '/' + page.name
@@ -25,3 +25,5 @@ export const WCRoutes = ({ lazyComponents }: { lazyComponents: LazyComponentType
 
     </Routes>
 }
+
+export default WCRoutes
