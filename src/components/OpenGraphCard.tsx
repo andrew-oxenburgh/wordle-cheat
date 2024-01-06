@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ArticleGraphFields, ArticleGraphType, MusicGraphFields, MusicGraphType, NormalisedType } from '../pages/my-links/my-links.utils'
+import { ArticleGraphFields, ArticleGraphType, MusicGraphFields, MusicGraphType, NormalisedType } from '../pages/OpenGraphPage/open-graph.utils'
 import Loader from './Loader'
 import Card from 'react-bootstrap/esm/Card'
 import Image from 'react-bootstrap/esm/Image'
@@ -76,14 +76,13 @@ const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean; normali
         <Card key={JSON.stringify(normalisedGraph)}>
             <Card.Header>
                 {normalisedGraph?.favicon &&
-                    <Image width="32" src={normalisedGraph.favicon} />}
+                    <Image max-width="32" src={normalisedGraph.favicon} />}
                 {normalisedGraph?.siteName &&
                     <span>{' ' + normalisedGraph.siteName}</span>}
             </Card.Header>
             <Card.Body>
                 {normalisedGraph.title && <h3>{normalisedGraph?.title}</h3>}
                 <p>{normalisedGraph?.description}</p>
-                <p>{normalisedGraph?.type}</p>
                 <p>{normalisedGraph?.siteName}</p>
                 {normalisedGraph.url && <Card.Link href={normalisedGraph.url} target="_blank" rel="noopener noreferrer">{normalisedGraph.url}</Card.Link>}
             </Card.Body>

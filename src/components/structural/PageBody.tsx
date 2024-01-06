@@ -8,6 +8,7 @@ import PageHeader from './PageHeader'
 import { PageInfoType, findPageInfo } from '../../config/config'
 import { ErrorBoundary } from './ErrorBoundary'
 import PageFooter from './PageFooter'
+import ReactMarkdown from 'react-markdown'
 const useStyles = createUseStyles({
     container: {
         backgroundColor: 'white',
@@ -36,13 +37,12 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
         <Container className={classes.container} {...args}>
             <PageHeader name={name} />
 
-            <InfoThing height="50%">
-                <h3>{header.shortDesc}</h3>
-
+            <InfoThing height={header.height}>
                 <Container>
-                    {header.longDesc.map((desc, index) => (
-                        <p key={index}>{desc}</p>
-                    ))}
+                    <ReactMarkdown
+                        children={header.longDesc}
+                    />
+
                 </Container>
             </InfoThing>
             <ErrorBoundary>

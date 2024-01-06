@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
+// import { getAnalytics } from 'firebase/analytics'
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions'
 // import dotenv from 'dotenv'
 // dotenv.config()
@@ -35,6 +35,8 @@ const app = initializeApp(firebaseConfig)
 // if (process.env.ENVIRONMENT === 'DEV') {
 //     console.log("DEV MODE")
 // console.log('connected to emulator');
-// connectFunctionsEmulator(getFunctions(), 'localhost', 5001)
+connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
 
 // }
+
+export default app

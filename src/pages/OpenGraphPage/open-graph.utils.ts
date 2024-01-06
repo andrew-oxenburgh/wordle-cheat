@@ -1,4 +1,6 @@
+import { getFunctions, httpsCallable } from 'firebase/functions'
 import { MusicSongObject, OgObject } from 'open-graph-scraper/dist/lib/types'
+import app from '../../config/firebase'
 
 type Image = Partial<{
     height: string | number
@@ -156,3 +158,17 @@ export const presets: string[] = [
     'https://react-bootstrap.netlify.app/docs/components/dropdowns/',
     'https://edition.cnn.com/2023/12/31/asia/india-pakistan-bangladesh-srilanka-elections-2024-intl-hnk/index.html',
 ]
+
+export const getOgGraph = async (url: string): Promise<OgObject> => {
+    const functions = getFunctions(app)
+    const httpCaller = httpsCallable(functions, 'ogGraph')
+
+    const result = await httpCaller({ url }) as {
+        data: {
+            graph: OgObject
+        }
+    }
+    const json = result?.data.graph || { success: false } as OgObject
+    return json
+}
+

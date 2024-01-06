@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
+
 import express from 'express'
 import ogGraph from './ogGraph'
 export const app = express()
-import ViteExpress from "vite-express";
+// import ViteExpress from 'vite-express'
 
-console.log('Starting EXPRESS')
+console.info('Starting EXPRESS')
 
 app.get('/api/test', (_, res) =>
     res.json({ greeting: 'Hello' }
@@ -32,9 +34,9 @@ app.get('/api/graph', (req, res) => {
     void r()
 })
 
-const server = app.listen(8088, () => {
-    console.log(`Example app listening on port 8088`)
-})
+// const server = app.listen(8088, () => {
+//     console.info('Example app listening on port 8088')
+// })
 
-// ViteExpress.bind(app, server);
+// void ViteExpress.bind(app, server)
 

@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
  * Creates a button to press to show more info. The content is
  * shown in a drop down Overlay
  */
-const InfoThing: React.FC<HelpThingProps> = ({ children, height = '30%' }) => {
+const InfoThing: React.FC<HelpThingProps> = ({ children, height }) => {
     const [showHelp, setShowHelp] = useState(false)
     const toggleHelp = () => setShowHelp(!showHelp)
 

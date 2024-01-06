@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PageBody from '../../components/structural/PageBody'
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
-import { NormalisedType, normalise, presets } from './my-links.utils'
+import { NormalisedType, normalise, presets, getOgGraph } from './open-graph.utils'
 import OpenGraphCard from '../../components/OpenGraphCard'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -9,8 +9,7 @@ import Accordion from 'react-bootstrap/esm/Accordion'
 import JSONPretty from 'react-json-pretty'
 import 'react-json-pretty/themes/1337.css'
 import { createUseStyles } from 'react-jss'
-// import { initializeApp } from 'firebase/app'
-// const app = initializeApp()
+import { useEffectOnce } from 'usehooks-ts'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -23,32 +22,44 @@ const useStyles = createUseStyles({
     },
 })
 
-
 const MyLinks: React.FC = () => {
-    const [url, setUrl] = useState('')
+    const [url, setUrl] = useState('https://ogp.me/')
     const [loading, setLoading] = useState<boolean>(false)
     const [normalisedGraph, setNormalisedGraph] = useState<NormalisedType | null>(null)
     const [ogGraph, setOgGraph] = useState<OgObject | null>(null)
     const [status, setStatus] = useState('')
     const classes = useStyles()
+
+    useEffectOnce(() => {
+        const fill = async () => {
+            setLoading(true)
+            await fillCard(url)
+        }
+        void fill()
+    })
+
     const fillCard = async (site: string) => {
-        // app
         try {
             if (site !== url) {
                 setUrl(site)
             }
+
             setLoading(true)
+            setNormalisedGraph(null)
             setOgGraph(null)
+
             const newUrl = removeProtocol(site)
+            if (!newUrl) {
+                setStatus('No URL provided')
+                return
+            }
 
-            const path = 'http://localhost:5001/sketch-oxenburgh/us-central1/ogGraph?url=' + newUrl
-
-
-            const response = await fetch(path)
-            const json: OgObject = await response.json()
-            const normalised = normalise(json, site)
-            setNormalisedGraph(normalised)
-
+            const json = await getOgGraph(newUrl)
+            if (!json.success) {
+                setStatus(json.error || 'error')
+                return
+            }
+            setNormalisedGraph(normalise(json, site))
             setOgGraph(json)
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -58,13 +69,16 @@ const MyLinks: React.FC = () => {
             setLoading(false)
         }
     }
-    const onClick = async () => {
-        await fillCard(url)
+    const onClick = () => {
+        void fillCard(url)
     }
 
     return (
         <>
-            <PageBody name="my-links">
+            <PageBody name="open-graph">
+
+                <h3>Open Graph</h3>
+                <p>Enter a url, and we'll extract all the OG data and present it in a kind of nice way</p>
                 <input
                     type="text"
                     className="form-control"
@@ -73,7 +87,6 @@ const MyLinks: React.FC = () => {
                     value={url}
                     onChange={(event) => setUrl(event.target.value)}
                 />
-
 
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">

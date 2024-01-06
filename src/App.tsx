@@ -67,8 +67,8 @@ const lazyComponents: LazyComponentType[] = [
         lazyComponent: React.lazy(() => (import('./pages/wordle-two'))),
     },
     {
-        name: 'my-links',
-        lazyComponent: React.lazy(() => (import('./pages/my-links'))),
+        name: 'open-graph',
+        lazyComponent: React.lazy(() => (import('./pages/OpenGraphPage'))),
     },
 ]
 
