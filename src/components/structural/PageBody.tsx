@@ -42,13 +42,11 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
                     <ReactMarkdown
                         children={header.longDesc}
                     />
-
                 </Container>
             </InfoThing>
             <ErrorBoundary>
                 {children}
             </ErrorBoundary>
-            <PageFooter underConstruction={header.underConstruction} />
         </Container>
     )
 }

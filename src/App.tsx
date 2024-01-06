@@ -72,10 +72,17 @@ const lazyComponents: LazyComponentType[] = [
     },
 ]
 
+const navBarStyle = {
+    padding: '0 3em',
+    borderRadius: '3px',
+    width: 'fit-content',
+    margin: 'auto'
+}
+
 const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     return (
-        <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={{ margin: '0 auto', paddingLeft: '1em' }}>
+        <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={navBarStyle}>
             <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
