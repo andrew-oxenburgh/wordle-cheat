@@ -1,5 +1,11 @@
 import * as R from 'ramda'
-import { ArticleGraphFields, ArticleGraphType, MusicGraphFields, MusicGraphType, NormalisedType } from '../pages/OpenGraphPage/open-graph.utils'
+import {
+    ArticleGraphFields,
+    ArticleGraphType,
+    MusicGraphFields,
+    MusicGraphType,
+    NormalisedType
+} from '../pages/OpenGraphPage/open-graph.types'
 import Loader from './Loader'
 import Card from 'react-bootstrap/esm/Card'
 import Image from 'react-bootstrap/esm/Image'
