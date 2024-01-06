@@ -16,7 +16,8 @@
     "scripts": "better-scripts",
     "build": "vite build",
     "preview": "vite preview",
-    "ci": "echo 'put something here'"
+    "ci": "echo 'put something here'",
+    "test": "jest"
   },
   "keywords": [
     "react",
