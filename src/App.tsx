@@ -76,7 +76,7 @@ const navBarStyle = {
     padding: '0 3em',
     borderRadius: '3px',
     width: '30em',
-    margin: 'auto'
+    margin: 'auto',
 }
 
 const Navigation = () => {

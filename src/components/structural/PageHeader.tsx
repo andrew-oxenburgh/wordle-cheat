@@ -1,10 +1,12 @@
 import { createUseStyles } from 'react-jss'
-import Button from 'react-bootstrap/Button'
+import Button, { ButtonProps } from 'react-bootstrap/Button'
 import * as config from '../../config/config'
 import InfoThing from '../InfoThing'
 import Container from 'react-bootstrap/esm/Container'
 import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
+import OverlayTrigger from 'react-bootstrap/esm/OverlayTrigger'
+import Tooltip from 'react-bootstrap/esm/Tooltip'
 
 const buttonStyle = {
     fontWeight: 'bold',
@@ -48,38 +50,41 @@ const useStyles = createUseStyles({
 })
 
 interface Props {
-    name: string,
+    name: string
     desc: string
 }
 
-const PageHeader: React.FC<Props> = ({ name, desc }) => {
+const PageHeader: React.FC<Props> = ({ name }) => {
     const classes = useStyles()
     const [showInfo, setShowInfo] = useState(false)
     const header: config.PageInfoType = config.findPageInfo(name)
     const nextLink: string = config.findPageInfo(header.nextPage).link
     const prevLink: string = config.findPageInfo(header.prevPage).link
     const onClick = () => { setShowInfo(true) }
+
     return (
         <div className={classes.pageHeader}>
             <div className={classes.backdrop}>
-                <Button as="a" href={prevLink}
-                    className={classes.leftArrow}>
+                <ButtonWithTooltip as="a" href={prevLink}
+                    className={classes.leftArrow}
+                    tipText="previous page">
                     &larr;
-                </Button>
-                <Button as="a" href={nextLink}
-                    className={classes.rightArrow}>
+                </ButtonWithTooltip>
+                <ButtonWithTooltip as="a" href={nextLink}
+                    className={classes.rightArrow}
+                    tipText="next page">
                     &rarr;
-                </Button>
-                <Button
+                </ButtonWithTooltip>
+                <ButtonWithTooltip
                     className={classes.info}
                     onClick={onClick}
                     aria-label={'Help button'}
                     variant="warning"
                     id="info"
+                    tipText="page info"
                 >
                     &#9432;
-
-                </Button>
+                </ButtonWithTooltip>
 
             </div>
             <h3>{header.title}</h3>
@@ -99,3 +104,31 @@ const PageHeader: React.FC<Props> = ({ name, desc }) => {
 }
 
 export default PageHeader
+
+type ButtonWithTooltipProps = {
+    tipText: string | JSX.Element
+    children: string | JSX.Element
+    placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto'
+} & ButtonProps
+
+const ButtonWithTooltip: React.FC<ButtonWithTooltipProps> = (
+    { placement = 'bottom',
+        tipText,
+        children,
+        ...args }) => {
+
+    const tooltip = (
+        <Tooltip id="tooltip">
+            {tipText}
+        </Tooltip>
+    )
+
+    return <OverlayTrigger placement={placement} overlay={tooltip}>
+        <Button
+            {...args}
+        >
+            {children}
+        </Button>
+    </OverlayTrigger>
+}
+

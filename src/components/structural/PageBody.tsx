@@ -3,12 +3,10 @@ import { ReactNode } from 'react'
 import Container from 'react-bootstrap/Container'
 
 import { createUseStyles } from 'react-jss'
-import InfoThing from '../InfoThing'
 import PageHeader from './PageHeader'
 import { PageInfoType, findPageInfo } from '../../config/config'
 import { ErrorBoundary } from './ErrorBoundary'
-import PageFooter from './PageFooter'
-import ReactMarkdown from 'react-markdown'
+
 const useStyles = createUseStyles({
     container: {
         backgroundColor: 'white',

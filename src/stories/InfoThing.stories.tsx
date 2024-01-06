@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/no-empty-function: "off" */
+
 import type { Meta, StoryObj } from '@storybook/react'
 
 import InfoThing from '../components/InfoThing'
@@ -7,7 +9,7 @@ const meta: Meta<typeof InfoThing> = {
     title: 'Sketches/InfoThing',
     component: InfoThing,
     parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
         layout: 'centered',
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
@@ -18,7 +20,7 @@ const meta: Meta<typeof InfoThing> = {
             control: 'text',
             description: 'height. May be a percentage',
         },
-    // 👇 All Button stories expect a label arg
+        // 👇 All Button stories expect a label arg
     },
 }
 
@@ -31,8 +33,8 @@ export const Primary: Story = {
         height: '50%',
     },
     render: () => (<>
-        <InfoThing height="50%">
-            <p>some content</p>
+        <InfoThing height="50%" show={true} onHide={() => { }}>
+            <p>some kiddies</p>
         </InfoThing>
     </>),
 }
