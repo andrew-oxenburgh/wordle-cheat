@@ -1,5 +1,6 @@
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
-import { OutputType, convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
+import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
+import { TwoStringColumns } from './open-graph.types'
 
 test('convert images', () => {
     const input: OgObject = {
@@ -8,7 +9,7 @@ test('convert images', () => {
             'url': 'https://example.com/image.png',
         }],
     }
-    const expectedOutput: OutputType = [
+    const expectedOutput: TwoStringColumns = [
         ['og:image:width', '300'],
         ['og:image:url', 'https://example.com/image.png'],
     ]
@@ -42,7 +43,7 @@ test('convert multiple value back to OG format', () => {
         'requestUrl': 'http://ogp.me/',
         'success': true,
     }
-    const expectedOutput: OutputType = [
+    const expectedOutput: TwoStringColumns = [
         ['og:title', 'Open Graph protocol'],
         ['og:type', 'website'],
         ['og:url', 'https://ogp.me/'],
@@ -97,7 +98,7 @@ const spotify = {
 }
 
 test('convert spotify', () => {
-    const expectedOutput: OutputType = [
+    const expectedOutput: TwoStringColumns = [
         [
             'og:site:name',
             'Spotify',

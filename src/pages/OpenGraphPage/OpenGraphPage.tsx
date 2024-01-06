@@ -12,6 +12,8 @@ import JSONPretty from 'react-json-pretty'
 import 'react-json-pretty/themes/1337.css'
 import { createUseStyles } from 'react-jss'
 import { useEffectOnce } from 'usehooks-ts'
+import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
+import Table from 'react-bootstrap/Table'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -121,6 +123,27 @@ const MyLinks: React.FC = () => {
                                 <Accordion.Header>Open Graph Data</Accordion.Header>
                                 <Accordion.Body className={classes.accordianBody}>
                                     <JSONPretty id="json-pretty" data={ogGraph} />
+                                    <Table striped bordered hover>
+                                        <thead>
+                                            <tr>
+                                                <th>og:tag</th>
+                                                <th>value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {convertOgObjectToOgArray(ogGraph).map((row) => {
+                                                if (row.length >= 2) {
+                                                    return (
+                                                        <tr key={row.join('/')}>
+                                                            <td>{row[0]}</td>
+                                                            <td>{row[1]}</td>
+                                                        </tr>
+                                                    )
+                                                }
+                                            }
+                                            )}
+                                        </tbody>
+                                    </Table>
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>

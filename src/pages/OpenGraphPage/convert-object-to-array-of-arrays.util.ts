@@ -1,11 +1,10 @@
 /* eslint @typescript-eslint/no-unsafe-argument: "off" */
 
 import * as R from 'ramda'
+import { TwoStringColumns } from './open-graph.types'
 
-export type OutputType = [string, string][]
-
-export const convertOgObjectToOgArray = (inp: any, prefix = ''): OutputType => {
-    return R.reduce((acc: OutputType, key: string) => {
+export const convertOgObjectToOgArray = (inp: any, prefix = ''): TwoStringColumns => {
+    return R.reduce((acc: TwoStringColumns, key: string) => {
         const val = inp[key]
         const newKey: string = key.split(/(?=[A-Z])/).join(':').toLowerCase()
         if (['requestUrl', 'success', 'charset', 'favicon'].indexOf(key) !== -1) {
@@ -23,7 +22,7 @@ export const convertOgObjectToOgArray = (inp: any, prefix = ''): OutputType => {
             acc.push(...sub[0])
         }
         return acc
-    }, [] as OutputType, R.keys(inp))
+    }, [] as TwoStringColumns, R.keys(inp))
 }
 
 export default {}

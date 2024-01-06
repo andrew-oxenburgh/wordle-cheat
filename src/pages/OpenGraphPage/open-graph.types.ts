@@ -7,6 +7,8 @@ type Image = Partial<{
     width: string | number
 }>
 
+export type TwoStringColumns = [string, string][]
+
 export type ArticleGraphType = {
     author?: string
     expirationTime?: string
