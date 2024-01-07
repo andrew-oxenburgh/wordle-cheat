@@ -4,7 +4,7 @@ export type ConversionType = {
 }
 
 export type InterpretationType = {
-    kind: 'integer' | 'text' | 'geo'
+    kind: 'integer' | 'text' | 'geo' | 'url'
     conversions: ConversionType[]
 }
 

@@ -5,6 +5,7 @@ import { StringInspectionType } from './lib/textHelper.types'
 import CopyableText from '../../components/CopyableText'
 
 import { createUseStyles } from 'react-jss'
+import Form from 'react-bootstrap/Form'
 
 const useStyles = createUseStyles({
     input: {
@@ -41,7 +42,7 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
 }
 
 export const ConversionComponent = () => {
-    const [text, setText] = useState('hello, world')
+    const [text, setText] = useState('https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY?thing=other-thing')
     const [conversions, setConversions] = useState<StringInspectionType>({
         input: '',
         kinds: [],
@@ -52,7 +53,8 @@ export const ConversionComponent = () => {
     const classes = useStyles()
     return (
         <>
-            <input
+            <Form.Control
+                as="input"
                 autoFocus
                 type="text"
                 value={text}

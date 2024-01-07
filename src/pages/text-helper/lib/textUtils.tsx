@@ -1,6 +1,7 @@
 import { textConversions } from './textConversions'
 import { integerConversions } from './integerConversions'
 import { StringInspectionType, InterpretationType } from './textHelper.types'
+import { urlConversions } from './urlConversions'
 
 const notNumber = (s: string): boolean => {
     return isNaN(parseInt(s.trim(), 10))
@@ -8,6 +9,10 @@ const notNumber = (s: string): boolean => {
 
 const isInteger = (s: string): boolean => {
     return !isNaN(parseInt(s.trim(), 10))
+}
+
+const isUrl = (s: string): boolean => {
+    return URL.canParse(s)
 }
 
 export const isLatLong = (s: string): boolean => {
@@ -25,24 +30,39 @@ export const stringConversion = (s: string): StringInspectionType => {
         input: s,
         kinds: [],
     }
+
+    let done = false
+
     if (s.trim().length === 0) {
         return ret
     }
 
     const kinds: InterpretationType[] = []
 
-    if (notNumber(s)) {
+    if (isUrl(s)) {
+        kinds.push({
+            kind: 'url',
+            conversions: urlConversions(s.trim()),
+        })
+        done = true
+    }
+
+    if (!done && notNumber(s)) {
         kinds.push({
             kind: 'text',
             conversions: textConversions(s.trim()),
         })
+        done = true
+
     }
 
-    if (isInteger(s)) {
+    if (!done && isInteger(s)) {
         kinds.push({
             kind: 'integer',
             conversions: integerConversions(s.trim()),
         })
+        done = true
+
     }
     // if (isLatLong(s)) {
     //    kinds.push({
@@ -53,7 +73,6 @@ export const stringConversion = (s: string): StringInspectionType => {
 
     ret.kinds = kinds
     return ret
-
 }
 
 export { }

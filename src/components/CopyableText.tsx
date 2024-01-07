@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy as icon } from '@fortawesome/free-solid-svg-icons/faCopy'
 import Alert from 'react-bootstrap/Alert'
 import { useInterval } from 'usehooks-ts'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 const useStyles = createUseStyles({
     button: {
         position: 'relative',
-        backgroundColor: 'lightblue',
         borderRadius: '0.5em',
         minHeight: '3em',
         minWidth: '15em',
@@ -18,10 +19,6 @@ const useStyles = createUseStyles({
         padding: '0 10px 0 10px',
         margin: '1em 0 1.5em 0',
         cursor: 'pointer',
-        '&:hover': {
-            backgroundColor: 'skyblue',
-        },
-        fontFamily: 'monospace',
     },
     alert: {
         position: 'absolute',
@@ -75,7 +72,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
 
     return (
         <div>
-            <button
+            <div
                 className={classes.button}
                 onClick={onCopy}
                 aria-label={'Copy to clipboard button'}
@@ -87,11 +84,16 @@ const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
                     <span>
                         <FontAwesomeIcon icon={icon} />
                     </span>
-                    <span>
-                        &nbsp;{text}
+                    <span style={{ clear: 'both' }}>
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            style={import('./style.css')}
+                        >
+                            {text}
+                        </ReactMarkdown>
                     </span>
                 </div>
-            </button>
+            </div>
             <Alert className={classes.alert} dismissible show={show} onClose={closeAlert} variant="warning">
                 {warning && <Alert.Heading>{warning}</Alert.Heading>}
                 Copied to clipboard!
