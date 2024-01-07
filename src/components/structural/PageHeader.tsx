@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const buttonStyle = {
     fontWeight: 'bold',
@@ -61,7 +62,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
     const prevLink: string = config.findPageInfo(header.prevPage).link
     const onClick = () => { setShowInfo(true) }
 
-    const icon = (<FontAwesomeIcon color="green" fixedWidth icon={header.icon} />)
+    const icon = (<FontAwesomeIcon color="green" fixedWidth icon={header.icon as IconProp} />)
     return (
         <div className={classes.pageHeader}>
             <div className={classes.backdrop}>

@@ -6,6 +6,7 @@ import { pageDefinitions, version } from './config/config'
 import { useLocation, Location } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export const navBarStyle = {
     padding: '0 3em',
@@ -26,7 +27,7 @@ const Navigation = () => {
                     <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
                         {pageDefinitions.map((page) => {
-                            const icon = (<FontAwesomeIcon border size="lg" color="green" fixedWidth icon={page.icon} />)
+                            const icon = (<FontAwesomeIcon border size="lg" color="green" fixedWidth icon={page.icon as IconProp} />)
                             return (
                                 <NavDropdown.Item
                                     active={true === page.link.endsWith(location.pathname)}
