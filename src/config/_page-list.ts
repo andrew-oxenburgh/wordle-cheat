@@ -36,6 +36,10 @@ const credits: CreditsType = {
         url: 'https://cloud.google.com/functions',
         text: 'Google Cloud Functions by Google',
     },
+    'emoji-api': {
+        url: 'https://emoji-api.com/',
+        text: 'Open Emoji API',
+    },
 }
 
 const creditLink = (name: string): string => {
@@ -76,8 +80,19 @@ Technologies:
         name: 'emoji-search',
         icon: 'search',
         longDesc:
-            'Very brutal look up.' +
-            '\nI\'m using an API, but it\'s just a single call. Nothing complicated',
+            `
+### Emoji Search
+
+Just a fun little thing
+
+Very brutal look up. The functionality is in the [Emoji API](https://emoji-api.com/).
+            
+I\'m using an API, but it\'s just a single call. Nothing complicated
+
+Technologies:
+ - ${creditLink('emoji-api')}
+
+`,
         link: '#/emoji-search',
     },
     {
@@ -150,7 +165,7 @@ const fulfilPageDefaults = (page: Partial<PageInfoType>) => {
         shortDesc: title,
         link: '/#/' + page.name,
         underConstruction: false,
-        height: '30%',
+        height: '70%',
         icon: 'key',
         ...page,
     }

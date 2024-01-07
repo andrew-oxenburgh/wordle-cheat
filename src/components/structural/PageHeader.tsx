@@ -62,7 +62,6 @@ const PageHeader: React.FC<Props> = ({ name }) => {
     const onClick = () => { setShowInfo(true) }
 
     const icon = (<FontAwesomeIcon color="green" fixedWidth icon={header.icon} />)
-
     return (
         <div className={classes.pageHeader}>
             <div className={classes.backdrop}>

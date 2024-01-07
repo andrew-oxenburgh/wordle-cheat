@@ -1,10 +1,8 @@
-
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
-import Toast from 'react-bootstrap/Toast'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 import PageBody from '../../components/structural/PageBody'
@@ -15,7 +13,7 @@ const useStyles = createUseStyles({
     emoji: {
         cursor: 'crosshair',
         width: '25%',
-        fontSize: '400%',
+        // fontSize: '400%',
         textAlign: 'center',
     },
     alert: {
@@ -58,17 +56,17 @@ type EmojiType = {
     variants: EmojiVariantType[]
 }
 
-
 const EmojiSearch = () => {
     const [alert, setAlert] = useState<string>('')
     const [searchTerm, setSearchTerm] = useState('')
     const [results, setResults] = useState<EmojiType[]>([])
-    const [_, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const classes = useStyles()
     const handleClick = () => {
         const handle = async () => {
             try {
                 setLoading(true)
+                setResults([])
                 const response: Response = await fetch(search(searchTerm))
                 if (response.ok) {
                     const data = await response.json()
@@ -89,12 +87,6 @@ const EmojiSearch = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value)
     }
-    const handleKeyPress = (event: React.KeyboardEvent) => {
-        if (event.key === 'Enter' && event.currentTarget === event.target) {
-            void handleClick()
-        }
-    }
-
     const onCopy = (ch: string) => {
         const copy = async () => {
             await navigator.clipboard.writeText(ch)
@@ -105,20 +97,37 @@ const EmojiSearch = () => {
         }
     }
 
+    const buttonText = () => {
+        if (loading) {
+            return 'Loading...'
+        }
+        if (searchTerm.length <= 3) {
+            return '3 letters needed'
+        }
+        return 'Search'
+    }
+
     return (
         <PageBody name="emoji-search" >
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 <Card.Body>
-                    <Card.Title>Search</Card.Title>
-                    <Form.Control onKeyPress={handleKeyPress} onChange={handleChange} type="text" placeholder="Search..." />
-                    <Button variant="primary" onClick={handleClick}
-                        disabled={searchTerm.length < 3}
-                    >search</Button>
+                    <Form>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control onChange={handleChange} type="text" placeholder="search..." />
+                            <Form.Text className="text-muted">
+                                more than 3 letters, please...
+                            </Form.Text>
+                        </Form.Group>
+                        <Button className="w-100" variant="primary" disabled={searchTerm.length < 3 || loading} type="submit" onClick={handleClick}>
+                            {buttonText()}
+                        </Button>
+                        <div className="w-100 bg-info text-center m-1" >
+                            {results.length === 0 ? 'No Emojis Found' : `${results.length} Emojis found`}
+                        </div>
+                    </Form>
+
                 </Card.Body>
             </Card>
-            <Toast bg="info">
-                <Toast.Body>{results.length === 0 ? 'No Emojis Found' : `${results.length} Emojis found`}</Toast.Body>
-            </Toast>
 
             {alert !== '' && (
                 <Alert className={classes.alert} dismissible onClose={() => { setAlert('') }}>
@@ -151,20 +160,3 @@ const EmojiSearch = () => {
 }
 
 export default EmojiSearch
-
-/**
-            <a href="https://emoji-api.com/">emoji-api</a>
-            <p>This is a simple emoji search app.</p>
-            <a href={findAll()} target="_blank">all</a>
-            <br />
-            <a href={search('computer')} target="_blank">search for computer</a>
-            <br />
-            <p>{find('grinning-squinting-face')}</p>
-            <a href={find('grinning-squinting-face')} target="_blank">find grinning-squinting-face</a>
-            <br />
-            <a href="https://emoji-api.com/emojis/e0-7-desktop-computer?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">specific emoji</a>
-            <br />
-            <a href="https://emoji-api.com/categories/travel-places?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">all cetagories</a>
-            <br />
-            <a href="https://emoji-api.com/categories/travel-places?access_key=3c852c8687a973f3017ad721b796f6232306d17e" target="_blank">specific category</a>
- **/
