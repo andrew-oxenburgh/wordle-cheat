@@ -84,6 +84,7 @@ const MyLinks: React.FC = () => {
                 <h3>Open Graph</h3>
                 <p>Enter a url, and we'll extract all the OG data and present it in a kind of nice way</p>
                 <input
+                    autoFocus
                     type="text"
                     className="form-control"
                     id="url"

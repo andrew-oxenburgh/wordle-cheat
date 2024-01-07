@@ -52,7 +52,13 @@ export const ConversionComponent = () => {
     const classes = useStyles()
     return (
         <>
-            <input className={classes.input} type="text" value={text} onChange={(e) => setText(e.target.value)} />
+            <input
+                autoFocus
+                type="text"
+                value={text}
+                placeholder="Enter a URL"
+
+                onChange={(e) => setText(e.target.value)} />
             <StringInspectionDisplay inspection={conversions} />
         </>
     )

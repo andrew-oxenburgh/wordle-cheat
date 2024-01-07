@@ -113,7 +113,13 @@ const EmojiSearch = () => {
                 <Card.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Control onChange={handleChange} type="text" placeholder="search..." />
+                            <Form.Control
+                                as="input"
+                                onChange={handleChange}
+                                type="text"
+                                placeholder="search..."
+                                autoFocus
+                            />
                             <Form.Text className="text-muted">
                                 more than 3 letters, please...
                             </Form.Text>
