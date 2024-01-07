@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import { startCase } from 'lodash'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'open-graph'
 
 export type PageInfoType = {
     title: string
@@ -78,7 +78,7 @@ Technologies:
     },
     {
         name: 'emoji-search',
-        icon: 'search',
+        icon: 'icons',
         longDesc:
             `
 ### Emoji Search
@@ -123,6 +123,11 @@ Technologies:
         longDesc: 'Paste in some text and it\'ll make suggestions about what to do with it.',
     },
     {
+        name: 'password-generator',
+        icon: 'key',
+        longDesc: 'Generate a "good" password.',
+    },
+    {
         name: 'netflix-genre',
         icon: 'film',
         longDesc:
@@ -143,11 +148,6 @@ Technologies:
             'click on squares to change their colours. Drag a ' +
             'square to change the squares over which you have dragged that colour',
         ].join('\n'),
-    },
-    {
-        name: 'password-generator',
-        icon: 'key',
-        longDesc: 'Generate a "good" password.',
     },
     // {
     //    name: 'blogs',

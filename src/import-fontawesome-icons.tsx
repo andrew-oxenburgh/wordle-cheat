@@ -14,6 +14,23 @@ import {
     faLink,
     faHome,
     faFilm,
+    faIcons,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faCheckSquare, faCoffee, faFileAlt, faKey, faSun, faSearch, faPrint, faPuzzlePiece, faPencil, faGamepad, faLink, faHome, faFilm)
+library.add(
+    fab,
+    faCheckSquare,
+    faCoffee,
+    faFileAlt,
+    faKey,
+    faSun,
+    faSearch,
+    faPrint,
+    faPuzzlePiece,
+    faPencil,
+    faGamepad,
+    faLink,
+    faHome,
+    faFilm,
+    faIcons
+)

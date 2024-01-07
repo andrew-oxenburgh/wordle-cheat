@@ -27,7 +27,7 @@ const Navigation = () => {
                     <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
                         {pageDefinitions.map((page) => {
-                            const icon = (<FontAwesomeIcon border size="lg" color="green" fixedWidth icon={page.icon as IconProp} />)
+                            const icon = (<FontAwesomeIcon border size="lg" color="tomato" fixedWidth icon={page.icon as IconProp} />)
                             return (
                                 <NavDropdown.Item
                                     active={true === page.link.endsWith(location.pathname)}

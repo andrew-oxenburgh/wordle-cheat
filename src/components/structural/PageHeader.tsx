@@ -61,7 +61,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
     const prevLink: string = config.findPageInfo(header.prevPage).link
     const onClick = () => { setShowInfo(true) }
 
-    const icon = (<FontAwesomeIcon color="green" fixedWidth icon={header.icon as IconProp} />)
+    const icon = (<FontAwesomeIcon color="tomato" fixedWidth icon={header.icon as IconProp} />)
     return (
         <div className={classes.pageHeader}>
             <div className={classes.backdrop}>

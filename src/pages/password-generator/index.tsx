@@ -51,13 +51,13 @@ const createPassword = () => {
 }
 
 const JSSComponent: React.FC = () => {
-    const classes = useStyles()
     const [password, setPassword] = useState(createPassword())
 
     const handleButtonClick = () => {
         setPassword(createPassword())
     }
 
+    const classes = useStyles()
     return (
         <>
             <PageBody name="password-generator">

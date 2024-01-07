@@ -96,17 +96,15 @@ const EmojiSearch = () => {
             void copy()
         }
     }
-
     const buttonText = () => {
         if (loading) {
             return 'Loading...'
         }
-        if (searchTerm.length <= 3) {
+        if (searchTerm.length < 3) {
             return '3 letters needed'
         }
         return 'Search'
     }
-
     return (
         <PageBody name="emoji-search" >
             <Card>
@@ -127,11 +125,10 @@ const EmojiSearch = () => {
                         <Button className="w-100" variant="primary" disabled={searchTerm.length < 3 || loading} type="submit" onClick={handleClick}>
                             {buttonText()}
                         </Button>
-                        <div className="w-100 bg-info text-center m-1" >
-                            {results.length === 0 ? 'No Emojis Found' : `${results.length} Emojis found`}
-                        </div>
                     </Form>
-
+                    <Card.Text className="w-100 bg-info rounded text-center mt-1 p-1" >
+                        {results.length === 0 ? 'No Emojis Found' : `${results.length} Emojis found`}
+                    </Card.Text>
                 </Card.Body>
             </Card>
 
@@ -142,7 +139,6 @@ const EmojiSearch = () => {
             )
             }
 
-            <p></p>
             <Table size="sm" striped bordered hover variant="dark">
                 <thead>
                     <tr>
@@ -151,14 +147,25 @@ const EmojiSearch = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {results?.map((emoji: EmojiType) => (
-                        <tr key={emoji.slug}>
-                            <td className={classes.chacter}>{emoji.slug.replace(/\w+-\w+-/, '').replaceAll('-', ' ')}</td>
-                            <td className={classes.emoji} width="25%" onClick={onCopy(emoji.character)}>
-                                {emoji.character}
-                            </td>
-                        </tr>
-                    ))}
+                    {
+                        results?.length ?
+                            (results.map((emoji: EmojiType) => (
+                                <tr key={emoji.slug}>
+                                    <td className={classes.chacter}>{emoji.slug.replace(/\w+-\w+-/, '').replaceAll('-', ' ')}</td>
+                                    <td className={classes.emoji} width="25%" onClick={onCopy(emoji.character)}>
+                                        {emoji.character}
+                                    </td>
+                                </tr>
+                            )))
+                            : (
+                                <tr>
+                                    <td className={classes.chacter}>-</td>
+                                    <td className={classes.emoji} width="25%">
+                                        -
+                                    </td>
+                                </tr>
+                            )
+                    }
                 </tbody>
             </Table>
         </PageBody>
