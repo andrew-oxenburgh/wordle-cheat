@@ -45,7 +45,7 @@ const creditLink = (name: string): string => {
 export const _initPageList: Partial<PageInfoType>[] = [
     {
         name: 'welcome',
-        title: 'Andrew\'s Sketch Pad',
+        title: 'Andrew\'s Sketch\'s',
         longDesc:
             'This is a showcase of some doodles by me.' +
             'Seriously, just sketches, you know, for fun.' +
@@ -56,7 +56,7 @@ export const _initPageList: Partial<PageInfoType>[] = [
     },
     {
         name: 'open-graph',
-        title: 'View OpenGraph Card',
+        title: 'OpenGraph Viewer',
         height: '80%',
         icon: 'link',
         longDesc: `
