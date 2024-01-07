@@ -9,10 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const buttonStyle = {
-    fontWeight: 'bold',
     fontSize: '1.5em',
     padding: '0 0.3em',
-    borderRadius: '2em',
+    borderRadius: '0.5em',
 }
 
 const useStyles = createUseStyles({
