@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import Button, { ButtonProps } from 'react-bootstrap/Button'
-import OverlayTrigger from 'react-bootstrap/esm/OverlayTrigger'
-import Tooltip from 'react-bootstrap/esm/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 type ButtonWithTooltipProps = {
     tipText: string | ReactNode

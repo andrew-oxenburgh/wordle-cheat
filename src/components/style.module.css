@@ -13,3 +13,12 @@ td {
 td:nth-child(1) {
     width: 25%
 }
+
+th {
+    font-weight: bold;
+    background-color: aliceblue;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}

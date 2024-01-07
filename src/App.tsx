@@ -1,6 +1,3 @@
-import './config/firebase'
-import './import-fontawesome-icons'
-
 import { HashRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -8,6 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import PageFooter from './components/structural/PageFooter'
 import Navigation from './Navigation'
 import WCRoutes from './WCRoutes'
+
+import './config/firebase'
+import './import-fontawesome-icons'
+
 import { lazyComponents } from './lazyComponents'
 
 const App = () => {

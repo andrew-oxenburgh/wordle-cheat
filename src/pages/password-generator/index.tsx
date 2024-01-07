@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
+
+import * as R from 'ramda'
+
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
@@ -7,10 +10,9 @@ import fiveLetterwords from '../../config/five-letter-words'
 import fourLetterWords from '../../config/four-letter-words'
 import commonWords from '../../config/common-words'
 
-import * as R from 'ramda'
-
 import CopyablText from '../../components/CopyableText'
 import PageBody from '../../components/structural/PageBody'
+
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 
 words = R.uniq(words)

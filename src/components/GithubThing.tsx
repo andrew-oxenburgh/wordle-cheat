@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
-import { ButtonWithTooltip } from './ButtonWithTooltip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ButtonWithTooltip } from './ButtonWithTooltip'
 
 const useStyles = createUseStyles({
     button: {

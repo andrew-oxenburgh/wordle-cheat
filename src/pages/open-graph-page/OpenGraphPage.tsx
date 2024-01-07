@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
-import PageBody from '../../components/structural/PageBody'
+
+import { createUseStyles } from 'react-jss'
+import { useEffectOnce } from 'usehooks-ts'
+
+import Button from 'react-bootstrap/Button'
+import Dropdown from 'react-bootstrap/Dropdown'
+import Accordion from 'react-bootstrap/Accordion'
+import Table from 'react-bootstrap/Table'
+
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
+import JSONPretty from 'react-json-pretty'
+
+import PageBody from '../../components/structural/PageBody'
+import OpenGraphCard from '../../components/OpenGraphCard'
+
 import { NormalisedType, presets } from './open-graph.types'
 import { normalise } from './open-graph.utils'
 import { getOgGraph } from './open-graph-page'
-import OpenGraphCard from '../../components/OpenGraphCard'
-import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/Dropdown'
-import Accordion from 'react-bootstrap/esm/Accordion'
-import JSONPretty from 'react-json-pretty'
-import 'react-json-pretty/themes/1337.css'
-import { createUseStyles } from 'react-jss'
-import { useEffectOnce } from 'usehooks-ts'
 import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
-import Table from 'react-bootstrap/Table'
+
+import 'react-json-pretty/themes/1337.css'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {

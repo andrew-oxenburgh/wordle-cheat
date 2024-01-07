@@ -1,23 +1,10 @@
 import { useState, useEffect, Fragment } from 'react'
 
+import Form from 'react-bootstrap/Form'
+
 import { stringConversion } from './lib/textUtils'
 import { StringInspectionType } from './lib/textHelper.types'
 import CopyableText from '../../components/CopyableText'
-
-import { createUseStyles } from 'react-jss'
-import Form from 'react-bootstrap/Form'
-
-const useStyles = createUseStyles({
-    input: {
-        width: '100%',
-        height: '2.5em',
-        fontSize: '1em',
-        border: '1px solid darkblue',
-        borderRadius: '0.5em',
-        padding: '0 10px 0 10px',
-        margin: '1em 0 1.5em 0',
-    },
-})
 
 type StringInspectionProps = {
     inspection: StringInspectionType
@@ -50,7 +37,6 @@ export const ConversionComponent = () => {
     useEffect(() => {
         setConversions(stringConversion(text))
     }, [text])
-    const classes = useStyles()
     return (
         <>
             <Form.Control

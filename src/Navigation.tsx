@@ -1,12 +1,14 @@
 import { useState } from 'react'
+
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { pageDefinitions, version } from './config/config'
 import { useLocation, Location } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+
+import { pageDefinitions, version } from './config/config'
 
 export const navBarStyle = {
     padding: '0 3em',

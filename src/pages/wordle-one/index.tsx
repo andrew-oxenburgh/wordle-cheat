@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react'
 import * as R from 'ramda'
 
+import { createUseStyles } from 'react-jss'
+import PropTypes from 'prop-types'
+
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import PageBody from '../../components/structural/PageBody'
-import { createUseStyles } from 'react-jss'
 
-import PropTypes from 'prop-types'
+import PageBody from '../../components/structural/PageBody'
 
 import {
     createRegEx,

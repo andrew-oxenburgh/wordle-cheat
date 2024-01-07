@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { signal } from '@preact/signals-react'
 import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
+
 import PageBody from '../../components/structural/PageBody'
 
 const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia']

@@ -1,9 +1,12 @@
 import PageBody from '../../components/structural/PageBody'
 import MdEditor from 'react-markdown-editor-lite'
-// import style manually
+
 import MarkdownIt from 'markdown-it'
-import 'react-markdown-editor-lite/lib/index.css'
+
 import './printPage.css'
+
+import 'react-markdown-editor-lite/lib/index.css'
+
 const mdParser = new MarkdownIt(/* Markdown-it options */)
 
 const PrintPage = () => {

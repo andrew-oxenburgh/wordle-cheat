@@ -1,6 +1,9 @@
-
 import React, { Suspense } from 'react'
 import { createUseStyles } from 'react-jss'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Loader from './components/Loader'
 
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
 const Cheater = React.lazy(() => import('./pages/wordle-two'))
@@ -13,11 +16,6 @@ const MarkdownPage = React.lazy(() => import('./pages/markdown-pages'))
 const PasswordGenerator = React.lazy(() => import('./pages/password-generator'))
 const EmojiSearch = React.lazy(() => import('./pages/emoji-search'))
 const PrintPage = React.lazy(() => import('./pages/print-page'))
-
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Loader from './components/Loader'
 
 const useStyles = createUseStyles({
     page: {

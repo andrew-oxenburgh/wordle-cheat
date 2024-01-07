@@ -1,4 +1,5 @@
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
+
 import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
 import { TwoStringColumns } from './open-graph.types'
 

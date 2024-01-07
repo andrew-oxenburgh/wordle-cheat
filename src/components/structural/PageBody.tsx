@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
+import { createUseStyles } from 'react-jss'
 
 import Container from 'react-bootstrap/Container'
 
-import { createUseStyles } from 'react-jss'
 import PageHeader from './PageHeader'
-import { PageInfoType, findPageInfo } from '../../config/config'
 import { ErrorBoundary } from './ErrorBoundary'
+import { PageInfoType, findPageInfo } from '../../config/config'
 
 const useStyles = createUseStyles({
     container: {

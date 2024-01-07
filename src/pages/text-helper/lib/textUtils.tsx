@@ -1,3 +1,5 @@
+import URL from 'core-js/stable/url'
+
 import { textConversions } from './textConversions'
 import { integerConversions } from './integerConversions'
 import { StringInspectionType, InterpretationType } from './textHelper.types'

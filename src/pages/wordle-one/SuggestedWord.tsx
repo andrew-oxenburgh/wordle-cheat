@@ -1,4 +1,5 @@
 import Badge from 'react-bootstrap/Badge'
+
 import PropTypes from 'prop-types'
 
 const SuggestedWord = ({ word }: { word: string }): JSX.Element => {

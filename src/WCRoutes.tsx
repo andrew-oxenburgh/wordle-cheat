@@ -1,6 +1,8 @@
 import { Suspense } from 'react'
-import * as R from 'ramda'
 import { Routes, Route } from 'react-router-dom'
+
+import * as R from 'ramda'
+
 import Welcome from './pages/welcome'
 import Loader from './components/Loader'
 import Desktop from './Desktop'

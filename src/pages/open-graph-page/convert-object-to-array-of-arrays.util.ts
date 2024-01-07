@@ -1,6 +1,7 @@
 /* eslint @typescript-eslint/no-unsafe-argument: "off" */
 
 import * as R from 'ramda'
+
 import { TwoStringColumns } from './open-graph.types'
 
 export const convertOgObjectToOgArray = (inp: any, prefix = ''): TwoStringColumns => {

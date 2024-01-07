@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import { createUseStyles } from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy as icon } from '@fortawesome/free-solid-svg-icons/faCopy'
@@ -6,6 +7,7 @@ import Alert from 'react-bootstrap/Alert'
 import { useInterval } from 'usehooks-ts'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import style from './style.module.css'
 
 const useStyles = createUseStyles({
     button: {
@@ -70,6 +72,18 @@ const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
         time,
     )
 
+    const createMarkdown = () => {
+        return (
+            <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                className={style.markdown}
+            >
+                {text}
+            </ReactMarkdown>
+        )
+    }
+
+
     return (
         <div>
             <div
@@ -85,12 +99,7 @@ const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
                         <FontAwesomeIcon icon={icon} />
                     </span>
                     <span style={{ clear: 'both' }}>
-                        <ReactMarkdown
-                            remarkPlugins={[remarkGfm]}
-                            style={import('./style.css')}
-                        >
-                            {text}
-                        </ReactMarkdown>
+                        {createMarkdown()}
                     </span>
                 </div>
             </div>

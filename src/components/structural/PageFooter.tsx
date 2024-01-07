@@ -1,9 +1,8 @@
 import { createUseStyles } from 'react-jss'
+
 import ReplitThing from '../ReplitThing'
 import GithubThing from '../GithubThing'
 import UnderConstructionThing from '../UnderConstructionThing'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
 
 const useStyles = createUseStyles({
     footer: {

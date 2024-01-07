@@ -1,5 +1,4 @@
 import { ConversionType } from './textHelper.types'
-import toInteger from 'lodash/toInteger'
 
 export const urlConversions = (s: string): ConversionType[] => {
     const ret = []
@@ -29,11 +28,9 @@ export const urlConversions = (s: string): ConversionType[] => {
 
     }
 
-    console.log(table)
-
     ret.push({
         name: 'url',
-        value: table
+        value: table,
     })
     return ret
 }

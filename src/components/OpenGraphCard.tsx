@@ -1,3 +1,6 @@
+import Card from 'react-bootstrap/esm/Card'
+import Image from 'react-bootstrap/esm/Image'
+
 import * as R from 'ramda'
 import {
     ArticleGraphFields,
@@ -7,8 +10,6 @@ import {
     NormalisedType,
 } from '../pages/open-graph-page/open-graph.types'
 import Loader from './Loader'
-import Card from 'react-bootstrap/esm/Card'
-import Image from 'react-bootstrap/esm/Image'
 
 const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     return (

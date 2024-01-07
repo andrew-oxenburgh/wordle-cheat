@@ -1,4 +1,5 @@
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
+
 import { NormalisedType } from './open-graph.types'
 
 export const normalise = (og: OgObject, url: string): NormalisedType => {

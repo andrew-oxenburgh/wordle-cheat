@@ -1,12 +1,14 @@
-import { createUseStyles } from 'react-jss'
-import * as config from '../../config/config'
-import InfoThing from '../InfoThing'
-import Container from 'react-bootstrap/esm/Container'
-import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
-import { ButtonWithTooltip } from '../ButtonWithTooltip'
+import { createUseStyles } from 'react-jss'
+import ReactMarkdown from 'react-markdown'
+
+import Container from 'react-bootstrap/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+
+import * as config from '../../config/config'
+import InfoThing from '../InfoThing'
+import { ButtonWithTooltip } from '../ButtonWithTooltip'
 
 const buttonStyle = {
     fontSize: '1.5em',
