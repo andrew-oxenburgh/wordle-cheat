@@ -5,7 +5,7 @@ import {
     MusicGraphFields,
     MusicGraphType,
     NormalisedType,
-} from '../pages/OpenGraphPage/open-graph.types'
+} from '../pages/open-graph-page/open-graph.types'
 import Loader from './Loader'
 import Card from 'react-bootstrap/esm/Card'
 import Image from 'react-bootstrap/esm/Image'

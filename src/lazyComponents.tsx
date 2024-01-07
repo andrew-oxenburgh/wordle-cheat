@@ -50,6 +50,6 @@ export const lazyComponents: LazyComponentType[] = [
     },
     {
         name: 'open-graph',
-        lazyComponent: React.lazy(() => (import('./pages/OpenGraphPage'))),
+        lazyComponent: React.lazy(() => (import('./pages/open-graph-page'))),
     },
 ]

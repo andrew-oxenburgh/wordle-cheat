@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import OpenGraphCard from '../components/OpenGraphCard'
 import examples from './example-open-graph'
-import { normalise } from '../pages/OpenGraphPage/open-graph.utils'
+import { normalise } from '../pages/open-graph-page/open-graph.utils'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof OpenGraphCard> = {
