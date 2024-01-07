@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/esm/Container'
 import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const buttonStyle = {
     fontWeight: 'bold',
@@ -60,6 +61,8 @@ const PageHeader: React.FC<Props> = ({ name }) => {
     const prevLink: string = config.findPageInfo(header.prevPage).link
     const onClick = () => { setShowInfo(true) }
 
+    const icon = (<FontAwesomeIcon color="green" fixedWidth icon={header.icon} />)
+
     return (
         <div className={classes.pageHeader}>
             <div className={classes.backdrop}>
@@ -85,7 +88,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
                 </ButtonWithTooltip>
 
             </div>
-            <h3>{header.title}</h3>
+            <h3>{icon} {header.title}</h3>
 
             <InfoThing height={header.height} show={showInfo} onHide={() => {
                 setShowInfo(false)

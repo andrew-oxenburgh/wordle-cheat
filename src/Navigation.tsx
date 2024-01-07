@@ -5,6 +5,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { pageDefinitions, version } from './config/config'
 import { useLocation, Location } from 'react-router-dom'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 export const navBarStyle = {
     padding: '0 3em',
     borderRadius: '3px',
@@ -23,11 +25,14 @@ const Navigation = () => {
                 <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
                     <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
-                        {pageDefinitions.map((page) => (
-                            <NavDropdown.Item
-                                active={true === page.link.endsWith(location.pathname)}
-                                key={page.title} href={page.link}>{page.title}</NavDropdown.Item>
-                        ))}
+                        {pageDefinitions.map((page) => {
+                            const icon = (<FontAwesomeIcon border size="lg" color="green" fixedWidth icon={page.icon} />)
+                            return (
+                                <NavDropdown.Item
+                                    active={true === page.link.endsWith(location.pathname)}
+                                    key={page.title} href={page.link}>{icon}&nbsp;{page.title}</NavDropdown.Item>
+                            )
+                        })}
                     </NavDropdown>
                     <Nav.Link href="/sb/index.html" target="_blank">Storybook</Nav.Link>
                 </Nav>

@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import { startCase } from 'lodash'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'open-graph'
 
 export type PageInfoType = {
     title: string
@@ -17,6 +17,7 @@ export type PageInfoType = {
     underConstruction: boolean
     shortDesc: string
     longDesc: string
+    icon: string
 }
 
 type CreditsType = {
@@ -51,11 +52,13 @@ export const _initPageList: Partial<PageInfoType>[] = [
             'I\'ve written heaps of these things, and it\'s nice to get them all under the one roof',
 
         link: '#/welcome',
+        icon: 'home',
     },
     {
         name: 'open-graph',
         title: 'View OpenGraph Card',
         height: '80%',
+        icon: 'link',
         longDesc: `
 ### View OpenGraph Card
 OpenGraph is a protocol that enables websites to control the presentation of shared content on social media platforms.
@@ -71,6 +74,7 @@ Technologies:
     },
     {
         name: 'emoji-search',
+        icon: 'search',
         longDesc:
             'Very brutal look up.' +
             '\nI\'m using an API, but it\'s just a single call. Nothing complicated',
@@ -78,6 +82,7 @@ Technologies:
     },
     {
         name: 'print-page',
+        icon: 'print',
         longDesc:
             'Print Page' +
             'Sometimes you just want to print off some text, a list or something. ' +
@@ -86,6 +91,7 @@ Technologies:
     },
     {
         name: 'wordle-one',
+        icon: 'puzzle-piece',
         longDesc:
             'My first attempt at a Wordle Cheat' +
             '\nIt works, but it\'s a bit dodgy',
@@ -93,27 +99,30 @@ Technologies:
     {
         name: 'wordle-two',
         longDesc: 'My second attempt at a Wordle Cheat.\nStill very much a work in progress',
-
+        icon: 'puzzle-piece',
         underConstruction: true,
     },
     {
         name: 'text-helper',
+        icon: 'pencil',
         longDesc: 'Paste in some text and it\'ll make suggestions about what to do with it.',
     },
     {
         name: 'netflix-genre',
+        icon: 'film',
         longDesc:
             'Netflix provides a bunch of codes that aren\'t in their app.' +
             '\nHere they all, with links to Netflix.',
-
     },
     {
         name: 'sumner-tides',
+        icon: 'sun',
         longDesc: 'Still a WIP',
         underConstruction: true,
     },
     {
         name: 'draggey-gamey',
+        icon: 'gamepad',
         longDesc: [
             'Play with this. It doesn\'t quite work on mobile',
             'click on squares to change their colours. Drag a ' +
@@ -122,6 +131,7 @@ Technologies:
     },
     {
         name: 'password-generator',
+        icon: 'key',
         longDesc: 'Generate a "good" password.',
     },
     // {
@@ -141,6 +151,7 @@ const fulfilPageDefaults = (page: Partial<PageInfoType>) => {
         link: '/#/' + page.name,
         underConstruction: false,
         height: '30%',
+        icon: 'key',
         ...page,
     }
 }

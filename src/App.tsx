@@ -1,4 +1,5 @@
 import './config/firebase'
+import './import-fontawesome-icons'
 
 import { HashRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
