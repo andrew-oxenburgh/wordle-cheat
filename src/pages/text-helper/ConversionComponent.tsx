@@ -40,7 +40,7 @@ export const ConversionComponent = () => {
     return (
         <>
             <Form.Control
-                as="input"
+                as="textarea"
                 autoFocus
                 type="text"
                 value={text}
