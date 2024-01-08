@@ -1,10 +1,11 @@
-import { useState, useEffect, Fragment } from 'react'
+import { useState, Fragment, useRef, useEffect } from 'react'
 
 import Form from 'react-bootstrap/Form'
 
-import { stringConversion } from './lib/textUtils'
 import { StringInspectionType } from './lib/textHelper.types'
 import CopyableText from '../../components/CopyableText'
+import { useResizeElement } from '../../hooks/useResizeElement'
+import { stringConversion } from './lib/textUtils'
 
 type StringInspectionProps = {
     inspection: StringInspectionType
@@ -29,11 +30,13 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
 }
 
 export const ConversionComponent = () => {
+    const textAreaEle = useRef(null);
     const [text, setText] = useState('https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY?thing=other-thing')
     const [conversions, setConversions] = useState<StringInspectionType>({
         input: '',
         kinds: [],
     })
+    useResizeElement(textAreaEle, [text])
     useEffect(() => {
         setConversions(stringConversion(text))
     }, [text])
@@ -41,13 +44,16 @@ export const ConversionComponent = () => {
         <>
             <Form.Control
                 as="textarea"
+                id="urlTextArea"
+                ref={textAreaEle}
                 autoFocus
                 type="text"
                 value={text}
-                placeholder="Enter a URL"
-
-                onChange={(e) => setText(e.target.value)} />
-            <StringInspectionDisplay inspection={conversions} />
+                placeholder="Enter some text..."
+                onChange={(e) => setText(e.target.value)}
+            />
+            <StringInspectionDisplay
+                inspection={conversions} />
         </>
     )
 }

@@ -14,6 +14,11 @@ td:nth-child(1) {
     width: 25%
 }
 
+td:nth-child(2) {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    ;
+}
+
 th {
     font-weight: bold;
     background-color: aliceblue;
