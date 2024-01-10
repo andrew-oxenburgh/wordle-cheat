@@ -1,10 +1,10 @@
-import { useState, Fragment, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import useResizeElement from 'react-hook-resizable-element'
 
 import Form from 'react-bootstrap/Form'
 
 import { StringInspectionType } from './lib/textHelper.types'
 import CopyableText from '../../components/CopyableText'
-import { useResizeElement } from '../../hooks/useResizeElement'
 import { stringConversion } from './lib/textUtils'
 
 type StringInspectionProps = {
@@ -15,14 +15,14 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
     return (
         <>
             {inspection.kinds.map((kind) => (
-                <Fragment key={kind.kind}>
+                <div key={kind.kind}>
                     <div>{kind.kind} Conversions</div>
                     <div >
                         {kind.conversions.map((conversion) => (
                             <CopyableText text={conversion.value} key={conversion.name} />
                         ))}
                     </div>
-                </Fragment>
+                </div>
             ))
             }
         </ >

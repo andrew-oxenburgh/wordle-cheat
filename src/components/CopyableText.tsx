@@ -51,7 +51,7 @@ interface Props {
 /**
  * Create a field to show text, and
  */
-const CopyableText: React.FC<Props> = ({ text, warning = '', time = 3000 }) => {
+const CopyableText = ({ text = '', warning = '', time = 3000 }) => {
     const classes = useStyles()
     const [show, setShow] = useState(false)
     const closeAlert = () => setShow(false)

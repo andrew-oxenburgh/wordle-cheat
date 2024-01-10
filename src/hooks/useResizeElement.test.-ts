@@ -1,4 +1,4 @@
-import { MutableRefObject } from 'react';
+// import { MutableRefObject } from 'react';
 import {
     UseResizeElementError,
     isNullThrowError,
@@ -55,7 +55,7 @@ describe('throwErrorIfElementIsInvalid', () => {
     })
 
     it('should not throw an error if all of the conditions pass', () => {
-        const eleRef = { current: { style: { height: 'test' }, scrollHeight: 'test' } } as unknown as MutableRefObject<any>;
+        const eleRef = { current: { style: { height: 'test' }, scrollHeight: 35 } } as unknown as MutableRefObject<ResizableElementShape>;
         expect(() => throwErrorIfElementIsInvalid(eleRef)).not.toThrow();
     });
 });
