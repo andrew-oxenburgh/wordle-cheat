@@ -1,0 +1,54 @@
+{
+	"files": [
+		{
+			"path": "src/Desktop.tsx",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "tsconfig.node.json",
+			"bookmarks": [
+				{
+					"line": 17,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "package.json",
+			"bookmarks": [
+				{
+					"line": 17,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "vite.config.ts",
+			"bookmarks": [
+				{
+					"line": 41,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "tsconfig.json",
+			"bookmarks": [
+				{
+					"line": 32,
+					"column": 0,
+					"label": ""
+				}
+			]
+		}
+	]
+}

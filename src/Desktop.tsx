@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Loader from './components/Loader'
+import Loader from '#/components/Loader'
 
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
 const Cheater = React.lazy(() => import('./pages/wordle-two'))
@@ -47,15 +47,16 @@ const Desktop = () => {
     return (
         <Container fluid style={{ paddingBottom: '4em' }}>
             <Row>
+                {/* <Spinner /> */}
                 {pages.map((Page, index) =>
-                    (<>
-                        <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
-                            <Suspense key={index} fallback={<Loader />}>
-                                <Page key={index} />
-                            </Suspense>
-                        </Col>
-                    </>
-                    ))}
+                (<>
+                    <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
+                        <Suspense key={index} fallback={<Loader />}>
+                            <Page key={index} />
+                        </Suspense>
+                    </Col>
+                </>
+                ))}
             </Row>
         </Container>
     )
