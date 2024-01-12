@@ -61,7 +61,7 @@ const WordleTwo = (): JSX.Element => {
                 const newBoardState: BoardState = [...boardState]
                 newBoardState[next - 1] = {
                     letter: '-',
-                    state: State.NONE
+                    state: State.NONE,
                 }
                 setBoardState(newBoardState)
                 setNext(next - 1)
@@ -82,9 +82,9 @@ const WordleTwo = (): JSX.Element => {
         }
     }
 
-    type VoidFunction = () => void;
+    type VoidFunction = () => void
 
-    function onClick(offset: number): VoidFunction {
+    const onClick = (offset: number): VoidFunction => {
         return (): void => {
             const newLetters = [...boardState]
             newLetters[offset].state = incrState(newLetters[offset].state)

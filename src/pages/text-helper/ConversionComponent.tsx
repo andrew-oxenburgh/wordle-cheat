@@ -30,7 +30,7 @@ const StringInspectionDisplay: React.FC<StringInspectionProps> = ({ inspection }
 }
 
 export const ConversionComponent = () => {
-    const textAreaEle = useRef(null);
+    const textAreaEle = useRef(null)
     const [text, setText] = useState('https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY?thing=other-thing')
     const [conversions, setConversions] = useState<StringInspectionType>({
         input: '',

@@ -9,14 +9,14 @@ export enum State {
 
 export const incrState = (state: State): State => {
     switch (state) {
-        case State.NONE:
-            return State.NOT_USED
-        case State.NOT_USED:
-            return State.USED
-        case State.USED:
-            return State.HERE
-        case State.HERE:
-            return State.NONE
+    case State.NONE:
+        return State.NOT_USED
+    case State.NOT_USED:
+        return State.USED
+    case State.USED:
+        return State.HERE
+    case State.HERE:
+        return State.NONE
     }
 }
 
@@ -27,19 +27,19 @@ export interface LetterState {
 
 export type BoardState = LetterState[]
 
-export type RowsState = LetterState[][];
-export type ColsState = LetterState[][];
+export type RowsState = LetterState[][]
+export type ColsState = LetterState[][]
 
 
-export function notNormalLetter(input: string): boolean {
-    return ! /^[A-Za-z]$/.test(input);
+export const notNormalLetter = (input: string): boolean => {
+    return ! /^[A-Za-z]$/.test(input)
 }
 
 export const blankBoard = (w: number, h: number): BoardState => R.times(
     () => {
         return {
             letter: '-',
-            state: State.NONE
+            state: State.NONE,
         }
     },
     w * h,
@@ -47,28 +47,27 @@ export const blankBoard = (w: number, h: number): BoardState => R.times(
 
 export const variant = (state: State): string => {
     switch (state) {
-        case State.NONE:
-            return 'secondary'
-        case State.NOT_USED:
-            return 'light'
-        case State.USED:
-            return 'warning'
-        case State.HERE:
-            return 'success'
+    case State.NONE:
+        return 'secondary'
+    case State.NOT_USED:
+        return 'light'
+    case State.USED:
+        return 'warning'
+    case State.HERE:
+        return 'success'
     }
 }
 
-export function calcRows(board: BoardState, width = 5): RowsState {
+export const calcRows = (board: BoardState, width = 5): RowsState => {
     const ret = R.splitEvery(width, board)
     return ret
 }
 
-export function calcCols(board: BoardState, width = 5): ColsState {
+export const calcCols = (board: BoardState, width = 5): ColsState => {
     let ret: ColsState = []
     const indexedReduce = R.addIndex(R.reduce)
     ret = indexedReduce((acc: ColsState, val: LetterState, inx: number) => {
         const col = inx % width
-        const row = inx - col * width
         acc[col] = acc[col] || []
         acc[col].push(val)
         return acc

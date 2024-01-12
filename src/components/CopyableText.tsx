@@ -42,7 +42,7 @@ const useStyles = createUseStyles({
     },
 })
 
-interface Props {
+type CopyableTextProps = {
     text: string
     warning?: string
     time?: number
@@ -51,7 +51,7 @@ interface Props {
 /**
  * Create a field to show text, and
  */
-const CopyableText = ({ text = '', warning = '', time = 3000 }) => {
+const CopyableText = ({ text, warning, time = 3000 }: CopyableTextProps) => {
     const classes = useStyles()
     const [show, setShow] = useState(false)
     const closeAlert = () => setShow(false)
