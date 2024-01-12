@@ -97,10 +97,6 @@ const WordleTwo = (): JSX.Element => {
         setNext(0)
     }
 
-    function variant(state: any): string | undefined {
-        throw new Error('Function not implemented.')
-    }
-
     return (
         <div onKeyDown={onkeydown as unknown as KeyboardEventHandler} tabIndex={0}>
             <PageBody name="wordle-two">
