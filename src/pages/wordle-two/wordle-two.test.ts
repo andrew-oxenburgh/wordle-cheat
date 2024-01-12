@@ -1,5 +1,6 @@
-import { blankBoard, BoardState } from "./wordle.utils"
 
+import { expect, test, describe } from 'vitest'
+import { blankBoard, BoardState } from "./wordle.utils"
 
 const oneByOne = blankBoard(1, 1)
 const twoByOne = blankBoard(2, 1)
@@ -9,13 +10,13 @@ function findPattern(board: BoardState): string[] {
     return [];
 }
 
-describe('initial', () => {
-    it('one by one NONE allows all letters', () => {
+describe('wordle.utils', () => {
+    test('one by one NONE allows all letters', () => {
         expect(findPattern(oneByOne)).toEqual(['a-z']);
     })
-    it('ywo by one NONE allows all letters in array of 2', () => {
+    test('two by one NONE allows all letters in array of 2', () => {
         expect(findPattern(twoByOne)).toEqual(['a-z', 'a-z']);
     })
-});
+})
 
 export default {}
