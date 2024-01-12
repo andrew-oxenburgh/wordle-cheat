@@ -27,6 +27,10 @@ export interface LetterState {
 
 export type BoardState = LetterState[]
 
+export type RowsState = LetterState[][];
+export type ColsState = LetterState[][];
+
+
 export function notNormalLetter(input: string): boolean {
     return ! /^[A-Za-z]$/.test(input);
 }
@@ -53,5 +57,24 @@ export const variant = (state: State): string => {
             return 'success'
     }
 }
+
+export function calcRows(board: BoardState, width = 5): RowsState {
+    const ret = R.splitEvery(width, board)
+    return ret
+}
+
+export function calcCols(board: BoardState, width = 5): ColsState {
+    let ret: ColsState = []
+    const indexedReduce = R.addIndex(R.reduce)
+    ret = indexedReduce((acc: ColsState, val: LetterState, inx: number) => {
+        const col = inx % width
+        const row = inx - col * width
+        acc[col] = acc[col] || []
+        acc[col].push(val)
+        return acc
+    }, ret, board)
+    return ret
+}
+
 
 export default {}
