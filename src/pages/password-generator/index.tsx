@@ -39,25 +39,25 @@ const useStyles = createUseStyles({
 
 
 function* randomNumberGenerator(): Generator<number> {
-    const array = new Uint32Array(10);
+    const array = new Uint32Array(10)
     while (true) {
-        console.log('recalcing')
-
-        crypto.getRandomValues(array);
-        for (let r of array) {
+        crypto.getRandomValues(array)
+        for (const r of array) {
             const n = (r / 5000) % 1
-            console.log(n)
             yield n
         }
     }
 }
 
-const rnd = randomNumberGenerator();
+const rnd = randomNumberGenerator()
 
-function randomWord() {
+const randomWord = (): string => {
     return words[Math.floor(rnd.next().value * numWords)].toLowerCase()
 }
 
+const randomSeparator = (): string => {
+    return separators[Math.floor(rnd.next().value * separators.length)]
+}
 
 const createPassword = () => {
     let password = ''
@@ -112,8 +112,3 @@ const JSSComponent: React.FC = () => {
 }
 
 export default JSSComponent
-
-function randomSeparator() {
-    return separators[Math.floor(rnd.next().value * separators.length)]
-}
-
