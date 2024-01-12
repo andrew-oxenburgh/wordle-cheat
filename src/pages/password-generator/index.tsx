@@ -37,16 +37,38 @@ const useStyles = createUseStyles({
     },
 })
 
+
+function* randomNumberGenerator(): Generator<number> {
+    const array = new Uint32Array(10);
+    while (true) {
+        console.log('recalcing')
+
+        crypto.getRandomValues(array);
+        for (let r of array) {
+            const n = (r / 5000) % 1
+            console.log(n)
+            yield n
+        }
+    }
+}
+
+const rnd = randomNumberGenerator();
+
+function randomWord() {
+    return words[Math.floor(rnd.next().value * numWords)].toLowerCase()
+}
+
+
 const createPassword = () => {
     let password = ''
-    password += words[Math.floor(Math.random() * numWords)].toLowerCase()
-    password += separators[Math.floor(Math.random() * separators.length)]
-    password += words[Math.floor(Math.random() * numWords)].toUpperCase()
-    password += separators[Math.floor(Math.random() * separators.length)]
-    password += words[Math.floor(Math.random() * numWords)].toLowerCase()
+    password += randomWord()
+    password += randomSeparator()
+    password += randomWord()
+    password += randomSeparator()
+    password += randomWord()
     if (password.length < 15) {
-        password += separators[Math.floor(Math.random() * separators.length)]
-        password += words[Math.floor(Math.random() * numWords)].toLowerCase()
+        password += randomSeparator()
+        password += randomWord()
 
     }
     return password
@@ -90,3 +112,8 @@ const JSSComponent: React.FC = () => {
 }
 
 export default JSSComponent
+
+function randomSeparator() {
+    return separators[Math.floor(rnd.next().value * separators.length)]
+}
+
