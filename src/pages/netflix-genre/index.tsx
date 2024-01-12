@@ -25,6 +25,7 @@ const NetflixGenre = () => {
                                             <td>
                                                 <a target="_blank"
                                                     href={'https://www.netflix.com/browse/genre/' + code}
+                                                    rel="noopener noreferrer"
                                                 >
                                                     {genre}
                                                 </a>
