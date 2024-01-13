@@ -4,7 +4,7 @@ import useResizeElement from 'react-hook-resizable-element'
 import Form from 'react-bootstrap/Form'
 
 import { StringInspectionType } from './lib/textHelper.types'
-import CopyableText from '../../components/CopyableText'
+import CopyableText from '#/components/CopyableText'
 import { stringConversion } from './lib/textUtils'
 
 type StringInspectionProps = {

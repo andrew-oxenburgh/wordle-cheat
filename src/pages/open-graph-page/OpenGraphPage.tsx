@@ -11,8 +11,8 @@ import Table from 'react-bootstrap/Table'
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
 import JSONPretty from 'react-json-pretty'
 
-import PageBody from '../../components/structural/PageBody'
-import OpenGraphCard from '../../components/OpenGraphCard'
+import PageBody from '#/components/structural/PageBody'
+import OpenGraphCard from '#/components/OpenGraphCard'
 
 import { NormalisedType, presets } from './open-graph.types'
 import { normalise } from './open-graph.utils'

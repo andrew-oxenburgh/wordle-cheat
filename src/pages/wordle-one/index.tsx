@@ -11,7 +11,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 
-import PageBody from '../../components/structural/PageBody'
+import PageBody from '#/components/structural/PageBody'
 
 import {
     createRegEx,
@@ -24,7 +24,7 @@ import {
     WordleForm,
 } from './wordle-utils'
 import WordList from './WordList'
-import { GenericEventType } from '../../config/config-types'
+import { GenericEventType } from '#/config/config-types'
 
 const wcInput = {
     background: 'green',

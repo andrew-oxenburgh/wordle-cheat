@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 
 import PageHeader from './PageHeader'
 import { ErrorBoundary } from './ErrorBoundary'
-import { PageInfoType, findPageInfo } from '../../config/config'
+import { PageInfoType, findPageInfo } from '#/config/config'
 
 const useStyles = createUseStyles({
     container: {

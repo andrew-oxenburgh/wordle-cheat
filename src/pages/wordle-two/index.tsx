@@ -2,7 +2,7 @@ import { KeyboardEventHandler, useState } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import PageBody from '../../components/structural/PageBody'
+import PageBody from '#/components/structural/PageBody'
 import Button from 'react-bootstrap/Button'
 import {
     BoardState,

@@ -86,6 +86,7 @@
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@rollup/plugin-alias": "^5.1.0",
     "core-js": "^3.35.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

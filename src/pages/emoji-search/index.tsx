@@ -7,7 +7,7 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 
-import PageBody from '../../components/structural/PageBody'
+import PageBody from '#/components/structural/PageBody'
 
 const useStyles = createUseStyles({
     chacter: {

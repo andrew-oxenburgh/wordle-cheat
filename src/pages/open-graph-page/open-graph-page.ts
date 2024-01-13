@@ -2,7 +2,7 @@ import { getFunctions, httpsCallable } from 'firebase/functions'
 
 import { OgObject } from 'open-graph-scraper/dist/lib/types'
 
-import app from '../../config/firebase'
+import app from '#/config/firebase'
 
 export const getOgGraph = async (url: string): Promise<OgObject> => {
     const functions = getFunctions(app)

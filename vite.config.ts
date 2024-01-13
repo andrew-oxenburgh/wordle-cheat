@@ -4,6 +4,10 @@ import path from 'path'
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import express from './express-plugin'
+import alias from '@rollup/plugin-alias'
+import { resolve } from 'path'
+
+const projectRootDir = resolve(__dirname);
 
 // https://vitejs.dev/config/
 const config = (props) => {
@@ -23,7 +27,17 @@ const config = (props) => {
                }
             }
          },
-         express('express.js')
+         express('express.js'),
+         alias({
+            // for rollup
+            entries: [
+               {
+                  find: '#',
+                  replacement: resolve(projectRootDir, 'src')
+               }
+            ]
+         })
+
       ],
       server: {
          // port: 5000,

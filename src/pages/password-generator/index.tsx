@@ -6,12 +6,12 @@ import * as R from 'ramda'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-import fiveLetterwords from '../../config/five-letter-words'
-import fourLetterWords from '../../config/four-letter-words'
-import commonWords from '../../config/common-words'
+import fiveLetterwords from '#/config/five-letter-words'
+import fourLetterWords from '#/config/four-letter-words'
+import commonWords from '#/config/common-words'
 
-import CopyablText from '../../components/CopyableText'
-import PageBody from '../../components/structural/PageBody'
+import CopyablText from '#/components/CopyableText'
+import PageBody from '#/components/structural/PageBody'
 
 let words = fiveLetterwords.concat(fourLetterWords).concat(commonWords)
 

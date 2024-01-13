@@ -1,4 +1,4 @@
-import PageBody from '../../components/structural/PageBody'
+import PageBody from '#/components/structural/PageBody'
 import MdEditor from 'react-markdown-editor-lite'
 
 import MarkdownIt from 'markdown-it'

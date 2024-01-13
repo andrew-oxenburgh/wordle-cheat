@@ -4,7 +4,7 @@ import * as R from 'ramda'
 /* eslint @typescript-eslint/no-unsafe-return: "off" */
 
 const getWords = async (): Promise<string[]> => {
-    const ret = await import('../../config/five-letter-words')
+    const ret = await import('#/config/five-letter-words')
     return ret.default
 }
 

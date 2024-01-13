@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-import * as config from '../../config/config'
+import * as config from '#/config/config'
 import InfoThing from '../InfoThing'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 
