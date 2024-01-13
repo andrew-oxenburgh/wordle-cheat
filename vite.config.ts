@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 import express from './express-plugin'
 import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
+import removeConsole from 'vite-plugin-remove-console';
 
 const projectRootDir = resolve(__dirname);
 
@@ -36,8 +37,8 @@ const config = (props) => {
                   replacement: resolve(projectRootDir, 'src')
                }
             ]
-         })
-
+         }),
+         removeConsole()
       ],
       server: {
          // port: 5000,

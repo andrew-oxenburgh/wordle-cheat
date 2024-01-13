@@ -44,6 +44,7 @@ const pages = [
 
 const Desktop = () => {
     const classes = useStyles()
+    console.log('   checking!!!')
     return (
         <Container fluid style={{ paddingBottom: '4em' }}>
             <Row>
