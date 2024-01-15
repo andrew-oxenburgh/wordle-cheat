@@ -16,6 +16,5 @@
   },
   "include": [
     "vite.config.ts",
-    "express-plugin.ts"
   ],
 }

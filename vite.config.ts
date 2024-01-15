@@ -3,7 +3,6 @@
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-import express from './express-plugin'
 import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
 import removeConsole from 'vite-plugin-remove-console';
@@ -30,7 +29,6 @@ const config = ({ command, mode }) => {
                }
             }
          },
-         express('express.js'),
          alias({
             // for rollup
             entries: [

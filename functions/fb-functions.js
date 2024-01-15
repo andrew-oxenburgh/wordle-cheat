@@ -1,8 +1,8 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
-const { logger } = require("firebase-functions");
-const { onRequest, onCall } = require("firebase-functions/v2/https");
+const {logger} = require("firebase-functions");
+const {onRequest, onCall} = require("firebase-functions/v2/https");
 const ogs = require("open-graph-scraper");
-const cors = require("cors")({ origin: true });
+const cors = require("cors")({origin: true});
 const version = require("../package.json").version;
 
 // The Firebase Admin SDK to access Firestore.
@@ -13,7 +13,7 @@ const onCallOptions = {
     cors: true,
     // timeoutSeconds: 30,
     maxInstances: 2,
-    mode: "no-cors"
+    mode: "no-cors",
 };
 
 const userAgent = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
@@ -34,7 +34,7 @@ exports.ogGraph = onCall(onCallOptions, async (request, _) => {
         };
         try {
             if (url) {
-                const qury = await ogs({ url, fetchOptions });
+                const qury = await ogs({url, fetchOptions});
 
                 result.success = true;
                 result.graph = qury.result;
