@@ -2,8 +2,8 @@
 const {logger} = require("firebase-functions");
 const {onRequest, onCall} = require("firebase-functions/v2/https");
 const ogs = require("open-graph-scraper");
-const cors = require("cors")({origin: true});
-const version = require("../package.json").version;
+// const cors = require("cors")({ origin: true });
+// const version = require("../package.json").version;
 
 // The Firebase Admin SDK to access Firestore.
 const admin = require("firebase-admin");
@@ -23,31 +23,29 @@ const fetchOptions = {
         "user-agent": userAgent,
     },
     cache: "force-cache",
-
+    cors: true,
 };
 
 exports.ogGraph = onCall(onCallOptions, async (request, _) => {
-    cors(async (request, _) => {
-        const url = request.data.url;
-        const result = {
-            success: false,
-        };
-        try {
-            if (url) {
-                const qury = await ogs({url, fetchOptions});
+    const url = request.data.url;
+    const result = {
+        success: false,
+    };
+    try {
+        if (url) {
+            const qury = await ogs({url, fetchOptions});
 
-                result.success = true;
-                result.graph = qury.result;
-            } else {
-                result.success = false;
-                result.error = "No URL provided";
-            }
-        } catch (err) {
-            logger.log("*********ERROR", err);
-            result.error = err.toString();
+            result.success = true;
+            result.graph = qury.result;
+        } else {
+            result.success = false;
+            result.error = "No URL provided";
         }
-        return result;
-    });
+    } catch (err) {
+        logger.log("*********ERROR", err);
+        result.error = err.toString();
+    }
+    return result;
 });
 
 exports.pingMe = onRequest(onCallOptions, async (req, res) => {
@@ -64,8 +62,8 @@ exports.pingMe = onRequest(onCallOptions, async (req, res) => {
     });
 });
 
-exports.version = onRequest(onCallOptions, async (req, res) => {
-    res.json({
-        version,
-    });
-});
+// exports.version = onRequest(onCallOptions, async (req, res) => {
+//     res.json({
+//         version,
+//     });
+// });
