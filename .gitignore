@@ -4,4 +4,6 @@ dist/
 *.log
 .firebase/
 .eslintcache
+.env.serve
+.env.build
 .env

@@ -10,6 +10,12 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 
 const onCallOptions = {
+    cors: [
+        "localhost",
+        "sketch-oxenburgh.web.app",
+        "oxenburgh.dev",
+    ],
+
     timeoutSeconds: 30,
     maxInstances: 2,
 };

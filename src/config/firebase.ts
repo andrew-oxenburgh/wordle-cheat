@@ -27,16 +27,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// const analytics = getAnalytics(app)
 
-// console.log(process.env)
+if (import.meta.env.MODE === 'development') {
+    console.log('dev mode')
+    connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
+} else {
+    console.log('prod mode')
+}
 
-// if (process.env.ENVIRONMENT === 'DEV') {
-//     console.log("DEV MODE")
-// console.log('connected to emulator');
-connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
-
-// }
 
 export default app
