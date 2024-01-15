@@ -1,16 +1,15 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
-const { logger } = require("firebase-functions");
-const { onRequest, onCall } = require("firebase-functions/v2/https");
+const {logger} = require("firebase-functions");
+const {onRequest, onCall} = require("firebase-functions/v2/https");
 const ogs = require("open-graph-scraper");
 
 const version = require("../package.json").version;
 
+// The Firebase Admin SDK to access Firestore.
+const admin = require("firebase-admin");
+admin.initializeApp();
+
 const onCallOptions = {
-    cors: [
-        // "localhost",
-        "sketch-oxenburgh.web.app",
-        "oxenburgh.dev",
-    ],
     timeoutSeconds: 30,
     maxInstances: 2,
 };
@@ -31,7 +30,7 @@ exports.ogGraph = onCall(onCallOptions, async (request, _) => {
     };
     try {
         if (url) {
-            const qury = await ogs({ url, fetchOptions });
+            const qury = await ogs({url, fetchOptions});
 
             result.success = true;
             result.graph = qury.result;

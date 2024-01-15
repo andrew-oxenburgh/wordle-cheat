@@ -8,10 +8,7 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "frameworksBackend": {
-      "region": "asia-east1"
-    }
+    ]
   },
   "emulators": {
     "auth": {
