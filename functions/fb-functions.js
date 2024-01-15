@@ -5,7 +5,11 @@ const { onRequest, onCall } = require("firebase-functions/v2/https");
 const ogs = require("open-graph-scraper")
 
 const onCallOptions = {
-    cors: ['localhost', 'sketch-oxenburgh.web.app'],
+    cors: [
+        'localhost',
+        'sketch-oxenburgh.web.app',
+        'oxenburgh.dev'
+    ],
     timeoutSeconds: 10,
     maxInstances: 1,
 }
