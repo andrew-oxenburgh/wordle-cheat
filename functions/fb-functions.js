@@ -1,50 +1,48 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
-const e = require("express");
 const { logger } = require("firebase-functions");
 const { onRequest, onCall } = require("firebase-functions/v2/https");
-const ogs = require("open-graph-scraper")
+const ogs = require("open-graph-scraper");
 
 const onCallOptions = {
     cors: [
-        'localhost',
-        'sketch-oxenburgh.web.app',
-        'oxenburgh.dev'
+        "localhost",
+        "sketch-oxenburgh.web.app",
+        "oxenburgh.dev",
     ],
     timeoutSeconds: 10,
     maxInstances: 1,
-}
+};
 
-const userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+const userAgent = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
 const fetchOptions = {
-    method: 'GET',
+    method: "GET",
     headers: {
-        'user-agent': userAgent,
+        "user-agent": userAgent,
     },
-    cache: 'force-cache'
-}
+    cache: "force-cache",
+};
 
 exports.ogGraph = onCall(onCallOptions, async (request, _) => {
     const url = request.data.url;
     const result = {
         success: false,
-    }
+    };
     try {
         if (url) {
-            const qury = await ogs({ url, fetchOptions })
+            const qury = await ogs({ url, fetchOptions });
 
-            result.success = true
-            result.graph = qury.result
+            result.success = true;
+            result.graph = qury.result;
         } else {
-            result.success = false
-            result.error = "No URL provided"
+            result.success = false;
+            result.error = "No URL provided";
         }
     } catch (err) {
-        logger.log("*********ERROR", err)
-        result.error = err.toString()
-
+        logger.log("*********ERROR", err);
+        result.error = err.toString();
     } finally {
-        return result
     }
+    return result;
 });
 
 exports.ping = onRequest(onCallOptions, async (req, res) => {
@@ -56,7 +54,7 @@ exports.ping = onRequest(onCallOptions, async (req, res) => {
     //     .add({ original: original });
     // Send back a message that we've successfully written the message
     res.json({
-        help: 'Write a message. add an arg ?text=something to the url',
-        text: original
+        help: "Write a message. add an arg ?text=something to the url",
+        text: original,
     });
 });
