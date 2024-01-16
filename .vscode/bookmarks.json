@@ -21,16 +21,6 @@
 			]
 		},
 		{
-			"path": "package.json",
-			"bookmarks": [
-				{
-					"line": 15,
-					"column": 0,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "vite.config.ts",
 			"bookmarks": [
 				{

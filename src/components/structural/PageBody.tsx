@@ -4,8 +4,9 @@ import { createUseStyles } from 'react-jss'
 import Container from 'react-bootstrap/Container'
 
 import PageHeader from './PageHeader'
-import { ErrorBoundary } from './ErrorBoundary'
+import { ErrorBoundary } from '../ErrorBoundary'
 import { PageInfoType, findPageInfo } from '#/config/config'
+import { appMinMaxWidth } from './structural.config'
 
 const useStyles = createUseStyles({
     container: {
@@ -15,10 +16,10 @@ const useStyles = createUseStyles({
         alignContent: 'center',
         justifyContent: 'center',
         height: '100%',
-        maxWidth: '30em',
         cursor: 'default',
         padding: '1em',
         overflow: 'none',
+        ...appMinMaxWidth
     },
 })
 

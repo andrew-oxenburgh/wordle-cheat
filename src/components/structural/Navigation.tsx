@@ -8,12 +8,13 @@ import { useLocation, Location } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-import { pageDefinitions, version } from './config/config'
+import { pageDefinitions, version } from '../../config/config'
+import { appMinMaxWidth } from './structural.config'
 
 export const navBarStyle = {
     padding: '0 3em',
     borderRadius: '3px',
-    width: '30em',
+    ...appMinMaxWidth,
     margin: 'auto',
 }
 

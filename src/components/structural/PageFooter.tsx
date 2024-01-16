@@ -3,45 +3,37 @@ import { createUseStyles } from 'react-jss'
 import ReplitThing from '../ReplitThing'
 import GithubThing from '../GithubThing'
 import UnderConstructionThing from '../UnderConstructionThing'
+import { appMaxWidth, appMinWidth } from './structural.config'
 
 const useStyles = createUseStyles({
     footer: {
-        width: '100%',
-        height: '3.5em',
         position: 'static',
         margin: 'auto',
-    },
-    footerContent: {
-        color: 'white',
+        ...appMaxWidth,
+        ...appMinWidth,
         textAlign: 'center',
-        padding: '10px 0',
-        margin: 'auto',
         height: '3.5em',
         left: 0,
         bottom: 0,
-        paddingRight: '0.5em',
-        minWidth: '30em',
-        maxWidth: '30em',
         justifyContent: 'flex-end',
         display: 'flex',
         borderRadius: '3px',
+        padding: '0.4em',
     },
 })
 
 const PageFooter = ({ underConstruction = false }) => {
     const classes = useStyles()
     return (
-        <footer className={classes.footer}>
-            <div className={classes.footerContent + ' bg-dark'} >
-                <ReplitThing />
-                &nbsp;
-                <GithubThing />
-                {
-                    underConstruction && (
-                        <UnderConstructionThing />
-                    )
-                }
-            </div >
+        <footer className={classes.footer + ' bg-dark'}>
+            <ReplitThing />
+            &nbsp;
+            <GithubThing />
+            {
+                underConstruction && (
+                    <UnderConstructionThing />
+                )
+            }
         </footer >
     )
 }

@@ -9,6 +9,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import * as config from '#/config/config'
 import InfoThing from '../InfoThing'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
+import { appMaxWidth, appMinMaxWidth, appMinWidth } from './structural.config'
 
 const buttonStyle = {
     fontSize: '1.5em',
@@ -20,12 +21,13 @@ const useStyles = createUseStyles({
     pageHeader: {
         textAlign: 'center',
         textAnchor: 'middle',
-        maxWidth: '30em',
         marginBottom: '1em',
         // paddingBottom: '0.5em',
         overflow: 'none',
         height: 'fit-content',
         position: 'relative',
+        minWidth: '100%',
+        ...appMaxWidth,
     },
     backdrop: {
         width: '100%',
@@ -69,12 +71,12 @@ const PageHeader: React.FC<Props> = ({ name }) => {
             <div className={classes.backdrop}>
                 <ButtonWithTooltip as="a" href={prevLink}
                     className={classes.leftArrow}
-                    tipText="previous page">
+                    tipText="previous sketch">
                     &larr;
                 </ButtonWithTooltip>
                 <ButtonWithTooltip as="a" href={nextLink}
                     className={classes.rightArrow}
-                    tipText="next page">
+                    tipText="next sketch">
                     &rarr;
                 </ButtonWithTooltip>
                 <ButtonWithTooltip
@@ -83,7 +85,7 @@ const PageHeader: React.FC<Props> = ({ name }) => {
                     aria-label={'Help button'}
                     variant="warning"
                     id="info"
-                    tipText="page info"
+                    tipText="sketch info"
                 >
                     &#9432;
                 </ButtonWithTooltip>

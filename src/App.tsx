@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 // dynamic because possibly big imports
 import PageFooter from './components/structural/PageFooter'
-import Navigation from './Navigation'
+import Navigation from './components/structural/Navigation'
 import WCRoutes from './WCRoutes'
 
 import './config/firebase'
