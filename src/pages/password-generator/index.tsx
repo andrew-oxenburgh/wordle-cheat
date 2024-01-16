@@ -35,6 +35,10 @@ const useStyles = createUseStyles({
         bottom: '10em',
         left: '1em',
     },
+    card: {
+        maxWidth: '30em',
+        margin: 'auto'
+    }
 })
 
 
@@ -85,7 +89,7 @@ const JSSComponent: React.FC = () => {
     return (
         <>
             <PageBody name="password-generator">
-                <Card>
+                <Card className={classes.card}>
                     <Card.Body>
                         <Card.Title>A suggested password</Card.Title>
                         <Card.Text>

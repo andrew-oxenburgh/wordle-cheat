@@ -6,7 +6,7 @@ import PageBody from '#/components/structural/PageBody'
 const TextHelper = () => {
     return (
         <PageBody name="text-helper" >
-            <Card>
+            <Card style={{ maxWidth: '30em', margin: 'auto' }}>
                 <Card.Body>
                     <Card.Text>
                         Converts strings into a bunch of useful formats

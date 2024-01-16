@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { useEffectOnce } from 'usehooks-ts'
@@ -20,6 +20,9 @@ import { getOgGraph } from './open-graph-page'
 import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.util'
 
 import 'react-json-pretty/themes/1337.css'
+import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
+import AccordionHeader from 'react-bootstrap/esm/AccordionHeader'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -33,12 +36,13 @@ const useStyles = createUseStyles({
 })
 
 const MyLinks: React.FC = () => {
-    const [url, setUrl] = useState('https://ogp.me/')
+    const [url, setUrl] = useState('https://open.spotify.com/track/7FpBQ067pHB67deawpbbcY')
     const [loading, setLoading] = useState<boolean>(false)
     const [normalisedGraph, setNormalisedGraph] = useState<NormalisedType | null>(null)
     const [ogGraph, setOgGraph] = useState<OgObject | null>(null)
     const [status, setStatus] = useState('')
     const classes = useStyles()
+    const urlRef = useRef(null)
 
     useEffectOnce(() => {
         const fill = async () => {
@@ -83,77 +87,99 @@ const MyLinks: React.FC = () => {
         void fillCard(url)
     }
 
+    const cardStyle = { maxWidth: '30em', margin: 'auto' }
+
     return (
         <>
             <PageBody name="open-graph">
+                <Card style={cardStyle}>
+                    <Card.Header>
+                        Open Graph
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Text>
+                            Enter a url, and we'll extract all the OG data and present it in a kind of nice way
+                        </Card.Text>
+                        <Form.Control
+                            as="textarea"
+                            id="urlTextArea2"
+                            ref={urlRef}
+                            autoFocus
+                            type="text"
+                            value={url}
+                            placeholder="Enter a URL..."
+                            onChange={(e) => setUrl(e.target.value)}
+                        />
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                Preset url's
+                            </Dropdown.Toggle>
 
-                <h3>Open Graph</h3>
-                <p>Enter a url, and we'll extract all the OG data and present it in a kind of nice way</p>
-                <input
-                    autoFocus
-                    type="text"
-                    className="form-control"
-                    id="url"
-                    placeholder="Enter a URL"
-                    value={url}
-                    onChange={(event) => setUrl(event.target.value)}
-                />
+                            <Dropdown.Menu>
+                                {
+                                    presets.map((preset) => (
+                                        <Dropdown.Item
+                                            key={preset}
+                                            onClick={() => void fillCard(preset)}>
+                                            {preset}
+                                        </Dropdown.Item>
+                                    ))
+                                }
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Preset url's
-                    </Dropdown.Toggle>
+                        <Button type="submit" className="btn btn-primary"
+                            disabled={loading}
+                            onClick={() => void onClick()}
+                        >{loading ? 'Loading...' : 'Submit'}</Button>
+                    </Card.Body>
+                </Card>
 
-                    <Dropdown.Menu>
-                        {
-                            presets.map((preset) => (
-                                <Dropdown.Item
-                                    key={preset}
-                                    onClick={() => void fillCard(preset)}>
-                                    {preset}
-                                </Dropdown.Item>
-                            ))
-                        }
-                    </Dropdown.Menu>
-                </Dropdown>
-
-                <Button type="submit" className="btn btn-primary"
-                    disabled={loading}
-                    onClick={() => void onClick()}
-                >{loading ? 'Loading...' : 'Submit'}</Button>
-
-                <OpenGraphCard normalisedGraph={normalisedGraph} loading={loading} />
+                <OpenGraphCard normalisedGraph={normalisedGraph} loading={loading} cardStyle={cardStyle} />
                 {
                     ogGraph && (
-                        <Accordion defaultActiveKey="0">
-                            <Accordion.Item eventKey="1">
-                                <Accordion.Header>Open Graph Data</Accordion.Header>
-                                <Accordion.Body className={classes.accordianBody}>
-                                    <JSONPretty id="json-pretty" data={ogGraph} />
-                                    <Table striped bordered hover>
-                                        <thead>
-                                            <tr>
-                                                <th>og:tag</th>
-                                                <th>value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {convertOgObjectToOgArray(ogGraph).map((row) => {
-                                                if (row.length >= 2) {
-                                                    return (
-                                                        <tr key={row.join('/')}>
-                                                            <td>{row[0]}</td>
-                                                            <td>{row[1]}</td>
-                                                        </tr>
-                                                    )
-                                                }
-                                            }
-                                            )}
-                                        </tbody>
-                                    </Table>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
+                        <>
+                            <Card style={cardStyle}>
+                                <Accordion defaultActiveKey="0">
+                                    <Accordion.Item eventKey="1" style={{ background: "rgb(30, 30, 30)" }}>
+                                        <Accordion.Header>Data as is from scraper</Accordion.Header>
+                                        <Accordion.Body className={classes.accordianBody}>
+                                            <JSONPretty id="json-pretty" data={ogGraph} />
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+                                </Accordion>
+                            </Card>
+                            <Card style={cardStyle}>
+                                <Accordion defaultActiveKey="0">
+                                    <Accordion.Item eventKey="1">
+                                        <Accordion.Header>Open Graph Data</Accordion.Header>
+                                        <Accordion.Body className={classes.accordianBody}>
+                                            <Table size="sm" striped bordered hover style={{ fontSize: 'small' }}>
+                                                <thead>
+                                                    <tr>
+                                                        <th>og:tag</th>
+                                                        <th>value</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {convertOgObjectToOgArray(ogGraph).map((row) => {
+                                                        if (row.length >= 2) {
+                                                            return (
+                                                                <tr key={row.join('/')}>
+                                                                    <td>{row[0]}</td>
+                                                                    <td>{row[1]}</td>
+                                                                </tr>
+                                                            )
+                                                        }
+                                                    }
+                                                    )}
+                                                </tbody>
+                                            </Table>
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+                                </Accordion>
+                            </Card >
+                        </>
                     )
                 }
                 <pre>

@@ -1,5 +1,5 @@
-import Card from 'react-bootstrap/esm/Card'
-import Image from 'react-bootstrap/esm/Image'
+import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
 
 import * as R from 'ramda'
 import {
@@ -32,38 +32,42 @@ const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     )
 }
 
-const MusicCard = ({ graph }: { graph: MusicGraphType }) => {
+const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType, cardStyle: {} }) => {
     return (
-        <>
-            <hr />
-            <h4>Music</h4>
-            {
-                R.reduce((acc: any, f: string) => {
-                    const val: any = graph[f as keyof MusicGraphType]
+        <Card style={cardStyle}>
+            <Card.Header>Music</Card.Header>
+            <Card.Body>
+                {
+                    R.reduce((acc: any, f: string) => {
+                        const val: any = graph[f as keyof MusicGraphType]
 
-                    if (!val) {
+                        if (!val) {
+                            return acc
+                        }
+                        if (f === 'musician' || f === 'album' || f === 'audio') {
+                            acc.push(
+                                <a href={val} target='_blank' key={val} rel="noopener noreferrer">{f}</a>
+                            )
+                        } else {
+                            acc.push(
+                                <p key={val}>{f} : {val}</p>
+                            )
+                        }
                         return acc
-                    }
-                    if (f === 'musician' || f === 'album' || f === 'audio') {
-                        acc.push(
-                            <a href={val} target='_blank' key={val} rel="noopener noreferrer">{f}</a>
-                        )
-                    } else {
-                        acc.push(
-                            <p key={val}>{f} : {val}</p>
-                        )
-                    }
-                    return acc
-                }, [], MusicGraphFields)
-            }
-        </>
+                    }, [], MusicGraphFields)
+                }
+            </Card.Body>
+        </Card>
     )
 }
 
-const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean; normalisedGraph: NormalisedType | null }) => {
-    // console.log(JSON.stringify(normalisedGraph, null, 4))
+type OpenGraphCardType = {
+    loading: boolean
+    normalisedGraph: NormalisedType | null
+    cardStyle: {}
+}
 
-
+const OpenGraphCard = ({ loading, normalisedGraph, cardStyle = {} }: OpenGraphCardType) => {
     if (loading) {
         return (
             <Loader title="" />
@@ -80,32 +84,50 @@ const OpenGraphCard = ({ loading, normalisedGraph }: { loading: boolean; normali
         )
     }
     return (
-        <Card key={JSON.stringify(normalisedGraph)}>
-            <Card.Header>
-                {normalisedGraph?.favicon &&
-                    <Image max-width="32" src={normalisedGraph.favicon} />}
-                {normalisedGraph?.siteName &&
-                    <span>{' ' + normalisedGraph.siteName}</span>}
-            </Card.Header>
-            <Card.Body>
-                {normalisedGraph.title && <h3>{normalisedGraph?.title}</h3>}
-                <p>{normalisedGraph?.description}</p>
-                <p>{normalisedGraph?.siteName}</p>
-                {normalisedGraph.url && <Card.Link href={normalisedGraph.url} target="_blank" rel="noopener noreferrer">{normalisedGraph.url}</Card.Link>}
-            </Card.Body>
-            {normalisedGraph?.image &&
-                <Card.Img src={normalisedGraph?.image.url}></Card.Img>}
+        <>
+            <Card key={JSON.stringify(normalisedGraph)} style={cardStyle}>
+                <Card.Header>
+                    <>
+                        {
+                            normalisedGraph?.favicon && (
+                                <Image src={normalisedGraph.favicon} title="favicon" />
+                            )
+                        }
+                        <span>&nbsp;</span>
+                        {
+                            normalisedGraph.title || 'Results'
+                        }
+                    </>
+                </Card.Header>
+                <Card.Body>
+                    {
+                        normalisedGraph?.image &&
+                        <Card.Img src={normalisedGraph?.image.url} title="image.url" />
+                    }
 
-            {normalisedGraph?.article && (
+                    {normalisedGraph?.siteName &&
+                        <span>{' ' + normalisedGraph.siteName}</span>}
+                    <p>{normalisedGraph?.description}</p>
+                    <p>{normalisedGraph?.siteName}</p>
+                    {normalisedGraph.url &&
+                        <Card.Link href={normalisedGraph.url} target="_blank" rel="noopener noreferrer">
+                            {normalisedGraph.url
+                            }
+                        </Card.Link>
+                    }
+                </Card.Body>
+
+                {/* {normalisedGraph?.article && (
                 <ArticleCard graph={normalisedGraph.article} />
-            )}
-            {normalisedGraph?.type === 'website' && (
+            )} */}
+                {/* {normalisedGraph?.type === 'website' && (
                 <h3>Website</h3>
-            )}
+            )} */}
+            </Card>
             {normalisedGraph.music && (
-                <MusicCard graph={normalisedGraph.music} />
+                <MusicCard graph={normalisedGraph.music} cardStyle={cardStyle} />
             )}
-        </Card>
+        </>
     )
 }
 
