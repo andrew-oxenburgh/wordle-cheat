@@ -11,11 +11,12 @@ const useStyles = createUseStyles({
         margin: 'auto',
     },
     container: {
+        background: 'white',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '20em',
+        height: '35em',
     },
 })
 
