@@ -2,6 +2,8 @@
 import { initializeApp } from 'firebase/app'
 // import { getAnalytics } from 'firebase/analytics'
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions'
+import { isDevMode } from './isDevMode'
+
 // import dotenv from 'dotenv'
 // dotenv.config()
 
@@ -27,10 +29,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-
-const inDevMode = import.meta.env.MODE === 'development'
-
-if (inDevMode) {
+if (isDevMode()) {
+    console.warn('in DEV mode')
     connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
 }
 
