@@ -98,7 +98,9 @@ const WordleTwo = (): JSX.Element => {
     }
 
     return (
-        <div onKeyDown={onkeydown as unknown as KeyboardEventHandler} tabIndex={0}>
+        <div
+            onKeyDown={onkeydown as unknown as KeyboardEventHandler}
+            tabIndex={0}>
             <PageBody name="wordle-two">
                 <h3>Seriously, don't even look at me!!!</h3>
                 {Legend}

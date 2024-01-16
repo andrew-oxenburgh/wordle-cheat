@@ -12,4 +12,10 @@ export const appMinMaxWidth = {
     ...appMinWidth,
 }
 
+export const cardStyle = {
+    maxWidth: '30em',
+    margin: 'auto'
+}
+
+
 export default {}

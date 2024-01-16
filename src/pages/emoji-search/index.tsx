@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { KeyboardEventHandler, useEffect, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 
 import Card from 'react-bootstrap/Card'
@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 
 import PageBody from '#/components/structural/PageBody'
+import { cardStyle } from '#/components/structural/structural.config'
 
 const useStyles = createUseStyles({
     chacter: {
@@ -21,7 +22,7 @@ const useStyles = createUseStyles({
     },
     alert: {
         position: 'absolute',
-        top: '1em',
+        top: '4em',
         right: '1em',
         zIndex: 10,
     },
@@ -61,35 +62,47 @@ type EmojiType = {
 
 const EmojiSearch = () => {
     const [alert, setAlert] = useState<string>('')
-    const [searchTerm, setSearchTerm] = useState('')
+    const [searchTerm, setSearchTerm] = useState('monkey')
+    const [searched, setSearched] = useState('')
     const [results, setResults] = useState<EmojiType[]>([])
     const [loading, setLoading] = useState(false)
     const classes = useStyles()
-    const handleClick = () => {
-        const handle = async () => {
-            try {
-                setLoading(true)
-                setResults([])
-                const response: Response = await fetch(search(searchTerm))
-                if (response.ok) {
-                    const data = await response.json()
-                    if (!data || data?.status === 'error') {
-                        setResults([])
-                    } else {
-                        setResults(data as EmojiType[])
-                    }
+    const handle = async () => {
+        try {
+            setLoading(true)
+            setResults([])
+            const response: Response = await fetch(search(searchTerm))
+            if (response.ok) {
+                const data = await response.json()
+                if (!data || data?.status === 'error') {
+                    setResults([])
                 } else {
-                    throw new Error('Failed to fetch data')
+                    setResults(data as EmojiType[])
                 }
-            } finally {
-                setLoading(false)
+            } else {
+                throw new Error('Failed to fetch data')
             }
+        } finally {
+            setLoading(false)
+            setSearched(searchTerm)
         }
+    }
+
+    useEffect(() => {
+        void handle()
+    }, [])
+
+    const handleClick = () => {
         void handle()
     }
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value)
     }
+    const onkeydown = (e: KeyboardEvent): void => {
+        e.key === 'Enter' && handle()
+    }
+
     const onCopy = (ch: string) => {
         const copy = async () => {
             await navigator.clipboard.writeText(ch)
@@ -110,13 +123,25 @@ const EmojiSearch = () => {
     }
     return (
         <PageBody name="emoji-search" >
-            <Card>
+            <Card style={cardStyle}>
+                <Card.Header>Looking for an emoji?</Card.Header>
                 <Card.Body>
+                    <Card.Text>
+                        Then look no further...
+                    </Card.Text>
+                    <Card.Text>
+                        Change the search term, et voila!!
+                    </Card.Text>
+                    <Card.Text>
+                        Click on the emoji to copy it into the clipboard
+                    </Card.Text>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control
                                 as="input"
                                 onChange={handleChange}
+                                onKeyDown={onkeydown as unknown as KeyboardEventHandler}
+                                value={searchTerm}
                                 type="text"
                                 placeholder="search..."
                                 autoFocus
@@ -134,43 +159,47 @@ const EmojiSearch = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-
-            {alert !== '' && (
-                <Alert className={classes.alert} dismissible onClose={() => { setAlert('') }}>
-                    {alert}
-                </Alert>
-            )
+            {
+                alert !== '' && (
+                    <Alert className={classes.alert} dismissible onClose={() => { setAlert('') }}>
+                        {alert}
+                    </Alert>
+                )
             }
-
-            <Table size="sm" striped bordered hover variant="dark">
-                <thead>
-                    <tr>
-                        <th>slug</th>
-                        <th>unicode</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        results?.length ?
-                            (results.map((emoji: EmojiType) => (
-                                <tr key={emoji.slug}>
-                                    <td className={classes.chacter}>{emoji.slug.replace(/\w+-\w+-/, '').replaceAll('-', ' ')}</td>
-                                    <td className={classes.emoji} width="25%" onClick={onCopy(emoji.character)}>
-                                        {emoji.character}
-                                    </td>
-                                </tr>
-                            )))
-                            : (
-                                <tr>
-                                    <td className={classes.chacter}>-</td>
-                                    <td className={classes.emoji} width="25%">
-                                        -
-                                    </td>
-                                </tr>
-                            )
-                    }
-                </tbody>
-            </Table>
+            <Card style={cardStyle}>
+                <Card.Header>Found {results.length} results with search term "{searched}"</Card.Header>
+                <Card.Body>
+                    <Table size="sm" striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>slug</th>
+                                <th>unicode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                results?.length ?
+                                    (results.map((emoji: EmojiType) => (
+                                        <tr key={emoji.slug}>
+                                            <td className={classes.chacter}>{emoji.slug.replace(/\w+-\w+-/, '').replaceAll('-', ' ')}</td>
+                                            <td className={classes.emoji} width="25%" onClick={onCopy(emoji.character)}>
+                                                {emoji.character}
+                                            </td>
+                                        </tr>
+                                    )))
+                                    : (
+                                        <tr>
+                                            <td className={classes.chacter}>-</td>
+                                            <td className={classes.emoji} width="25%">
+                                                -
+                                            </td>
+                                        </tr>
+                                    )
+                            }
+                        </tbody>
+                    </Table>
+                </Card.Body>
+            </Card>
         </PageBody>
     )
 }

@@ -23,6 +23,7 @@ import 'react-json-pretty/themes/1337.css'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader'
+import { cardStyle } from '#/components/structural/structural.config'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
@@ -86,8 +87,6 @@ const MyLinks: React.FC = () => {
     const onClick = () => {
         void fillCard(url)
     }
-
-    const cardStyle = { maxWidth: '30em', margin: 'auto' }
 
     return (
         <>
