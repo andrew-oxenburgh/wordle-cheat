@@ -140,7 +140,7 @@ const MyLinks: React.FC = () => {
                         <>
                             <Card style={cardStyle}>
                                 <Accordion defaultActiveKey="0">
-                                    <Accordion.Item eventKey="1" style={{ background: "rgb(30, 30, 30)" }}>
+                                    <Accordion.Item eventKey="1" style={{ background: 'rgb(30, 30, 30)' }}>
                                         <Accordion.Header>Data as is from scraper</Accordion.Header>
                                         <Accordion.Body className={classes.accordianBody}>
                                             <JSONPretty id="json-pretty" data={ogGraph} />

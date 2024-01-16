@@ -37,8 +37,8 @@ const useStyles = createUseStyles({
     },
     card: {
         maxWidth: '30em',
-        margin: 'auto'
-    }
+        margin: 'auto',
+    },
 })
 
 

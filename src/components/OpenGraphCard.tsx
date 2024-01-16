@@ -32,7 +32,7 @@ const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     )
 }
 
-const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType, cardStyle: {} }) => {
+const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType; cardStyle: {} }) => {
     return (
         <Card style={cardStyle}>
             <Card.Header>Music</Card.Header>
