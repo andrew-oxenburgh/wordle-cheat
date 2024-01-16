@@ -9,7 +9,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import * as config from '#/config/config'
 import InfoThing from '../InfoThing'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
-import { appMaxWidth, appMinMaxWidth, appMinWidth } from './structural.config'
+import { appMaxWidth } from './structural.config'
 
 const buttonStyle = {
     fontSize: '1.5em',

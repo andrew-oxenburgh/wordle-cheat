@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
         cursor: 'default',
         padding: '1em',
         overflow: 'none',
-        ...appMinMaxWidth
+        ...appMinMaxWidth,
     },
 })
 

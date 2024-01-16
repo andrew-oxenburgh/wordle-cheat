@@ -28,12 +28,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 
-if (import.meta.env.MODE === 'development') {
-    console.log('dev mode')
-    connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
-} else {
-    console.log('prod mode')
-}
+const inDevMode = import.meta.env.MODE === 'development'
 
+if (inDevMode) {
+    connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
+}
 
 export default app
