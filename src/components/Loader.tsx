@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import Spinner from 'react-bootstrap/Spinner'
+import { appMaxWidth } from './structural/structural.config'
 
 
 const useStyles = createUseStyles({
@@ -17,6 +18,8 @@ const useStyles = createUseStyles({
         alignItems: 'center',
         justifyContent: 'center',
         height: '35em',
+        margin: 'auto',
+        ...appMaxWidth,
     },
 })
 
