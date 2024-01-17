@@ -4,6 +4,7 @@ import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 
 import PageBody from '#/components/structural/PageBody'
+import Card from 'react-bootstrap/esm/Card'
 
 const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia']
 // const colors: string[] = ['#000', '#444', '#888', '#aaa', '#eee']
@@ -107,28 +108,30 @@ const ClickCounter: React.FC<Props> = ({ clicks = 0 }) => {
     )
 }
 
-const GridComponent: React.FC = () => {
+const DraggyGamey: React.FC = () => {
     const classes = useStyles()
     const handleUndragMe = () => {
         isBeingDragged.value = -1
     }
-
-    return (
-        <div className={classes.grid}
-            onMouseLeave={handleUndragMe}
-        >
-            {Array(numOfCells).fill(null).map((_, index) => (
-                <ClickCounter key={index} clicks={index} />
-            ))}
-        </div>
-    )
-}
-
-const DraggyGamey: React.FC = () => {
     return (
         <>
             <PageBody name="draggey-gamey">
-                <GridComponent />
+                <Card style={{ maxWidth: '30em', margin: 'auto' }}
+                    onMouseLeave={handleUndragMe}
+                >
+                    <Card.Header>
+                        a fun little game
+                    </Card.Header>
+                    <Card.Body>
+                        <div className={classes.grid}
+                            onMouseLeave={handleUndragMe}
+                        >
+                            {Array(numOfCells).fill(null).map((_, index) => (
+                                <ClickCounter key={index} clicks={index} />
+                            ))}
+                        </div>
+                    </Card.Body>
+                </Card>
             </PageBody>
         </>
     )

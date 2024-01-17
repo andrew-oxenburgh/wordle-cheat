@@ -1,6 +1,7 @@
 import { KeyboardEventHandler, useState } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Stack from 'react-bootstrap/Stack'
 
 import PageBody from '#/components/structural/PageBody'
 import Button from 'react-bootstrap/Button'
@@ -12,38 +13,40 @@ import {
     blankBoard,
     incrState,
 } from './wordle.utils'
+import Card from 'react-bootstrap/esm/Card'
+import Container from 'react-bootstrap/esm/Container'
 
 const _width = 5
 const _height = 6
 
 const Legend = (
-    <>
-        <span>
+    <Stack direction='horizontal' gap={1}>
+        <span className="p-2">
             <Button size='lg' variant={variant(State.NONE)}
             >
                 -
             </Button>
             None
         </span>
-        <span>
+        <span className="p-2">
             <Button size='lg' variant={variant(State.NOT_USED)}>
                 -
             </Button>
             Not Used
         </span>
-        <span>
+        <span className="p-2">
             <Button size='lg' variant={variant(State.USED)}>
                 -
             </Button>
             Used
         </span>
-        <span>
+        <span className="p-2">
             <Button size='lg' variant={variant(State.HERE)}>
                 -
             </Button>
             Here
         </span>
-    </>
+    </Stack>
 )
 const WordleTwo = (): JSX.Element => {
     const [boardState, setBoardState] = useState<BoardState>((blankBoard(_width, _height)))
@@ -102,27 +105,32 @@ const WordleTwo = (): JSX.Element => {
             onKeyDown={onkeydown as unknown as KeyboardEventHandler}
             tabIndex={0}>
             <PageBody name="wordle-two">
-                <h3>Seriously, don't even look at me!!!</h3>
-                {Legend}
-                {Array.from({ length: _height }).map((_, rowIndex) => (
-                    <Row key={rowIndex}>
-                        {Array.from({ length: _width }).map((__, colIndex) => (
-                            <Col key={colIndex}>
-                                <Button
-                                    size="lg"
-                                    variant={variant(boardState[rowIndex * _width + colIndex].state)}
-                                    onClick={onClick(_width * rowIndex + colIndex)}
-                                    disabled={rowIndex * _width + colIndex > next - 1}
-                                >
-                                    {boardState[_width * rowIndex + colIndex].letter}
-                                </Button>
-                            </Col>
+                <Card style={{ maxWidth: '40em', margin: 'auto' }}>
+
+                    <Card.Header>Seriously, don't even look at me!!!</Card.Header>
+                    {Legend}
+                    <Container>
+                        {Array.from({ length: _height }).map((_, rowIndex) => (
+                            <Row key={rowIndex}>
+                                {Array.from({ length: _width }).map((__, colIndex) => (
+                                    <Col key={colIndex}>
+                                        <Button
+                                            size="lg"
+                                            variant={variant(boardState[rowIndex * _width + colIndex].state)}
+                                            onClick={onClick(_width * rowIndex + colIndex)}
+                                            disabled={rowIndex * _width + colIndex > next - 1}
+                                        >
+                                            {boardState[_width * rowIndex + colIndex].letter}
+                                        </Button>
+                                    </Col>
+                                ))}
+                            </Row>
                         ))}
-                    </Row>
-                ))}
-                <Button variant="primary" onClick={onClear}>
-                    clear
-                </Button>
+                    </Container>
+                    <Button variant="primary" onClick={onClear}>
+                        clear
+                    </Button>
+                </Card>
             </PageBody>
         </div>
     )
