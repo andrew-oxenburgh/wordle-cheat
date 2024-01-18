@@ -12,21 +12,22 @@ import { pageDefinitions, version } from '../../config/config'
 import { appMinMaxWidth } from './structural.config'
 
 export const navBarStyle = {
-    padding: '0 3em',
     borderRadius: '3px',
     ...appMinMaxWidth,
     margin: 'auto',
+    width: '100%',
+    padding: '0 1em',
 }
 
 const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     const location: Location = useLocation()
     return (
-        <Navbar expanded={expanded} bg="light" expand="sm" style={navBarStyle}>
+        <Navbar expanded={expanded} bg="light" style={navBarStyle}>
             <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav onSelect={() => { setExpanded(false) }} className="me-auto">
+            <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
+                <Nav onSelect={() => { setExpanded(false) }}>
                     <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
                         {pageDefinitions.map((page) => {
