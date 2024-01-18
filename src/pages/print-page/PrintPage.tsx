@@ -5,7 +5,6 @@ import './printPage.css'
 import 'react-markdown-editor-lite/lib/index.css'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 
 const mdParser = new MarkdownIt(/* Markdown-it options */)
 
