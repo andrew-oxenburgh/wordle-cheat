@@ -1,15 +1,15 @@
 import { createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 import CompareSketchWithImage from '../../components/CompareSketchWithImage'
-import imgUrl from './the-onion-snippet-1.png'
+import imgUrl from './sketch-countdown.png'
 
 const hrColor = 'rgb(200,200,200)'
 const sketchBackgroundColor = 'rgba(34, 34, 34, 0.04)'
 const headlineFontColorHover = 'rgb(34, 34, 34)'
 const fontColor = 'black'
 
-const width = '319px'
-const height = '552px'
+const width = '475px'
+const height = '457px'
 
 export const useStyles = createUseStyles({
     theOnion: {
@@ -64,39 +64,25 @@ const headlines = [
     'Dog Urged To Pay Attention While Dog on TV ',
 ]
 
-export const TheOnion = () => {
+export const Countdown = () => {
     const classes = useStyles()
     const mapIndexed = R.addIndex(R.map)
     return (
-        <div className={classes.theOnion}>
-            <span className={classes.title}>Trending</span>
-            {
-                mapIndexed((v: string, ndx: number) => {
-                    const hasHr = (ndx !== headlines.length)
-                    return (
-                        <div key={v}>
-                            <p className={classes.headline}>{v} </p>
-                            {hasHr && <hr className={classes.hr} />}
-                        </div>
-                    )
-
-                }, headlines)
-            }
-        </div >
+        <h1>Countdown goes here</h1>
     )
 }
 
-const ImitationOnion = () => {
+const SketchCountdown = () => {
     return (
         <CompareSketchWithImage
             img={imgUrl}
             width={width}
             height={height}
-            name="imitation-onion"
+            name="sketch-countdown"
         >
-            <TheOnion />
+            <Countdown />
         </CompareSketchWithImage>
     )
 }
 
-export default ImitationOnion
+export default SketchCountdown

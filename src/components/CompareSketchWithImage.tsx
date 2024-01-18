@@ -29,9 +29,10 @@ type CompareChildWithImageProps = {
     width: number | string
     height: number | string
     hideImage?: boolean
+    name: string
 }
 
-export const CompareSketchWithImage = ({ img, children, width, height, hideImage = false }: CompareChildWithImageProps) => {
+export const CompareSketchWithImage = ({ img, children, width, height, hideImage = false, name }: CompareChildWithImageProps) => {
     const classes = useStyles()
     const cardStyle = {
         width,
@@ -45,7 +46,7 @@ export const CompareSketchWithImage = ({ img, children, width, height, hideImage
         height,
     }
     return (
-        <PageBody name="imitation-onion">
+        <PageBody name={name}>
             <h5>Doesn't work so well on a mobile.</h5>
             <Stack direction="horizontal" gap={3}>
                 <Card

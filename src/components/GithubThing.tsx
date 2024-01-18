@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ButtonWithTooltip } from './ButtonWithTooltip'
 
 const useStyles = createUseStyles({
@@ -25,7 +25,7 @@ const GithubThing: React.FC = () => {
                 tipText="Github"
                 placement="top"
             >
-                <FontAwesomeIcon icon={['fab', 'github']} />
+                {/* <FontAwesomeIcon icon={['fab', 'github']} /> */}
                 <span className={classes.text}>github</span>
             </ButtonWithTooltip>
         </span>

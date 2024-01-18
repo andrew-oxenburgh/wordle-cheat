@@ -56,4 +56,8 @@ export const lazyComponents: LazyComponentType[] = [
         name: 'open-graph',
         lazyComponent: React.lazy(() => (import('./pages/open-graph-page'))),
     },
+    {
+        name: 'sketch-countdown',
+        lazyComponent: React.lazy(() => (import('./pages/sketch-countdown'))),
+    },
 ]

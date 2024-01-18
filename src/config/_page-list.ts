@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph' | 'imitation-onion'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'open-graph' | 'imitation-onion' | 'sketch-countdown'
 
 export type PageInfoType = {
     title: string
@@ -156,6 +156,15 @@ Technologies:
 ### Recreate a snippet from somewhere on the web.
 
 In this case I chose The Onion.
+        `,
+    },
+    {
+        name: 'sketch-countdown',
+        icon: 'explosion',
+        longDesc: `
+### Recreate a snippet from somewhere on the web.
+
+In this case I chose Countdown.
         `,
     },
     // {
