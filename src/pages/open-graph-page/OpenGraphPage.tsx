@@ -22,8 +22,6 @@ import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.ut
 import 'react-json-pretty/themes/1337.css'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
-import AccordionHeader from 'react-bootstrap/esm/AccordionHeader'
-import { cardStyle } from '#/components/structural/structural.config'
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {

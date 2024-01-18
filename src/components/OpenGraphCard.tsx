@@ -11,6 +11,8 @@ import {
 } from '../pages/open-graph-page/open-graph.types'
 import Loader from './Loader'
 
+
+/* eslint-disable-next-line */
 const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     return (
         <>
@@ -32,7 +34,7 @@ const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     )
 }
 
-const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType; cardStyle: {} }) => {
+const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType; cardStyle: object }) => {
     return (
         <Card style={cardStyle}>
             <Card.Header>Music</Card.Header>
@@ -64,7 +66,7 @@ const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType; cardStyle
 type OpenGraphCardType = {
     loading: boolean
     normalisedGraph: NormalisedType | null
-    cardStyle: {}
+    cardStyle: object
 }
 
 const OpenGraphCard = ({ loading, normalisedGraph, cardStyle = {} }: OpenGraphCardType) => {

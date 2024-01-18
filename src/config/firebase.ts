@@ -30,6 +30,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 if (isDevMode()) {
+    /* eslint-disable-next-line */
     console.warn('in DEV mode')
     connectFunctionsEmulator(getFunctions(app), 'localhost', 5001)
 }

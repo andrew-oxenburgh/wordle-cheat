@@ -25,18 +25,18 @@ const useStyles = createUseStyles({
             width: '30%',
             color: 'green',
             display: 'inline-block',
-            borderTop: 'solid green 3px'
-        }
+            borderTop: 'solid green 3px',
+        },
     },
     headline: {
         margin: '0 0 0 0.4em',
         fontSize: '1.50em',
         marginBottom: '3px',
-        lineHeight: '33px'
+        lineHeight: '33px',
     },
     cardBody: {
         padding: 0,
-        transform: 'scale(0.95)'
+        transform: 'scale(0.95)',
 
     },
     hr: {
@@ -48,18 +48,18 @@ const useStyles = createUseStyles({
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: '150%',
-    }
+    },
 })
 
 const headlines = [
-    "Nation Settles For Jimmy John's",
-    "Teen Mom Wants Another One",
-    "No Scan Do",
-    "Mannequin In White Wedding Dress Clearly Not Virgin ",
-    "Study Finds Children Of Divorce Better Prepared For Life's Relentless Misery ",
-    "Gen Z Explains Why They Are 'Resetting' Their Virginity ",
-    "Millions Watch Emmys For Rare Glimpse At TV Actors ",
-    "Dog Urged To Pay Attention While Dog on TV ",
+    'Nation Settles For Jimmy John\'s',
+    'Teen Mom Wants Another One',
+    'No Scan Do',
+    'Mannequin In White Wedding Dress Clearly Not Virgin ',
+    'Study Finds Children Of Divorce Better Prepared For Life\'s Relentless Misery ',
+    'Gen Z Explains Why They Are \'Resetting\' Their Virginity ',
+    'Millions Watch Emmys For Rare Glimpse At TV Actors ',
+    'Dog Urged To Pay Attention While Dog on TV ',
 ]
 
 const Fraud = () => {

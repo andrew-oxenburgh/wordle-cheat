@@ -67,7 +67,7 @@ const EmojiSearch = () => {
     const [results, setResults] = useState<EmojiType[]>([])
     const [loading, setLoading] = useState(false)
     const classes = useStyles()
-    const handle = async () => {
+    const fetchSearch = async () => {
         try {
             setLoading(true)
             setResults([])
@@ -89,18 +89,25 @@ const EmojiSearch = () => {
     }
 
     useEffect(() => {
-        void handle()
+        // initial search
+        void fetchSearch()
     }, [])
 
+    // pressed button
     const handleClick = () => {
-        void handle()
+        void fetchSearch()
     }
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value)
+    // pressed Enter
+    const onKeyDown = (e: KeyboardEvent): void => {
+        if (e.key === 'Enter') {
+            void fetchSearch()
+        }
+        return
     }
-    const onkeydown = (e: KeyboardEvent): void => {
-        e.key === 'Enter' && handle()
+
+    const keyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value)
     }
 
     const onCopy = (ch: string) => {
@@ -121,6 +128,7 @@ const EmojiSearch = () => {
         }
         return 'Search'
     }
+
     return (
         <PageBody name="emoji-search" >
             <Card style={cardStyle}>
@@ -139,8 +147,8 @@ const EmojiSearch = () => {
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control
                                 as="input"
-                                onChange={handleChange}
-                                onKeyDown={onkeydown as unknown as KeyboardEventHandler}
+                                onChange={keyChange}
+                                onKeyDown={onKeyDown as unknown as KeyboardEventHandler}
                                 value={searchTerm}
                                 type="text"
                                 placeholder="search..."

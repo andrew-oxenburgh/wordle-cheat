@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-    | 'open-graph' | 'imitation-onion'
+| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+| 'open-graph' | 'imitation-onion'
 
 export type PageInfoType = {
     title: string
