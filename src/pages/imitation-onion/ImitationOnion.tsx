@@ -3,12 +3,17 @@ import * as R from 'ramda'
 import { CompareChildWithImage } from '../../components/CompareChildWithImage'
 import imgUrl from './the-onion-snippet-1.png'
 
+const hrColor = 'rgb(200,200,200)'
+
+
+const fraudBackgroundColor = 'rgba(34, 34, 34, 0.04)'
+const headlineFontColor_hover = 'rgb(34, 34, 34)'
+const fontColor = 'black'
 export const useStyles = createUseStyles({
     fraud: {
         fontFamily: 'EB Garamond, serif',
-        backgroundColor: 'rgba(34, 34, 34, 0.04)',
-        width: '100%',
-        color: 'black',
+        background: fraudBackgroundColor,
+        color: fontColor,
     },
     title: {
         fontSize: '2.1em',
@@ -29,13 +34,16 @@ export const useStyles = createUseStyles({
         fontSize: '1.50em',
         marginBottom: '3px',
         lineHeight: '33px',
+        '&:hover': {
+            color: headlineFontColor_hover,
+            cursor: 'pointer'
+        }
     },
     cardBody: {
         padding: 0,
-        transform: 'scale(0.95)',
-
     },
     hr: {
+        borderColor: hrColor,
         margin: '0.91em',
     },
     cardHeader: {
