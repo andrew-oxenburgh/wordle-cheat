@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
 import removeConsole from 'vite-plugin-remove-console';
+import { splitVendorChunkPlugin } from 'vite'
 
 const projectRootDir = resolve(__dirname);
 
@@ -38,7 +39,8 @@ const config = ({ command, mode }) => {
                }
             ]
          }),
-         removeConsole()
+         removeConsole(),
+         splitVendorChunkPlugin()
       ],
       server: {
          // port: 5000,
