@@ -20,7 +20,7 @@
     "ci": "echo 'put something here'",
     "test": "vitest",
     "dev": "vite",
-    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./ --fix --format unix --cache"
+    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache"
   },
   "keywords": [
     "react",

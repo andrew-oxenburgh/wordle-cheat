@@ -15,7 +15,7 @@
     }
   },
   "include": [
-    "vite.config.ts",
-    "src/config/banners.ts"
+    // "vite.config.ts",
+    // "src/config/banners.ts"
   ],
 }
