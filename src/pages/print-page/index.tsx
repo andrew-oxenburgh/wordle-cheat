@@ -1,3 +1,3 @@
-import PrintPage from "./PrintPage";
+import PrintPage from './PrintPage'
 
 export default PrintPage
