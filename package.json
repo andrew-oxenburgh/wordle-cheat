@@ -44,7 +44,7 @@
     "@storybook/addon-links": "^7.6.6",
     "@storybook/addon-onboarding": "^1.0.10",
     "@storybook/blocks": "^7.6.9",
-    "@storybook/react": "^7.6.6",
+    "@storybook/react": "^7.6.9",
     "@storybook/react-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
     "@testing-library/jest-dom": "^5.17.0",
