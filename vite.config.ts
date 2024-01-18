@@ -7,7 +7,7 @@ import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
 import removeConsole from 'vite-plugin-remove-console'
 import { splitVendorChunkPlugin } from 'vite'
-import BannerInjection from 'vite-plugin-banner-injection';
+import BannerInjection from 'vite-plugin-banner-injection'
 import { banner, footer } from './src/config/banners'
 
 const projectRootDir = resolve(__dirname)
