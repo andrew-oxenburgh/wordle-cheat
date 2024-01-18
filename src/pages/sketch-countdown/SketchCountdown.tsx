@@ -5,6 +5,8 @@ import imgUrl from './sketch-countdown.png'
 import tpUrl from "./toilet-paper.webp"
 import butterUrl from "./butter.webp"
 import Stack from 'react-bootstrap/esm/Stack'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMessage as messageIcon } from '@fortawesome/free-solid-svg-icons/faMessage'
 
 const width = '475px'
 const height = '457px'
@@ -40,18 +42,19 @@ export const useStyles = createUseStyles({
         overflow: 'hidden',
         height: '100%',
         width: '100%',
-        fontFamily: 'Helvetica, sans-serif',
+        fontFamily: 'Open Sans, sans - serif',
     },
     product: {
-        background: 'orange',
+        // background: 'orange',
         border: '1px solid black',
         width: '50%',
         height: '100%',
         position: 'relative',
     },
     header: {
-        background: 'red',
+        background: '#e10000',
         fontWeight: '800',
+        fontSize: '0.9em',
         paddingLeft: '0.5em',
         paddingTop: '0.2em',
         color: 'white',
@@ -59,15 +62,15 @@ export const useStyles = createUseStyles({
         height: '2em',
         position: 'absolute',
         top: 0,
-        width: '100%'
+        width: '100%',
     },
     main: {
         background: 'white',
-        border: 'solid 5px yellow',
         position: 'absolute',
         top: '2em',
         height: 'calc(100% - 4em - 2.6em)',
-        width: '100%',
+        width: 'calc(100% - 0.5em)',
+        marginLeft: '0.5em',
     },
     footer: {
         background: 'green',
@@ -82,13 +85,12 @@ export const useStyles = createUseStyles({
     note: {
         width: '32px',
         height: '32px',
-        background: 'pink',
         position: 'absolute',
-        top: '0',
-        right: '0',
+        top: '6px',
+        right: '6px',
     },
     img: {
-        width: '78%',
+        width: '73%',
         margin: '1em 0 0 1em'
     },
     text: {
@@ -103,29 +105,30 @@ export const useStyles = createUseStyles({
         marginBottom: '1em',
     },
     unitPrice: {
-        marginBottom: '1em'
+        marginBottom: '1em',
     },
     price: {
-        border: '5px solid black',
         width: '100%',
-        height: '4em',
-        verticalAlign: 'top',
-        position: 'relative'
     },
     priceDollarSign: {
+        lineHeight: '1em',
         fontSize: '150%',
-        position: 'absolute',
-        top: 0,
+        display: 'inline-block',
+        verticalAlign: 'top',
+        paddingTop: '0.35em',
     },
     priceDollars: {
-        position: 'absolute',
-        top: 0,
         fontSize: '300%',
+        lineHeight: '1em',
+        display: 'inline-block',
+        verticalAlign: 'top',
     },
     priceCents: {
-        position: 'absolute',
-        top: 0,
         fontSize: '150%',
+        lineHeight: '1em',
+        display: 'inline-block',
+        verticalAlign: 'top',
+        paddingTop: '0.25em',
     },
 })
 
@@ -133,7 +136,7 @@ function ProuctHeader() {
     const classes = useStyles()
     return (
         <header className={classes.header}>
-            Low Price
+            LOW PRICE
         </header>
     )
 }
@@ -142,8 +145,14 @@ function ProuctMain({ product }: { product: PriceDataType }) {
     const classes = useStyles()
     return (
         <main className={classes.main}>
-            <div className={classes.note} />
-            <img className={classes.img} src={product.imgUrl} alt={product.title} />
+            <div className={classes.note}>
+                <FontAwesomeIcon
+                    icon={messageIcon}
+                    size='2x'
+                    color='green'
+                />
+            </div>
+            <img className={classes.img} src={product.imgUrl} title={product.title} />
             <div className={classes.text}>
                 <div className={classes.title}>{product.title}</div>
                 <div className={classes.unitPrice}>{product.unitPrice}</div>
