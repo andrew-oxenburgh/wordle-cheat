@@ -29,7 +29,7 @@ export const useStyles = createUseStyles({
     },
 })
 
-export const CompareChildWithImage = ({ img, children }: CompareChildWithImageProps) => {
+export const CompareSketchWithImage = ({ img, children }: CompareChildWithImageProps) => {
     const classes = useStyles();
     return (
         <PageBody name="imitation-onion">
@@ -55,3 +55,5 @@ export const CompareChildWithImage = ({ img, children }: CompareChildWithImagePr
         </PageBody>
     );
 };
+
+export default CompareSketchWithImage

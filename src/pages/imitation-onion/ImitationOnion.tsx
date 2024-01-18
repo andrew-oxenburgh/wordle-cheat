@@ -1,18 +1,17 @@
 import { createUseStyles } from 'react-jss'
 import * as R from 'ramda'
-import { CompareChildWithImage } from '../../components/CompareChildWithImage'
+import CompareSketchWithImage from '../../components/CompareSketchWithImage'
 import imgUrl from './the-onion-snippet-1.png'
 
 const hrColor = 'rgb(200,200,200)'
-
-
-const fraudBackgroundColor = 'rgba(34, 34, 34, 0.04)'
+const sketchBackgroundColor = 'rgba(34, 34, 34, 0.04)'
 const headlineFontColor_hover = 'rgb(34, 34, 34)'
 const fontColor = 'black'
+
 export const useStyles = createUseStyles({
-    fraud: {
+    theOnion: {
         fontFamily: 'EB Garamond, serif',
-        background: fraudBackgroundColor,
+        background: sketchBackgroundColor,
         color: fontColor,
     },
     title: {
@@ -66,11 +65,11 @@ const headlines = [
     'Dog Urged To Pay Attention While Dog on TV ',
 ]
 
-export const Fraud = () => {
+export const TheOnion = () => {
     const classes = useStyles()
     const mapIndexed = R.addIndex(R.map)
     return (
-        <div className={classes.fraud}>
+        <div className={classes.theOnion}>
             <h6 className={classes.title}>Trending</h6>
             {
                 mapIndexed((v: string, ndx: number) => {
@@ -90,9 +89,9 @@ export const Fraud = () => {
 
 const ImitationOnion = () => {
     return (
-        <CompareChildWithImage img={imgUrl}>
-            <Fraud />
-        </CompareChildWithImage>
+        <CompareSketchWithImage img={imgUrl}>
+            <TheOnion />
+        </CompareSketchWithImage>
     )
 }
 
