@@ -1,9 +1,8 @@
 import { createUseStyles } from 'react-jss'
-import * as R from 'ramda'
 import CompareSketchWithImage from '#/components/CompareSketchWithImage'
 import imgUrl from './sketch-countdown.png'
-import tpUrl from "./toilet-paper.webp"
-import butterUrl from "./butter.webp"
+import tpUrl from './toilet-paper.webp'
+import butterUrl from './butter.webp'
 import Stack from 'react-bootstrap/esm/Stack'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage as messageIcon } from '@fortawesome/free-solid-svg-icons/faMessage'
@@ -23,13 +22,13 @@ const priceData: PriceDataType[] = [
         title: 'Essentials Toilet Paper 12Pk White 2ply',
         unitPrice: '$0.14 / 100ss',
         price: ['$', '3', '00'],
-        imgUrl: tpUrl
+        imgUrl: tpUrl,
     },
     {
         title: 'Countdown Butter Salted',
         unitPrice: '500g $0.88 / 100g',
         price: ['$', '4', '39'],
-        imgUrl: butterUrl
+        imgUrl: butterUrl,
     },
 ]
 
@@ -91,7 +90,7 @@ export const useStyles = createUseStyles({
     },
     img: {
         width: '73%',
-        margin: '1em 0 0 1em'
+        margin: '1em 0 0 1em',
     },
     text: {
         height: '45%',
@@ -132,7 +131,7 @@ export const useStyles = createUseStyles({
     },
 })
 
-function ProuctHeader() {
+const ProuctHeader = () => {
     const classes = useStyles()
     return (
         <header className={classes.header}>
@@ -141,7 +140,7 @@ function ProuctHeader() {
     )
 }
 
-function ProuctMain({ product }: { product: PriceDataType }) {
+const ProuctMain = ({ product }: { product: PriceDataType }) => {
     const classes = useStyles()
     return (
         <main className={classes.main}>
@@ -162,7 +161,7 @@ function ProuctMain({ product }: { product: PriceDataType }) {
     )
 }
 
-function Price({ price }: { price: string[] }) {
+const Price = ({ price }: { price: string[] }) => {
     const classes = useStyles()
     return (
         <div className={classes.price}>
@@ -173,7 +172,7 @@ function Price({ price }: { price: string[] }) {
     )
 }
 
-function ProuctFooter() {
+const ProuctFooter = () => {
     const classes = useStyles()
     return (
         <header className={classes.footer}>
@@ -184,7 +183,6 @@ function ProuctFooter() {
 
 export const Countdown = () => {
     const classes = useStyles()
-    const mapIndexed = R.addIndex(R.map)
     return (
         <Stack direction='horizontal' gap={3} className={classes.countdown}>
             <span className={classes.product}>
