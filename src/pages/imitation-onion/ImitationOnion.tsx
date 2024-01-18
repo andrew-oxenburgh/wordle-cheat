@@ -18,15 +18,16 @@ export const useStyles = createUseStyles({
         color: fontColor,
         maxWidth: width,
         maxHeight: height,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        margin: '0.5em',
     },
     title: {
         display: 'inline-block',
-        fontSize: '2.1em',
+        fontSize: '1.8em',
         fontWeight: 'bolder',
         paddingTop: '0.2em',
-        margin: '0 0 0.8em 0.4em',
         verticalAlign: 'bottom',
+        marginBottom: '5px',
         '&::after': {
             content: '"------------"',
             maxHeight: 0,
@@ -37,11 +38,10 @@ export const useStyles = createUseStyles({
         },
     },
     headline: {
-        margin: '0 0 0 0.4em',
-        fontSize: '1.10em',
+        fontSize: '1.13em',
         fontWeight: 'bold',
         marginBottom: '3px',
-        lineHeight: '21px',
+        lineHeight: '19px',
         '&:hover': {
             color: headlineFontColor_hover,
             cursor: 'pointer'
