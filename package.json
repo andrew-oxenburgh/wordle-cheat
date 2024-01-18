@@ -98,6 +98,7 @@
     "remark-gfm": "^4.0.0",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.0",
+    "vite-plugin-banner-injection": "^0.2.0",
     "vite-tsconfig-paths": "^4.2.3",
     "vitest": "^1.1.3"
   }

@@ -7,6 +7,8 @@ import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
 import removeConsole from 'vite-plugin-remove-console'
 import { splitVendorChunkPlugin } from 'vite'
+import BannerInjection from 'vite-plugin-banner-injection';
+import { banner, footer } from './src/config/banners'
 
 const projectRootDir = resolve(__dirname)
 
@@ -41,6 +43,11 @@ const config = ({ mode }) => {
                     },
                 ],
             }),
+            BannerInjection({
+                banner,
+                footer,
+            }),
+
             removeConsole(),
             splitVendorChunkPlugin(),
         ],
@@ -70,6 +77,13 @@ const config = ({ mode }) => {
                 },
             },
             chunkSizeWarningLimit: 1024,
+            target: [
+                'es2020',
+                'edge108', /* 2022-nov */
+                'firefox107', /* 2022-nov */
+                'chrome104', /* 2022-aug */
+                'safari15', /* 2022-jul */
+            ],
         },
     }
 }
