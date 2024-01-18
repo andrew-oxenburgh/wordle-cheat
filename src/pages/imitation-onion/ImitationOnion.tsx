@@ -1,18 +1,14 @@
-import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/esm/Card'
-import Image from 'react-bootstrap/esm/Image'
-import Stack from 'react-bootstrap/esm/Stack'
 import { createUseStyles } from 'react-jss'
-import imgUrl from './the-onion-snippet-1.png'
 import * as R from 'ramda'
+import { CompareChildWithImage } from '../../components/CompareChildWithImage'
+import imgUrl from './the-onion-snippet-1.png'
 
-const useStyles = createUseStyles({
+export const useStyles = createUseStyles({
     fraud: {
         fontFamily: 'EB Garamond, serif',
         backgroundColor: 'rgba(34, 34, 34, 0.04)',
         width: '100%',
         color: 'black',
-
     },
     title: {
         fontSize: '2.1em',
@@ -62,7 +58,7 @@ const headlines = [
     'Dog Urged To Pay Attention While Dog on TV ',
 ]
 
-const Fraud = () => {
+export const Fraud = () => {
     const classes = useStyles()
     const mapIndexed = R.addIndex(R.map)
     return (
@@ -72,10 +68,10 @@ const Fraud = () => {
                 mapIndexed((v: string, ndx: number) => {
                     const hasHr = (ndx !== headlines.length)
                     return (
-                        <>
+                        <div key={v}>
                             <p className={classes.headline}>{v} </p>
                             {hasHr && <hr className={classes.hr} />}
-                        </>
+                        </div>
                     )
 
                 }, headlines)
@@ -85,30 +81,10 @@ const Fraud = () => {
 }
 
 const ImitationOnion = () => {
-    const classes = useStyles()
     return (
-        <PageBody name="imitation-onion">
-            <h5>Doesn't work so well on a mobile.</h5>
-            <Stack direction="horizontal" gap={3}>
-                <Card style={{ maxWidth: '50%', minWidth: '395px', margin: 'auto', marginTop: 0 }}>
-                    <Card.Header className={classes.cardHeader} >
-                        My Copy
-                    </Card.Header>
-                    <Card.Body className={classes.cardBody}>
-                        <Fraud />
-                    </Card.Body>
-                </Card >
-                <Card style={{ width: '50%', minWidth: '395px', margin: 'auto', marginTop: 0 }}>
-                    <Card.Header className={classes.cardHeader}>
-                        The Original
-                    </Card.Header>
-                    <Card.Body className={classes.cardBody}>
-                        <Image width="100%" src={imgUrl} />
-                    </Card.Body>
-
-                </Card >
-            </Stack>
-        </PageBody>
+        <CompareChildWithImage img={imgUrl}>
+            <Fraud />
+        </CompareChildWithImage>
     )
 }
 
