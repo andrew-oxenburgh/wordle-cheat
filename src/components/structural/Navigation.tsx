@@ -24,7 +24,7 @@ const Navigation = () => {
     const location: Location = useLocation()
     return (
         <Navbar expanded={expanded} bg="light" style={navBarStyle}>
-            <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
+            <Navbar.Brand href="#/">Sketches <span className="fst-italic text-secondary">(v.{version})</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
                 <Nav onSelect={() => { setExpanded(false) }}>

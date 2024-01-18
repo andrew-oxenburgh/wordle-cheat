@@ -12,8 +12,7 @@ import { banner, footer } from './src/config/banners'
 const projectRootDir = resolve(__dirname)
 
 // https://vitejs.dev/config/
-const config = ({ mode }: { mode: any }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+const config = ({ mode }: { mode: string }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
     return {
@@ -26,7 +25,7 @@ const config = ({ mode }: { mode: any }) => {
             {
                 name: 'markdown-loader',
                 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                transform(code: string, id: string) {
+                transform: (code: string, id: string) => {
                     if (id.slice(-3) === '.md') {
                         // For .md files, get the raw content
                         return `export default ${JSON.stringify(code)};`
