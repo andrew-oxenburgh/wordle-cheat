@@ -22,7 +22,7 @@ const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     const location: Location = useLocation()
     return (
-        <Navbar expanded={expanded} bg="dark" variant="dark" expand="sm" style={navBarStyle}>
+        <Navbar expanded={expanded} bg="light" expand="sm" style={navBarStyle}>
             <Navbar.Brand href="#/">Sketches <span style={{ fontSize: '50%' }}>({version})</span></Navbar.Brand>
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

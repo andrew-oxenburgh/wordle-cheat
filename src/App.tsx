@@ -1,5 +1,5 @@
 import { HashRouter } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css'
+import './bootstrap.min.css'
 
 // dynamic because possibly big imports
 import PageFooter from './components/structural/PageFooter'
