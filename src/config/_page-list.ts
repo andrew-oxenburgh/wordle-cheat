@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'open-graph' | 'imitation-onion'
 
 export type PageInfoType = {
     title: string
@@ -148,6 +148,15 @@ Technologies:
             'click on squares to change their colours. Drag a ' +
             'square to change the squares over which you have dragged that colour',
         ].join('\n'),
+    },
+    {
+        name: 'imitation-onion',
+        icon: 'explosion',
+        longDesc: `
+### Recreate a snippet from somewhere on the web.
+
+In this case I chose The Onion.
+        `,
     },
     // {
     //    name: 'blogs',

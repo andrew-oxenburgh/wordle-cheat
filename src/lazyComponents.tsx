@@ -17,6 +17,10 @@ export const lazyComponents: LazyComponentType[] = [
         lazyComponent: React.lazy(() => (import('./pages/password-generator'))),
     },
     {
+        name: 'imitation-onion',
+        lazyComponent: React.lazy(() => (import('./pages/imitation-onion'))),
+    },
+    {
         name: 'draggey-gamey',
         lazyComponent: React.lazy(() => (import('./pages/draggey-gamey'))),
     },
