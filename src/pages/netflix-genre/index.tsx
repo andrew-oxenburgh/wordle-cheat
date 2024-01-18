@@ -2,7 +2,7 @@ import Accordion from 'react-bootstrap/Accordion'
 
 import PageBody from '#/components/structural/PageBody'
 import genres from './genres'
-import Card from 'react-bootstrap/esm/Card'
+import Card from 'react-bootstrap/Card'
 
 const NetflixGenre = () => {
     return (

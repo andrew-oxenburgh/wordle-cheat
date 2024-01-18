@@ -13,8 +13,8 @@ import {
     blankBoard,
     incrState,
 } from './wordle.utils'
-import Card from 'react-bootstrap/esm/Card'
-import Container from 'react-bootstrap/esm/Container'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 
 const _width = 5
 const _height = 6

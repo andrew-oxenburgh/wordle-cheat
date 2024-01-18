@@ -1,7 +1,7 @@
 import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/esm/Card'
-import Image from 'react-bootstrap/esm/Image'
-import Stack from 'react-bootstrap/esm/Stack'
+import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import Stack from 'react-bootstrap/Stack'
 import { ReactNode } from 'react'
 import { createUseStyles } from 'react-jss'
 

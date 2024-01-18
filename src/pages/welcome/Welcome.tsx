@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/esm/Card'
+import Card from 'react-bootstrap/Card'
 
 
 const Welcome = () => {

@@ -3,8 +3,8 @@ import MdEditor from 'react-markdown-editor-lite'
 import MarkdownIt from 'markdown-it'
 import './printPage.css'
 import 'react-markdown-editor-lite/lib/index.css'
-import Card from 'react-bootstrap/esm/Card'
-import Button from 'react-bootstrap/esm/Button'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const mdParser = new MarkdownIt(/* Markdown-it options */)
 

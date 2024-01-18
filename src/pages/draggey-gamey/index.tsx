@@ -4,7 +4,7 @@ import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 
 import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/esm/Card'
+import Card from 'react-bootstrap/Card'
 
 const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia']
 // const colors: string[] = ['#000', '#444', '#888', '#aaa', '#eee']
