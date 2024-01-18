@@ -1,5 +1,4 @@
 /** @type {import('vite').UserConfig} */
-// import tsconfigPaths from 'vite-tsconfig-paths'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -13,7 +12,7 @@ import { banner, footer } from './src/config/banners'
 const projectRootDir = resolve(__dirname)
 
 // https://vitejs.dev/config/
-const config = ({ mode }) => {
+const config = ({ mode }: { mode: any }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
@@ -27,7 +26,7 @@ const config = ({ mode }) => {
             {
                 name: 'markdown-loader',
                 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-                transform(code, id) {
+                transform(code: string, id: string) {
                     if (id.slice(-3) === '.md') {
                         // For .md files, get the raw content
                         return `export default ${JSON.stringify(code)};`
@@ -74,6 +73,13 @@ const config = ({ mode }) => {
                 input: {
                     main: resolve(__dirname, 'index.html'),
                     // about: resolve(__dirname, 'about.html'),
+                },
+                onwarn: (log: any, handler: any) => {
+                    // hide these
+                    if (log.code === 'MODULE_LEVEL_DIRECTIVE') {
+                        return
+                    }
+                    handler(log)
                 },
             },
             chunkSizeWarningLimit: 1024,
