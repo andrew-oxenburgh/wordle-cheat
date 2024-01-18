@@ -93,6 +93,7 @@ const ImitationOnion = () => {
             width={width}
             height={height}
             name="imitation-onion"
+            inspirationUrl='https://www.theonion.com/'
         >
             <TheOnion />
         </CompareSketchWithImage>

@@ -30,9 +30,13 @@ type CompareChildWithImageProps = {
     height: number | string
     hideImage?: boolean
     name: string
+    inspirationUrl: string
 }
 
-export const CompareSketchWithImage = ({ img, children, width, height, hideImage = false, name }: CompareChildWithImageProps) => {
+export const CompareSketchWithImage = ({
+    img, children, width, height,
+    hideImage = false,
+    inspirationUrl, name }: CompareChildWithImageProps) => {
     const classes = useStyles()
     const cardStyle = {
         width,
@@ -47,7 +51,9 @@ export const CompareSketchWithImage = ({ img, children, width, height, hideImage
     }
     return (
         <PageBody name={name}>
-            <h5>Doesn't work so well on a mobile.</h5>
+            <a href={inspirationUrl} target="_blank" rel="noreferrer">
+                Inspiration
+            </a>
             <Stack direction="horizontal" gap={3}>
                 <Card
                     className={classes.card}
