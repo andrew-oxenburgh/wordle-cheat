@@ -8,49 +8,48 @@ const sketchBackgroundColor = 'rgba(34, 34, 34, 0.04)'
 const headlineFontColor_hover = 'rgb(34, 34, 34)'
 const fontColor = 'black'
 
+const width = '319px'
+const height = '552px'
+
 export const useStyles = createUseStyles({
     theOnion: {
         fontFamily: 'EB Garamond, serif',
         background: sketchBackgroundColor,
         color: fontColor,
+        maxWidth: width,
+        maxHeight: height,
+        overflow: 'hidden'
     },
     title: {
+        display: 'inline-block',
         fontSize: '2.1em',
         fontWeight: 'bolder',
         paddingTop: '0.2em',
         margin: '0 0 0.8em 0.4em',
+        verticalAlign: 'bottom',
         '&::after': {
-            content: '""',
-            marginLeft: '1em',
-            width: '30%',
+            content: '"------------"',
+            maxHeight: 0,
+            marginLeft: '0.5em',
+            overflow: 'hidden',
+            overflowBlock: 'hidden',
             color: 'green',
-            display: 'inline-block',
-            borderTop: 'solid green 3px',
         },
     },
     headline: {
         margin: '0 0 0 0.4em',
-        fontSize: '1.50em',
+        fontSize: '1.10em',
+        fontWeight: 'bold',
         marginBottom: '3px',
-        lineHeight: '33px',
+        lineHeight: '21px',
         '&:hover': {
             color: headlineFontColor_hover,
             cursor: 'pointer'
         }
     },
-    cardBody: {
-        padding: 0,
-    },
     hr: {
         borderColor: hrColor,
         margin: '0.91em',
-    },
-    cardHeader: {
-        width: '100%',
-        margin: 'auto',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: '150%',
     },
 })
 
@@ -70,7 +69,7 @@ export const TheOnion = () => {
     const mapIndexed = R.addIndex(R.map)
     return (
         <div className={classes.theOnion}>
-            <h6 className={classes.title}>Trending</h6>
+            <span className={classes.title}>Trending</span>
             {
                 mapIndexed((v: string, ndx: number) => {
                     const hasHr = (ndx !== headlines.length)
@@ -89,7 +88,11 @@ export const TheOnion = () => {
 
 const ImitationOnion = () => {
     return (
-        <CompareSketchWithImage img={imgUrl}>
+        <CompareSketchWithImage
+            img={imgUrl}
+            width={width}
+            height={height}
+        >
             <TheOnion />
         </CompareSketchWithImage>
     )
