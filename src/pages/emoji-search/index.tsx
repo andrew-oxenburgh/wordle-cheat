@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
         position: 'absolute',
         top: '4em',
         right: '1em',
-        zIndex: 10,
+        // zIndex: 10,
     },
 })
 const emojiRoot = 'https://emoji-api.com/'
@@ -131,7 +131,7 @@ const EmojiSearch = () => {
 
     return (
         <PageBody name="emoji-search" >
-            <Card style={cardStyle}>
+            <Card style={cardStyle} className="mb-3 mt-4">
                 <Card.Header>Looking for an emoji?</Card.Header>
                 <Card.Body>
                     <Card.Text>
@@ -158,14 +158,16 @@ const EmojiSearch = () => {
                                 more than 3 letters, please...
                             </Form.Text>
                         </Form.Group>
-                        <Button className="w-100" variant="primary" disabled={searchTerm.length < 3 || loading} type="submit" onClick={handleClick}>
+                        <Button className="w-100 mt-3 mb-3" variant="primary" disabled={searchTerm.length < 3 || loading} type="submit" onClick={handleClick}>
                             {buttonText()}
                         </Button>
                     </Form>
-                    <Card.Text className="w-100 bg-info rounded text-center mt-1 p-1" >
+                </Card.Body>
+                <Card.Footer>
+                    <Card.Text className="text-center fw-bold" >
                         {results.length === 0 ? 'No Emojis Found' : `${results.length} Emojis found`}
                     </Card.Text>
-                </Card.Body>
+                </Card.Footer>
             </Card>
             {
                 alert !== '' && (

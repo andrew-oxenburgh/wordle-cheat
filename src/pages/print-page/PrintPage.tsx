@@ -12,11 +12,15 @@ const PrintPage = () => {
     return (
         <PageBody name="print-page" >
             <Card>
-                <Card.Header>
-                    Write some markup and print it directly
+                <Card.Header className="position-relative ps-3">
+                    Write some text, do some light formatting, and
                     <Button
+                        size="sm"
+                        variant="light"
+                        className="ms-2 me-2 border"
                         onClick={() => window.print()}
-                    >Print</Button>
+                    > Print </Button>
+                    it directly!! Too easy!!
                 </Card.Header>
                 <MdEditor
                     style={{ height: '500px' }}

@@ -14,7 +14,7 @@
 			"path": "tsconfig.node.json",
 			"bookmarks": [
 				{
-					"line": 19,
+					"line": 20,
 					"column": 0,
 					"label": ""
 				}
@@ -24,7 +24,7 @@
 			"path": "vite.config.ts",
 			"bookmarks": [
 				{
-					"line": 58,
+					"line": 67,
 					"column": 0,
 					"label": ""
 				}
