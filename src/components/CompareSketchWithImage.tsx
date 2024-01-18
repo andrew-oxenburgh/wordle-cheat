@@ -1,15 +1,15 @@
-import PageBody from '#/components/structural/PageBody';
-import Card from 'react-bootstrap/esm/Card';
-import Image from 'react-bootstrap/esm/Image';
-import Stack from 'react-bootstrap/esm/Stack';
-import { ReactNode } from 'react';
+import PageBody from '#/components/structural/PageBody'
+import Card from 'react-bootstrap/esm/Card'
+import Image from 'react-bootstrap/esm/Image'
+import Stack from 'react-bootstrap/esm/Stack'
+import { ReactNode } from 'react'
 import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
     card: {
         maxWidth: '50%',
         margin: 'auto',
-        marginTop: 0
+        marginTop: 0,
     },
     cardHeader: {
         width: '100%',
@@ -24,7 +24,7 @@ export const useStyles = createUseStyles({
 })
 
 type CompareChildWithImageProps = {
-    img: string,
+    img: string
     children: ReactNode
     width: number | string
     height: number | string
@@ -32,7 +32,7 @@ type CompareChildWithImageProps = {
 }
 
 export const CompareSketchWithImage = ({ img, children, width, height, hideImage = false }: CompareChildWithImageProps) => {
-    const classes = useStyles();
+    const classes = useStyles()
     const cardStyle = {
         width,
         minWidth: width,
@@ -42,7 +42,7 @@ export const CompareSketchWithImage = ({ img, children, width, height, hideImage
         width,
         minWidth: width,
         maxWidth: width,
-        height
+        height,
     }
     return (
         <PageBody name="imitation-onion">
@@ -81,7 +81,7 @@ export const CompareSketchWithImage = ({ img, children, width, height, hideImage
                 }
             </Stack>
         </PageBody>
-    );
-};
+    )
+}
 
 export default CompareSketchWithImage

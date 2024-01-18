@@ -5,7 +5,7 @@ import imgUrl from './the-onion-snippet-1.png'
 
 const hrColor = 'rgb(200,200,200)'
 const sketchBackgroundColor = 'rgba(34, 34, 34, 0.04)'
-const headlineFontColor_hover = 'rgb(34, 34, 34)'
+const headlineFontColorHover = 'rgb(34, 34, 34)'
 const fontColor = 'black'
 
 const width = '319px'
@@ -43,9 +43,9 @@ export const useStyles = createUseStyles({
         marginBottom: '3px',
         lineHeight: '19px',
         '&:hover': {
-            color: headlineFontColor_hover,
-            cursor: 'pointer'
-        }
+            color: headlineFontColorHover,
+            cursor: 'pointer',
+        },
     },
     hr: {
         borderColor: hrColor,
