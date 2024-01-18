@@ -2,9 +2,9 @@ import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
 export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph' | 'imitation-onion' | 'sketch-countdown'
+    | 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
+    | 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
+    | 'open-graph' | 'imitation-onion' | 'sketch-countdown'
 
 export type PageInfoType = {
     title: string
@@ -98,10 +98,14 @@ Technologies:
     {
         name: 'print-page',
         icon: 'print',
-        longDesc:
-            'Print Page' +
-            'Sometimes you just want to print off some text, a list or something. ' +
-            'With this Doodle you can paste the text in and do some formatting using Markdown, and then print it out. ',
+        longDesc: `
+## Print Page\n
+
+Sometimes you just want to print off some text, a list or something. 
+
+With *this* Sketch you can paste the text in and do some light 
+formatting using the editor, and then print it out.
+        `,
         link: '#/print-page',
     },
     {
