@@ -4,7 +4,7 @@ import PageBody from '#/components/structural/PageBody'
 import Card from 'react-bootstrap/Card'
 import { Legend } from './Legend'
 import { Game } from './Game'
-import { colors } from './ClickCounter'
+import { colors } from './config'
 
 export const dragColor = signal<string>(colors[1])
 

@@ -12,7 +12,7 @@ import Loader from '#/components/Loader'
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
 const Cheater = React.lazy(() => import('./pages/wordle-two'))
 const TextHelper = React.lazy(() => import('./pages/text-helper'))
-const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey'))
+const DraggyGamey = React.lazy(() => import('./pages/draggey-gamey/DraggeyGamey'))
 const SumnerTides = React.lazy(() => import('./pages/sumner-tides'))
 const Welcome = React.lazy(() => import('./pages/welcome'))
 const NetflixGenre = React.lazy(() => import('./pages/netflix-genre'))

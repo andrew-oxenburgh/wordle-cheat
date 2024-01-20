@@ -1,9 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import { ClickCounter } from './ClickCounter'
-
-const width = 8
-const height = width
-const numOfCells = width * height
+import { width, height, numOfCells } from './config'
 
 export const useStyles = createUseStyles({
     grid: {

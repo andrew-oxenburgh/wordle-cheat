@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import Stack from 'react-bootstrap/esm/Stack'
-import { dragColor } from '.'
-import { colors } from './ClickCounter'
+import { dragColor } from './DraggeyGamey'
+import { colors } from './config'
 
 export const Legend = () => {
     return <Stack direction="horizontal" gap={3}>

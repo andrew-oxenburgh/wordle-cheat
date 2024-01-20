@@ -2,12 +2,8 @@ import { useState } from 'react'
 import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 
-const colorList: string[] = ['white', 'blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray', 'cyan', 'magenta', 'teal', 'olive', 'navy', 'maroon', 'aqua', 'lime', 'fuchsia']
-const numColors = 5
-export const colors: string[] = R.take(numColors, colorList)
-
-
-import { dragColor } from '.'
+import { dragColor } from './DraggeyGamey'
+import { colors } from './config'
 
 const colorCss: Styles = R.reduce(
     (acc: any, color: string) => {
