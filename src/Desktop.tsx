@@ -5,6 +5,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Loader from '#/components/Loader'
 
+// import date from '##date'
+
+// console.log(date)
+
 const WordleCheat = React.lazy(() => import('./pages/wordle-one'))
 const Cheater = React.lazy(() => import('./pages/wordle-two'))
 const TextHelper = React.lazy(() => import('./pages/text-helper'))
@@ -49,14 +53,14 @@ const Desktop = () => {
             <Row>
                 {/* <Spinner /> */}
                 {pages.map((Page, index) =>
-                    (<>
-                        <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
-                            <Suspense key={index} fallback={<Loader />}>
-                                <Page key={index} />
-                            </Suspense>
-                        </Col>
-                    </>
-                    ))}
+                (<>
+                    <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
+                        <Suspense key={index} fallback={<Loader />}>
+                            <Page key={index} />
+                        </Suspense>
+                    </Col>
+                </>
+                ))}
             </Row>
         </Container>
     )

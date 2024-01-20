@@ -30,6 +30,10 @@ const config = ({ mode }: { mode: string }) => {
                         // For .md files, get the raw content
                         return `export default ${JSON.stringify(code)};`
                     }
+                    if (id === '##date') {
+                        // For .md files, get the raw content
+                        return `export default {date: "${new Date().toString()}"}`
+                    }
                 },
             },
             alias({
@@ -38,6 +42,10 @@ const config = ({ mode }: { mode: string }) => {
                     {
                         find: '#',
                         replacement: resolve(projectRootDir, 'src'),
+                    },
+                    {
+                        find: '##date',
+                        replacement: 'hello, world',
                     },
                 ],
             }),
