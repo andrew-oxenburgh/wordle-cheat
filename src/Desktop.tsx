@@ -53,14 +53,14 @@ const Desktop = () => {
             <Row>
                 {/* <Spinner /> */}
                 {pages.map((Page, index) =>
-                (<>
-                    <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
-                        <Suspense key={index} fallback={<Loader />}>
-                            <Page key={index} />
-                        </Suspense>
-                    </Col>
-                </>
-                ))}
+                    (<>
+                        <Col sm="6" md="4" lg="3" xl="3" className={classes.page}>
+                            <Suspense key={index} fallback={<Loader />}>
+                                <Page key={index} />
+                            </Suspense>
+                        </Col>
+                    </>
+                    ))}
             </Row>
         </Container>
     )
