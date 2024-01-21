@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { useEffectOnce } from 'usehooks-ts'

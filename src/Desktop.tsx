@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { createUseStyles } from 'react-jss'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'

@@ -16,6 +16,9 @@ const config = ({ mode }: { mode: string }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
     return {
+        esbuild: {
+            jsxInject: `import React from 'react'`
+        },
         plugins: [
             // tsconfigPaths(),
             react({
