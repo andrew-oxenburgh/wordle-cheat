@@ -14,7 +14,7 @@ interface InfoThingProps {
  * Creates a button to press to show more info. The content is
  * shown in a drop down Overlay
  */
-const InfoThing: React.FC<InfoThingProps> = ({ children = '', height, show, onHide }) => {
+const InfoThing: React.FC<InfoThingProps> = ({ children = '', height, show = false, onHide }) => {
     return (
         <Container>
             <Offcanvas

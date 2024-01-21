@@ -18,10 +18,16 @@
     "build": "vite build",
     "preview": "vite preview",
     "ci": "echo 'put something here'",
-    "storybook:build": "storybook build -o ./public/sb",
+    "storybook": "storybook dev",
+    "storybook:build": "storybook build -o ./public/sb --test",
     "test": "vitest",
     "dev": "vite",
-    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache"
+    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache",
+    "build:client": "vite build",
+    "build:storybook": "storybook build --docs -o dist/sb",
+    "build:clean": "rimraf dist/",
+    "build:preview": "vite preview",
+    "firebase:deploy": "firebase deploy --only hosting "
   },
   "keywords": [
     "react",
@@ -89,6 +95,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@rollup/plugin-alias": "^5.1.0",
+    "@storybook/preview-api": "^7.6.10",
     "core-js": "^3.35.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

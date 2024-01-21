@@ -22,15 +22,4 @@ const scripts = (s) => {
  */
 
 module.exports = {
-    "dev": "vite",
-    "storybook": "storybook dev",
-    // "storybookDocs": "storybook dev --docs",
-    "test": "jest",
-    "upPatch": "npm version patch --force",
-    "upMinor": "npm version minor --force",
-    "build:client": "vite build",
-    "build:storybook": "storybook build --docs -o dist/sb",
-    "build:clean": "rimraf dist/",
-    "build:preview": "vite preview",
-    "firebase:deploy": "firebase deploy --only hosting "
 }

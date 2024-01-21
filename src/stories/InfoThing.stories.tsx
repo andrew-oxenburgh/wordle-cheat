@@ -1,8 +1,8 @@
 /* eslint @typescript-eslint/no-empty-function: "off" */
-
+import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import InfoThing from '../components/InfoThing'
+import InfoThing from '#/components/InfoThing'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof InfoThing> = {
@@ -20,6 +20,12 @@ const meta: Meta<typeof InfoThing> = {
             control: 'text',
             description: 'height. May be a percentage',
         },
+        show: {
+            control: 'boolean',
+        },
+        onHide: {
+            control: 'function',
+        },
         // 👇 All Button stories expect a label arg
     },
 }
@@ -31,10 +37,19 @@ type Story = StoryObj<typeof InfoThing>
 export const Primary: Story = {
     args: {
         height: '50%',
+        show: false,
     },
-    render: () => (<>
-        <InfoThing height="50%" show={true} onHide={() => { }}>
-            <p>some kiddies</p>
-        </InfoThing>
-    </>),
+    render: (args) => {
+        const [{ show }, updateArgs] = useArgs()
+
+        const onHide = () => {
+            updateArgs({ show: !show })
+        }
+
+        return (<>
+            <InfoThing  {...args} onHide={onHide}>
+                <p>some kiddies</p>
+            </InfoThing >
+        </>)
+    },
 }

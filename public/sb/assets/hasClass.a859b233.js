@@ -1,0 +1,14 @@
+/*
+Copyright (c) 2023, 2024 Andrew Oxenburgh
+MIT License
+https://github.com/andrew-oxenburgh/wordle-cheat/blob/21d063ecd90cf635497a692146bdf3dc196196e6/LICENSE.md
+mailto:andrew.oxenburgh@gmail.com
+https://oxenburgh.dev
+https://github.com/andrew-oxenburgh/
+https://github.com/andrew-oxenburgh/wordle-cheat/
+*/
+import{r as n}from"./index.5fa2b10e.js";import{c as m,o as v,u as R,a as p}from"./Fade.e64bfd51.js";import{j as l}from"./ThemeProvider.c81a5c7d.js";function U(){const e=n.exports.useRef(!0),t=n.exports.useRef(()=>e.current);return n.exports.useEffect(()=>(e.current=!0,()=>{e.current=!1}),[]),t.current}const y=typeof global<"u"&&global.navigator&&global.navigator.product==="ReactNative",j=typeof document<"u",x=j||y?n.exports.useLayoutEffect:n.exports.useEffect;function L(e,t){if(e.contains)return e.contains(t);if(e.compareDocumentPosition)return e===t||!!(e.compareDocumentPosition(t)&16)}function h(e){const t=n.exports.useRef(e);return t.current=e,t}function N(e){const t=h(e);n.exports.useEffect(()=>()=>t.current(),[])}function W(e){return e.code==="Escape"||e.keyCode===27}const E=n.exports.createContext(m?window:void 0);E.Provider;function w(){return n.exports.useContext(E)}const d=(e,t)=>m?e==null?(t||v()).body:(typeof e=="function"&&(e=e()),e&&"current"in e&&(e=e.current),e&&("nodeType"in e||e.getBoundingClientRect)?e:null):null;function k(e,t){const r=w(),[s,o]=n.exports.useState(()=>d(e,r?.document));if(!s){const u=d(e);u&&o(u)}return n.exports.useEffect(()=>{t&&s&&t(s)},[t,s]),n.exports.useEffect(()=>{const u=d(e);u!==s&&o(u)},[e,s]),s}function C({children:e,in:t,onExited:r,mountOnEnter:s,unmountOnExit:o}){const u=n.exports.useRef(null),c=n.exports.useRef(t),f=R(r);n.exports.useEffect(()=>{t?c.current=!0:f(u.current)},[t,f]);const a=p(u,e.ref),i=n.exports.cloneElement(e,{ref:a});return t?i:o||!c.current&&s?null:i}function O({in:e,onTransition:t}){const r=n.exports.useRef(null),s=n.exports.useRef(!0),o=R(t);return x(()=>{if(!r.current)return;let u=!1;return o({in:e,element:r.current,initial:s.current,isStale:()=>u}),()=>{u=!0}},[e,o]),x(()=>(s.current=!1,()=>{s.current=!0}),[]),r}function D({children:e,in:t,onExited:r,onEntered:s,transition:o}){const[u,c]=n.exports.useState(!t);t&&u&&c(!1);const f=O({in:!!t,onTransition:i=>{const b=()=>{i.isStale()||(i.in?s?.(i.element,i.initial):(c(!0),r?.(i.element)))};Promise.resolve(o(i)).then(b,g=>{throw i.in||c(!0),g})}}),a=p(f,e.ref);return u&&!t?null:n.exports.cloneElement(e,{ref:a})}function F(e,t,r){return e?l.exports.jsx(e,Object.assign({},r)):t?l.exports.jsx(D,Object.assign({},r,{transition:t})):l.exports.jsx(C,Object.assign({},r))}function I(e,t){return e.classList?!!t&&e.classList.contains(t):(" "+(e.className.baseVal||e.className)+" ").indexOf(" "+t+" ")!==-1}export{N as a,k as b,L as c,x as d,w as e,I as h,W as i,F as r,U as u};
+
+/*
+Copyright (c) 2023, 2024 Andrew Oxenburgh
+*/
