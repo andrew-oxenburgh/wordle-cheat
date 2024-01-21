@@ -10,7 +10,7 @@ export const getOgGraph = async (url: string): Promise<OgObject> => {
     try {
         const functions = getFunctions(app)
         const httpCaller = httpsCallable(functions, 'ogGraph', {
-
+            timeout: 15000,
         })
 
         const result = await httpCaller({ url }) as {

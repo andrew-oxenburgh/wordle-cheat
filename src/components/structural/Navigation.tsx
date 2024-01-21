@@ -28,7 +28,6 @@ const Navigation = () => {
             <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
                 <Nav onSelect={() => { setExpanded(false) }}>
-                    <Nav.Link href="#/">Home</Nav.Link>
                     <NavDropdown title="Sketches" id="wordle-cheats">
                         {pageDefinitions.map((page) => {
                             const icon = (<FontAwesomeIcon border size="lg" color="tomato" fixedWidth icon={page.icon as IconProp} />)
@@ -39,7 +38,7 @@ const Navigation = () => {
                             )
                         })}
                     </NavDropdown>
-                    <Nav.Link href="/sb/index.html" target="_blank">Storybook</Nav.Link>
+                    <Nav.Link href="/dist/sb/index.html" target="_blank">Storybook</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

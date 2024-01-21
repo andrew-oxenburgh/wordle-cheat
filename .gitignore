@@ -7,3 +7,4 @@ dist/
 .env.serve
 .env.build
 .env
+storybook-static
