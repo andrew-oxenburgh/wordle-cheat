@@ -5,37 +5,11 @@ import Card from 'react-bootstrap/Card'
 import { Legend } from './Legend'
 import { GameBoard } from './GameBoard'
 import { colors } from './config'
-import Button from 'react-bootstrap/Button'
-import html2canvas from 'html2canvas'
-import downloadjs from 'downloadjs'
-import { loggerError } from '#/config/logger'
+import { Download } from './Download'
 
 export const dragColor = signal<string>(colors[1])
 
 const DraggyGamey: React.FC = () => {
-    const downloadAsMimeType = (canvas: HTMLCanvasElement, mimeType: string) => {
-        const dataURL = canvas.toDataURL(`image/${mimeType}`)
-        downloadjs(dataURL, `download.${mimeType}`, `image/${mimeType}`)
-    }
-
-    const printIt = async () => {
-        try {
-            const board =
-                document.getElementById('game-board')
-            if (!board) {
-                return
-            }
-            const canvas = await html2canvas(board)
-            downloadAsMimeType(canvas, 'webp')
-            downloadAsMimeType(canvas, 'png')
-            downloadAsMimeType(canvas, 'jpg')
-            downloadAsMimeType(canvas, 'svg')
-        } catch (e) {
-            loggerError(e)
-        }
-
-    }
-
     return (
         <>
             <PageBody name="draggey-gamey">
@@ -48,15 +22,14 @@ const DraggyGamey: React.FC = () => {
                         <Legend />
                         <GameBoard id="game-board" />
                     </Card.Body>
-                    <Card.Footer
-                        onClick={() => void printIt()}
-                    >
-                        <Button>download</Button>
+                    <Card.Footer>
+                        <Download eleId="game-board" />
                     </Card.Footer>
                 </Card>
-            </PageBody>
+            </PageBody >
         </>
     )
 }
 
 export default DraggyGamey
+

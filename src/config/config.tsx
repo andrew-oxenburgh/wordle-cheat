@@ -48,4 +48,6 @@ export {
 }
 export type { PageInfoType }
 
+export const downloadFilename = 'sketch-oxenburgh-download'
+
 export default {}
