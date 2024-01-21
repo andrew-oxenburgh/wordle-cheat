@@ -3,8 +3,11 @@ import Stack from 'react-bootstrap/Stack'
 import { dragColor } from './DraggeyGamey'
 import { colors, getTextColor } from './config'
 import Button from 'react-bootstrap/Button'
+import { effect } from '@preact/signals-react'
 
 export const Legend = () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    effect(() => { })
     return <Stack direction="horizontal" gap={3}>
         {R.map((color: string) => {
             const isSelected = color === dragColor.value
@@ -23,6 +26,5 @@ export const Legend = () => {
                 </Button>
             )
         }, colors)}
-        {/* {dragColor.value} */}
     </Stack>
 }

@@ -1,8 +1,9 @@
 import { createUseStyles } from 'react-jss'
 import { GameCell } from './GameCell'
 import { width, height, numOfCells } from './config'
-import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
+import { dragColor } from './DraggeyGamey'
+import { effect } from '@preact/signals-react'
 
 export const useStyles = createUseStyles({
     grid: {
@@ -20,10 +21,17 @@ export const useStyles = createUseStyles({
 
 export const GameBoard = ({ id = '' }) => {
     const classes = useStyles()
-    return (<Container id={id} className={classes.grid}>
-        {Array(numOfCells).fill(null).map((_, index) => (
-            <GameCell key={index} _color={'white'} />
-        ))}
-    </Container>
+    effect(() => { })
+    return (<Container id={id} className={classes.grid}
+        style={{
+            borderColor: dragColor.value
+        }}
+    >
+        {
+            Array(numOfCells).fill(null).map((_, index) => (
+                <GameCell key={index} _color={'white'} />
+            ))
+        }
+    </Container >
     )
 }

@@ -4,6 +4,7 @@ import * as R from 'ramda'
 
 import { dragColor } from './DraggeyGamey'
 import { colors } from './config'
+import { effect } from '@preact/signals-react'
 
 const colorCss: Styles = R.reduce(
     (acc: any, color: string) => {
@@ -30,6 +31,7 @@ const colorCss: Styles = R.reduce(
 const useStylesClicks = createUseStyles(colorCss)
 
 export const GameCell = ({ _color }: { _color: string }) => {
+    effect(() => { })
     const classes = useStylesClicks()
     const [color, setColor] = useState<string>(_color)
 
@@ -45,6 +47,9 @@ export const GameCell = ({ _color }: { _color: string }) => {
             onDragOver={onClick}
             onDragCapture={onClick}
             onDrop={onClick}
+            style={{
+                borderColor: dragColor.value
+            }}
         />
     )
 }
