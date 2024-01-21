@@ -95,6 +95,7 @@
     "downloadjs": "^1.4.7",
     "express": "^4.18.2",
     "firebase": "^10.7.1",
+    "firebase-tools": "^13.0.3",
     "html2canvas": "^1.4.1",
     "node-fetch": "^3.3.2",
     "open-graph-scraper": "^6.3.2",
