@@ -20,26 +20,31 @@ const colorCss: Styles = R.reduce(
                 transition: '0.1s',
             },
             '&:not(:hover)': {
-                border: '1px solid transparent',
+                border: '1px dashed whitesmoke',
                 transition: 'border 3s ease',
             },
         }
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return acc
     }, {}, colors)
 
 const useStylesClicks = createUseStyles(colorCss)
 
-export const ClickCounter = ({ _color }: { _color: string }) => {
+export const GameCell = ({ _color }: { _color: string }) => {
     const classes = useStylesClicks()
     const [color, setColor] = useState<string>(_color)
 
     const onClick = () => setColor(dragColor.value)
     return (
         <button
+            draggable="true"
             className={classes['color_' + color]}
             aria-label={'Click me button '}
             onClick={onClick}
-            onDragOver={onClick} />
+            onDragStart={onClick}
+            onDrag={onClick}
+            onDragOver={onClick}
+            onDragCapture={onClick}
+            onDrop={onClick}
+        />
     )
 }

@@ -1,6 +1,8 @@
 import { createUseStyles } from 'react-jss'
-import { ClickCounter } from './ClickCounter'
+import { GameCell } from './GameCell'
 import { width, height, numOfCells } from './config'
+import React from 'react'
+import Container from 'react-bootstrap/esm/Container'
 
 export const useStyles = createUseStyles({
     grid: {
@@ -14,19 +16,14 @@ export const useStyles = createUseStyles({
         padding: 0,
         border: '1px solid black',
     },
-    container: {
-        display: 'flex',
-        alignContent: 'center',
-    },
 })
 
-
-export const Game = () => {
+export const GameBoard = ({ id = '' }) => {
     const classes = useStyles()
-    return (<div className={classes.grid}>
+    return (<Container id={id} className={classes.grid}>
         {Array(numOfCells).fill(null).map((_, index) => (
-            <ClickCounter key={index} _color={'white'} />
+            <GameCell key={index} _color={'white'} />
         ))}
-    </div>
+    </Container>
     )
 }
