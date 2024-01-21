@@ -18,7 +18,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "ci": "echo 'put something here'",
-    "storybook:build": "storybook build -o ./dist/sb",
+    "storybook:build": "storybook build -o ./public/sb",
     "test": "vitest",
     "dev": "vite",
     "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache"
