@@ -5,7 +5,6 @@ const useStyles = createUseStyles({
     container: {
         width: '100%',
         height: '100%',
-
     },
     heading: {
         textAlign: 'center',
@@ -13,8 +12,8 @@ const useStyles = createUseStyles({
     },
     spinner: {
         display: 'inherit',
-        width: '50%',
-        height: '50%',
+        // width: '50%',
+        // height: '50%',
         margin: '2em auto',
     },
 })
@@ -35,7 +34,7 @@ const Loader = ({ title = 'waiting...' }) => {
                 className={classes.spinner}
                 variant='primary'
             >
-                <span className="visually-hidden">Loading...</span>
+                <span className="visually-hidden">{title}</span>
             </Spinner>
         </div>
     )
