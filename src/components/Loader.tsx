@@ -1,34 +1,40 @@
 import { createUseStyles } from 'react-jss'
 import Spinner from 'react-bootstrap/Spinner'
-import { appMaxWidth } from './structural/structural.config'
-
 
 const useStyles = createUseStyles({
-    spinner: {
-        color: 'blue',
-        padding: '10px',
-        width: '10em',
-        height: '10em',
+    container: {
+        width: '100%',
+        height: '100%',
+
+    },
+    heading: {
+        textAlign: 'center',
         margin: 'auto',
     },
-    container: {
-        background: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '35em',
-        margin: 'auto',
-        ...appMaxWidth,
+    spinner: {
+        display: 'inherit',
+        width: '50%',
+        height: '50%',
+        margin: '2em auto',
     },
 })
 
-const Loader = ({ title = 'Dynamic Import!!!!' }) => {
+/**
+ * 
+ *  shows the user when we're loading something.
+ * 
+ * Fills the whole container.
+ */
+const Loader = ({ title = 'waiting...' }) => {
     const classes = useStyles()
     return (
         <div className={classes.container}>
-            {title && <h1 className={classes.spinner} >{title}</h1>}
-            <Spinner className={classes.spinner} animation="border" role="status" variant="primary">
+            {title && <h1 className={classes.heading} >{title}</h1>}
+            <Spinner
+                as="div"
+                className={classes.spinner}
+                variant='primary'
+            >
                 <span className="visually-hidden">Loading...</span>
             </Spinner>
         </div>

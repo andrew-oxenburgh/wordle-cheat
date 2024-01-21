@@ -19,6 +19,18 @@ const meta: Meta<typeof Loader> = {
         },
         // 👇 All Button stories expect a label arg
     },
+    decorators: [
+        (Story) => (
+            <div style={{
+                width: '30em',
+                height: '30em',
+            }}>
+                {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+                <Story />
+            </div>
+        ),
+    ],
+
 }
 
 export default meta
@@ -27,10 +39,9 @@ type Story = StoryObj<typeof Loader>
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
     args: {
-        title: 'button',
-        // label: 'Button',
+        title: 'waiting for dynamic imports...',
     },
-    render: () => (<>
-        <Loader />
+    render: (args) => (<>
+        <Loader {...args} />
     </>),
 }
