@@ -20,9 +20,9 @@ const useStyles = createUseStyles({
 })
 
 /**
- * 
- *  shows the user when we're loading something.
- * 
+ *
+ * shows the user when we're loading something.
+ *
  * Fills the whole container.
  */
 const Loader = ({ title = 'waiting...' }) => {
