@@ -70,7 +70,7 @@ type OpenGraphCardType = {
 }
 
 const OpenGraphCard = ({ loading, normalisedGraph, cardStyle = {} }: OpenGraphCardType) => {
-    if (true) {
+    if (loading) {
         return (
             <Card style={{
                 // height: '80em',

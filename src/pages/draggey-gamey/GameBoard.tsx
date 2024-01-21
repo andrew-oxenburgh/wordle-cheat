@@ -24,7 +24,7 @@ export const GameBoard = ({ id = '' }) => {
     effect(() => { })
     return (<Container id={id} className={classes.grid}
         style={{
-            borderColor: dragColor.value
+            borderColor: dragColor.value,
         }}
     >
         {

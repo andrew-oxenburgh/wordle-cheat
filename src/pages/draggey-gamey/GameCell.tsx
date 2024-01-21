@@ -15,6 +15,7 @@ const colorCss: Styles = R.reduce(
             borderRadius: 0,
             padding: 0,
             margin: 0,
+
             // border: '5px solid none',
             '&:hover': {
                 border: '1px solid #222',
@@ -48,7 +49,7 @@ export const GameCell = ({ _color }: { _color: string }) => {
             onDragCapture={onClick}
             onDrop={onClick}
             style={{
-                borderColor: dragColor.value
+                borderColor: dragColor.value,
             }}
         />
     )

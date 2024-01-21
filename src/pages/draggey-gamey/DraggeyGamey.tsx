@@ -16,9 +16,15 @@ const DraggyGamey: React.FC = () => {
                 <Card style={{ maxWidth: '30em', margin: 'auto' }}
                 >
                     <Card.Header>
-                        a fun little game
+                        Let's play a little game
                     </Card.Header>
                     <Card.Body>
+                        <Card.Text>
+                            Select a colour from the legend and click or drag to change the colors of squares
+                        </Card.Text>
+                        <Card.Text>
+                            Then download your attractive art!!
+                        </Card.Text>
                         <Legend />
                         <GameBoard id="game-board" />
                     </Card.Body>
