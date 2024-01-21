@@ -38,7 +38,7 @@ const Navigation = () => {
                             )
                         })}
                     </NavDropdown>
-                    <Nav.Link href="/sb/index.html" target="_blank">Storybook</Nav.Link>
+                    <Nav.Link href="/sb/index.html" target="_blank" rel="noopener noreferrer">Storybook</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
