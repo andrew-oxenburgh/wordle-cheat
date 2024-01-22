@@ -1,35 +1,18 @@
 import * as R from 'ramda'
+import { BoardState, LetterState } from './wordle.type'
 
-export enum State {
-    'NONE' = 0,
-    'NOT_USED',
-    'USED',
-    'HERE'
-}
-
-export const incrState = (state: State): State => {
+export const incrState = (state: LetterState): LetterState => {
     switch (state) {
-    case State.NONE:
-        return State.NOT_USED
-    case State.NOT_USED:
-        return State.USED
-    case State.USED:
-        return State.HERE
-    case State.HERE:
-        return State.NONE
+        case LetterState.NONE:
+            return LetterState.NOT_USED
+        case LetterState.NOT_USED:
+            return LetterState.USED
+        case LetterState.USED:
+            return LetterState.HERE
+        case LetterState.HERE:
+            return LetterState.NONE
     }
 }
-
-export interface LetterState {
-    letter: string
-    state: State
-}
-
-export type BoardState = LetterState[]
-
-export type RowsState = LetterState[][]
-export type ColsState = LetterState[][]
-
 
 export const notNormalLetter = (input: string): boolean => {
     return ! /^[A-Za-z]$/.test(input)
@@ -39,22 +22,22 @@ export const blankBoard = (w: number, h: number): BoardState => R.times(
     () => {
         return {
             letter: '-',
-            state: State.NONE,
+            state: LetterState.NONE,
         }
     },
     w * h,
 )
 
-export const variant = (state: State): string => {
+export const variant = (state: LetterState): string => {
     switch (state) {
-    case State.NONE:
-        return 'secondary'
-    case State.NOT_USED:
-        return 'light'
-    case State.USED:
-        return 'warning'
-    case State.HERE:
-        return 'success'
+        case LetterState.NONE:
+            return 'secondary'
+        case LetterState.NOT_USED:
+            return 'light'
+        case LetterState.USED:
+            return 'warning'
+        case LetterState.HERE:
+            return 'success'
     }
 }
 

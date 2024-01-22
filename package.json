@@ -21,6 +21,7 @@
     "storybook": "storybook dev",
     "storybook:build": "storybook build -o ./public/sb --test",
     "test": "vitest",
+    "jest": "jest",
     "dev": "vite",
     "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache",
     "build:storybook": "storybook build --docs -o dist/sb",
@@ -110,6 +111,7 @@
     "vitest": "^1.2.1"
   },
   "dependencies": {
+    "jest": "^29.7.0",
     "lightningcss": "^1.23.0"
   }
 }

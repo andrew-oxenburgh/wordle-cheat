@@ -6,13 +6,15 @@ import Stack from 'react-bootstrap/Stack'
 import PageBody from '#/components/structural/PageBody'
 import Button from 'react-bootstrap/Button'
 import {
-    BoardState,
-    State,
     notNormalLetter,
     variant,
     blankBoard,
     incrState,
 } from './wordle.utils'
+import {
+    BoardState,
+    LetterState,
+} from './wordle.type'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 
@@ -22,26 +24,26 @@ const _height = 6
 const Legend = (
     <Stack direction='horizontal' gap={1}>
         <span className="p-2">
-            <Button size='lg' variant={variant(State.NONE)}
+            <Button size='lg' variant={variant(LetterState.NONE)}
             >
                 -
             </Button>
             None
         </span>
         <span className="p-2">
-            <Button size='lg' variant={variant(State.NOT_USED)}>
+            <Button size='lg' variant={variant(LetterState.NOT_USED)}>
                 -
             </Button>
             Not Used
         </span>
         <span className="p-2">
-            <Button size='lg' variant={variant(State.USED)}>
+            <Button size='lg' variant={variant(LetterState.USED)}>
                 -
             </Button>
             Used
         </span>
         <span className="p-2">
-            <Button size='lg' variant={variant(State.HERE)}>
+            <Button size='lg' variant={variant(LetterState.HERE)}>
                 -
             </Button>
             Here
@@ -64,7 +66,7 @@ const WordleTwo = (): JSX.Element => {
                 const newBoardState: BoardState = [...boardState]
                 newBoardState[next - 1] = {
                     letter: '-',
-                    state: State.NONE,
+                    state: LetterState.NONE,
                 }
                 setBoardState(newBoardState)
                 setNext(next - 1)

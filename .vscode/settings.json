@@ -1,4 +1,41 @@
 {
     "svg.preview.background": "editor",
-    "cloudcode.duetAI.inlineSuggestions.enableAuto": false
+    "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
+    "favorites.resources": [
+        {
+            "filePath": "src/pages",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": "src/components",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": "src/scratch/scratch.test.ts",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": "src/scratch",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": "package.json",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": "vite.config.ts",
+            "group": "HighLevel"
+        },
+        {
+            "filePath": ".eslintrc.cjs",
+            "group": "HighLevel"
+        }
+    ],
+    "favorites.groups": [
+        "Default",
+        "main",
+        "HighLevel",
+    ],
+    "favorites.currentGroup": "HighLevel",
+    "favorites.sortOrder": "MANUAL"
 }
