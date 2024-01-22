@@ -76,10 +76,31 @@ const config = ({ mode }: { mode: string }) => {
             ],
         },
         build: {
-            // sourcemap: true,
+            emptyOutDir: true,
+            assetsInlineLimit: 150 * 1024,
+            chunkSizeWarningLimit: 1024,
+            cssMinify: 'lightningcss',
             manifest: true,
-            // minify: true,
+            minify: true,
             rollupOptions: {
+                output: {
+                    experimentalMinChunkSize: 10 * 1024,
+                    manualChunks: {
+                        'react-bootstrap': ['react-bootstrap'],
+                        'react-dom': ['react-dom'],
+                        'react-router-dom': ['react-router-dom'],
+                    },
+                    // manualChunks: (id: string) => {
+                    //     console.log('id', id)
+                    //     if (id.includes('/pages/draggey-gamey')) {
+                    //         return 'draggey-gamey'
+                    //     } else if (id.includes('/pages/open-graph-page')) {
+                    //         return 'open-graph-page'
+                    //     } else if (id.includes('/pages/sketch-countdown')) {
+                    //         return 'sketch-countdown'
+                    //     }
+                    // },
+                },
                 input: {
                     main: resolve(__dirname, 'index.html'),
                     // about: resolve(__dirname, 'about.html'),
@@ -92,7 +113,6 @@ const config = ({ mode }: { mode: string }) => {
                     handler(log)
                 },
             },
-            chunkSizeWarningLimit: 1024,
             target: [
                 'es2020',
                 'edge108', /* 2022-nov */
