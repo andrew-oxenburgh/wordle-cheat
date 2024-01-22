@@ -1,3 +1,5 @@
+// PAGE: open-graph-page
+
 import { useRef, useState } from 'react'
 
 import { createUseStyles } from 'react-jss'

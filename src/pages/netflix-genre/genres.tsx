@@ -1,4 +1,5 @@
 // https://github.com/vrachieru/netflix-categories/blob/325d821211b6ed40ca0a03f70280678440f1f9af/categories.json
+// PAGE: netflix-genres
 
 export type GenreCodesType = {
     [category: string]: {

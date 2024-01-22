@@ -1,3 +1,5 @@
+// FAV: _page-list
+
 import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 

@@ -1,3 +1,5 @@
+// PAGE: wordle-one
+
 import { useEffect, useState } from 'react'
 import * as R from 'ramda'
 

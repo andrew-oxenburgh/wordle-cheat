@@ -37,5 +37,6 @@
         "HighLevel",
     ],
     "favorites.currentGroup": "HighLevel",
-    "favorites.sortOrder": "MANUAL"
+    "favorites.sortOrder": "MANUAL",
+    "todo-tree.filtering.scopes": []
 }

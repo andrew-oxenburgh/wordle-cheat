@@ -1,3 +1,5 @@
+// PAGE: emoji-search
+
 import { KeyboardEventHandler, useEffect, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 

@@ -1,3 +1,5 @@
+// PAGE: draggey-gamey
+
 import { signal } from '@preact/signals-react'
 
 import PageBody from '#/components/structural/PageBody'

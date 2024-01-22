@@ -1,3 +1,5 @@
+// PAGE: sketch-countdown
+
 import { createUseStyles } from 'react-jss'
 import CompareSketchWithImage from '#/components/CompareSketchWithImage'
 import imgUrl from './sketch-countdown.png?inline'

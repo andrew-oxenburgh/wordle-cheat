@@ -1,3 +1,6 @@
+// PAGE: password-generator
+
+
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 

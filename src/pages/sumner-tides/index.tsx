@@ -1,3 +1,5 @@
+// PAGE: sumner-tides
+
 import useSWR from 'swr'
 
 import PageBody from '#/components/structural/PageBody'

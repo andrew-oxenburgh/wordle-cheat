@@ -1,3 +1,5 @@
+// PAGE: imitation-onion
+
 import { createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 import CompareSketchWithImage from '../../components/CompareSketchWithImage'

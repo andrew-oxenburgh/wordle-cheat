@@ -1,3 +1,5 @@
+// PAGE: welcome
+
 import ReactMarkdown from 'react-markdown'
 import PageBody from '#/components/structural/PageBody'
 import Card from 'react-bootstrap/Card'

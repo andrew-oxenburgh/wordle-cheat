@@ -18,6 +18,8 @@ import {
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 
+// PAGE: wordle-two
+
 const _width = 5
 const _height = 6
 
