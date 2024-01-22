@@ -13,11 +13,17 @@ const projectRootDir = resolve(__dirname)
 
 // https://vitejs.dev/config/
 const config = ({ mode }: { mode: string }) => {
-    process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
+    process.env = {
+        ...process.env,
+        ...loadEnv(mode, process.cwd()),
 
+        // requires the VITE_ prefix
+        // form 2024-01-22T01:12:29.375Z
+        VITE__BUILD_DATE: new Date().toISOString(),
+    }
     return {
         esbuild: {
-            jsxInject: `import React from 'react'`
+            jsxInject: 'import React from "react"',
         },
         plugins: [
             // tsconfigPaths(),
