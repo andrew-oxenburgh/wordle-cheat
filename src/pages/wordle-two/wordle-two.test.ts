@@ -1,22 +1,23 @@
 import { expect, test, describe } from 'vitest'
-import { BoardState, ColsState, LetterState, RowsState, State, calcCols, calcRows } from './wordle.utils'
+import { BoardState, ColsState, Letter, RowsState, LetterState  } from './wordle.type'
+import { calcCols, calcRows } from './wordle.utils'
 import * as R from 'ramda'
 
 const arrayOfBlanks = (width: number): BoardState => R.times(() => {
     return {
         letter: '',
-        state: State.NONE,
+        state: LetterState.NONE,
     }
 }, width)
 
 
-const arrayOfOne = (): LetterState[] => arrayOfBlanks(1)
-const arrayOfTwo = (): LetterState[] => arrayOfBlanks(2)
+const arrayOfOne = (): Letter[] => arrayOfBlanks(1)
+const arrayOfTwo = (): Letter[] => arrayOfBlanks(2)
 
-const blankLetter = (): LetterState => {
+const blankLetter = (): Letter => {
     return {
         letter: '',
-        state: State.NONE,
+        state: LetterState.NONE,
     }
 }
 
@@ -27,12 +28,12 @@ const findPattern = (board: BoardState): string[] => {
     return []
 }
 
-const LETTER_A = { state: State.NONE, letter: 'a' }
-const LETTER_B = { state: State.NONE, letter: 'b' }
-const LETTER_C = { state: State.NONE, letter: 'c' }
-const LETTER_D = { state: State.NONE, letter: 'd' }
-const LETTER_E = { state: State.NONE, letter: 'e' }
-const LETTER_F = { state: State.NONE, letter: 'f' }
+const LETTER_A = { state: LetterState.NONE, letter: 'a' }
+const LETTER_B = { state: LetterState.NONE, letter: 'b' }
+const LETTER_C = { state: LetterState.NONE, letter: 'c' }
+const LETTER_D = { state: LetterState.NONE, letter: 'd' }
+const LETTER_E = { state: LetterState.NONE, letter: 'e' }
+const LETTER_F = { state: LetterState.NONE, letter: 'f' }
 
 describe('blank boards', () => {
     test('one by one NONE allows all letters', () => {
@@ -61,7 +62,7 @@ describe('calcRows', () => {
         input[1].letter = 't'
         const expected: RowsState = [
             arrayOfOne(),
-            [{ state: State.NONE, letter: 't' }],
+            [{ state: LetterState.NONE, letter: 't' }],
             arrayOfOne(),
         ]
         expect(calcRows(input, 1)).toEqual(expected)
@@ -170,7 +171,7 @@ describe('calcRows', () => {
 describe.skip('HERE board', () => {
     test('one by one', () => {
         const board = arrayOfOne()
-        board[0].state = State.HERE
+        board[0].state = LetterState.HERE
         expect(findPattern(board)).toEqual(['a'])
     })
 })

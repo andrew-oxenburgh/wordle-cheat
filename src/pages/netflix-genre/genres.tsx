@@ -211,4 +211,5 @@ const genres: GenreCodesType = {
 
 export default genres
 
-export {}
+export { }
+

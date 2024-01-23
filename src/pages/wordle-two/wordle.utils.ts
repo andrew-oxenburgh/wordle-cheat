@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { BoardState, LetterState } from './wordle.type'
+import { BoardState, ColsState, Letter, LetterState, RowsState } from './wordle.type'
 
 export const incrState = (state: LetterState): LetterState => {
     switch (state) {
@@ -49,7 +49,7 @@ export const calcRows = (board: BoardState, width = 5): RowsState => {
 export const calcCols = (board: BoardState, width = 5): ColsState => {
     let ret: ColsState = []
     const indexedReduce = R.addIndex(R.reduce)
-    ret = indexedReduce((acc: ColsState, val: LetterState, inx: number) => {
+    ret = indexedReduce((acc: ColsState, val: Letter, inx: number) => {
         const col = inx % width
         acc[col] = acc[col] || []
         acc[col].push(val)

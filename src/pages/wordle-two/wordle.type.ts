@@ -5,14 +5,14 @@ export enum LetterState {
     'HERE'
 }
 
-export type LetterType = {
+export type Letter = {
     letter: string
     state: LetterState
 }
 
-export type BoardState = LetterType[]
+export type BoardState = Letter[]
 
-export type RowsState = LetterType[][]
-export type ColsState = LetterType[][]
+export type RowsState = Letter[][]
+export type ColsState = Letter[][]
 
 export default {}

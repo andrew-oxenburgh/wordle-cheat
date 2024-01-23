@@ -1,3 +1,7 @@
+import { downloadFilename } from '#/config/config'
+import { loggerError } from '#/config/logger'
+import downloadjs from 'downloadjs'
+import html2canvas from 'html2canvas'
 import * as R from 'ramda'
 
 const tileColorList: string[] = [
@@ -40,4 +44,25 @@ export const getTextColor = (color: string): string => {
 export const width = 8
 export const height = width
 export const numOfCells = width * height
+
+export const downloadIt = async (document: Document, eleId: string, mimeType: string) => {
+    try {
+        const board = document.getElementById(eleId)
+        if (!board) {
+            return
+        }
+        const affirm = confirm('Press OK to download')
+
+        if (!affirm) {
+            return
+        }
+
+        const canvas = await html2canvas(board)
+        const dataURL = canvas.toDataURL(`image/${mimeType}`)
+        downloadjs(dataURL, `${downloadFilename}.${mimeType}`, `image/${mimeType}`)
+    } catch (e) {
+        loggerError(e)
+    }
+}
+
 

@@ -1,17 +1,18 @@
 // PAGE: draggey-gamey
 
-import { signal } from '@preact/signals-react'
+import { effect, signal } from '@preact/signals-react'
+import Card from 'react-bootstrap/Card'
 
 import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/Card'
 import { Legend } from './Legend'
 import { GameBoard } from './GameBoard'
 import { colors } from './config'
-import { Download } from './Download'
+import { DownloadPanel } from './DownloadPanel'
 
 export const dragColor = signal<string>(colors[1])
 
 const DraggyGamey: React.FC = () => {
+    effect(()=>{})
     return (
         <>
             <PageBody name="draggey-gamey">
@@ -31,7 +32,7 @@ const DraggyGamey: React.FC = () => {
                         <GameBoard id="game-board" />
                     </Card.Body>
                     <Card.Footer>
-                        <Download eleId="game-board" />
+                        <DownloadPanel eleId="game-board" />
                     </Card.Footer>
                 </Card>
             </PageBody >
