@@ -1,0 +1,42 @@
+{
+
+	// https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+
+	// Place your wordle-cheat workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"hello": {
+		"scope": "javascript,typescript,html",
+		"prefix": "httt",
+		"body": [
+			"$BLOCK_COMMENT_START", 
+			"Hello World",
+			"$UUID",
+			"$BLOCK_COMMENT_END"
+		]
+	},
+	"uuid": {
+		"prefix": "uuid",
+		"body": [
+			"$BLOCK_COMMENT_START", 
+			"$UUID",
+			"$BLOCK_COMMENT_END"
+		]
+	},
+	"ramda reduce": {
+		"scope": "typescript,javascript",
+		"prefix": "R.reduce",
+		"body": [
+			"R.reduce((${1:acc}, ${2:_val})=>{",
+				"$3",
+				"return acc",
+				"}, ${4}, $5)",
+		],
+	},
+
+}
