@@ -38,5 +38,8 @@
     ],
     "favorites.currentGroup": "HighLevel",
     "favorites.sortOrder": "MANUAL",
-    "todo-tree.filtering.scopes": []
+    "todo-tree.filtering.scopes": [],
+    "vscodemacros.macroFilePath": ".vscode/macro.js",
+    "prisma-smart-formatter.typescript.defaultFormatter": "vscode.typescript-language-features",
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "dbaeumer.vscode-eslint"
 }
