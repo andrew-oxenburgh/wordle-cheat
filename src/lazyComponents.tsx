@@ -21,7 +21,7 @@ export const lazyComponents: LazyComponentType[] = [
     },
     {
         name: 'draggey-gamey',
-        lazyComponent: React.lazy(() => (import('./pages/draggey-gamey/DraggeyGamey'))),
+        lazyComponent: React.lazy(() => (import('./pages/draggey-gamey'))),
     },
     {
         name: 'sumner-tides',

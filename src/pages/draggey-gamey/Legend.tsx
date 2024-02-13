@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 import Stack from 'react-bootstrap/Stack'
-import { dragColor } from './DraggeyGamey'
+import { dragColor } from '.'
 import { colors, getTextColor } from './config'
 import Button from 'react-bootstrap/Button'
 import { effect } from '@preact/signals-react'

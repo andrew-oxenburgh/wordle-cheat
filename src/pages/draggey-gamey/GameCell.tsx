@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Styles, createUseStyles } from 'react-jss'
 import * as R from 'ramda'
 
-import { dragColor } from './DraggeyGamey'
+import { dragColor } from '.'
 import { colors } from './config'
 import { effect } from '@preact/signals-react'
 

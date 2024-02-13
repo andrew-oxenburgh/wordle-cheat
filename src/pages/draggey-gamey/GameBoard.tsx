@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss'
 import { GameCell } from './GameCell'
 import { width, height, numOfCells } from './config'
 import Container from 'react-bootstrap/esm/Container'
-import { dragColor } from './DraggeyGamey'
+import { dragColor } from '.'
 import { effect } from '@preact/signals-react'
 
 export const useStyles = createUseStyles({
