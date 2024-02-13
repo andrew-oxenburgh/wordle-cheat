@@ -1,3 +1,6 @@
+/* eslint-disable */
+
+
 import { it, expect, describe } from 'vitest'
 import inputData from './all-emoji.json'
 
@@ -168,7 +171,7 @@ describe('generate enriched data', () => {
     it('map of data', async () => {
         const map = toMap(data)
         const tagAndEmoji: TagsMap = calcMapTags(map)
-        const tags = R.uniq(R.keys(tagAndEmoji)).sort()
+        // const tags = R.uniq(R.keys(tagAndEmoji)).sort()
 
 
         type ArrayOfPairsOfStrings = [string, string]

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { it, expect, describe } from 'vitest'
 import inputData from './all-emoji.json'
 

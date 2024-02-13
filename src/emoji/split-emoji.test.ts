@@ -1,20 +1,20 @@
-import { it, expect, describe } from 'vitest'
+import { it, describe } from 'vitest'
 import fs from 'fs'
 import * as R from 'ramda'
 
-const emoji2defined = '1F37E..1F37F; Basic_Emoji; bottle with popping cork..popcorn  # E1.0[2](🍾..🍿)'
-const emoji1defined = '1F37E..1F37F; Basic_Emoji; bottle with popping cork..popcorn  # E1.0[2](🍾..🍿)'
-const emojiMyltiDefined = '1F313..1F315  ; Basic_Emoji                  ; first quarter moon..full moon  # E0.6   [3] (🌓..🌕)'
+// const emoji2defined = '1F37E..1F37F; Basic_Emoji; bottle with popping cork..popcorn  # E1.0[2](🍾..🍿)'
+// const emoji1defined = '1F37E..1F37F; Basic_Emoji; bottle with popping cork..popcorn  # E1.0[2](🍾..🍿)'
+// const emojiMyltiDefined = '1F313..1F315  ; Basic_Emoji                  ; first quarter moon..full moon  # E0.6   [3] (🌓..🌕)'
 
-type EmojiType = {
-    emojiCodePoint: string
-    emojiType: 'Basic_Emoji' |
-    'Emoji_Keycap_Sequence' |
-    'RGI_Emoji_Flag_Sequence' |
-    'RGI_Emoji_Tag_Sequence' |
-    'RGI_Emoji_Modifier_Sequence'
-    emojiShortName: string
-}
+// type EmojiType = {
+//     emojiCodePoint: string
+//     emojiType: 'Basic_Emoji' |
+//     'Emoji_Keycap_Sequence' |
+//     'RGI_Emoji_Flag_Sequence' |
+//     'RGI_Emoji_Tag_Sequence' |
+//     'RGI_Emoji_Modifier_Sequence'
+//     emojiShortName: string
+// }
 
 describe('emoji-line', () => {
     it('single line', () => {
