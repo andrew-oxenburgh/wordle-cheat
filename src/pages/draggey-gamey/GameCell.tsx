@@ -49,7 +49,7 @@ export const GameCell = ({ _color }: { _color: string }) => {
             onDragCapture={onClick}
             onDrop={onClick}
             style={{
-                borderColor: dragColor.value,
+                borderColor: 'whitesmoke',
             }}
         />
     )

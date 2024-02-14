@@ -4,7 +4,7 @@ import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
 import * as R from 'ramda'
 
-const tileColorList: string[] = [
+export const tileColorList: string[] = [
     'white',
     'blue',
     'red',
@@ -27,7 +27,7 @@ const tileColorList: string[] = [
     'lime',
     'fuchsia',
 ]
-const numColors = 5
+export const numColors = 5
 export const colors: string[] = R.take(numColors, tileColorList)
 
 export const getTextColor = (color: string): string => {
@@ -41,7 +41,7 @@ export const getTextColor = (color: string): string => {
     return 'white'
 }
 
-export const width = 8
+export const width = 22
 export const height = width
 export const numOfCells = width * height
 
@@ -64,5 +64,3 @@ export const downloadIt = async (document: Document, eleId: string, mimeType: st
         loggerError(e)
     }
 }
-
-
