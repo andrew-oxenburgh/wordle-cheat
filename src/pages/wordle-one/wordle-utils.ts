@@ -1,32 +1,55 @@
 import * as R from 'ramda'
-
+import fiveLetterWords from '#/config/five-letter-words'
 /* eslint @typescript-eslint/restrict-template-expressions: "off" */
 /* eslint @typescript-eslint/no-unsafe-return: "off" */
 
-const getWords = async (): Promise<string[]> => {
-    const ret = await import('#/config/five-letter-words')
-    return ret.default
+const _scrabbleLetterWeighting = {
+    a: 9,
+    b: 2,
+    c: 2,
+    d: 4,
+    e: 12,
+    f: 2,
+    g: 3,
+    h: 2,
+    i: 9,
+    j: 1,
+    k: 1,
+    l: 4,
+    m: 2,
+    n: 6,
+    o: 8,
+    p: 2,
+    q: 1,
+    r: 6,
+    s: 4,
+    t: 6,
+    u: 4,
+    v: 2,
+    w: 2,
+    x: 2,
+    y: 2,
+    z: 1,
 }
 
 const LOWERCASE_ALPHA = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
-export const findWordsWithoutTheseLetters = async (form: WordleForm): Promise<string[]> => {
+export const findWordsWithoutTheseLetters = (form: WordleForm): Promise<string[]> => {
     let ignoreLetters: string = form.unused
     ignoreLetters = ignoreLetters + R.map((pos: PositionEntity) => {
         return pos.known + pos.unknown
     })(form.position)
     const letters = '[^' + R.uniq(ignoreLetters).join('') + ']'
     const re = new RegExp(`^${R.repeat(letters, 5).join('')}$`)
-    const words = await getWords()
     return R.reduce((acc: string[], word: string) => {
         if (re.test(word)) {
             acc.push(word)
         }
         return acc
-    })([], words)
+    })([], fiveLetterWords)
 }
 
-export const createRegEx = async (form: WordleForm): Promise<string[]> => {
+export const createRegEx = (form: WordleForm): Promise<string[]> => {
     const unused = (fm: WordleForm, off: number) => {
         if (fm.position[off].known) {
             return fm.position[off].known[0]
@@ -57,7 +80,6 @@ export const createRegEx = async (form: WordleForm): Promise<string[]> => {
     const regexp = `^${letters.join('')}$`
 
     const re = new RegExp(regexp)
-    const words = await getWords()
 
     return R.reduce((acc: string[], word: string) => {
         const lettersInCommon = R.intersection(allRightLetters, word).join('')
@@ -65,7 +87,7 @@ export const createRegEx = async (form: WordleForm): Promise<string[]> => {
             acc.push(word)
         }
         return acc
-    })([], words)
+    })([], fiveLetterWords)
 }
 
 export const sanitise = (value: string): string => {

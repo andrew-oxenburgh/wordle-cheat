@@ -3,10 +3,21 @@
 import * as R from 'ramda'
 import startCase from 'lodash/startCase'
 
-export type PageNameType = 'home' | 'welcome' | 'emoji-search'
-| 'print-page' | 'wordle-one' | 'wordle-two' | 'text-helper'
-| 'netflix-genre' | 'sumner-tides' | 'draggey-gamey' | 'password-generator'
-| 'open-graph' | 'imitation-onion' | 'sketch-countdown'
+export type PageNameType =
+  | 'home'
+  | 'welcome'
+  | 'emoji-search'
+  | 'print-page'
+  | 'wordle-one'
+  | 'wordle-two'
+  | 'text-helper'
+  | 'netflix-genre'
+  | 'sumner-tides'
+  | 'draggey-gamey'
+  | 'password-generator'
+  | 'open-graph'
+  | 'imitation-onion'
+  | 'sketch-countdown'
 
 export type PageInfoType = {
     title: string
@@ -53,9 +64,9 @@ export const _initPageList: Partial<PageInfoType>[] = [
         name: 'welcome',
         title: 'Andrew\'s Sketch\'s',
         longDesc:
-            'This is a showcase of some doodles by me.' +
-            'Seriously, just sketches, you know, for fun.' +
-            'I\'ve written heaps of these things, and it\'s nice to get them all under the one roof',
+      'This is a showcase of some doodles by me.' +
+      'Seriously, just sketches, you know, for fun.' +
+      'I\'ve written heaps of these things, and it\'s nice to get them all under the one roof',
 
         link: '#/welcome',
         icon: 'home',
@@ -72,8 +83,8 @@ OpenGraph is a protocol that enables websites to control the presentation of sha
 I used a scraper package in a cloud function to get the OpenGraph card for a given URL.
 
 Technologies:
- - ${creditLink('open-graph-scraper')} 
- - ${creditLink('google-cloud-functions')} 
+ - ${creditLink('open-graph-scraper')}
+ - ${creditLink('google-cloud-functions')}
 
        `,
         link: '#/open-graph',
@@ -81,14 +92,13 @@ Technologies:
     {
         name: 'emoji-search',
         icon: 'icons',
-        longDesc:
-            `
+        longDesc: `
 ### Emoji Search
 
 Just a fun little thing
 
 Very brutal look up. The functionality is in the [Emoji API](https://emoji-api.com/).
-            
+
 I\'m using an API, but it\'s just a single call. Nothing complicated
 
 Technologies:
@@ -103,9 +113,9 @@ Technologies:
         longDesc: `
 ## Print Page\n
 
-Sometimes you just want to print off some text, a list or something. 
+Sometimes you just want to print off some text, a list or something.
 
-With *this* Sketch you can paste the text in and do some light 
+With *this* Sketch you can paste the text in and do some light
 formatting using the editor, and then print it out.
         `,
         link: '#/print-page',
@@ -114,19 +124,20 @@ formatting using the editor, and then print it out.
         name: 'wordle-one',
         icon: 'puzzle-piece',
         longDesc:
-            'My first attempt at a Wordle Cheat' +
-            '\nIt works, but it\'s a bit dodgy',
+      'My first attempt at a Wordle Cheat' + '\nIt works, but it\'s a bit dodgy',
     },
     {
         name: 'wordle-two',
-        longDesc: 'My second attempt at a Wordle Cheat.\nStill very much a work in progress',
+        longDesc:
+      'My second attempt at a Wordle Cheat.\nStill very much a work in progress',
         icon: 'puzzle-piece',
         underConstruction: true,
     },
     {
         name: 'text-helper',
         icon: 'pencil',
-        longDesc: 'Paste in some text and it\'ll make suggestions about what to do with it.',
+        longDesc:
+      'Paste in some text and it\'ll make suggestions about what to do with it.',
     },
     {
         name: 'password-generator',
@@ -137,8 +148,8 @@ formatting using the editor, and then print it out.
         name: 'netflix-genre',
         icon: 'film',
         longDesc:
-            'Netflix provides a bunch of codes that aren\'t in their app.' +
-            '\nHere they all, with links to Netflix.',
+      'Netflix provides a bunch of codes that aren\'t in their app.' +
+      '\nHere they all, with links to Netflix.',
     },
     {
         name: 'sumner-tides',
@@ -152,7 +163,7 @@ formatting using the editor, and then print it out.
         longDesc: [
             'Play with this. It doesn\'t quite work on mobile',
             'click on squares to change their colours. Drag a ' +
-            'square to change the squares over which you have dragged that colour',
+        'square to change the squares over which you have dragged that colour',
         ].join('\n'),
     },
     {
@@ -183,9 +194,7 @@ const fulfilPageDefaults = (page: Partial<PageInfoType>) => {
     const title = startCase(page.name)
     return {
         title,
-        longDesc: [
-            title,
-        ],
+        longDesc: [title],
         shortDesc: title,
         link: '/#/' + page.name,
         underConstruction: false,
@@ -194,4 +203,7 @@ const fulfilPageDefaults = (page: Partial<PageInfoType>) => {
         ...page,
     }
 }
-export const pageConfig: PageInfoType[] = R.map(fulfilPageDefaults, _initPageList)
+export const pageConfig: PageInfoType[] = R.map(
+    fulfilPageDefaults,
+    _initPageList,
+)

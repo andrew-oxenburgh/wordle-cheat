@@ -1,43 +1,8 @@
 {
-    "svg.preview.background": "editor",
     "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
-    "favorites.resources": [
-        {
-            "filePath": "src/pages",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": "src/components",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": "src/scratch/scratch.test.ts",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": "src/scratch",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": "package.json",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": "vite.config.ts",
-            "group": "HighLevel"
-        },
-        {
-            "filePath": ".eslintrc.cjs",
-            "group": "HighLevel"
-        }
+    "vscode_custom_css.imports": [
+        "file:///Users/andrew/.vscode/font.css"
     ],
-    "favorites.groups": [
-        "Default",
-        "main",
-        "HighLevel",
-    ],
-    "favorites.currentGroup": "HighLevel",
-    "favorites.sortOrder": "MANUAL",
     "todo-tree.filtering.scopes": [],
     "vscodemacros.macroFilePath": ".vscode/macro.js",
     "prisma-smart-formatter.typescript.defaultFormatter": "vscode.typescript-language-features",

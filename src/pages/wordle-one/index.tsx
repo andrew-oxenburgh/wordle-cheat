@@ -35,7 +35,7 @@ const wcInput = {
     borderColor: 'black',
     borderWidth: 2,
     borderStyle: 'solid',
-    margin: 0,
+    margin: 'auto',
     transition: 'border-color 0.1s',
     '&:not(:hover)': {
         transition: 'border-color 0.1s',
@@ -46,7 +46,6 @@ const wcInput = {
 }
 
 const useStyles = createUseStyles({
-    wcInput,
     doesntContain: {
         ...wcInput,
         background: 'slategrey',
@@ -59,11 +58,11 @@ const useStyles = createUseStyles({
     containButNotHere: {
         ...wcInput,
         background: 'yellow',
-        width: '3em !important',
+        width: '4em',
         fontSize: '1.1em',
         color: 'black',
-        margin: 0,
-        padding: '0 0 0 0.2em ',
+        margin: 'auto',
+        // padding: '0 0 0 0.2em ',
         '&:focus': {
             background: 'khaki',
             colour: 'black',
@@ -71,9 +70,7 @@ const useStyles = createUseStyles({
     },
     here: {
         ...wcInput,
-        minWidth: '100%',
-        margin: 0,
-        padding: '0 0 0 0.6em ',
+        minWidth: '1em',
         background: 'green',
         color: 'white',
         '&:focus': {
@@ -139,135 +136,124 @@ const WordleOne = ({ debug = false }: { debug?: boolean }): JSX.Element => {
     }
 
     return (
-        <>
-            <PageBody name='wordle-one'>
-                <Card style={{ maxWidth: '30em', margin: 'auto' }}>
-                    <Form style={{
-                        width: '100%',
-                    }}>
-                        <Form.Group>
+        <PageBody name='wordle-one'>
+            <Card style={{ maxWidth: '30em', margin: 'auto' }}>
+                <Form style={{
+                    width: '100%',
+                }}>
+                    <Form.Group>
 
-                            {/* UNUSED LETTERS */}
-                            <Form.Label>definitely doesn&apos;t contain</Form.Label>
-                            <p>
+                        {/* UNUSED LETTERS */}
+                        <Form.Label>definitely doesn&apos;t contain</Form.Label>
+                        <p>
                                 Turns to lowercase and orders alphabetically
-                            </p>
-                            <Form.Control
-                                className={classes.doesntContain}
-                                type="text"
-                                autoComplete="off"
-                                name="unusedLetters"
-                                placeholder="put letters here"
-                                value={form.unused}
-                                onChange={changeUnusedLetters} />
-                            <Form.Text>
+                        </p>
+                        <Form.Control
+                            className={classes.doesntContain}
+                            type="text"
+                            autoComplete="off"
+                            name="unusedLetters"
+                            placeholder="put letters here"
+                            value={form.unused}
+                            onChange={changeUnusedLetters} />
+                        <Form.Text>
                                 lower case, no duplicates
-                            </Form.Text>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>contains, and position unknown</Form.Label>
-                            {/* USED, BUT NOT HERE */}
-                            <Container fluid={true} >
-                                <Row style={{
-                                    padding: 0,
-                                    margin: 0,
-                                }}
-                                >
-                                    {R.map((ndx: number) => {
-                                        return (
-                                            <Col
-                                                key={`knownLetter-${ndx}`}
-                                                style={{
-                                                    padding: 0,
-                                                    margin: 0,
-                                                }}
-                                            >
-                                                <Form.Control
-                                                    className={classes.containButNotHere}
-                                                    autoComplete="off"
-                                                    type="text"
-                                                    id={`knownLetter-unknownPlace-${ndx}`}
-                                                    name={`knownLetter-${ndx}`}
-                                                    value={form.position[ndx].unknown}
-                                                    onChange={changeKnownLetters('unknown', ndx)} />
-                                            </Col>
-                                        )
+                        </Form.Text>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>contains, and position unknown</Form.Label>
+                        {/* USED, BUT NOT HERE */}
+                        <Container fluid={true} >
+                            <Row                                >
+                                {R.map((ndx: number) => {
+                                    return (
+                                        <Col
+                                            key={`knownLetter-${ndx}`}
+                                        >
+                                            <Form.Control
+                                                className={classes.containButNotHere}
+                                                autoComplete="off"
+                                                type="text"
+                                                id={`knownLetter-unknownPlace-${ndx}`}
+                                                name={`knownLetter-${ndx}`}
+                                                value={form.position[ndx].unknown}
+                                                onChange={changeKnownLetters('unknown', ndx)} />
+                                        </Col>
+                                    )
 
-                                    })([0, 1, 2, 3, 4])
-                                    }
-                                </Row>
-                            </Container>
-                        </Form.Group>
-
-                        <Form.Group>
-                            <Form.Label>contains, and position known</Form.Label>
-                            {/* USED and HERE!!! */}
-                            <Container fluid="sm">
-                                <Row>
-                                    {R.map((ndx: number) => {
-                                        return (
-                                            <Col
-                                                key={`knownLetter-${ndx}`}
-                                                style={{ margin: 0 }}
-                                            >
-                                                <Form.Control
-                                                    className={classes.here}
-                                                    type="text"
-                                                    autoComplete="off"
-                                                    name={`knownLetter-${ndx}`}
-                                                    value={form.position[ndx].known}
-                                                    onChange={changeKnownLetters('known', ndx)} />
-                                            </Col>
-                                        )
-
-                                    })([0, 1, 2, 3, 4])
-                                    }
-                                </Row>
-                            </Container>
-                        </Form.Group>
-                        <Form.Group>
-                            <Container style={{
-                                marginTop: '1em',
-                            }}>
-                                <Row>
-                                    <Col xs="3">
-                                        <Button aria-label="clear form" variant="warning"
-                                            onClick={() => setForm({ ...FORM })}>
-                                            clear form
-                                        </Button>
-                                    </Col>
-                                    <Col xs="3">
-                                        <Button aria-label="find words that fit" variant="primary"
-                                            onClick={onFindWords}>
-                                            find words
-                                        </Button>
-                                    </Col>
-                                    <Col xs="6">
-                                        <Button aria-label="find words using letters unchosen yet"
-                                            variant="primary" onClick={onFindUnchosen}>
-                                            find words using letters unchosen yet
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Form.Group>
-                    </Form>
-                    <WordList words={words} title="suggestions - for completion" />
-                    <WordList words={unchosen} title="suggestions - to discover unfound letters" />
-                    {debug && <Card>
-                        <Card.Header>debug ifo</Card.Header>
-                        <Card.Body>
-                            <pre>
-                                {
-                                    JSON.stringify(form, null, 4)
+                                })([0, 1, 2, 3, 4])
                                 }
-                            </pre>
-                        </Card.Body>
-                    </Card>
-                    }
+                            </Row>
+                        </Container>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>contains, and position known</Form.Label>
+                        {/* USED and HERE!!! */}
+                        <Container fluid="sm">
+                            <Row>
+                                {R.map((ndx: number) => {
+                                    return (
+                                        <Col
+                                            key={`knownLetter-${ndx}`}
+                                        >
+                                            <Form.Control
+                                                className={classes.here}
+                                                type="text"
+                                                autoComplete="off"
+                                                name={`knownLetter-${ndx}`}
+                                                value={form.position[ndx].known}
+                                                onChange={changeKnownLetters('known', ndx)} />
+                                        </Col>
+                                    )
+
+                                })([0, 1, 2, 3, 4])
+                                }
+                            </Row>
+                        </Container>
+                    </Form.Group>
+                    <Form.Group>
+                        <Container style={{
+                            marginTop: '1em',
+                        }}>
+                            <Row>
+                                <Col xs="3">
+                                    <Button aria-label="clear form" variant="warning"
+                                        onClick={() => setForm({ ...FORM })}>
+                                            clear form
+                                    </Button>
+                                </Col>
+                                <Col xs="3">
+                                    <Button aria-label="find words that fit" variant="primary"
+                                        onClick={onFindWords}>
+                                            find words
+                                    </Button>
+                                </Col>
+                                <Col xs="6">
+                                    <Button aria-label="find words using letters unchosen yet"
+                                        variant="primary" onClick={onFindUnchosen}>
+                                            find words using letters unchosen yet
+                                    </Button>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Form.Group>
+                </Form>
+                <WordList words={words} title="suggestions - for completion" />
+                <WordList words={unchosen} title="suggestions - to discover unfound letters" />
+                {debug && <Card>
+                    <Card.Header>debug ifo</Card.Header>
+                    <Card.Body>
+                        <pre>
+                            {
+                                JSON.stringify(form, null, 4)
+                            }
+                        </pre>
+                    </Card.Body>
                 </Card>
-            </PageBody>
-        </>
+                }
+            </Card>
+        </PageBody>
     )
 }
 

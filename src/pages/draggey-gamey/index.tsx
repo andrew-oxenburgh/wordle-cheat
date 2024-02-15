@@ -10,7 +10,6 @@ import { GameBoard } from './GameBoard'
 import * as config from './config'
 import { DownloadPanel } from './DownloadPanel'
 import { useState } from 'react'
-import Button from '@restart/ui/Button'
 
 export const dragColor = signal<string>(config.colors[1])
 

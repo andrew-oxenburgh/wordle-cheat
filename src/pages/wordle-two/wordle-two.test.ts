@@ -1,5 +1,5 @@
 import { expect, test, describe } from 'vitest'
-import { BoardState, ColsState, Letter, RowsState, LetterState  } from './wordle.type'
+import { BoardState, ColsState, Letter, RowsState, LetterState } from './wordle.type'
 import { calcCols, calcRows } from './wordle.utils'
 import * as R from 'ramda'
 
@@ -35,7 +35,7 @@ const LETTER_D = { state: LetterState.NONE, letter: 'd' }
 const LETTER_E = { state: LetterState.NONE, letter: 'e' }
 const LETTER_F = { state: LetterState.NONE, letter: 'f' }
 
-describe('blank boards', () => {
+describe('blank board', () => {
     test('one by one NONE allows all letters', () => {
         expect(findPattern(arrayOfOne())).toEqual(['a-z'])
     })
@@ -43,6 +43,7 @@ describe('blank boards', () => {
         expect(findPattern(arrayOfTwo())).toEqual(['a-z', 'a-z'])
     })
 })
+
 describe('calcRows', () => {
     test('one by one', () => {
         expect(calcRows(arrayOfOne())).toEqual([[blankLetter()]])
@@ -56,7 +57,6 @@ describe('calcRows', () => {
         ]
         expect(actual).toEqual(expected)
     })
-
     test('three rows of 1', () => {
         const input: BoardState = arrayOfBlanks(3)
         input[1].letter = 't'
@@ -168,7 +168,7 @@ describe('calcRows', () => {
     })
 })
 
-describe.skip('HERE board', () => {
+describe('HERE board', () => {
     test('one by one', () => {
         const board = arrayOfOne()
         board[0].state = LetterState.HERE
