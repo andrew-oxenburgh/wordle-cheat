@@ -1,0 +1,3271 @@
+<tbody>
+    <tr>
+        <td>0.2.149
+        </td>
+        <td>2008-09-02
+        </td>
+        <td>WebKit&nbsp;522
+        </td>
+        <td>0.3
+        </td>
+        <td>
+            <ul>
+                <li>First release<sup>[r 3]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>0.3.154
+        </td>
+        <td>2008-10-29
+        </td>
+        <td>WebKit 522
+        </td>
+        <td>0.3
+        </td>
+        <td>
+            <ul>
+                <li>Improved plugin performance and reliability</li>
+                <li>Spell checking for input fields</li>
+                <li>Improved&nbsp;web proxy&nbsp;performance and reliability</li>
+                <li>Tab and window management updates</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>0.4.154
+        </td>
+        <td>2008-11-24
+        </td>
+        <td>WebKit 525
+        </td>
+        <td>0.3
+        </td>
+        <td>
+            <ul>
+                <li>Bookmark manager with import and export support</li>
+                <li>Privacy section added to the application options</li>
+                <li>New blocked popup notification</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>1.0.154
+        </td>
+        <td>2008-12-11
+        </td>
+        <td>WebKit 528
+        </td>
+        <td>0.3
+        </td>
+        <td>
+            <ul>
+                <li>First stable release</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>2.0.172
+        </td>
+        <td>2009-05-24
+        </td>
+        <td>WebKit 530
+        </td>
+        <td>0.4
+        </td>
+        <td>
+            <ul>
+                <li>35% faster&nbsp;JavaScript&nbsp;on the SunSpider benchmark</li>
+                <li>Mouse wheel support</li>
+                <li>Full-screen mode</li>
+                <li>Full-page zoom</li>
+                <li>Form auto-fill</li>
+                <li>Sort bookmarks by title</li>
+                <li>Tab docking to browser and desktop edges</li>
+                <li>Basic&nbsp;Greasemonkey&nbsp;support<sup>[r 4]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>3.0.195
+        </td>
+        <td>2009-10-12
+        </td>
+        <td>WebKit 532
+        </td>
+        <td>1.2
+        </td>
+        <td>
+            <ul>
+                <li>New "new tab" page for improved customization</li>
+                <li>25% faster JavaScript</li>
+                <li>HTML5&nbsp;video and audio tag support</li>
+                <li>Lightweight theming</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>4.0.249
+        </td>
+        <td>2010-01-25
+        </td>
+        <td>WebKit 532.5
+        </td>
+        <td>1.3
+        </td>
+        <td>
+            <ul>
+                <li>Extensions</li>
+                <li>Bookmark synchronization</li>
+                <li>Enhanced developer tools</li>
+                <li>Improved HTML5 support</li>
+                <li>Performance improvements</li>
+                <li>Full ACID3 pass</li>
+                <li>HTTP byte range support</li>
+                <li>Experimental new anti-reflected-XSS feature called "XSS Auditor"<sup>[r 5]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>4.1.249
+        </td>
+        <td>2010-03-17
+        </td>
+        <td>WebKit 532.5
+        </td>
+        <td>1.3
+        </td>
+        <td>
+            <ul>
+                <li>Translate infobar<sup>[<i>clarification needed</i>]</sup></li>
+                <li>New privacy features</li>
+                <li>Disabled XSS Auditor<sup>[r 6]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>5.0.375
+        </td>
+        <td>2010-05-21
+        </td>
+        <td>WebKit 533
+        </td>
+        <td>2.1
+        </td>
+        <td>
+            <ul>
+                <li>Browser preference synchronizing</li>
+                <li>Increased HTML5 support (Geolocation API, App Cache, web sockets, and file drag-and-drop)</li>
+                <li>Revamped bookmark manager</li>
+                <li>Adobe Flash Player&nbsp;integrated<sup>[r 7][r 8]</sup></li>
+                <li>First stable releases for macOS, 32 bit Linux, and 64 bit Linux<sup>[r 9]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>6.0.472
+        </td>
+        <td>2010-09-02
+        </td>
+        <td>WebKit 534.3
+        </td>
+        <td>2.2
+        </td>
+        <td>
+            <ul>
+                <li>Updated and more streamlined UI with simplified Omnibox</li>
+                <li>New tab page</li>
+                <li>Merged menu buttons</li>
+                <li>Form auto-fill</li>
+                <li>Expanded synchronization support to include extensions and auto-fill data</li>
+                <li>Support for&nbsp;WebM&nbsp;videos</li>
+                <li>Built-in PDF support (disabled by default)<sup>[r 10]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>7.0.517
+        </td>
+        <td>2010-10-21
+        </td>
+        <td>WebKit 534.7
+        </td>
+        <td>2.3.11
+        </td>
+        <td>
+            <ul>
+                <li>Implemented HTML5 parsing algorithm</li>
+                <li>File API</li>
+                <li>Directory upload via input tag</li>
+                <li>macOS version gained&nbsp;AppleScript&nbsp;support for UI automation<sup>[r 11]</sup></li>
+                <li>Late binding enabled for&nbsp;SSL sockets: high priority SSL requests are now always sent to the
+                    server first.</li>
+                <li>New options for managing cookies</li>
+                <li>Updated New Tab page to enable featuring of web applications</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>8.0.552
+        </td>
+        <td>2010-12-02
+        </td>
+        <td>WebKit 534.10
+        </td>
+        <td>2.4.9
+        </td>
+        <td>
+            <ul>
+                <li>Chrome Web Store</li>
+                <li>Built-in PDF viewer that works inside Chrome's sandbox for increased security</li>
+                <li>Expanded synchronization support to include web applications</li>
+                <li>Improved plug-in handling<sup>[r 12]</sup></li>
+                <li>This release added "about:flags" to showcase experimental features such as Chrome Instant, side tabs
+                    on Windows, tabbed settings, Click to Play,<sup>[<i>clarification needed</i>]</sup>&nbsp;background
+                    web applications, Remoting,<sup>[<i>clarification needed</i>]</sup>&nbsp;disables outdated
+                    plug-ins,<sup>[<i>clarification needed</i>]</sup>&nbsp;XSS Auditor,<sup>[<i>clarification
+                            needed</i>]</sup>&nbsp;Cloud Print Proxy,<sup>[<i>clarification
+                            needed</i>]</sup>&nbsp;GPU-accelerated compositing, WebGL support for
+                    the&nbsp;<i>canvas</i>&nbsp;element, and a "tab overview" mode (like&nbsp;Exposé) for&nbsp;macOS.
+                </li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>9.0.597
+        </td>
+        <td>2011-02-03
+        </td>
+        <td>WebKit 534.13
+        </td>
+        <td>2.5.9
+        </td>
+        <td>
+            <ul>
+                <li>WebGL enabled by default</li>
+                <li>Adobe Flash&nbsp;sandboxing on Windows and Chrome Instant (a la&nbsp;Google Instant) option<sup>[r
+                        13]</sup></li>
+                <li>WebP&nbsp;support<sup>[r 14]</sup></li>
+                <li>New flags: print preview, GPU-accelerated compositing, GPU-accelerated Canvas 2D,&nbsp;Google Native
+                    Client, CRX-less Web Apps, Web page prerendering, experimental Extension APIs, disable hyperlink
+                    auditing</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>10.0.648
+        </td>
+        <td>2011-03-08
+        </td>
+        <td>WebKit 534.16
+        </td>
+        <td>3.0.12
+        </td>
+        <td>
+            <ul>
+                <li>Google Cloud Print&nbsp;sign-in interface enabled by default</li>
+                <li>Partially implemented sandboxing of the GPU process<sup>[r 15][r 16]</sup></li>
+                <li>Faster JavaScript performance due to incorporation of&nbsp;Crankshaft, an improved compiler for
+                    V8<sup>[r 17]</sup></li>
+                <li>Settings pages that open in a tab, rather than a dialog box</li>
+                <li>Malware reporting and disabling outdated plugins</li>
+                <li>Password sync</li>
+                <li>GPU accelerated video</li>
+                <li>Background WebApps</li>
+                <li>webNavigation extension API<sup>[r 18]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>11.0.696
+        </td>
+        <td>2011-04-27
+        </td>
+        <td>WebKit 534.24
+        </td>
+        <td>3.1.8
+        </td>
+        <td>
+            <ul>
+                <li>HTML5 Speech Input API<sup>[r 19]</sup></li>
+                <li>Updated icon<sup>[r 20]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>12.0.742
+        </td>
+        <td>2011-06-07
+        </td>
+        <td>WebKit 534.30
+        </td>
+        <td>3.2.10
+        </td>
+        <td>
+            <ul>
+                <li>Hardware accelerated 3D CSS</li>
+                <li>New Safe Browsing protection against downloading malicious files</li>
+                <li>Ability to delete&nbsp;Flash cookies&nbsp;from inside Chrome<sup>[r 21]</sup></li>
+                <li>Launch Apps by name from the Omnibox</li>
+                <li>Integrated Sync into new settings pages</li>
+                <li>Improved screen reader support</li>
+                <li>New warning when hitting Command-Q on Mac<sup>[r 21]</sup></li>
+                <li>New flags: P2P API</li>
+                <li>Existing tab on foreground on open</li>
+                <li>Experimental new tab page</li>
+                <li>Add grouping to tab context menu</li>
+                <li>Run PPAPI Flash in the renderer process</li>
+                <li>Multiple profiles</li>
+                <li>Removed&nbsp;Google Gears</li>
+                <li>Print and Save buttons in the PDF viewer<sup>[r 22]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>13.0.782
+        </td>
+        <td>2011-08-02
+        </td>
+        <td rowspan="1">WebKit 535.1
+        </td>
+        <td>3.3.10
+        </td>
+        <td>
+            <ul>
+                <li>Instant Pages (pre-rendering of Web pages)<sup>[r 23]</sup></li>
+                <li>Native print interface and preview (Linux and Windows only)</li>
+                <li>Experimental new tab page</li>
+                <li>Experimental Restrict Instant To Search option</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>14.0.835
+        </td>
+        <td>2011-09-16
+        </td>
+        <td rowspan="1">WebKit 535.1
+        </td>
+        <td>3.4.14
+        </td>
+        <td>
+            <ul>
+                <li>Native Client (NaCl) enabled for apps in the Chrome Web Store<sup>[r 24]</sup></li>
+                <li>Web Audio API</li>
+                <li>Additional macOS Lion feature support</li>
+                <li>Sync Encryption for all data</li>
+                <li>Print preview on Mac</li>
+                <li>Validation of HTTPS sites<sup>[r 25]</sup></li>
+                <li>Experimental Web Request extension API</li>
+                <li>Experimental Content Settings extension API<sup>[r 26]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>15.0.874
+        </td>
+        <td>2011-10-25
+        </td>
+        <td>WebKit 535.2
+        </td>
+        <td>3.5.10
+        </td>
+        <td>
+            <ul>
+                <li>Faster print preview<sup>[r 27]</sup></li>
+                <li>Redesigned new tab page on by default<sup>[r 27]</sup></li>
+                <li>JavaScript fullscreen API enabled by default<sup>[r 27]</sup></li>
+                <li>Inline installation of Chrome Web Store items by verified sites</li>
+                <li>Omnibox History synchronization<sup>[r 28]</sup></li>
+                <li>Switched to&nbsp;FFmpeg&nbsp;native VP8 decoder<sup>[r 29]</sup></li>
+                <li>Extensions integrated into settings pages</li>
+                <li>GPU Accelerated Canvas 2D disabled</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>16.0.912
+        </td>
+        <td>2011-12-13
+        </td>
+        <td>WebKit 535.7
+        </td>
+        <td>3.6.6
+        </td>
+        <td>
+            <ul>
+                <li>Multiple profiles on by default<sup>[r 28]</sup></li>
+                <li>Optional permissions in Chrome extensions, so the user can opt-in or opt-out of the optional
+                    permissions at installation time<sup>[r 30]</sup></li>
+                <li>Experimental support for side tabs was removed.<sup>[r 31]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>17.0.963
+        </td>
+        <td>2012-02-08
+        </td>
+        <td>WebKit 535.11
+        </td>
+        <td>3.7.12
+        </td>
+        <td>
+            <ul>
+                <li>Updated Omnibox prerendering of pages<sup>[r 32]</sup></li>
+                <li>Download scanning protection<sup>[r 32]</sup></li>
+                <li>New extensions APIs<sup>[r 32]</sup></li>
+                <li>Improved History tab</li>
+                <li>Removal of "+" symbol from the "new tab" button</li>
+                <li>Limited support for changing user agent strings</li>
+                <li>Adjustable margins in print preview<sup>[r 33]</sup></li>
+                <li>Search engine synchronization<sup>[r 34]</sup></li>
+                <li>Disabled GAIA profile info<sup>[r 35]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>18.0.1025
+        </td>
+        <td>2012-03-28<br>
+            <p>2012-06-27 (Android ARM)<br>
+                2012-09-26<br>
+                (18.0.1026, Android x86)
+            </p>
+        </td>
+        <td>WebKit 535.19
+        </td>
+        <td>3.8.9
+        </td>
+        <td>
+            <ul>
+                <li>Hardware-accelerated Canvas2D graphics<sup>[r 36]</sup></li>
+                <li>WebGL without the need of 3D graphics hardware through the software rasterizer SwiftShader<sup>[r
+                        36]</sup></li>
+                <li>Brighter "new tab" button<sup>[r 37]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>19.0.1084
+        </td>
+        <td>2012-05-15<br>
+            <p>2012-06-28 (iOS)
+            </p>
+        </td>
+        <td>WebKit 536.5
+        </td>
+        <td>3.9.24
+        </td>
+        <td>
+            <ul>
+                <li>Access tabs between devices<sup>[r 38]</sup></li>
+                <li>Reorganized and searchable settings interface</li>
+                <li>Better spell check by using the Google search engine spell checker</li>
+                <li>Web Store link to the bottom of New Tab page</li>
+                <li>Experimental&nbsp;JavaScript Harmony&nbsp;(ECMAScript 6) support<sup>[r 39]</sup></li>
+                <li>Experimental&nbsp;Web Intents&nbsp;API<sup>[r 40]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>20.0.1132
+        </td>
+        <td>2012-06-26
+        </td>
+        <td>WebKit 536.10
+        </td>
+        <td>3.10.6
+        </td>
+        <td>
+            <ul>
+                <li>Experimental touch friendly user interface adjustments. Context menus have extra vertical padding
+                    between items.<sup>[r 41]</sup></li>
+                <li>New tab button is bigger and wider</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>21.0.1180
+        </td>
+        <td>2012-07-31<br>
+            <p>2012-08-22 (iOS)
+            </p>
+        </td>
+        <td>WebKit 537.1
+        </td>
+        <td>3.11.10
+        </td>
+        <td>
+            <ul>
+                <li>Media Stream API (getUserMedia) enabled by default. (E.g. webcam access via JavaScript.)<sup>[r
+                        42]</sup></li>
+                <li>Gamepad API prototype available by default.</li>
+                <li>Support for (pointer) and (hover) CSS media queries so sites can optimize their user interface for
+                    touch when touch-screen support is available.</li>
+                <li>HTML5 audio/video and WebAudio now support 24-bit PCM wave files
+                    <ul>
+                        <li>Note: This is the last version of Chrome that will run on Mac OS X 10.5.8 Leopard.
+                            (undocumented)</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>22.0.1229
+        </td>
+        <td>2012-09-25
+        </td>
+        <td>WebKit 537.4
+        </td>
+        <td>3.12.19
+        </td>
+        <td>
+            <ul>
+                <li>New-style packaged apps are enabled by default.</li>
+                <li>New menu icon, replacing the wrench icon</li>
+                <li>Support for&nbsp;TLS&nbsp;1.1<sup>[r 43][r 44]</sup></li>
+                <li>Support for&nbsp;color management&nbsp;ICC v2 profiles by default<sup>[r 45]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>23.0.1271
+        </td>
+        <td>2012-11-06<br>
+            <p>2012-11-28 (iOS)
+            </p>
+        </td>
+        <td>WebKit 537.11
+        </td>
+        <td>3.13.7
+        </td>
+        <td>
+            <ul>
+                <li>Do Not Track&nbsp;preference<sup>[r 46]</sup></li>
+                <li>Hardware video acceleration with 25% more efficient power consumption in some scenarios</li>
+                <li>Manager for site permission control</li>
+                <li>New icon for Chrome Web Store when opening new tab</li>
+                <li>PPAPI Flash Player (or Pepper-based Flash Player) replaced the NPAPI Flash Player on Mac also<sup>[r
+                        47]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>24.0.1312
+        </td>
+        <td>2013-01-10
+        </td>
+        <td>WebKit 537.17
+        </td>
+        <td>3.14.5
+        </td>
+        <td>
+            <ul>
+                <li>Support for&nbsp;MathML<sup>[r 48]</sup></li>
+                <li>The HTML5 datalist element now supports suggesting a date and time<sup>[r 48]</sup></li>
+                <li>Experimental support for&nbsp;CSS custom filters<sup>[r 48][r 49]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>25.0.1364
+        </td>
+        <td>2013-02-21<br>
+            <p>2013-02-27 (Android)<br>
+                2013-03-04 (iOS)
+            </p>
+        </td>
+        <td>WebKit 537.22
+        </td>
+        <td>3.15.11
+        </td>
+        <td>
+            <ul>
+                <li>Support for&nbsp;Opus audio</li>
+                <li>Support for&nbsp;VP9&nbsp;video<sup>[r 50]</sup></li>
+                <li>Silent installs of external extensions are now disabled by default.<sup>[r 51]</sup></li>
+                <li>Web Speech API<sup>[r 52]</sup></li>
+                <li>Encrypted omnibox search (https)<sup>[r 53]</sup></li>
+                <li>Native Client&nbsp;on&nbsp;ARM</li>
+                <li>Disabled&nbsp;MathML&nbsp;support for the time being<sup>[r 54]</sup></li>
+            </ul>
+            <p>Android version (update from 18):
+            </p>
+            <ul>
+                <li>Newer V8 JavaScript engine</li>
+                <li>Audio now continues to play while Chrome is in the background</li>
+                <li>Support for pausing audio in Chrome when phone is in use</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>26.0.1410
+        </td>
+        <td>2013-03-26<br>
+            <p>2013-04-03 (Android)<br>
+                2013-04-09 (iOS)
+            </p>
+        </td>
+        <td>WebKit 537.31
+        </td>
+        <td>3.16.14
+        </td>
+        <td>
+            <ul>
+                <li>Improved spell checker (grammar and homonym checking)<sup>[r 55]</sup></li>
+                <li>Desktop shortcuts for multiple users (profiles) on Windows<sup>[r 55]</sup></li>
+                <li>Asynchronous DNS resolver on Mac and Linux<sup>[r 55]</sup></li>
+            </ul>
+            <p>Android version:<sup>[r 56]</sup>
+            </p>
+            <ul>
+                <li>Autofill and password sync</li>
+                <li>Performance and stability improvements</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>27.0.1453
+        </td>
+        <td>2013-05-21<br>
+            <p>2013-05-22 (Android)<br>
+                2013-06-03 (iOS)
+            </p>
+        </td>
+        <td>WebKit 537.36
+        </td>
+        <td>3.17.6
+        </td>
+        <td>
+            <ul>
+                <li>Resource handling optimized for faster page loads<sup>[r 57]</sup></li>
+                <li>Improved Omnibox predictions and spelling correction<sup>[r 57]</sup></li>
+                <li>syncFileSystem API for Google Drive data synchronization<sup>[r 57]</sup></li>
+                <li>Stop packaging Manifest version 1.0 extensions<sup>[r 58]</sup></li>
+            </ul>
+            <p>Android version:<sup>[r 59]</sup>
+            </p>
+            <ul>
+                <li>Fullscreen on phones (scrolling down the page makes the toolbar disappear)</li>
+                <li>Simpler searching (the query stays visible in the omnibox, making it easier to edit)</li>
+                <li>Client-side certificate support</li>
+                <li>Tab history on tablets</li>
+                <li>"A ton of stability and performance fixes"</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>28.0.1500
+        </td>
+        <td>2013-06-17 (Linux)<br>
+            <p>2013-07-09<br>
+                (macOS and Windows)<br>
+                2013-07-10 (Android)<br>
+                2013-07-17 (iOS)
+            </p>
+        </td>
+        <td>Blink&nbsp;28 (except iOS)
+        </td>
+        <td>3.18.5
+        </td>
+        <td>
+            <ul>
+                <li>Replaced layout engine with&nbsp;Blink, a fork of&nbsp;WebKit<sup>[r 60][r 61][r 62]</sup>&nbsp;on
+                    all platforms besides iOS</li>
+                <li>Faster page loads with the new Blink threaded HTML parser<sup>[r 63]</sup></li>
+                <li>Rich Notifications and Notification Center (HTML-based notifications deprecated)<sup>[r 64]</sup>
+                </li>
+                <li>Major improvements to the&nbsp;asm.js&nbsp;benchmark performances<sup>[r 63]</sup></li>
+                <li>Support for the CSS :unresolved pseudoclass for Custom Elements<sup>[r 63]</sup></li>
+                <li>Support for the CSS @supports conditional blocks to test for property:value pairs<sup>[r 63]</sup>
+                </li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Fullscreen API support (fullscreen browsing on tablets)<sup>[r 63]</sup></li>
+                <li>Experimental&nbsp;WebGL,&nbsp;Web Audio,&nbsp;WebRTC&nbsp;support behind flags<sup>[r 63]</sup></li>
+                <li>Built-in translation<sup>[r 65]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Improved interoperability with many other Google Apps<sup>[r 66]</sup></li>
+                <li>Voice Search enhancements<sup>[r 66]</sup></li>
+                <li>Fullscreen for iPad<sup>[r 66]</sup></li>
+                <li>Data usage savings (rolling out over time)<sup>[r 66]</sup></li>
+                <li>Access to browser history<sup>[r 66]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>29.0.1547
+        </td>
+        <td>2013-08-20<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2013-08-21 (Android)<br>
+                2013-09-12 (iOS)
+            </p>
+        </td>
+        <td>Blink 29 (except iOS)
+        </td>
+        <td>3.19.18
+        </td>
+        <td>
+            <ul>
+                <li>Support for&nbsp;VP9&nbsp;final</li>
+                <li>Support for&nbsp;TLS&nbsp;1.2</li>
+                <li>Preliminary&nbsp;QUIC&nbsp;support<sup>[r 67]</sup></li>
+                <li>Improved Omnibox suggestions based on the recency of visited sites</li>
+                <li>Ability to reset user profile back to its original state</li>
+                <li>New apps and extensions APIs (such as Native Messaging API for connecting Chrome with native
+                    applications installed on the same computer - an alternative to NPAPI<sup>[r 68]</sup>)</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>WebRTC support<sup>[r 69]</sup></li>
+                <li>WebAudio support<sup>[r 69]</sup></li>
+                <li>Improved scrolling responsiveness<sup>[r 70]</sup>&nbsp;and visual indication when scrolling to the
+                    top or bottom of a page<sup>[r 69]</sup></li>
+                <li>Startup performance and stability improvements<sup>[r 70]</sup></li>
+                <li>New color picker user interface for web forms<sup>[r 69]</sup></li>
+                <li>Support for Google's experimental data compression service (comparable to&nbsp;Opera Turbo) that
+                    lets Google servers quickly read and optimize a Web page for mobile devices, then transmit it to the
+                    smartphone using Google's&nbsp;SPDY&nbsp;network technology.</li>
+                <li>Rudimentary tab groups implemented</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Get back to Search Results faster</li>
+                <li>Data cost savings enhancements (rolled out incrementally)</li>
+                <li>Voice search pronoun support (e.g. queries like: “Who is the president of the United States?”
+                    followed by “Who is his wife?”)</li>
+                <li>Improvements to Single Sign On with other Google Apps<sup>[r 71]</sup></li>
+                <li>Support for&nbsp;WebP&nbsp;image format<sup>[r 72]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>30.0.1599
+        </td>
+        <td>2013-09-18 (iOS)<br>
+            <p>2013-10-01<br>
+                (Linux, macOS, and Windows)<br>
+                2013-10-02 (Android)
+            </p>
+        </td>
+        <td>Blink 30 (except iOS)
+        </td>
+        <td>3.20.17
+        </td>
+        <td>
+            <ul>
+                <li>New image context menu item: "Search Google for this image"</li>
+                <li>New Chrome Apps APIs: webview.request, media gallery write support and downloads<sup>[r 73]</sup>
+                </li>
+                <li>New platform features (both in desktop and mobile): support for the WebRTC Device Enumeration API,
+                    allowing users to change their microphones and/or camera on the fly without having to restart the
+                    WebRTC call, DevTools now supports CSS source maps, Chrome will now match the behavior of IE and not
+                    honor the Refresh header or tags when the URL to be refreshed to has a javascript: scheme<sup>[r
+                        73]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>New gesture: swipe horizontally across the top toolbar to quickly switch tabs</li>
+                <li>New gesture: drag vertically down from the toolbar to enter into the tab switcher view</li>
+                <li>New gesture: drag down from the menu to open the menu and select wanted item without having to lift
+                    finger</li>
+                <li>WebGL is enabled by default on high-end devices<sup>[r 73]</sup></li>
+                <li>DeviceMotion (device acceleration and rotation rates) events<sup>[r 73]</sup></li>
+                <li>Media Source Extension is enabled on Android 4.1+<sup>[r 73]</sup></li>
+                <li>Two new experimental features behind a flag: Web Speech API (recognition) and the Vibration
+                    API<sup>[r 73]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>New look and feature enhancements for iOS7</li>
+                <li>Improvements to Fullscreen behavior especially on iPad (iOS7 only)</li>
+                <li>New Settings UI</li>
+                <li>Maps and email links launch the Google Maps and Gmail apps (if installed) automatically. You can
+                    change your preference in Settings</li>
+                <li>Stability / security improvements and bug fixes<sup>[r 74]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>31.0.1650
+        </td>
+        <td>2013-11-12<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2013-11-14 (Android)<br>
+                2013-11-20 (iOS)
+            </p>
+        </td>
+        <td>Blink 31 (except iOS)
+        </td>
+        <td>3.21.18
+        </td>
+        <td>
+            <ul>
+                <li>Payment requestAutocomplete() on Chrome for Android, Windows, Chrome OS</li>
+                <li>PNaCl on desktop versions of Chrome</li>
+                <li>New Chrome Apps APIs: With URL handlers for apps, Chrome App developers can now specify URLs to be
+                    handled by a Chrome App. For example, a document link on a website could open a document editor
+                    Chrome App. This gives users more seamless entry points into their favorite Chrome Apps.</li>
+                <li>Directory access for Apps allows Chrome Apps to access and write to user-approved folders. This
+                    feature can be used to share files between a Chrome App and a native app. For example, a Chrome App
+                    code editor could modify files managed by a native Git client.</li>
+                <li>SCTP for WebRTC Data Channel allows P2P data transfers between browsers to be either best effort,
+                    reliable, or semi reliable, opening up use cases such as gaming.</li>
+                <li>Alpha channel support for WebM video enables transparency masking (a.k.a. green screen effects) in
+                    WebM videos.</li>
+                <li>Speech recognition with the JavaScript Web Speech API is now supported on Chrome for Android.</li>
+                <li>window.devicePixelRatio now takes full-page zoom (but not pinch zoom) into account</li>
+                <li>Support for { alpha: false } in getContext('2d') lets you create an opaque canvas. This is similar
+                    to existing WebGL functionality and can improve the rendering performance of your app.</li>
+                <li>The Media Source API has been unprefixed and is now supported on Chrome for Android. It allows
+                    JavaScript to generate media streams for playback, addressing use cases like adaptive streaming and
+                    time shifting live streams.</li>
+                <li>2D canvas now supports the "ellipse" method.</li>
+                <li>Support for several Mutation Events has been removed. Consider using MutationObserver
+                    instead.<sup>[r 75]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Fast form completion with Autofill</li>
+                <li>Long press on an image to search for related images</li>
+                <li>Stability / security improvements and bug fixes<sup>[r 74]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>32.0.1700
+        </td>
+        <td>2014-01-14<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2014-01-15 (Android)<br>
+                2014-01-27 (iOS)
+            </p>
+        </td>
+        <td>Blink 32 (except iOS)
+        </td>
+        <td>3.22.24
+        </td>
+        <td>
+            <ul>
+                <li>Tab indicators for sound, webcam and casting</li>
+                <li>A different look for Win8 Metro mode</li>
+                <li>Automatically blocking malware files</li>
+                <li>A number of new apps/extension APIs</li>
+                <li>Various under-the-hood changes for stability and performance</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Add web page shortcuts right to your home screen more easily from the menu</li>
+                <li>Reduce data usage in Chrome up to 50%. Visit Settings &gt; Bandwidth management &gt; Reduce data
+                    usage to enable.<sup>[r 76]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Translate
+                    <ul>
+                        <li>When you come across a page written in a language that you don't understand, just look for
+                            the translation bar. One tap and the page is quickly translated for you.</li>
+                    </ul>
+                </li>
+                <li>Reduce Data Usage
+                    <ul>
+                        <li>Reduce your data usage by up to 50%. Enable this feature and view your savings: Settings
+                            &gt; Bandwidth &gt; Reduce Data Usage.</li>
+                    </ul>
+                </li>
+                <li>New Tab Page update to make searching faster and easier
+                    <ul>
+                        <li>This feature is being rolled out and will be available to all users over time, beginning on
+                            iPhone.</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>33.0.1750
+        </td>
+        <td>2014-02-18 (iOS)<br>
+            <p>2014-02-20<br>
+                (Linux, macOS, and Windows)<br>
+                2014-02-26 (Android)
+            </p>
+        </td>
+        <td>Blink 33 (except iOS)
+        </td>
+        <td>3.23.17
+        </td>
+        <td>
+            <ul>
+                <li>Custom Elements<sup>[r 77]</sup></li>
+                <li>Ogg Opus in MSE and &lt;video&gt;<sup>[r 77]</sup></li>
+                <li>Page Visibility API<sup>[r 77]</sup></li>
+                <li>VTTCue&nbsp;<sup>[r 77]</sup></li>
+                <li>Web Speech API (synthesis)<sup>[r 77]</sup></li>
+                <li>Font-kerning<sup>[r 77]</sup></li>
+                <li>requestAutocomplete()<sup>[r 77]</sup></li>
+                <li>Speech Synthesis<sup>[r 77]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Download progress notification for file downloads using the Chrome network stack<sup>[r 78]</sup>
+                </li>
+                <li>Updated help and feedback UI<sup>[r 78]</sup></li>
+                <li>Support for &lt;datalist&gt; tag<sup>[r 78]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Stability and security updates<sup>[r 74]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>34.0.1847
+        </td>
+        <td>2014-04-02 (Android)<br>
+            <p>2014-04-08<br>
+                (Linux, macOS, and Windows)<br>
+                2014-04-29 (iOS)
+            </p>
+        </td>
+        <td>Blink 34 (except iOS)
+        </td>
+        <td>3.24.35
+        </td>
+        <td>
+            <ul>
+                <li>Responsive Images and Unprefixed Web Audio</li>
+                <li>Import supervised users onto new computers</li>
+                <li>A different look for Windows 8 Metro mode</li>
+                <li>A number of new apps/extension APIs</li>
+                <li>New scroll bar look</li>
+                <li>Ignores autocomplete="off" on password input fields</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Battery usage optimizations</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Updated tour when you start Chrome for the first time</li>
+                <li>Support for autocomplete in the omnibox for right to left languages</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>35.0.1916
+        </td>
+        <td>2014-05-20 (Android)<br>
+            <p>2014-05-20<br>
+                (Linux, macOS, and Windows)<br>
+                2014-05-28 (iOS)
+            </p>
+        </td>
+        <td>Blink 35 (except iOS)
+        </td>
+        <td>3.25.28
+        </td>
+        <td>
+            <ul>
+                <li>More developer control over touch input</li>
+                <li>New JavaScript features</li>
+                <li>Unprefixed Shadow DOM v0</li>
+                <li>A number of new apps/extension APIs</li>
+                <li>Opus&nbsp;updated to version v1.1</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Undo Tab Close</li>
+                <li>Fullscreen video with Subtitles and HTML5 controls</li>
+                <li>Support for some multi-window devices</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Added right-to-left support to the omnibox for Arabic and Hebrew</li>
+                <li>See your search term in the omnibox, instead of the long search query URL</li>
+                <li>Easily refine your search queries and view more results on the search results page</li>
+                <li>Stability improvements and bug fixes<sup>[r 74]</sup></li>
+            </ul>
+            <p>Linux version:
+            </p>
+            <ul>
+                <li>Switched graphics interface backend from&nbsp;GTK+&nbsp;to Aura</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>36.0.1985
+        </td>
+        <td>2014-07-15 (iOS)<br>
+            <p>2014-07-16<br>
+                (Linux, macOS, and Windows)<br>
+                2014-07-16 (Android)
+            </p>
+        </td>
+        <td>Blink 36 (except iOS)
+        </td>
+        <td>3.26.31
+        </td>
+        <td>
+            <ul>
+                <li>Rich Notifications Improvements</li>
+                <li>An Updated Incognito / Guest NTP design</li>
+                <li>The addition of a Browser crash recovery bubble</li>
+                <li>Multiple stability and performance improvements<sup>[r 79]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Improved text rendering on non-mobile optimized sites</li>
+                <li>Doodles return to the new tab page<sup>[r 80]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Allows mobile sites that have added Cast support to work with your Cast-enabled device</li>
+                <li>Stability improvements and bug fixes<sup>[r 81]</sup></li>
+            </ul>
+            <p>Linux version:
+            </p>
+            <ul>
+                <li>Chrome App Launcher<sup>[r 79]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>37.0.2062
+        </td>
+        <td>2014-08-26<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2014-09-03 (Android)<br>
+                2014-09-22 (iOS)<sup>[<i>citation needed</i>]</sup>
+            </p>
+        </td>
+        <td>Blink 37 (except iOS)
+        </td>
+        <td>3.27.34
+        </td>
+        <td>
+            <ul>
+                <li>DirectWrite&nbsp;support on Windows for improved font rendering</li>
+                <li>A number of new apps/extension APIs</li>
+                <li>Multiple stability and performance improvements<sup>[r 82]</sup></li>
+                <li>Removal of the showModalDialog API, breaking several enterprise web apps<sup>[r 83]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Signing into Chrome signs you into your favorite Google sites</li>
+                <li>Updated look and feel with elements of&nbsp;Material Design</li>
+                <li>Multiple performance improvements and bug fixes<sup>[r 84]</sup></li>
+            </ul>
+            <p>Windows version:
+            </p>
+            <ul>
+                <li>64-bit Windows support<sup>[r 85]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>38.0.2125
+        </td>
+        <td>2014-10-07<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2014-10-07 (iOS)<br>
+                2014-10-08 (Android)
+            </p>
+        </td>
+        <td>Blink 38 (except iOS)
+        </td>
+        <td>3.28.71
+        </td>
+        <td>
+            <ul>
+                <li>A number of new apps/extension APIs</li>
+                <li>Support for logging into sites using&nbsp;<i>FIDO&nbsp;U2F Security Key</i>&nbsp;(a USB or
+                    smartcard&nbsp;security token) as a factor in&nbsp;2-factor authentication<sup>[r 86]</sup></li>
+                <li>Under-the-hood changes for stability and performance<sup>[r 87]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Support for Battery Status and Screen orientation APIs</li>
+                <li>Additional Material Design updates</li>
+                <li>Bug fixes and performance improvements<sup>[r 88]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Better support for iPhone 6 and 6+</li>
+                <li>Download and open files in Google Drive</li>
+                <li>Stability improvements and bug fixes</li>
+                <li>Security fix<sup>[r 89]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>39.0.2171
+        </td>
+        <td>2014-11-12 (Android)<br>
+            <p>2014-11-18<br>
+                (Linux, macOS, and Windows)<br>
+                2014-11-24 (iOS)<sup>[<i>citation needed</i>]</sup>
+            </p>
+        </td>
+        <td>Blink 39 (except iOS)
+        </td>
+        <td>3.29.88
+        </td>
+        <td>
+            <ul>
+                <li>Removes SSL/TLS protocol version fallback to SSLv3</li>
+                <li>64-bit support for Mac</li>
+                <li>A number of new apps/extension APIs</li>
+                <li>Under-the-hood changes for stability and performance<sup>[r 90]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Number of bug fixes and performance improvements<sup>[r 91]</sup></li>
+                <li>Experimental Reader Mode<sup>[r 92]</sup>&nbsp;can be enabled via chrome://flags<sup>[<i>permanent
+                            dead link</i>]</sup>, is not available for tablets in this version</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>40.0.2214
+        </td>
+        <td>2015-01-20 (iOS)<br>
+            <p>2015-01-21<br>
+                (Linux, macOS, and Windows)<br>
+                2015-01-21 (Android)
+            </p>
+        </td>
+        <td>Blink 40 (except iOS)
+        </td>
+        <td>3.30.33
+        </td>
+        <td>
+            <ul>
+                <li>Disabled SSLv3 support by default</li>
+                <li>The minimum SSL/TLS version can now be set through about:flags</li>
+                <li>Updated info dialog for Chrome app on Windows and Linux</li>
+                <li>A new clock behind/ahead error message<sup>[r 93]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Updated page info and content settings UI</li>
+                <li>Number of bug fixes and performance improvements<sup>[r 94]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>New look with Material Design bringing bold graphics, fluid motion, and tactile surfaces</li>
+                <li>iOS 8 optimizations and support for bigger phones</li>
+                <li>Support handoff from Chrome to your default browser on macOS</li>
+                <li>Stability improvements and bug fixes<sup>[r 95]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>41.0.2272
+        </td>
+        <td>2015-03-03<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-03-11 (Android)<br>
+                2015-03-16 (iOS)
+            </p>
+        </td>
+        <td>Blink 41 (except iOS)
+        </td>
+        <td>4.1.0
+        </td>
+        <td>
+            <ul>
+                <li>A number of new apps/extension APIs</li>
+                <li>Many under the hood changes for stability and performance<sup>[r 96]</sup></li>
+                <li>Aero interface is disabled in Windows Vista</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>The ability to pull to reload at the top of most pages</li>
+                <li>A number of bug fixes and performance improvements<sup>[r 97]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>42.0.2311
+        </td>
+        <td>2015-04-14<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-04-15 (Android)<br>
+                2015-04-16 (iOS)
+            </p>
+        </td>
+        <td>Blink 42 (except iOS)
+        </td>
+        <td>4.2.77
+        </td>
+        <td>
+            <ul>
+                <li>Support for&nbsp;NPAPI&nbsp;plugins disabled by default</li>
+                <li>A number of new apps, extension and Web Platform APIs (including the Push API)</li>
+                <li>Many under the hood changes for stability and performance<sup>[r 98]</sup></li>
+                <li>Add Bookmark is now redesigned.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Getting the latest updates from sites with notifications</li>
+                <li>Adding your favorite sites to your homescreen is now even easier</li>
+                <li>Bug fixes and speedy performance improvements<sup>[r 99]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>43.0.2357
+        </td>
+        <td>2015-05-19<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-05-27 (Android)<br>
+                2015-06-01 (iOS)
+            </p>
+        </td>
+        <td>Blink 43 (except iOS)
+        </td>
+        <td>4.3.61
+        </td>
+        <td>
+            <ul>
+                <li>Numerous bug fixes and security fixes<sup>[r 100]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Faster Checkout – Quickly and securely complete checkout forms with data from Google Wallet</li>
+                <li>Touch to Search – Learn more about words and phrases by touching them on your screen</li>
+                <li>Bug fixes and speedy performance improvements<sup>[r 101]</sup></li>
+                <li>No longer supports&nbsp;Android 4.0 (Ice Cream Sandwich)<sup>[r 102][r 103]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>44.0.2403
+        </td>
+        <td>2015-07-21<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-07-22 (iOS)<br>
+                2015-07-29 (Android)
+            </p>
+        </td>
+        <td>Blink 44 (except iOS)
+        </td>
+        <td>4.4.63
+        </td>
+        <td>
+            <ul>
+                <li>A number of new apps/extension APIs</li>
+                <li>Change in the loading page circle on Chrome tabs</li>
+                <li>Many under the hood changes for stability and performance<sup>[r 104]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Fixed a boatload of bugs and performance issues.<sup>[r 105]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Swipe to navigate: swipe right or left to navigate backwards and forwards</li>
+                <li>Support for accessing Physical Web content from the Today view</li>
+                <li>Stability improvements and bug fixes<sup>[r 106]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>45.0.2454
+        </td>
+        <td>2015-09-01<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-09-01 (Android)<br>
+                2015-09-02 (iOS)
+            </p>
+        </td>
+        <td>Blink 45 (except iOS)
+        </td>
+        <td>4.5.103
+        </td>
+        <td>
+            <ul>
+                <li>Support for NPAPI plugins permanently disabled</li>
+                <li>A number of fixes and improvements<sup>[r 107]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>A number of fixes for a whole bunch of performance/stability/other issues.<sup>[r 108]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>46.0.2490
+        </td>
+        <td>2015-10-13<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2015-10-14 (Android)<br>
+                2015-10-22 (iOS)
+            </p>
+        </td>
+        <td>Blink 46 (except iOS)
+        </td>
+        <td>4.6.85
+        </td>
+        <td>
+            <ul>
+                <li>Change in taskbar logo design</li>
+                <li>A number of fixes and improvements.<sup>[r 109]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Under the hood performance and stability tweaks.<sup>[r 110]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>47.0.2526
+        </td>
+        <td>2015-12-01 (iOS)<br>
+            <p>2015-12-01<br>
+                (Linux, macOS, and Windows)<br>
+                2015-12-02 (Android)
+            </p>
+        </td>
+        <td>Blink 47 (except iOS)
+        </td>
+        <td>4.7.80
+        </td>
+        <td>
+            <ul>
+                <li>Change in appearance on closing tabs with red x's</li>
+                <li>New PDF viewer design</li>
+                <li>Security fixes<sup>[r 111]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"More than a barge load of performance and stability fixes".<sup>[r 112]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Added support for more keyboard shortcuts. Bluetooth keyboards can open, close or change tabs or
+                    conduct a voice search.</li>
+                <li>Support for 3D touch on iPhone 6s/+. Force touch the Chrome icon to quickly open a new tab, a new
+                    incognito* tab, or conduct a voice search.<sup>[<i>citation needed</i>]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>48.0.2564
+        </td>
+        <td>2016-01-20<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-01-27 (iOS)<br>
+                2016-01-27 (Android)
+            </p>
+        </td>
+        <td>Blink 48 (except iOS)
+        </td>
+        <td>4.8.271
+        </td>
+        <td>
+            <ul>
+                <li>"Tab discarding" was enabled by default in chrome://flags<sup>[<i>permanent dead link</i>]</sup>
+                </li>
+                <li>Window change in right-clicking an embedded web link</li>
+                <li>The key icon in "Save your password" turns black</li>
+                <li>"Clear browsing history" has been improved</li>
+                <li>A large number of fixes and improvements<sup>[r 113]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements.</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>This version uses WKWebView, the latest rendering engine from Apple.</li>
+                <li>The crash rate was reduced by 70% and JavaScript execution is now faster.</li>
+                <li>Redesigned icons on the New Tab page: easier access to more of your frequently-visited sites.</li>
+                <li>Spotlight integration: Drag down or right from the Home screen and search for your Chrome
+                    bookmarks.<sup>[<i>citation needed</i>]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>49.0.2623
+        </td>
+        <td>2016-03-02<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-03-09 (iOS)<br>
+                2016-03-09 (Android)
+            </p>
+        </td>
+        <td>Blink 49 (except iOS)
+        </td>
+        <td>4.9.385
+        </td>
+        <td>
+            <ul>
+                <li>Extension icons now appear near search tab.</li>
+                <li>Changes in bookmark bar appearances.</li>
+                <li>Change in Incognito mode window.</li>
+                <li>Change in scrollbar movement.</li>
+                <li>Changed Downloads page appearance/design.</li>
+                <li>A large number of fixes and improvements<sup>[r 114]</sup></li>
+                <li>Removed Windows 8 Mode (Metro mode)</li>
+                <li>Last version available for Windows XP and Vista, as well as Mac OS X 10.6, 10.7, and 10.8.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"More than a barge full of performance and stability fixes."<sup>[r 115]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Bookmarks has a new look: Easily find your favorites!</li>
+                <li>Bug and stability fixes.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>50.0.2661
+        </td>
+        <td>2016-04-13<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-04-20 (iOS)<br>
+                2016-04-26 (Android)
+            </p>
+        </td>
+        <td>Blink 50 (except iOS)
+        </td>
+        <td>5.0.71
+        </td>
+        <td>
+            <ul>
+                <li>Windows XP, Vista, Mac OS X 10.6, 10.7, and 10.8 compatibility broken.</li>
+                <li>Auto-fill form letters are now highlighted in bold.</li>
+                <li>A number of fixes and improvements.<sup>[r 116]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements.</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Bug and stability fixes.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>51.0.2704
+        </td>
+        <td>2016-05-25<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-06-01 (iOS)<br>
+                2016-06-01 (Android)
+            </p>
+        </td>
+        <td>Blink 51 (except iOS)
+        </td>
+        <td>5.1.281
+        </td>
+        <td>
+            <ul>
+                <li>A number of fixes and improvements.<sup>[r 117]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Brought tab switching back into Chrome (Android L+)<sup>[r 118]</sup></li>
+                <li>Bug fixes and speedy performance improvements.</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Bug and stability fixes.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>52.0.2743
+        </td>
+        <td>2016-07-20<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-07-27 (iOS)<br>
+                2016-07-27 (Android)
+            </p>
+        </td>
+        <td>Blink 52 (except iOS)
+        </td>
+        <td>5.2.361
+        </td>
+        <td>
+            <ul>
+                <li>It is impossible to disable&nbsp;DirectWrite.</li>
+                <li>Bar on the bottom now shows darker text when hovering your mouse over the link.</li>
+                <li>"A number of fixes and improvements."<sup>[r 119]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements<sup>[r 120]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Accelerated Mobile Pages&nbsp;("AMP") – news and articles from many of your favorite publishers will
+                    now load instantly.</li>
+                <li>Lightning bolt and "AMP" next to articles in the "Top Stories" section of search results indicate
+                    faster web page loading.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>53.0.2785
+        </td>
+        <td>2016-08-31<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-09-07 (iOS)<br>
+                2016-09-07 (Android)
+            </p>
+        </td>
+        <td>Blink 53 (except iOS)
+        </td>
+        <td>5.3.332
+        </td>
+        <td>
+            <ul>
+                <li>New browser's inside look, including a new bookmark</li>
+                <li>"A number of fixes and improvements."<sup>[r 121]</sup></li>
+                <li>'Simplify page' option removed from 'Save as PDF'.</li>
+                <li>Shadow DOM&nbsp;v1<sup>[2]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements<sup>[r 122]</sup></li>
+                <li>Muted autoplay for video<sup>[r 123]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Chrome's History has a new look and it's now easier to review, find, and delete your browsing
+                    history.</li>
+                <li>Voice Search has been updated with a fresh look. Voice Search can now answer contextual questions
+                    such as "How tall is the Eiffel Tower?" followed by "When was it built?"</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>54.0.2840
+        </td>
+        <td>2016-10-12<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-10-19 (iOS)<br>
+                2016-10-19 (Android)
+            </p>
+        </td>
+        <td>Blink 54 (except iOS)
+        </td>
+        <td>5.4.500
+        </td>
+        <td>
+            <ul>
+                <li>"Other bookmarks" tab has changed appearance</li>
+                <li>The message "Right-click to play Adobe Flash Player" now appears while pages with Adobe Flash Player
+                    are loading.</li>
+                <li>"A number of fixes and improvements."<sup>[r 124]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements</li>
+                <li>View article suggestions for you on the new tab page</li>
+                <li>Play media in the background for sites that support it</li>
+                <li>Update saved passwords when you change or reset your password<sup>[r 125]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>No internet connection? Smile and tap the dinosaur</li>
+                <li>Fixed bookmark icons not displaying correctly</li>
+                <li>Fixed phone number detection issues in web pages</li>
+                <li>Stability improvements and bug fixes</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>55.0.2883
+        </td>
+        <td>2016-12-01<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2016-12-05 (iOS)<br>
+                2016-12-06 (Android)
+            </p>
+        </td>
+        <td>Blink 55 (except iOS)
+        </td>
+        <td>5.5.372
+        </td>
+        <td>
+            <ul>
+                <li>The History page has changed and is no longer in "Settings"</li>
+                <li>Flash Player is now off by default for most sites</li>
+                <li>"A number of fixes and improvements."<sup>[r 126]</sup></li>
+                <li>It is not possible to disable top level Material Design<sup>[r 127]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>You can swipe down or right from the iOS Home screen to search. Searching for "voice" or "incognito"
+                    enables you to start Chrome in Voice Search mode or in a new Incognito Tab, respectively. The
+                    appearance of items in Spotlight Search will only work for devices that support Spotlight Actions.
+                </li>
+                <li>The folder named "All Bookmarks" has been removed from the Bookmarks view. You can access all your
+                    other devices’ Bookmarks by clicking on the other folders.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Bug fixes and speedy performance improvements</li>
+                <li>Easily download music, videos, and even full web pages for viewing offline</li>
+                <li>View and share your downloads within Chrome</li>
+                <li>See misspelled words highlighted in text fields</li>
+                <li>Improvements to contextual search UI<sup>[r 128]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>56.0.2924
+        </td>
+        <td>2017-01-25<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-02-01 (iOS)<br>
+                2017-02-01 (Android)
+            </p>
+        </td>
+        <td>Blink 56 (except iOS)
+        </td>
+        <td>5.6.326
+        </td>
+        <td>
+            <ul>
+                <li>HTML5 enabled by default</li>
+                <li>Adobe Flash Player&nbsp;is automatically blocked for most sites that require the plugin</li>
+                <li>Labeling of unsecured HTTP sites</li>
+                <li>"A number of fixes and improvements."<sup>[r 129]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Scan a QR code or barcode by using 3D Touch on the app logo or searching for "QR" in Spotlight.</li>
+                <li>We've redesigned the tab switcher layout on iPad to make it easier to access your open sites.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Easily download music, videos, and even full web pages for viewing offline</li>
+                <li>View and share your downloads within Chrome</li>
+                <li>See misspelled words highlighted in text fields</li>
+                <li>Improvements to contextual search UI</li>
+                <li>Bug fixes and significant memory savings<sup>[r 130]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>57.0.2987
+        </td>
+        <td>2017-03-09<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-03-14 (iOS)<br>
+                2017-03-16 (Android)
+            </p>
+        </td>
+        <td>Blink 57 (except iOS)
+        </td>
+        <td>5.7.492
+        </td>
+        <td>
+            <ul>
+                <li>CSS grid layout</li>
+                <li>Improved "Add to Home" screen</li>
+                <li>Media Session&nbsp;API</li>
+                <li>"A number of fixes and improvements."<sup>[r 131]</sup></li>
+                <li>WebAssembly<sup>[r 132]</sup></li>
+                <li>Background tab policy changes<sup>[3]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Chrome can add pages to your Reading List.</li>
+                <li>Find in Page now works correctly in iOS 10.3.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Quickly use emails, addresses, and phone numbers in web pages by tapping on them</li>
+                <li>Easily access downloaded files and web pages from the new tab page</li>
+                <li>Long press article suggestions on the new tab page to download them</li>
+                <li>Bug fixes and performance improvements<sup>[r 133]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>58.0.3029
+        </td>
+        <td>2017-04-19<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-04-20 (Android)<br>
+                2017-04-25 (iOS)
+            </p>
+        </td>
+        <td>Blink 58 (except iOS)
+        </td>
+        <td>5.8.283
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 134]</sup></li>
+                <li>IndexedDB&nbsp;2.0</li>
+                <li>Workers and SharedWorkers in data-URLs.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Useful actions like “Find in page” available in apps that open web pages using Chrome</li>
+                <li>More frequently updated article suggestions on the New Tab page</li>
+                <li>Use recently visited search engines as your default search engine</li>
+                <li>See Physical Web suggestions, based on your surroundings, in the address bar</li>
+                <li>Bug fixes and performance improvements<sup>[r 135]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Stability improvements and bug fixes.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>59.0.3071
+        </td>
+        <td>2017-06-05<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-06-06 (iOS)<br>
+                2017-06-06 (Android)
+            </p>
+        </td>
+        <td>Blink 59 (except iOS)
+        </td>
+        <td>5.9.211
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 136]</sup></li>
+                <li>Revamped Settings and "About Google Chrome" page with Material Design</li>
+                <li>Headless mode&nbsp;in Linux and macOS.<sup>[r 137]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Fixed a user-reported issue that resulted in hangs and significant slowdowns when switching tabs.
+                </li>
+                <li>Fixed a crash involving dialogs presented while switching tabs.</li>
+                <li>Stability improvements and bug fixes.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>View and manage in-progress downloads on the Downloads page</li>
+                <li>View and clear your browsing data more easily on the redesigned History page</li>
+                <li>Long-press a link to open it in a new Chrome tab (from Chrome Custom Tabs)</li>
+                <li>Bug fixes and performance improvements<sup>[r 138]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>60.0.3112
+        </td>
+        <td>2017-07-25<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-07-25 (iOS)<br>
+                2017-07-31 (Android)
+            </p>
+        </td>
+        <td>Blink 60 (except iOS)
+        </td>
+        <td>6.0.286
+        </td>
+        <td>
+            <ul>
+                <li>MacBook Pro Touch Bar support.</li>
+                <li>"A number of fixes and improvements."<sup>[r 139]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>"Request Mobile Site" button can switch from a website's desktop version back to its mobile version
+                </li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Load pages faster and use less memory with an updated JavaScript engine</li>
+                <li>Bug fixes and performance improvements</li>
+                <li>Clear browsing data more easily<sup>[r 140]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>61.0.3163
+        </td>
+        <td>2017-09-05<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-09-05 (iOS)<br>
+                2017-09-05 (Android)
+            </p>
+        </td>
+        <td>Blink 61 (except iOS)
+        </td>
+        <td>6.1.534
+        </td>
+        <td>
+            <ul>
+                <li>Native support for JavaScript modules</li>
+                <li>"A number of fixes and improvements."<sup>[r 141]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Added a new button for scanning QR codes above the virtual keyboard</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Addition of Web Share API</li>
+                <li>Bug fixes and performance improvements</li>
+                <li>Translate pages with a more compact and intuitive toolbar</li>
+                <li>Pick images to post online with an improved image picker<sup>[r 142]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>62.0.3202
+        </td>
+        <td>2017-10-17<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2017-10-18 (iOS)<br>
+                2017-10-19 (Android)
+            </p>
+        </td>
+        <td>Blink 62 (except iOS)
+        </td>
+        <td>6.2.414
+        </td>
+        <td>
+            <ul>
+                <li>The "Save Your Password" icon gets a new appearance</li>
+                <li>"A number of fixes and improvements."<sup>[r 143]</sup></li>
+                <li>Support for OpenType variable fonts</li>
+                <li>Network Information API updated to report users actual Internet speed, not just connection type, to
+                    websites</li>
+                <li>HTTP sites that request user data will now be flagged as "non-secure" (red) in the Chrome
+                    Omnibox<sup>[r 144]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Two new Today widgets are added by tapping the Edit button at the bottom of the iOS Search screen
+                </li>
+                <li>Ability to drag a URL from another app and drop it into Chrome's omnibox or the tab strip, or from
+                    Chrome's content area to another app on iOS 11 iPads</li>
+                <li>The Payment Request API has been introduced</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Download files faster with accelerated downloads</li>
+                <li>View and copy passwords saved with Chrome if device lock is enabled</li>
+                <li>Quickly see your data savings in the Chrome menu when Data Saver is on<sup>[r 145]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>63.0.3239
+        </td>
+        <td>2017-12-05 (iOS)<br>
+            <p>2017-12-05 (Android)<br>
+                2017-12-06<br>
+                (Linux, macOS, and Windows)
+            </p>
+        </td>
+        <td>Blink 63 (except iOS)
+        </td>
+        <td>6.3.292
+        </td>
+        <td>
+            <ul>
+                <li>Various fixes from internal audits, fuzzing and other initiatives</li>
+                <li>"A number of fixes and improvements."<sup>[r 146]</sup></li>
+                <li>Browser allows you to import JavaScript modules dynamically</li>
+                <li>With async generator functions and the async iteration protocol, consumption or implementation of
+                    streaming data sources becomes streamlined</li>
+                <li>You can override the browser's default overflow scroll behavior with the CSS overscroll-behavior
+                    property<sup>[r 147]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Swipe up on the New Tab Page to explore suggested content from the web</li>
+                <li>The ability to reorder bookmarks is back!</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Chrome for Android will make permission requests modal dialogs</li>
+                <li>"Stability and performance improvements."<sup>[r 148]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>64.0.3282
+        </td>
+        <td>2018-01-23 (Android)<br>
+            <p>2018-01-24 (iOS)<br>
+                2018-01-24<br>
+                (Linux, macOS, and Windows)
+            </p>
+        </td>
+        <td>Blink 64 (except iOS)
+        </td>
+        <td>6.4.388
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 149]</sup></li>
+                <li>Support for ResizeObservers, will notify you when an element's content rectangle has changed its
+                    size.</li>
+                <li>Modules can now access to host specific metadata with import.meta.</li>
+                <li>The pop-up blocker gets stronger.</li>
+                <li>window.alert() no longer changes tab focus.</li>
+                <li>Chrome now supports named captures in&nbsp;regular expressions.</li>
+                <li>The default preload value for &lt;audio&gt; and &lt;video&gt; elements is now metadata.</li>
+                <li>You can now use Request.prototype.cache to view the cache mode of a Request and determine whether a
+                    request is a reload request.</li>
+                <li>Using the Focus Management API, you can now focus an element without scrolling to it with the
+                    preventScroll attribute.<sup>[r 150]</sup></li>
+                <li>Extensions page generates packages in CRX3 format now.<sup>[r 151]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Prevents sites with abusive ad experiences from opening new windows or tabs without your permission.
+                </li>
+                <li>"Stability and performance improvements."<sup>[r 152]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>You can now disable Article Suggestions without also disabling omnibox suggestions by going to
+                    Chrome Settings</li>
+                <li>If you previously turned off "Search and Site Suggestions" to disable Article Suggestions and would
+                    like to turn back on your Search Suggestions in the omnibox, you can do that from Chrome Settings
+                    &gt; Privacy</li>
+                <li>Support for&nbsp;iPhone X</li>
+                <li>Now requires iOS 10 or later</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>65.0.3325
+        </td>
+        <td>2018-03-06<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-03-06 (iOS)<br>
+                2018-03-06 (Android)
+            </p>
+        </td>
+        <td>Blink 65 (except iOS)
+        </td>
+        <td>6.5.254
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 153]</sup></li>
+                <li>New extension UI</li>
+                <li>The CSS Paint API allows you to programmatically generate an image</li>
+                <li>The Server Timing API allows web servers to provide performance timing information via HTTP headers
+                </li>
+                <li>The new CSS display: contents property can make boxes disappear</li>
+                <li>Fixed a bug that affected some timestamps</li>
+                <li>The syntax for specifying HSL and HSLA, and RGB and RGBA coordinates for the color property now
+                    match the CSS Color 4 spec</li>
+                <li>There's a new feature policy that allows you to control synchronous XHRs through an HTTP header or
+                    the iframe allow attribute<sup>[r 154]</sup></li>
+                <li>Last version available for OS X 10.9.</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Set language preferences for web content in Settings &gt; Languages</li>
+                <li>Turn on the prompt for simplified view for all supported articles in Settings &gt; Accessibility
+                    settings</li>
+                <li>Share and delete downloads more easily on the Downloads page<sup>[r 155]</sup></li>
+                <li>Disable screen capture on incognite mode&nbsp;<sup>[4]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Fixed a bug that affected some streaming audio players</li>
+                <li>Stability and performance improvements</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>66.0.3359
+        </td>
+        <td>2018-04-17<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-04-17 (iOS)<br>
+                2018-04-17 (Android)
+            </p>
+        </td>
+        <td>Blink 66 (except iOS)
+        </td>
+        <td>6.6.346
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 156]</sup></li>
+                <li>CSS manipulation becomes easier with the new CSS Typed Model Object</li>
+                <li>Access to the clipboard is now asynchronous</li>
+                <li>There's a new rendering context for canvas elements</li>
+                <li>TextArea and Select now support the autocomplete attribute</li>
+                <li>Setting autocapitalize on a form element will apply to any child form fields, improving
+                    compatibility with Safari's implementation of autocapitalize</li>
+                <li>trimStart() and trimEnd() are now available as the standards-based way of trimming whitespace from
+                    strings<sup>[r 157]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Find your saved passwords more easily – just tap the new Search icon in Settings &gt;
+                    Passwords<sup>[r 158]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Export passwords saved in Chrome and use them in another app</li>
+                <li>Stability and performance improvements</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>67.0.3396
+        </td>
+        <td>2018-05-29<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-05-29 (iOS)<br>
+                2018-05-31 (Android)
+            </p>
+        </td>
+        <td>Blink 67 (except iOS)
+        </td>
+        <td>6.7.288
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 159]</sup></li>
+                <li>Progressive Web Apps are coming to the desktop</li>
+                <li>The generic sensor API makes it way easier to get access to device sensors like the accelerometer,
+                    gyroscope and more</li>
+                <li>BigInt's make dealing with big integers way easier.</li>
+                <li>Credential Management API provides a framework for creating, retrieving and storing credentials</li>
+                <li>The Web Authentication API adds a third credential type, PublicKeyCredential, which allows browsers
+                    to authenticate a user with a private/public key pair generated by an authenticator<sup>[r
+                        160]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 161]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Improved handling of boarding passes, movie tickets, etc. in Wallet</li>
+                <li>Updated app selection UI when you tap on an email link</li>
+                <li>Improved support for external keyboards</li>
+                <li>Improved issue reporting: now you can draw on screenshots you are sending with feedback reports to
+                    obscure private data</li>
+                <li>A fix has been provided for autofill issue (June 13)</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>68.0.3440
+        </td>
+        <td>2018-07-24 (iOS)<br>
+            <p>2018-07-24<br>
+                (Linux, macOS, and Windows)<br>
+                2018-07-24 (Android)
+            </p>
+        </td>
+        <td>Blink 68 (except iOS)
+        </td>
+        <td>6.8.275
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."</li>
+                <li>HTTP sites marked as "not secure".<sup>[r 162]</sup></li>
+                <li>The Page Lifecycle API tells you when your tab has been suspended or restored.</li>
+                <li>The Payment Handler API makes it possible for web-based payment apps to support the Payment Request
+                    experience.</li>
+                <li>Content embedded in an iframe requires a user gesture to navigate the top-level browsing context to
+                    a different origin.</li>
+                <li>Since Chrome 1, the CSS cursor values for grab and grabbing have been prefixed; standard,
+                    un-prefixed values now supported.<sup>[r 163]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Fix for an Autofill issue.<sup>[r 164]</sup></li>
+                <li>The Add to Home Screen behavior on Android is changing to give you more control.</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Improved downloading from websites. Downloading now works while the app is in the background. You
+                    can also continue browsing in the same tab while your file downloads.</li>
+                <li>Improvements to Forms Autofill.</li>
+                <li>Improved handling of links to the App Store.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>69.0.3497
+        </td>
+        <td>2018-09-04<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-09-04 (iOS)<br>
+                2018-09-04 (Android)
+            </p>
+        </td>
+        <td>Blink 69 (except iOS)
+        </td>
+        <td>6.9.427
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 165]</sup></li>
+                <li>New browser interface</li>
+                <li>CSS Scroll Snap allows you to create smooth, slick, scroll experiences.</li>
+                <li>Display Cutouts lets you use the full area of the screen, including any space behind the display
+                    cutout, sometimes called a notch.</li>
+                <li>The Web Locks API allows you to asynchronously acquire a lock, hold it while work is performed, then
+                    release it.</li>
+                <li>You can now create color transitions around the circumference of a circle, using conic gradients.
+                </li>
+                <li>New toggleAttribute() method on elements toggles the existence of an attribute, similar to
+                    classList.toggle().</li>
+                <li>JavaScript arrays are getting two new methods: flat() and flatMap().</li>
+                <li>OffscreenCanvas moves work off the main thread in a worker, helping to eliminate performance
+                    bottlenecks.<sup>[r 166]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Secure and easy mobile payments via 3rd party payment apps</li>
+                <li>Password generation now works on more sites<sup>[r 167]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>New bottom toolbar: easier to reach frequently used functions, like Back, Search, tabs, and the menu
+                </li>
+                <li>New tab grid: see bigger previews of your tabs, including tabs open on other devices</li>
+                <li>Features like Bookmarks and Reading Lists are now easily accessible on the New Tab Page</li>
+                <li>Press firmly on the app icon to see shortcuts (3D Touch)</li>
+                <li>Credit cards you enter on your device are now securely synced to Google Pay for use on other devices
+                    (if enabled)</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>70.0.3538
+        </td>
+        <td>2018-10-16<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-10-16 (iOS)<br>
+                2018-10-17 (Android)
+            </p>
+        </td>
+        <td>Blink 70 (except iOS)
+        </td>
+        <td>7.0.276
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 168]</sup></li>
+                <li>Desktop Progressive Web Apps on Windows</li>
+                <li>The credential management API adds support for Public Key Credentials</li>
+                <li>Named workers</li>
+                <li>Web Bluetooth is now available in Windows 10</li>
+                <li>Chrome can send intervention and deprecation messages to your servers using the Report-To HTTP
+                    Response header field or surface them in the ReportingObserver interface</li>
+                <li>Support for AV1 video decoder (“Main” profile 0)<sup>[r 169]</sup></li>
+                <li>A number of important deprecations<sup>[r 170]</sup></li>
+            </ul>
+            <p>Android version
+            </p>
+            <ul>
+                <li>"Stability and performance improvements"<sup>[r 171]</sup></li>
+                <li>Cleaner, more modern design</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Bug fixes and design polish for the redesign</li>
+                <li>Updates to how Chrome launches other apps to improve reliability and security</li>
+                <li>Fixes to authentication issues caused by using out-of-date cookies</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>71.0.3578
+        </td>
+        <td>2018-12-04<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2018-12-04 (iOS)<br>
+                2018-12-04 (Android)
+            </p>
+        </td>
+        <td>Blink 71 (except iOS)
+        </td>
+        <td>7.1.302
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 172]</sup></li>
+                <li>Displaying relative times is now part of the Intl API</li>
+                <li>Specifying which side of the text the underline should appear on for text that flows vertically</li>
+                <li>Requiring user activation before using the speech synthesis API</li>
+                <li>The default credentials mode for module script requests has changed from omit to same-origin</li>
+                <li>Shadow DOM v1 spec; calculation for specificity for the :host() and :host-context() pseudo classes
+                    as well as for the arguments for&nbsp;::slotted()<sup>[r 173]</sup></li>
+                <li>Removed SpeechSynthesis.speak() without user activation</li>
+                <li>Removed prefixed versions of APIs</li>
+                <li>Removed URL.createObjectURL from MediaStream</li>
+                <li>Removed document.origin</li>
+                <li>Deprecations and removals of APIs<sup>[r 174]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>The Element.requestFullscreen() method can now be customized</li>
+                <li>"Stability and performance improvements."<sup>[r 175]</sup></li>
+                <li>Last version available for&nbsp;Android 4.1-4.3 (Jelly Bean)</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>You can now long-press on an image and save to clipboard and paste in other apps</li>
+                <li>Autofill now works better on sites with iframes (embedded pages)</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>72.0.3626
+        </td>
+        <td>2019-01-29<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-01-29 (iOS)<br>
+                2019-01-29 (Android)
+            </p>
+        </td>
+        <td>Blink 72 (except iOS)
+        </td>
+        <td>7.2.502
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 176]</sup></li>
+                <li>Creating public class fields in JavaScript is now much cleaner</li>
+                <li>New User Activation API</li>
+                <li>Localizing lists becomes way easier with the Intl.format() API</li>
+                <li>Chrome 72 changes the behavior of Cache.addAll() to better match the spec</li>
+                <li>Requests for favicons are now handled by the service worker, as long as the request URL is on the
+                    same origin as the service worker<sup>[r 177]</sup></li>
+                <li>Pages may no longer use window.open() to open a new page during unload</li>
+                <li>Removal of HTTP-Based Public Key Pinning</li>
+                <li>Removal of rendering FTP resources</li>
+                <li>Deprecation of TLS 1.0 and TLS 1.1</li>
+                <li>Deprecation of PaymentAddress.languageCode<sup>[r 178]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 179]</sup></li>
+                <li>Now requires Android 4.4 or later<sup>[5]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Support for more search engines</li>
+                <li>Fixed crashes on some page translations and added translations on previously untranslated websites
+                </li>
+                <li>A Siri Shortcut to start a new search is available</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>73.0.3683
+        </td>
+        <td>2019-03-12<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-03-12 (iOS)<br>
+                2019-03-12 (Android)
+            </p>
+        </td>
+        <td>Blink 73 (except iOS)
+        </td>
+        <td>7.3.492
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 180]</sup></li>
+                <li>Creating portable content is easier with signed HTTP exchanges</li>
+                <li>Dynamically changing styles becomes way easier with constructable style sheets</li>
+                <li>Support for Progressive Web Apps arrives on macOS, bringing support for PWAs to all desktop and
+                    mobile platforms</li>
+                <li>matchAll() is a new regular expression matching method on the string prototype, and returns an array
+                    containing the complete matches</li>
+                <li>The &lt;link&gt; element now supports imagesrcset and imagesizes properties to correspond to srcset
+                    and sizes attributes of HTMLImageElement</li>
+                <li>Blink's shadow blur radius implementation now matches Firefox and Safari</li>
+                <li>Dark mode is now supported on Mac, and Windows support is on the way<sup>[r 181]</sup></li>
+                <li>Removal of EXPLAIN and REINDEX support in WebSQL</li>
+                <li>Removal of isomorphic decoding of URL fragment identifier</li>
+                <li>Deprecation of 'drive-by downloads' in sandboxed iframes<sup>[r 182]</sup></li>
+                <li>Stoppage of support for external web extensions in CRX2 format, making CRX3 format required<sup>[r
+                        183]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Offline Content on the Dino Page: easily browse suggested articles while offline</li>
+                <li>Lite pages: get optimized pages that save data and load faster<sup>[r 184]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Tap on the icons above the keyboard and easily access your saved passwords, addresses and credit
+                    card information</li>
+                <li>Updated default search engines list</li>
+                <li>View JavaScript console messages</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>74.0.3729
+        </td>
+        <td>2019-04-23<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-04-24 (Android)<br>
+                2019-04-29 (iOS)
+            </p>
+        </td>
+        <td>Blink 74 (except iOS)
+        </td>
+        <td>7.4.288
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 185]</sup></li>
+                <li>Creating private class fields in JavaScript is now much cleaner</li>
+                <li>You can detect when the user has requested a reduced motion experience</li>
+                <li>CSS transition events</li>
+                <li>Adds new feature policy APIs to check if features are enabled or not<sup>[r 186]</sup></li>
+                <li>Removal of PaymentAddress's languageCode property</li>
+                <li>No popups during page unload</li>
+                <li>Deprecation of drive-by downloads in sandboxed iframes<sup>[r 187]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Translate any web page instantly by selecting Translate from the menu<sup>[r 188]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>You can now paste pictures from your clipboard into the omnibox to search</li>
+                <li>A fix has been included for translation not being offered on some English pages.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>75.0.3770
+        </td>
+        <td>2019-06-04<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-06-04 (iOS)<br>
+                2019-06-04 (Android)
+            </p>
+        </td>
+        <td>Blink 75 (except iOS)
+        </td>
+        <td>7.5.288
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 189]</sup></li>
+                <li>A new way to reduce latency on canvas elements</li>
+                <li>Web apps can now share files to other installed apps using the system level share sheet</li>
+                <li>Numeric literals now allow underscores as separators to make them more readable<sup>[r 190]</sup>
+                </li>
+                <li>Removal of overflow: -webkit-paged-x and overflow: -webkit-paged-y<sup>[r 191]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>Generate strong and unique passwords with Chrome's built-in password manager</li>
+                <li>Quickly look up your passwords by tapping any password field and using the new keyboard
+                    option<sup>[r 192]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Links that are clicked in Incognito mode will no longer open native applications</li>
+                <li>Custom search engine settings now show the search engine's icon</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>76.0.3809
+        </td>
+        <td>2019-07-30<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-07-30 (iOS)<br>
+                2019-07-30 (Android)
+            </p>
+        </td>
+        <td>Blink 76 (except iOS)
+        </td>
+        <td>7.6.303
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 193]</sup></li>
+                <li>Support for prefers-color-scheme media query, bringing dark mode to websites</li>
+                <li>An install button in the omnibox to make installation of Progressive Web Apps on desktop easier</li>
+                <li>Addition of Promise.allSettled()</li>
+                <li>Reading blobs is easier</li>
+                <li>Image support in the async clipboard API<sup>[r 194]</sup></li>
+                <li>Removal of feature policy: lazyload</li>
+                <li>Removal of outputs from MediaStreamAudioDestinationNode</li>
+                <li>Removal of insecure usage of DeviceMotionEvent</li>
+                <li>Removal of insecure usage of DeviceOrientationEvent<sup>[r 195]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 196]</sup></li>
+                <li>Preventing the mini-infobar from appearing on Progressive Web Apps on mobile</li>
+                <li>More frequent updates of WebAPKs</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Find In Page now works on iFrames, including AMP (Accelerated Mobile Pages)</li>
+                <li>A suggestion for a strong and unique password on a keyboard when signing up to a new site</li>
+                <li>Control of all Sync and Google services settings in one place</li>
+                <li>Some users will see a new design for the way Chrome offers to save passwords</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>77.0.3865
+        </td>
+        <td>2019-09-10<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2019-09-10 (iOS)<br>
+                2019-09-10 (Android)
+            </p>
+        </td>
+        <td>Blink 77 (except iOS)
+        </td>
+        <td>7.7.299
+        </td>
+        <td>
+            <ul>
+                <li>A number of fixes and improvements."<sup>[r 197]</sup></li>
+                <li>Forms get some new capabilities
+                    <ul>
+                        <li>The formdata event</li>
+                        <li>Form-associated custom elements</li>
+                    </ul>
+                </li>
+                <li>Native lazy loading</li>
+                <li>Chrome DevSummit 2019 is happening November 11–12, 2019</li>
+                <li>Introduction of Content Picker API</li>
+                <li>New measurement units in the intl.NumberFormat API<sup>[r 198]</sup></li>
+                <li>Removal of card issuer networks as payment method names</li>
+                <li>Deprecation of Web MIDI use on insecure origins</li>
+                <li>Deprecation of WebVR 1.1 API<sup>[r 199]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 200]</sup></li>
+                <li>A better way to track the performance of your site with Largest Contentful Paint</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>A new language settings page</li>
+                <li>You can clear your browsing data from a specific range of time</li>
+                <li>Omnibox suggestions are easier to read with added thumbnails and icons</li>
+                <li>Easily close tabs that are maliciously showing JavaScript dialogues</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>78.0.3904
+        </td>
+        <td>2019-10-22 (iOS)<br>
+            <p>2019-10-22 (Android)<br>
+                2019-10-22<br>
+                (Linux, macOS, and Windows)
+            </p>
+        </td>
+        <td>Blink 78 (except iOS)
+        </td>
+        <td>7.8.279
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 201]</sup></li>
+                <li>CSS Properties and Values API</li>
+                <li>Fresher service workers</li>
+                <li>New origin trials</li>
+                <li>Native File System</li>
+                <li>SMS Receiver<sup>[r 202]</sup></li>
+                <li>Removal of XSS Auditor<sup>[r 203]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 204]</sup></li>
+                <li>Dark theme for Chrome menus, settings, and surfaces</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>The ability to switch Chrome to dark mode if your device has been upgraded to iOS 13</li>
+                <li>Bookmarks, History, Recent Tabs, and Reading List are now presented as cards on iOS 13</li>
+                <li>The ability to add a new credit card directly in Chrome from the settings page</li>
+                <li>A fix for a navigation-related crash</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>79.0.3945
+        </td>
+        <td>2019-12-10 (iOS)<br>
+            <p>2019-12-10<br>
+                (Linux, macOS, and Windows)<br>
+                2019-12-10 (Android)
+            </p>
+        </td>
+        <td>Blink 79 (except iOS)
+        </td>
+        <td>7.9.317
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 205]</sup></li>
+                <li>The ability to create immersive experiences with the WebXR Device API</li>
+                <li>The Wake Lock API is available as an origin trial</li>
+                <li>The rendersubtree attribute is available as an origin trial</li>
+                <li>Videos from the Chrome DevSummit are now online<sup>[r 206]</sup></li>
+                <li>Changes -webkit-appearance keywords to work only with specific element types<sup>[r 207]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."</li>
+                <li>Password safety</li>
+                <li>Support for virtual reality</li>
+                <li>The ability to reorder bookmarks<sup>[r 208]</sup></li>
+                <li>Installed Progressive Web Apps on Android now support maskable icons</li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Chrome will check if username and password are leaked if signed in to Chrome and then in to a
+                    website</li>
+                <li>Starting a search in the address bar will initiate top suggestions even if network connection is
+                    slow</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>80.0.3987
+        </td>
+        <td>2020-02-04<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2020-02-04 (Android)<br>
+                2020-02-05 (iOS)
+            </p>
+        </td>
+        <td>Blink 80 (except iOS)
+        </td>
+        <td>8.0.426
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 209]</sup></li>
+                <li>Modules in workers</li>
+                <li>Optional chaining in JavaScript</li>
+                <li>New origin trials</li>
+                <li>Origin trial graduations</li>
+                <li>Using #:~:text=something will have Chrome scroll to and highlight the first instance of that text
+                    fragment</li>
+                <li>Setting display: minimal-ui on a Desktop PWA adds a back and reload button to the title bar of the
+                    installed PWA</li>
+                <li>Support for using SVG images as favicons<sup>[r 210]</sup></li>
+                <li>Disallowed Synchronous XMLHTTPRequest() in Page Dismissal</li>
+                <li>Deprecation of FTP support</li>
+                <li>Removal of allowing popups during page reload</li>
+                <li>Non-origin-clean ImageBitmap serialization and transferring removed</li>
+                <li>Protocol handling now requires a secure context</li>
+                <li>Web Components v0 removed</li>
+                <li>Removal of -webkit-appearance:button for arbitrary elements<sup>[r 211]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."</li>
+                <li>Quieter notifications</li>
+                <li>SameSite cookies are enabled by default</li>
+                <li>Insecure audio and video on secure pages are automatically upgraded to secure connections<sup>[r
+                        212]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Starting a search in the address bar brings up top suggestions served locally even in Incognito Mode
+                </li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>81.0.4044
+        </td>
+        <td>2020-04-07<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2020-04-07 (Android)<br>
+                2020-04-07 (iOS)
+            </p>
+        </td>
+        <td>Blink 81 (except iOS)
+        </td>
+        <td>8.1.307
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 213]</sup></li>
+                <li>Updated Chrome release schedule</li>
+                <li>WebXR hit testing</li>
+                <li>App icon badging</li>
+                <li>New origin trial of Web NFC and other origin trials</li>
+                <li>The media session API now supports tracking position state</li>
+                <li>INTL API now provides a DisplayNames method<sup>[r 214]</sup></li>
+                <li>Deprecation and removal of "basic-card" support Payment Handler</li>
+                <li>Removal of supportedType field from BasicCardRequest</li>
+                <li>Removal of &lt;discard&gt; element</li>
+                <li>TLS 1.3 downgrade hardening bypass (Removal of TLS 1.0 and 1.1 is delayed to Chrome 84 due to
+                    the&nbsp;COVID-19 pandemic.)<sup>[r 215]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."</li>
+                <li>27 languages were added, including Burmese, Armenian, Urdu, Central Khmer, and Punjabi</li>
+                <li>Notification of whether a password is typed and saved on an unsafe site<sup>[r 216]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Updated Terms of Service</li>
+                <li>Finding downloads in the downloads folder in Chrome's menu or in the device's Files app</li>
+                <li>Search suggestions will also include suggestions from the middle of words</li>
+                <li>Fixes for crashes related to bookmarks and security</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>83.0.4103
+        </td>
+        <td>2020-05-19<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2020-05-19 (Android)<br>
+                2020-05-21 (iOS)
+            </p>
+        </td>
+        <td>Blink 83 (except iOS)
+        </td>
+        <td>8.3.110
+        </td>
+        <td>
+            <ul>
+                <li>Version 82 is skipped due to the&nbsp;COVID-19 pandemic.</li>
+                <li>"A number of fixes and improvements."<sup>[r 217]</sup></li>
+                <li>Trusted types help prevent cross site scripting vulnerabilities</li>
+                <li>Form elements get an important make-over</li>
+                <li>A new way to detect memory leaks</li>
+                <li>The native file system API starts a new origin trial with added functionality</li>
+                <li>New cross-origin policies</li>
+                <li>The Web Vitals program provides unified guidance for quality signals that are essential to
+                    delivering a great user experience on the web</li>
+                <li>Chrome now supports the Barcode Detection API, which provides the ability to detect and decode
+                    barcodes</li>
+                <li>The new CSS @supports function provides feature detection for CSS selectors</li>
+                <li>New ARIA annotations support screen reader accessibility for comments, suggestions, and text
+                    highlights with semantic meanings (similar to &lt;mark&gt;)</li>
+                <li>The prefers-color-scheme media query lets authors support their own dark theme so they have full
+                    control over experiences they build</li>
+                <li>JavaScript now supports modules in shared workers<sup>[r 218]</sup></li>
+                <li>Disallowing of downloads in Sandboxed iframes<sup>[r 219]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>No longer supports&nbsp;Android 4.4 (KitKat)<sup>[r 220]</sup></li>
+                <li>"Stability and performance improvements."<sup>[r 221]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Allows users to see their last 5 search queries by tapping the address bar in a new tab when signed
+                    in with a Google account</li>
+                <li>Prompts and messages from Chrome have a refreshed look</li>
+                <li>iPhone users can change webpage text to a comfortable size by opening Chrome's menu and tapping
+                    "Zoom Text..." or by going to their Accessibility settings</li>
+                <li>Updated Terms of Service.</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>84.0.4147
+        </td>
+        <td>2020-07-14<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2020-07-14 (iOS)<br>
+                2020-07-14 (Android)
+            </p>
+        </td>
+        <td>Blink 84 (except iOS)
+        </td>
+        <td>8.4.371
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 222]</sup></li>
+                <li>App Icon Shortcuts</li>
+                <li>The Web Animations API adds support for a slew of previously unsupported features</li>
+                <li>Wake lock can prevent the screen from dimming or locking</li>
+                <li>The Content Indexing API helps surface content that is available offline</li>
+                <li>New origin trials for idle detection and Web Assembly SIMD</li>
+                <li>Same Site Cookie policy changes are starting to roll out again</li>
+                <li>Sites with abusive permission requests, or abusive notifications, will automatically be enrolled in
+                    our quieter notifications UI</li>
+                <li>New origin trial for QuicTransport<sup>[r 223]</sup></li>
+                <li>@import rules in CSSStyleSheet.replace() removed</li>
+                <li>Removal of TLS 1.0 and TLS 1.1<sup>[r 224]</sup></li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 225]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>New Safe Browsing features</li>
+                <li>Better mouse and trackpad support</li>
+                <li>You can now share a web page by creating and sharing a QR code</li>
+                <li>You can find your downloads in the downloads folder in Chrome's menu, or in your device's Files app
+                </li>
+                <li>Addition of nicknames to your payment cards saved in Chrome<sup>[r 226]</sup></li>
+            </ul>
+        </td>
+        <td>Windows:
+            <ul>
+                <li>Lightbox (JavaScript)&nbsp;(window inside window) no longer functions properly in Chromium based
+                    browsers.<sup>[6]</sup></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>85.0.4183
+        </td>
+        <td>2020-08-25<br>
+            <p>(Linux, macOS, and Windows)<br>
+                2020-08-25 (iOS)<br>
+                2020-08-25 (Android)
+            </p>
+        </td>
+        <td>Blink 85 (except iOS)
+        </td>
+        <td>8.5.210
+        </td>
+        <td>
+            <ul>
+                <li>"A number of fixes and improvements."<sup>[r 227]</sup></li>
+                <li>AppCache Removal Begins</li>
+                <li>Rejection of insecure SameSite=None cookies</li>
+                <li>-webkit-box quirks from -webkit-line-clamp<sup>[r 228]</sup></li>
+            </ul>
+            <p>iOS version:
+            </p>
+            <ul>
+                <li>Ability to use passwords saved to Chrome in other apps on the device</li>
+                <li>Site information has a new look</li>
+                <li>Users can drag links between the apps when another app is open next to Chrome in split view<sup>[r
+                        229]</sup></li>
+                <li>Fixes for clipboard crash and stability improvements</li>
+            </ul>
+            <p>Android version:
+            </p>
+            <ul>
+                <li>"Stability and performance improvements."<sup>[r 230]</sup></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>86.0.4240
+        </td>
+        <td>2020-10-06
+        </td>
+        <td>Blink 86 (except iOS)
+        </td>
+        <td>8.6
+        </td>
+        <td>
+            <ul>
+                <li><b>File System Access API</b> now available in stable</li>
+                <li><b>Web HID</b> and the <b>Multi-Screen Window Placement API</b></li>
+                <li>New stuff in CSS</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>87.0.4280
+        </td>
+        <td>2020-11-17
+        </td>
+        <td>Blink 87 (except iOS)
+        </td>
+        <td>8.7
+        </td>
+        <td>
+            <ul>
+                <li><b>Chrome Dev Summit</b> came back on 2020-12-09<span style="font-size: 5px;"> </span>-<span
+                        style="font-size: 5px;"> </span>2020-12-10</li>
+                <li>Ability to control <b>pan, tilt, and zoom</b> on webcams that support it</li>
+                <li><b>Range requests</b> and service workers don't require as many workarounds</li>
+                <li>The <b>font access API</b> started it's origin trial</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>88.0.4324
+        </td>
+        <td>2021-01-19
+        </td>
+        <td>Blink 88 (except iOS)
+        </td>
+        <td>8.8
+        </td>
+        <td>
+            <ul>
+                <li>Removed Adobe Flash Player support due to its end of life on 2020-12-31 (Done in agreement with
+                    Adobe on 2021-01-12)</li>
+                <li>Ability to upload extensions using <b>Manifest V3</b> to the <a target="_blank"
+                        rel="nofollow noreferrer noopener" class="external text"
+                        href="https://chrome.google.com/webstore">Chrome Web Store</a></li>
+                <li>The <code>aspect-ratio</code> CSS property makes it easy to set the aspect ratio on any element</li>
+                <li>This version heavily throttled chained JavaScript timers for hidden pages in particular conditions
+                </li>
+                <li>Ability to use <b>Play Billing</b> in your Trusted Web Activity</li>
+                <li>All the videos from <b>Chrome Dev Summit</b> are up</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>89.0.4389
+        </td>
+        <td>2021-03-02
+        </td>
+        <td>Blink 89 (except iOS)
+        </td>
+        <td>8.9
+        </td>
+        <td>
+            <ul>
+                <li>WebHID, WebNFC, and Web Serial are now available</li>
+                <li>Closed a loophole a few developers used to skirt the PWA installability checks</li>
+                <li>The arrival of Web Share and Web Share Target</li>
+                <li>Chrome now allows top level await within JavaScript modules</li>
+                <li>Updated icon shown in the omnibox for installable PWAs</li>
+                <li>Allowed users to sign up for the Digital Goods API origin trial if they have used a Trusted Web
+                    Activity to make their PWA available in the Play Store for Chrome</li>
+                <li>Removal of legacy prefixed events (webkitprerenderstart, webkitprerenderstop, webkitprerenderload,
+                    and webkitprerenderdomcontentloaded) dispatched on &lt;link rel="prerender"&gt;</li>
+                <li>Stopped cloning sessionStorage for windows opended with noopener number</li>
+                <li>Dropped support for older x86 processors that don't support SSE3</li>
+                <li>Android Version:
+                    <ul>
+                        <li>Stability and performance improvements</li>
+                    </ul>
+                </li>
+                <li>iOS Version:
+                    <ul>
+                        <li>Chrome 89 has been skipped over due to many Google products not updating on iOS since
+                            November 2020.</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>90.0.4430
+        </td>
+        <td>2021-04-13 (Android)<br>
+            <p>2021-04-14 (Linux, macOS, and Windows)<br>
+                2021-05-10 (iOS)
+            </p>
+        </td>
+        <td>Blink 90 (except iOS)
+        </td>
+        <td>9.0
+        </td>
+        <td>
+            <ul>
+                <li>Ability to prevent <b>overflow</b> with <code>overflow: clip;</code> in CSS</li>
+                <li>The Feature Policy API (introduced in version 74) has been renamed to <b>Permissions Policy</b></li>
+                <li>New way to implement and use <b>Shadow DOM</b> directly in HTML</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>91.0.4472
+        </td>
+        <td>2021-05-25 (Android, Linux, macOS, and Windows)<br>
+            <p>2021-06-03 (iOS)
+            </p>
+        </td>
+        <td>Blink 91 (except iOS)
+        </td>
+        <td>9.1
+        </td>
+        <td>
+            <ul>
+                <li>Web apps that interact with files, can now suggest file names and directories when using the <b>File
+                        System Access API</b></li>
+                <li>Ability to read files from the clipboard</li>
+                <li>If your site has more than one domain, and they share the same account management backend, you can
+                    tell Chrome they're the same, allowing the password manager to suggest the right credentials</li>
+                <li>All the videos from I/O are available on the <a target="_blank" rel="nofollow noreferrer noopener"
+                        class="external text" href="https://youtube.com/@ChromeDevs">Chrome Developers YouTube
+                        Channel</a></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>92.0.4515
+        </td>
+        <td>2021-07-20
+        </td>
+        <td>Blink 92 (except iOS)
+        </td>
+        <td>9.2
+        </td>
+        <td>
+            <ul>
+                <li>Removal of payment handlers for standardized payment method identifiers</li>
+                <li>Android Version:
+                    <ul>
+                        <li>Stability and performance improvements</li>
+                    </ul>
+                </li>
+                <li>IOS Version:
+                    <ul>
+                        <li>Users can take a screenshot of the whole webpage, then look for the "Full Page" option at
+                            the top of the screenshot editor</li>
+                        <li>Users can add more security to their Incognito tabs with Touch ID, Face ID, or a Passcode
+                        </li>
+                        <li>New Discover design on the New Tab Page makes exploring interests easier</li>
+                        <li>The ability to ask for confirmation if users want to close all tabs from the Tab Switcher
+                        </li>
+                        <li>Users can share, bookmark, and add individual tabs to their reading list from the Tab
+                            Switcher</li>
+                        <li>Stability and performance improvements</li>
+                        <li>Final version for iOS 12</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>93.0.4577
+        </td>
+        <td>2021-08-31
+        </td>
+        <td>Blink 93 (except iOS)
+        </td>
+        <td>9.3
+        </td>
+        <td>
+            <ul>
+                <li>Ability to load CSS style sheets with <b><code>import</code> statements</b>, just like JavaScript
+                    modules</li>
+                <li>Installed PWAs can register as <b>URL handlers</b>, making it possible for users to jump straight
+                    into your PWA</li>
+                <li>The <b>Multi-Screen Window Placement API</b> has been updated based on people's feedback, and
+                    started a second origin trial</li>
+                <li>The PWA Summit came up 2021-10-06<span style="font-size: 5px;"> </span>-<span
+                        style="font-size: 5px;"> </span> 2021-10-07</li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+</tbody>
