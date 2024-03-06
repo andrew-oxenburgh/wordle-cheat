@@ -32,3 +32,8 @@ push repo
 
 deploy to firebase
  - `firebase emulators:start --only hosting,functions`
+
+
+## March 1, 2024
+
+installed react-grid-dnd with --legacy-peer-deps
