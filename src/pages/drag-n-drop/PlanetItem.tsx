@@ -15,7 +15,6 @@ const PlanetItem = ({ item, itemSelected, dragHandleProps }: { item: any; itemSe
             className="dragHandle"
             {...dragHandleProps}
             style={{
-                overscrollBehavior: 'none',
                 transform: `scale(${scale})`,
                 boxShadow: `rgba(0, 0, 0, 0.3) 0px ${shadow}px ${2 * shadow}px 0px`,
             }}

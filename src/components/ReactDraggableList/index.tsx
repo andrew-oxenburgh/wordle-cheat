@@ -667,12 +667,10 @@ export default class DraggableList<
     return (
       <div style={{
         position: 'relative',
-        overscrollBehavior: 'none',
       }} ref={this._listRef}>
         <Motion
           style={{
             adjustScroll, anySelected,
-            // ...{ overscrollBehavior: 'none' },
           }}
           onRest={() => {
             if (!dragging) {

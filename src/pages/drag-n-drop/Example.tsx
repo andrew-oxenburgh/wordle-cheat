@@ -37,9 +37,6 @@ const Example = () => {
 
     return (
         <div className="main"
-            style={{
-                overscrollBehavior: 'none',
-            }}
         >
             <div className="intro">
                 <div>
