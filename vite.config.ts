@@ -4,8 +4,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
-import removeConsole from 'vite-plugin-remove-console'
-import { splitVendorChunkPlugin } from 'vite'
+// import removeConsole from 'vite-plugin-remove-console'
 import BannerInjection from 'vite-plugin-banner-injection'
 import { banner, footer } from './src/config/banners'
 
@@ -63,19 +62,18 @@ const config = ({ mode }: { mode: string }) => {
                 footer,
             }),
 
-            removeConsole(),
-            splitVendorChunkPlugin(),
+            // removeConsole(),
         ],
         server: {
             // port: 5000,
         },
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    // additionalData: `@import "./src/config/mvp-override.scss";`
-                },
-            },
-        },
+        // css: {
+        //     preprocessorOptions: {
+        //         scss: {
+        //             // additionalData: `@import "./src/config/mvp-override.scss";`
+        //         },
+        //     },
+        // },
         resolve: {
             alias: [
                 { find: '#/', replacement: path.resolve(__dirname, 'src') },

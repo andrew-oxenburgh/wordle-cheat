@@ -5,11 +5,12 @@ import Example from './Example'
 
 const DragNDropWrapper: React.FC = () => {
     return (
-        <>
+        <div
+        >
             <PageBody name="drag-n-drop">
-                <Example/>
+                <Example />
             </PageBody >
-        </>
+        </div>
     )
 }
 

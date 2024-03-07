@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const PlanetItem = ({item, itemSelected, dragHandleProps}:{ item: any; itemSelected?: any; dragHandleProps?: any }) => {
+const PlanetItem = ({ item, itemSelected, dragHandleProps }: { item: any; itemSelected?: any; dragHandleProps?: any }) => {
     // console.log(item)
     const [value, setValue] = useState(0)
     const _inc = () => {
@@ -15,6 +15,7 @@ const PlanetItem = ({item, itemSelected, dragHandleProps}:{ item: any; itemSelec
             className="dragHandle"
             {...dragHandleProps}
             style={{
+                overscrollBehavior: 'none',
                 transform: `scale(${scale})`,
                 boxShadow: `rgba(0, 0, 0, 0.3) 0px ${shadow}px ${2 * shadow}px 0px`,
             }}
@@ -22,7 +23,7 @@ const PlanetItem = ({item, itemSelected, dragHandleProps}:{ item: any; itemSelec
             <h2>{item.name}</h2>
             {item.subtitle && (
                 <div className="subtitle">
-            This item has a subtitle visible while dragging
+                    This item has a subtitle visible while dragging
                 </div>
             )}
             <div>

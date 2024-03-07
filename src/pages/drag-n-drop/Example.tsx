@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 
-import DraggableList from 'react-draggable-list'
-import PlanetItem  from './PlanetItem'
+import DraggableList from '#/components/ReactDraggableList'
+import PlanetItem from './PlanetItem'
 import { PlanetListItem } from './example-types'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 const Example = () => {
-    const _containerRef = useRef()
     const [container, setContainer] = useState(false)
     const [list, setList] = useState([
         { name: 'Mercury' },
@@ -19,20 +18,17 @@ const Example = () => {
         { name: 'Neptune' },
     ]
     )
-
-    // private _container = React.createRef<HTMLDivElement>()
-
     const _togglePluto = () => {
         const noPluto = list.filter((item) => item.name !== 'Venus')
         if (noPluto.length !== list.length) {
-            setList(noPluto )
+            setList(noPluto)
         } else {
-            setList([{ name: 'Venus' }].concat(list) )
+            setList([{ name: 'Venus' }].concat(list))
         }
     }
 
     const _toggleContainer = () => {
-        setContainer(!container )
+        setContainer(!container)
     }
 
     const _onListChange = (newList: readonly PlanetListItem[]) => {
@@ -40,7 +36,11 @@ const Example = () => {
     }
 
     return (
-        <div className="main">
+        <div className="main"
+            style={{
+                overscrollBehavior: 'none',
+            }}
+        >
             <div className="intro">
                 <div>
                     <input
@@ -58,20 +58,11 @@ const Example = () => {
                 </div>
             </div>
             <DraggableList
-                style={
-                    {
-                        display: 'grid',
-                        'grid-template-columns': '1fr 2fr',
-                        gap: '10px',
-                        background: 'red',
-                        margin: '2em',
-                    }
-                }
                 itemKey="name"
                 template={PlanetItem}
                 list={list}
-                onDragStart={() => console.log('drag start')}
-                onDragEnd={() => console.log('drag end')}
+                // onDragStart={() => console.log('drag start')}
+                // onDragEnd={() => console.log('drag end')}
                 onMoveEnd={(newList) => _onListChange(newList as readonly PlanetListItem[])}
             />
             <footer>Footer here.</footer>

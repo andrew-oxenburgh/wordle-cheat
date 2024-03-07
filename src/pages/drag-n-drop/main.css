@@ -17,6 +17,7 @@ footer {
   padding-left: 20px;
   background: white;
   max-height: 100%;
+  overscroll-behavior: none;
 }
 
 .item .dragHandle {
