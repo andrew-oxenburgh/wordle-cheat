@@ -107,9 +107,5 @@
     "vite-plugin-remove-console": "^2.2.0",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.2.2"
-  },
-  "dependencies": {
-    "react-draggable-list": "^4.2.0",
-    "react-motion": "^0.5.2"
   }
 }
