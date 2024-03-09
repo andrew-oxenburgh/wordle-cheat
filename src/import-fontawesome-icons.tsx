@@ -17,6 +17,7 @@ import {
     faFilm,
     faIcons,
     faMessage,
+    faTrash,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -36,5 +37,7 @@ library.add(
     faHome,
     faFilm,
     faIcons,
-    faMessage
+    faMessage,
+    faTrash,
+
 )

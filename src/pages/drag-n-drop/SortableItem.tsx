@@ -4,7 +4,7 @@ import { useSortable } from '@dnd-kit/sortable'
 export const SortableItem = (props: any) => {
     const {
         attributes, listeners, setNodeRef, transform, transition,
-    } = useSortable({ id: props.id })
+    } = useSortable({ id: props.data.id })
 
     const style = {
         transform: CSS.Transform.toString(transform as Transform),
@@ -15,7 +15,11 @@ export const SortableItem = (props: any) => {
 
     return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            {props.id} {props.data}
+            {props.data.id}
+            <br />
+            {props.data.text}
+            <br />
+            {props.delete ? 'delete' : ''}
         </div>
     )
 }
