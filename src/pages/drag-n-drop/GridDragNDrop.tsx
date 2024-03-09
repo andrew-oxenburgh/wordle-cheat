@@ -26,6 +26,7 @@ type Item = {
     text: string
     hide?: boolean
     deleting?: boolean
+    img?: string
 }
 
 const _items: Item[] = [
@@ -50,21 +51,22 @@ const _items: Item[] = [
         text: 'four',
         hide: false,
     },
-    {
-        id: 5,
-        text: 'five',
-        hide: false,
-    },
-    {
-        id: 6,
-        text: 'six',
-        hide: false,
-    },
+    // {
+    //     id: 5,
+    //     text: 'five',
+    //     hide: false,
+    // },
+    // {
+    //     id: 6,
+    //     text: 'six',
+    //     hide: false,
+    // },
 ]
 
 export const GridDragNDrop = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
+    const [cnt, setCnt] = useState(100)
     const [deletable, setDeletable] = useState<UniqueIdentifier>('-1')
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -74,8 +76,9 @@ export const GridDragNDrop = () => {
     )
 
     useEffect(() => {
-        console.log(items)
-    }, [items])
+        console.log('effect', items.length)
+        console.log('effect cnt', cnt)
+    }, [items, cnt])
 
     const findIemById = (id: UniqueIdentifier): number => {
         return R.find((v: any) => (v.id === id), items)
@@ -122,9 +125,25 @@ export const GridDragNDrop = () => {
         width: '25em',
     }
 
+    const saveImage = (img: string): void => {
+        console.log('saveImage')
+        if (items.length < 6) {
+            const newItems: Item[] = R.concat(items, [{
+                id: cnt,
+                text: 'XXXXXXXXXXXXXX',
+                img,
+            }])
+            console.log('cnt', cnt)
+            console.log('new item cnt = ' + items.length)
+            console.log('item cnt = ' + newItems.length)
+            setItems(...[newItems])
+            setCnt(cnt + 1)
+        }
+    }
+
     return (
         <>
-            <Button onClick={() => { }}>reset</Button>
+            <Button onClick={() => setItems(_items)}>reset</Button>
 
             <DndContext
                 sensors={sensors}
@@ -158,7 +177,11 @@ export const GridDragNDrop = () => {
                                 style={itemStyle}
                                 key={'camera'}
                                 id={'camera'}
-                                data={{ id: 'camera' }}
+                                data={{
+                                    id: 'camera',
+                                    saveImage,
+
+                                }}
                             />
                             }
                         </div>
