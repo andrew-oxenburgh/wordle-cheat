@@ -7,7 +7,6 @@ import {
     PointerSensor,
     useSensor,
     useSensors,
-    useDroppable,
     DragStartEvent,
     DragEndEvent,
     UniqueIdentifier,
@@ -19,34 +18,8 @@ import {
 } from '@dnd-kit/sortable'
 
 import { SortableItem } from './SortableItem'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash as icon } from '@fortawesome/free-solid-svg-icons/faTrash'
-
-const Bin = (props: any) => {
-    const { isOver, setNodeRef } = useDroppable({
-        id: 'droppable',
-    })
-    const style = {
-        color: isOver ? 'green' : undefined,
-        background: isOver ? 'red' : undefined,
-        position: 'absolute',
-        top: '50%',
-        right: '0',
-        transform: 'translate(-50 %, -50 %)',
-        fontSize: '300%',
-    }
-
-    if (props.show) {
-        return (
-            <div ref={setNodeRef} style={style}>
-                <span>
-                    <FontAwesomeIcon icon={icon} />
-                </span>
-            </div>
-        )
-    }
-    return ''
-}
+import { Bin } from './Bin'
+import Button from 'react-bootstrap/esm/Button'
 
 type Item = {
     id: number
@@ -150,37 +123,49 @@ export const GridDragNDrop = () => {
     }
 
     return (
-        <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
-            onDragEnd={handleDragEnd}
-            onDragStart={() => { setDragging(true) }}
-        >
-            <div style={context}>
-                <SortableContext
-                    items={items}
-                // strategy={verticalListSortingStrategy}
-                >
-                    <div style={container}>
-                        {items?.length && items.map(
-                            (item: any) => {
-                                if (!item) {
-                                    return ''
-                                }
+        <>
+            <Button onClick={() => { }}>reset</Button>
 
-                                return (<SortableItem
-                                    delete={item.id === deletable}
-                                    style={itemStyle}
-                                    key={item.id}
-                                    id={item.id}
-                                    data={item}
-                                />)
-                            })
-                        }
-                    </div>
-                </SortableContext>
-                <Bin show={dragging} />
-            </div>
-        </DndContext>
+            <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
+                onDragStart={() => { setDragging(true) }}
+            >
+                <div style={context}>
+                    <SortableContext
+                        items={items}
+                    // strategy={verticalListSortingStrategy}
+                    >
+                        <div style={container}>
+                            {items?.length && items.map(
+                                (item: any) => {
+                                    if (!item) {
+                                        return ''
+                                    }
+
+                                    return (<SortableItem
+                                        delete={item.id === deletable}
+                                        style={itemStyle}
+                                        key={item.id}
+                                        id={item.id}
+                                        data={item}
+                                    />)
+                                })
+                            }
+                            {(items.length < 6) && <SortableItem
+                                delete={false}
+                                style={itemStyle}
+                                key={'camera'}
+                                id={'camera'}
+                                data={{ id: 'camera' }}
+                            />
+                            }
+                        </div>
+                    </SortableContext>
+                    <Bin show={dragging} />
+                </div>
+            </DndContext>
+        </>
     )
 }
