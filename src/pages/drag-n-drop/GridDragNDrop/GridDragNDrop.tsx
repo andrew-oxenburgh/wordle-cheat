@@ -4,22 +4,16 @@ import useMobileDetect from '@groupher/use-mobile-detect-hook'
 
 import {
     DndContext,
-    closestCorners,
-    closestCenter,
-    rectIntersection,
-    KeyboardSensor,
     TouchSensor,
     PointerSensor,
     useSensor,
     useSensors,
     DragEndEvent,
     UniqueIdentifier,
-    MeasuringStrategy,
 } from '@dnd-kit/core'
 import {
     arrayMove,
     SortableContext,
-    sortableKeyboardCoordinates,
 } from '@dnd-kit/sortable'
 
 import { SortableItem } from './SortableItem'
@@ -27,6 +21,7 @@ import { Bin } from './Bin'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { createUseStyles } from 'react-jss'
+import { customCollisionDetectionAlgorithm } from './customCollisionDetectionAlgorithm'
 
 type Item = {
     id: number
@@ -81,36 +76,6 @@ const useStyles = createUseStyles({
     },
 })
 
-const measuringConfig = {
-    droppable: {
-        strategy: MeasuringStrategy.Always,
-    },
-}
-
-
-const customCollisionDetectionAlgorithm = ({
-    droppableContainers,
-    ...args
-}) => {
-    // First, let's see if the `trash` droppable rect is intersecting
-    const rectIntersectionCollisions = rectIntersection({
-        ...args,
-        droppableContainers: droppableContainers.filter(({ id }): boolean => id === 'deleteable'),
-    })
-
-    // Collision detection algorithms return an array of collisions
-    if (rectIntersectionCollisions.length > 0) {
-        // The trash is intersecting, return early
-        return rectIntersectionCollisions
-    }
-
-    // Compute other collisions
-    return closestCorners({
-        ...args,
-        droppableContainers: droppableContainers.filter(({ id }) => id !== 'deleteable'),
-    })
-}
-
 export const GridDragNDrop = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
@@ -142,7 +107,7 @@ export const GridDragNDrop = () => {
         } else if (active.id !== over?.id) {
             setItems((i: Item[]) => {
                 const oldIndex = findIemIndexById(active.id)
-                const newIndex = findIemIndexById((over?.id))
+                const newIndex = findIemIndexById((over?.id || -1))
                 return arrayMove(i, oldIndex, newIndex)
             })
         }
@@ -199,7 +164,7 @@ export const GridDragNDrop = () => {
                     >
                         <div className={classes.container}>
                             {items && items.map(
-                                (item: any) => {
+                                (item: Item) => {
                                     return (<SortableItem
                                         delete={item.id === deletable}
                                         style={itemStyle}

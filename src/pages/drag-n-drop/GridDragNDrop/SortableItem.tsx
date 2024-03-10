@@ -1,6 +1,6 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { CSS, Transform } from '@dnd-kit/utilities'
-import { useSortable, defaultAnimateLayoutChanges, AnimateLayoutChanges } from '@dnd-kit/sortable'
+import { useSortable, defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
 import { faTimes as cross } from '@fortawesome/free-solid-svg-icons/faTimes'
