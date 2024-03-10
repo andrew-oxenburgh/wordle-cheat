@@ -75,7 +75,6 @@ const Example = () => {
     )
 }
 
-
 const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     const location: Location = useLocation()
@@ -84,7 +83,7 @@ const Navigation = () => {
             <Navbar expanded={expanded} bg="light" style={navBarStyle}>
                 <Navbar.Brand href="#/">Sketches</Navbar.Brand>
                 <Example />
-
+                <Nav.Link href="/#/drag-n-drop"><i>be-spectacled</i></Nav.Link>
                 <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
                     <Nav onSelect={() => { setExpanded(false) }}>
