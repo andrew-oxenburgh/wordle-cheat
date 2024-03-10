@@ -12,6 +12,10 @@ const useStyles = createUseStyles({
         border: '1px orange solid',
         position: 'relative',
         padding: '0.5em',
+        minWidth: '33.33%',
+        maxWidth: '33.33%',
+        height: '50%',
+
     },
     ellipsis: {
         position: 'absolute',

@@ -18,7 +18,9 @@ import {
 
 import { SortableItem } from './SortableItem'
 import { Bin } from './Bin'
-import Button from 'react-bootstrap/esm/Button'
+import Button from 'react-bootstrap/Button'
+import Table from 'react-bootstrap/Table'
+import { createUseStyles } from 'react-jss'
 
 type Item = {
     id: number
@@ -62,6 +64,20 @@ const _items: Item[] = [
     // },
 ]
 
+const useStyles = createUseStyles({
+    context: {
+        position: 'absolute',
+        width: '25em',
+    },
+    container: {
+        width: '100%',
+        height: '15em',
+        display: 'flex',
+        border: 'green 7px dashed',
+        flexFlow: 'row wrap',
+    }
+})
+
 export const GridDragNDrop = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
@@ -88,7 +104,7 @@ export const GridDragNDrop = () => {
             const newItems: Item[] = R.remove(oldIndex, 1, items)
             setItems(...[newItems])
         } else if (active.id !== over?.id) {
-            setItems((i: Item) => {
+            setItems((i: Item[]) => {
                 const oldIndex = findIemIndexById(active.id)
                 const newIndex = findIemIndexById((over?.id))
                 return arrayMove(i, oldIndex, newIndex)
@@ -97,13 +113,13 @@ export const GridDragNDrop = () => {
         setDragging(false)
         setDeletable(-1)
     }
-    const container = {
-        width: '100%',
-        height: '15em',
-        display: 'flex',
-        border: 'green 7px dashed',
-        flexFlow: 'row wrap',
-    }
+    // const container = {
+    //     width: '100%',
+    //     height: '15em',
+    //     display: 'flex',
+    //     border: 'green 7px dashed',
+    //     flexFlow: 'row wrap',
+    // }
 
     const itemStyle = {
         minWidth: '33.33%',
@@ -111,10 +127,10 @@ export const GridDragNDrop = () => {
         height: '50%',
     }
 
-    const context = {
-        position: 'absolute',
-        width: '25em',
-    }
+    // const context = {
+    //     position: 'absolute',
+    //     width: '25em',
+    // }
 
     const appendImage = (item: Item) => {
         // console.log('appendImage item cnt = ' + items.length)
@@ -134,6 +150,9 @@ export const GridDragNDrop = () => {
         }
     }
 
+    const classes = useStyles()
+
+
     return (
         <>
             <Button onClick={() => setItems(_items)}>clear all</Button>
@@ -143,12 +162,11 @@ export const GridDragNDrop = () => {
                 onDragEnd={handleDragEnd}
                 onDragStart={() => { setDragging(true) }}
             >
-                <div style={context}>
+                <div className={classes.context}>
                     <SortableContext
                         items={items}
-                    // strategy={verticalListSortingStrategy}
                     >
-                        <div style={container}>
+                        <div className={classes.container}>
                             {items?.length && items.map(
                                 (item: any) => {
                                     if (!item) {
@@ -179,6 +197,36 @@ export const GridDragNDrop = () => {
                     <Bin show={dragging} />
                 </div>
             </DndContext>
+            {/* <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td colSpan={2}>Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </Table> */}
+
         </>
     )
 }

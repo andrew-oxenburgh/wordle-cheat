@@ -3,7 +3,7 @@
 import PageBody from '#/components/structural/PageBody'
 import { createUseStyles } from 'react-jss'
 import { SimpleDragNDrop } from './SimpleDragNDrop'
-import { GridDragNDrop } from './GridDragNDrop'
+import { GridDragNDrop } from './GridDragNDrop/GridDragNDrop'
 
 const useStyles = createUseStyles({
     demo: {
