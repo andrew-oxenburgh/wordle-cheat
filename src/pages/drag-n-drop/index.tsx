@@ -1,7 +1,6 @@
 // PAGE: drag-n-drop
 
 import PageBody from '#/components/structural/PageBody'
-import { DndContext } from '@dnd-kit/core'
 import { createUseStyles } from 'react-jss'
 import { SimpleDragNDrop } from './SimpleDragNDrop'
 import { GridDragNDrop } from './GridDragNDrop'

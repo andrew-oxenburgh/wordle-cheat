@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
 import Webcam from 'react-webcam'
 import Button from 'react-bootstrap/Button'
-import { useCallback, useRef } from 'react'
+import { useRef } from 'react'
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
         border: '1px dashed grey',
         borderRadius: '0.5em',
         padding: '0 0.5em',
+        background: 'white',
         '&:hover': {
             background: 'red',
         },
@@ -30,6 +31,12 @@ const useStyles = createUseStyles({
         top: 0,
         left: 0,
     },
+    captureButton: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+    },
 })
 export const SortableItem = (props: any) => {
     const {
@@ -37,19 +44,17 @@ export const SortableItem = (props: any) => {
     } = useSortable({ id: props.data.id })
 
     const webcamRef = useRef(null)
-    const capture = useCallback(
-        () => {
-            const imageSrc = webcamRef?.current?.getScreenshot()
-            // console.log(imageSrc)
-            props.data.saveImage(imageSrc)
-        },
-        [webcamRef]
-    )
+    const capture = () => {
+        const imageSrc = webcamRef?.current?.getScreenshot()
+        // console.log(imageSrc)
+        props.data.saveImage(imageSrc)
+    }
 
     const dynamicCardStyle = {
         transform: CSS.Transform.toString(transform as Transform),
         transition,
         ...(props.style ? props.style : {}),
+        position: 'relative',
     }
 
     const classes = useStyles()
@@ -57,27 +62,33 @@ export const SortableItem = (props: any) => {
     if (props.data.id === 'camera') {
         return (
             <div style={dynamicCardStyle} className={classes.card}>
-                CAMERA
-                {/* <Webcam
+                Camera
+                <Webcam
+                    style={{
+                        width: '100%',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                    }}
                     audio={false}
-                    height={300}
+                    // height={'100px'}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={300}
+                // width={'100em'}
                 // videoConstraints={{}}
-                /> */}
-                {/* <Button onClick={capture}> Capture photo</Button> */}
+                />
+                <Button className={classes.captureButton} onClick={capture}> Capture photo</Button>
             </div>
         )
     }
 
     return (
         <div style={dynamicCardStyle} className={classes.card}>
+            {props.data.img && <img className={classes.img} src={props.data.img} />}
             <span className={classes.ellipsis} ref={setNodeRef} {...attributes} {...listeners}>
                 <FontAwesomeIcon icon={icon} />
             </span>
             <h3>{props.data.id}</h3>
-            {props.data.img && <img className={classes.img} src={props.data.img} />}
         </div>
     )
 }

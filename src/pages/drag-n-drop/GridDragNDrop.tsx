@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import * as R from 'ramda'
 import {
     DndContext,
@@ -7,7 +7,6 @@ import {
     PointerSensor,
     useSensor,
     useSensors,
-    DragStartEvent,
     DragEndEvent,
     UniqueIdentifier,
 } from '@dnd-kit/core'
@@ -75,15 +74,6 @@ export const GridDragNDrop = () => {
         })
     )
 
-    useEffect(() => {
-        console.log('effect', items.length)
-        console.log('effect cnt', cnt)
-    }, [items, cnt])
-
-    const findIemById = (id: UniqueIdentifier): number => {
-        return R.find((v: any) => (v.id === id), items)
-    }
-
     const findIemIndexById = (id: UniqueIdentifier): number => {
         return R.findIndex((v: any) => (v.id === id), items)
     }
@@ -96,9 +86,9 @@ export const GridDragNDrop = () => {
             setDragging(true)
             const oldIndex = findIemIndexById(active.id)
             const newItems: Item[] = R.remove(oldIndex, 1, items)
-            setItems(newItems)
+            setItems(...[newItems])
         } else if (active.id !== over?.id) {
-            setItems((i: any) => {
+            setItems((i: Item) => {
                 const oldIndex = findIemIndexById(active.id)
                 const newIndex = findIemIndexById((over?.id))
                 return arrayMove(i, oldIndex, newIndex)
@@ -117,6 +107,7 @@ export const GridDragNDrop = () => {
 
     const itemStyle = {
         minWidth: '33.33%',
+        maxWidth: '33.33%',
         height: '50%',
     }
 
@@ -125,26 +116,27 @@ export const GridDragNDrop = () => {
         width: '25em',
     }
 
+    const appendImage = (item: Item) => {
+        // console.log('appendImage item cnt = ' + items.length)
+        const newItems: Item[] = R.concat(items, [item])
+        setItems(...[newItems])
+        setCnt(cnt + 1)
+
+    }
+
     const saveImage = (img: string): void => {
-        console.log('saveImage')
         if (items.length < 6) {
-            const newItems: Item[] = R.concat(items, [{
+            appendImage({
                 id: cnt,
                 text: 'XXXXXXXXXXXXXX',
                 img,
-            }])
-            console.log('cnt', cnt)
-            console.log('new item cnt = ' + items.length)
-            console.log('item cnt = ' + newItems.length)
-            setItems(...[newItems])
-            setCnt(cnt + 1)
+            })
         }
     }
 
     return (
         <>
-            <Button onClick={() => setItems(_items)}>reset</Button>
-
+            <Button onClick={() => setItems(_items)}>clear all</Button>
             <DndContext
                 sensors={sensors}
                 collisionDetection={closestCenter}
@@ -162,7 +154,6 @@ export const GridDragNDrop = () => {
                                     if (!item) {
                                         return ''
                                     }
-
                                     return (<SortableItem
                                         delete={item.id === deletable}
                                         style={itemStyle}
@@ -180,7 +171,6 @@ export const GridDragNDrop = () => {
                                 data={{
                                     id: 'camera',
                                     saveImage,
-
                                 }}
                             />
                             }
