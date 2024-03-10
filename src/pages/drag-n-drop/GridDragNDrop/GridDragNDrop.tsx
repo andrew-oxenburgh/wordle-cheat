@@ -65,17 +65,14 @@ const _items: Item[] = [
 ]
 
 const useStyles = createUseStyles({
-    context: {
-        position: 'absolute',
-        width: '25em',
-    },
     container: {
         width: '100%',
-        height: '15em',
+        maxWidth: '60em',
+        height: '30em',
         display: 'flex',
         border: 'green 7px dashed',
         flexFlow: 'row wrap',
-    }
+    },
 })
 
 export const GridDragNDrop = () => {
@@ -162,7 +159,7 @@ export const GridDragNDrop = () => {
                 onDragEnd={handleDragEnd}
                 onDragStart={() => { setDragging(true) }}
             >
-                <div className={classes.context}>
+                <div style={{ position: 'relative' }}>
                     <SortableContext
                         items={items}
                     >
