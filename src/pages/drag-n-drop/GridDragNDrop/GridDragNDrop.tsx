@@ -9,6 +9,7 @@ import {
     useSensors,
     DragEndEvent,
     UniqueIdentifier,
+    MeasuringStrategy,
 } from '@dnd-kit/core'
 import {
     arrayMove,
@@ -75,6 +76,12 @@ const useStyles = createUseStyles({
     },
 })
 
+const measuringConfig = {
+    droppable: {
+        strategy: MeasuringStrategy.Always,
+    }
+}
+
 export const GridDragNDrop = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
@@ -95,11 +102,8 @@ export const GridDragNDrop = () => {
         const { active, over } = event
 
         if (over?.id === 'droppable') {
-            setDeletable(active.id)
-            setDragging(true)
-            const oldIndex = findIemIndexById(active.id)
-            const newItems: Item[] = R.remove(oldIndex, 1, items)
-            setItems(...[newItems])
+            const newItems: Item[] = R.filter((i: Item) => { return i.id !== active.id }, items)
+            setItems(newItems)
         } else if (active.id !== over?.id) {
             setItems((i: Item[]) => {
                 const oldIndex = findIemIndexById(active.id)
@@ -107,8 +111,8 @@ export const GridDragNDrop = () => {
                 return arrayMove(i, oldIndex, newIndex)
             })
         }
-        setDragging(false)
-        setDeletable(-1)
+        // setDragging(false)
+        // setDeletable(-1)
     }
 
     const itemStyle = {
@@ -139,12 +143,19 @@ export const GridDragNDrop = () => {
         }
     }
 
+    const deleteMe = (id: number) => {
+        const newItems: Item[] = R.filter((i: Item) => { return i.id !== id }, items)
+        setItems(newItems)
+
+    }
+
     const classes = useStyles()
 
 
     return (
         <>
             <DndContext
+                measuring={measuringConfig}
                 sensors={sensors}
                 collisionDetection={closestCenter}
                 onDragEnd={handleDragEnd}
@@ -163,6 +174,7 @@ export const GridDragNDrop = () => {
                                         key={item.id}
                                         id={item.id}
                                         data={item}
+                                        deleteMe={() => deleteMe(item.id)}
                                     />)
                                 })
                             }
@@ -182,38 +194,45 @@ export const GridDragNDrop = () => {
                     <Bin show={dragging} />
                 </div>
             </DndContext>
-            <Button onClick={() => setItems(_items)}>clear all</Button>
+            <div>
+                <h3>About the grid</h3>
+                <Button variant="primary" style={{
+                    position: 'relative',
+                }} onClick={() => setItems(_items)}>reset grid for testing</Button>
 
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>txt</th>
-                        <th>img</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {items?.length && items.map(
-                        (item: any) => {
-                            if (!item) {
-                                return ''
-                            }
-                            return (
-                                <tr>
-                                    <td>{item.id}</td>
-                                    <td>{item.text}</td>
-                                    <td>
-                                        <img style={{
-                                            width: '100px',
-                                        }} src={item.img} />
-                                    </td>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>txt</th>
+                            <th>img</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {items?.length && items.map(
+                            (item: any) => {
+                                if (!item) {
+                                    return ''
+                                }
+                                return (
+                                    <tr key={item.id}>
+                                        <td>{item.id}</td>
+                                        <td>{item.text}</td>
+                                        <td>
+                                            <img style={{
+                                                width: '100px',
+                                            }} src={item.img} />
+                                        </td>
 
-                                </tr>
-                            )
-                        })
-                    }
-                </tbody>
-            </Table>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </div>
+
+
 
         </>
     )

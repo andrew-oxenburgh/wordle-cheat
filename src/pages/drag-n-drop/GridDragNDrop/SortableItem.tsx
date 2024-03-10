@@ -1,11 +1,40 @@
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { CSS, Transform } from '@dnd-kit/utilities'
-import { useSortable } from '@dnd-kit/sortable'
+import { useSortable, defaultAnimateLayoutChanges, AnimateLayoutChanges } from '@dnd-kit/sortable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
+import { faTimes as cross } from '@fortawesome/free-solid-svg-icons/faTimes'
 import Webcam from 'react-webcam'
 import Button from 'react-bootstrap/Button'
 import { useRef } from 'react'
 import { createUseStyles } from 'react-jss'
+import { Active, UniqueIdentifier } from '@dnd-kit/core'
+import { SortableTransition } from '@dnd-kit/sortable/dist/hooks/types'
+
+type LayoutChanges = {
+    active: Active | null
+    containerId: UniqueIdentifier
+    isDragging: boolean
+    isSorting: boolean
+    id: UniqueIdentifier
+    index: number
+    items: UniqueIdentifier[]
+    previousItems: UniqueIdentifier[]
+    previousContainerId: UniqueIdentifier
+    newIndex: number
+    transition: SortableTransition | null
+    wasDragging: boolean
+
+}
+function animateLayoutChanges(args: LayoutChanges) {
+    const { isSorting, wasDragging } = args
+
+    if (isSorting || wasDragging) {
+        return defaultAnimateLayoutChanges(args)
+    }
+
+    return true
+}
 
 const useStyles = createUseStyles({
     card: {
@@ -15,7 +44,6 @@ const useStyles = createUseStyles({
         minWidth: '33.33%',
         maxWidth: '33.33%',
         height: '50%',
-
     },
     ellipsis: {
         position: 'absolute',
@@ -29,7 +57,7 @@ const useStyles = createUseStyles({
         },
     },
     img: {
-        // width: '90%',
+        width: '100%',
         // height: '90%',
         position: 'absolute',
         top: 0,
@@ -44,8 +72,19 @@ const useStyles = createUseStyles({
 })
 export const SortableItem = (props: any) => {
     const {
-        attributes, listeners, setNodeRef, transform, transition,
-    } = useSortable({ id: props.data.id })
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({
+        animateLayoutChanges,
+        id: props.data.id,
+        transition: {
+            duration: 1000, // milliseconds
+            easing: 'ease-out',
+        },
+    })
 
     const webcamRef = useRef(null)
     const capture = () => {
@@ -53,6 +92,8 @@ export const SortableItem = (props: any) => {
         // console.log(imageSrc)
         props.data.saveImage(imageSrc)
     }
+
+    // console.log(CSS.Transform.toString(transform as Transform))
 
     const dynamicCardStyle = {
         transform: CSS.Transform.toString(transform as Transform),
@@ -93,6 +134,11 @@ export const SortableItem = (props: any) => {
                 <h3>{props.data.id}</h3>
                 <FontAwesomeIcon icon={icon} />
             </span>
+            <Button style={{
+                position: 'absolute',
+            }} onClick={() => props.deleteMe()}>
+                <FontAwesomeIcon icon={cross} />
+            </Button>
         </div>
     )
 }
