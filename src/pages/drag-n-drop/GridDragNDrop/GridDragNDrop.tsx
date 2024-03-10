@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import * as R from 'ramda'
+import useMobileDetect from '@groupher/use-mobile-detect-hook'
+
 import {
     DndContext,
+    closestCorners,
     closestCenter,
+    rectIntersection,
     KeyboardSensor,
+    TouchSensor,
     PointerSensor,
     useSensor,
     useSensors,
@@ -79,7 +84,31 @@ const useStyles = createUseStyles({
 const measuringConfig = {
     droppable: {
         strategy: MeasuringStrategy.Always,
+    },
+}
+
+
+const customCollisionDetectionAlgorithm = ({
+    droppableContainers,
+    ...args
+}) => {
+    // First, let's see if the `trash` droppable rect is intersecting
+    const rectIntersectionCollisions = rectIntersection({
+        ...args,
+        droppableContainers: droppableContainers.filter(({ id }): boolean => id === 'deleteable'),
+    })
+
+    // Collision detection algorithms return an array of collisions
+    if (rectIntersectionCollisions.length > 0) {
+        // The trash is intersecting, return early
+        return rectIntersectionCollisions
     }
+
+    // Compute other collisions
+    return closestCorners({
+        ...args,
+        droppableContainers: droppableContainers.filter(({ id }) => id !== 'deleteable'),
+    })
 }
 
 export const GridDragNDrop = () => {
@@ -87,12 +116,16 @@ export const GridDragNDrop = () => {
     const [dragging, setDragging] = useState(false)
     const [cnt, setCnt] = useState(100)
     const [deletable, setDeletable] = useState<UniqueIdentifier>('-1')
+
+    const detectDeviceType = useMobileDetect()
+
+    const sensor = detectDeviceType.isMobile ? TouchSensor : PointerSensor
+
+
     const sensors = useSensors(
-        useSensor(PointerSensor),
-        useSensor(KeyboardSensor, {
-            coordinateGetter: sortableKeyboardCoordinates,
-        })
+        useSensor(sensor)
     )
+
 
     const findIemIndexById = (id: UniqueIdentifier): number => {
         return R.findIndex((v: any) => (v.id === id), items)
@@ -101,7 +134,9 @@ export const GridDragNDrop = () => {
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event
 
-        if (over?.id === 'droppable') {
+        if (over?.id === 'deleteable') {
+            setDragging(true)
+            setDeletable(active.id)
             const newItems: Item[] = R.filter((i: Item) => { return i.id !== active.id }, items)
             setItems(newItems)
         } else if (active.id !== over?.id) {
@@ -111,8 +146,8 @@ export const GridDragNDrop = () => {
                 return arrayMove(i, oldIndex, newIndex)
             })
         }
-        // setDragging(false)
-        // setDeletable(-1)
+        setDragging(false)
+        setDeletable(-1)
     }
 
     const itemStyle = {
@@ -146,18 +181,15 @@ export const GridDragNDrop = () => {
     const deleteMe = (id: number) => {
         const newItems: Item[] = R.filter((i: Item) => { return i.id !== id }, items)
         setItems(newItems)
-
     }
 
     const classes = useStyles()
-
-
     return (
         <>
             <DndContext
-                measuring={measuringConfig}
+                // measuring={measuringConfig}
                 sensors={sensors}
-                collisionDetection={closestCenter}
+                collisionDetection={customCollisionDetectionAlgorithm}
                 onDragEnd={handleDragEnd}
                 onDragStart={() => { setDragging(true) }}
             >
@@ -199,6 +231,7 @@ export const GridDragNDrop = () => {
                 <Button variant="primary" style={{
                     position: 'relative',
                 }} onClick={() => setItems(_items)}>reset grid for testing</Button>
+                <p>devices = {JSON.stringify(detectDeviceType)}</p>
 
                 <Table striped bordered hover>
                     <thead>
@@ -223,7 +256,6 @@ export const GridDragNDrop = () => {
                                                 width: '100px',
                                             }} src={item.img} />
                                         </td>
-
                                     </tr>
                                 )
                             })
@@ -231,9 +263,6 @@ export const GridDragNDrop = () => {
                     </tbody>
                 </Table>
             </div>
-
-
-
         </>
     )
 }

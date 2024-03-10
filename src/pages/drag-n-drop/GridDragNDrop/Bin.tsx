@@ -14,18 +14,18 @@ const useStyles = createUseStyles({
 
 export const Bin = (props: any) => {
     const { isOver, setNodeRef } = useDroppable({
-        id: 'droppable',
+        id: 'deleteable',
     })
     const classes = useStyles()
     if (props.show) {
         return (
-            <div ref={setNodeRef} className={classes.bin}
+            <div className={classes.bin}
                 style={{
                     color: isOver ? 'green' : undefined,
                     background: isOver ? 'red' : undefined,
                 }}
             >
-                <span>
+                <span ref={setNodeRef} >
                     <FontAwesomeIcon icon={icon} />
                 </span>
             </div>

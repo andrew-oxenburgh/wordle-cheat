@@ -4,6 +4,7 @@ import { useSortable, defaultAnimateLayoutChanges, AnimateLayoutChanges } from '
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
 import { faTimes as cross } from '@fortawesome/free-solid-svg-icons/faTimes'
+import { faCamera as camera } from '@fortawesome/free-solid-svg-icons/faCamera'
 import Webcam from 'react-webcam'
 import Button from 'react-bootstrap/Button'
 import { useRef } from 'react'
@@ -65,9 +66,9 @@ const useStyles = createUseStyles({
     },
     captureButton: {
         position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '100%',
+        bottom: '50%',
+        left: '50%',
+        // width: '100%',
     },
 })
 export const SortableItem = (props: any) => {
@@ -122,7 +123,9 @@ export const SortableItem = (props: any) => {
                 // width={'100em'}
                 // videoConstraints={{}}
                 />
-                <Button className={classes.captureButton} onClick={capture}> Capture photo</Button>
+                <Button className={classes.captureButton} onClick={capture}>
+                    <FontAwesomeIcon icon={camera} />
+                </Button>
             </div>
         )
     }
@@ -136,6 +139,14 @@ export const SortableItem = (props: any) => {
             </span>
             <Button style={{
                 position: 'absolute',
+                background: 'red',
+                borderRadius: '2em',
+                fontSize: '125%',
+                color: 'white',
+                fontWeight: 'bold',
+                padding: '3px 8px',
+                opacity: '50%',
+                border: '3px solid white',
             }} onClick={() => props.deleteMe()}>
                 <FontAwesomeIcon icon={cross} />
             </Button>
