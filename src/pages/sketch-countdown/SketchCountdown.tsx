@@ -5,7 +5,7 @@ import CompareSketchWithImage from '#/components/CompareSketchWithImage'
 import imgUrl from './sketch-countdown.png?inline'
 import tpUrl from './toilet-paper.webp?inline'
 import butterUrl from './butter.webp?inline'
-import Stack from 'react-bootstrap/esm/Stack'
+import Stack from 'react-bootstrap/Stack'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage as messageIcon } from '@fortawesome/free-solid-svg-icons/faMessage'
 

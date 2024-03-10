@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss'
 import { GameCell } from './GameCell'
 import * as config from './config'
-import Container from 'react-bootstrap/esm/Container'
+import Container from 'react-bootstrap/Container'
 import { dragColor } from '.'
 import { effect } from '@preact/signals-react'
 
@@ -17,7 +17,7 @@ export const useStyles = createUseStyles({
     },
 })
 
-export const GameBoard = ({ id = '', width=(config.width) }) => {
+export const GameBoard = ({ id = '', width = (config.width) }) => {
     const classes = useStyles()
     effect(() => { })
     return (<Container id={id} className={classes.grid}
@@ -29,7 +29,7 @@ export const GameBoard = ({ id = '', width=(config.width) }) => {
         }}
     >
         {
-            Array(width*width).fill(null).map((_, index) => (
+            Array(width * width).fill(null).map((_, index) => (
                 <GameCell key={index} _color={'white'} />
             ))
         }

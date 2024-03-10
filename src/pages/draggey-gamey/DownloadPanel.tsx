@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import Stack from 'react-bootstrap/esm/Stack'
+import Stack from 'react-bootstrap/Stack'
 import { ButtonWithTooltip } from '#/components/ButtonWithTooltip'
 import { downloadIt } from './config'
 
