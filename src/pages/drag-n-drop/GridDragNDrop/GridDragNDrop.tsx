@@ -110,13 +110,6 @@ export const GridDragNDrop = () => {
         setDragging(false)
         setDeletable(-1)
     }
-    // const container = {
-    //     width: '100%',
-    //     height: '15em',
-    //     display: 'flex',
-    //     border: 'green 7px dashed',
-    //     flexFlow: 'row wrap',
-    // }
 
     const itemStyle = {
         minWidth: '33.33%',
@@ -134,7 +127,6 @@ export const GridDragNDrop = () => {
         const newItems: Item[] = R.concat(items, [item])
         setItems(...[newItems])
         setCnt(cnt + 1)
-
     }
 
     const saveImage = (img: string): void => {
@@ -152,7 +144,6 @@ export const GridDragNDrop = () => {
 
     return (
         <>
-            <Button onClick={() => setItems(_items)}>clear all</Button>
             <DndContext
                 sensors={sensors}
                 collisionDetection={closestCenter}
@@ -164,11 +155,8 @@ export const GridDragNDrop = () => {
                         items={items}
                     >
                         <div className={classes.container}>
-                            {items?.length && items.map(
+                            {items && items.map(
                                 (item: any) => {
-                                    if (!item) {
-                                        return ''
-                                    }
                                     return (<SortableItem
                                         delete={item.id === deletable}
                                         style={itemStyle}
@@ -194,35 +182,38 @@ export const GridDragNDrop = () => {
                     <Bin show={dragging} />
                 </div>
             </DndContext>
-            {/* <Table striped bordered hover>
+            <Button onClick={() => setItems(_items)}>clear all</Button>
+
+            <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>id</th>
+                        <th>txt</th>
+                        <th>img</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan={2}>Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    {items?.length && items.map(
+                        (item: any) => {
+                            if (!item) {
+                                return ''
+                            }
+                            return (
+                                <tr>
+                                    <td>{item.id}</td>
+                                    <td>{item.text}</td>
+                                    <td>
+                                        <img style={{
+                                            width: '100px',
+                                        }} src={item.img} />
+                                    </td>
+
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
-            </Table> */}
+            </Table>
 
         </>
     )

@@ -17,9 +17,9 @@ const DragNDropWrapper: React.FC = () => {
     return (
         <div>
             <PageBody name="drag-n-drop">
-                <div className={classes.demo}>
+                {/* <div className={classes.demo}>
                     <SimpleDragNDrop />
-                </div>
+                </div> */}
                 <div className={classes.demo}>
                     <GridDragNDrop />
                 </div>

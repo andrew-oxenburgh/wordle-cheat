@@ -29,8 +29,8 @@ const useStyles = createUseStyles({
         },
     },
     img: {
-        width: '90%',
-        height: '90%',
+        // width: '90%',
+        // height: '90%',
         position: 'absolute',
         top: 0,
         left: 0,
@@ -90,9 +90,9 @@ export const SortableItem = (props: any) => {
         <div style={dynamicCardStyle} className={classes.card}>
             {props.data.img && <img className={classes.img} src={props.data.img} />}
             <span className={classes.ellipsis} ref={setNodeRef} {...attributes} {...listeners}>
+                <h3>{props.data.id}</h3>
                 <FontAwesomeIcon icon={icon} />
             </span>
-            <h3>{props.data.id}</h3>
         </div>
     )
 }
