@@ -15,6 +15,7 @@ interface InfoThingProps {
  * shown in a drop down Overlay
  */
 const InfoThing: React.FC<InfoThingProps> = ({ children = '', height, show = false, onHide }) => {
+
     return (
         <Container>
             <Offcanvas

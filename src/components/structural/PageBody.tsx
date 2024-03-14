@@ -7,6 +7,7 @@ import PageHeader from './PageHeader'
 import { ErrorBoundary } from '../ErrorBoundary'
 import { PageInfoType, findPageInfo } from '#/config/config'
 import { appMinMaxWidth } from './structural.config'
+import AcceptCookies from './AcceptCookies'
 
 const useStyles = createUseStyles({
     container: {
@@ -35,6 +36,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
     return (
         <Container className={classes.container} {...args}>
             <PageHeader name={name} desc={header.longDesc} />
+            <AcceptCookies />
             <ErrorBoundary>
                 {children}
             </ErrorBoundary>
