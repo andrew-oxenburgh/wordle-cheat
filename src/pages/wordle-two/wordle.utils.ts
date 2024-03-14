@@ -18,15 +18,17 @@ export const notNormalLetter = (input: string): boolean => {
     return ! /^[A-Za-z]$/.test(input)
 }
 
-export const blankBoard = (w: number, h: number): BoardState => R.times(
-    () => {
-        return {
-            letter: '-',
-            state: LetterState.NONE,
-        }
-    },
-    w * h,
-)
+export const blankBoard = (w: number, h: number): BoardState => {
+    return R.times(
+        () => {
+            return {
+                letter: '-',
+                state: LetterState.NONE,
+            }
+        },
+        w * h,
+    ) as BoardState
+}
 
 export const variant = (state: LetterState): string => {
     switch (state) {
@@ -43,7 +45,7 @@ export const variant = (state: LetterState): string => {
 
 export const calcRows = (board: BoardState, width = 5): RowsState => {
     const ret = R.splitEvery(width, board)
-    return ret
+    return ret as RowsState
 }
 
 export const calcCols = (board: BoardState, width = 5): ColsState => {

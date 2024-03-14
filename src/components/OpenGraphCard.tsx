@@ -19,7 +19,7 @@ const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
             <hr />
             <h4>ARTICLE</h4>
             {
-                R.reduce((acc: any, f: string) => {
+                R.reduce((acc: JSX.Element[], f: string) => {
                     const val: any = graph[f as keyof ArticleGraphType]
                     if (!val) {
                         return acc
@@ -40,7 +40,7 @@ const MusicCard = ({ graph, cardStyle = {} }: { graph: MusicGraphType; cardStyle
             <Card.Header>Music</Card.Header>
             <Card.Body>
                 {
-                    R.reduce((acc: any, f: string) => {
+                    R.reduce((acc: JSX.Element[], f: string) => {
                         const val: any = graph[f as keyof MusicGraphType]
 
                         if (!val) {

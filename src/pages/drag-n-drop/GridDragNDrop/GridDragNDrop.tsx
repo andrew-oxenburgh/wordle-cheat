@@ -93,7 +93,7 @@ export const GridDragNDrop = () => {
 
 
     const findIemIndexById = (id: UniqueIdentifier): number => {
-        return R.findIndex((v: any) => (v.id === id), items)
+        return R.findIndex((v: Item) => (v.id === id), items) as number
     }
 
     const handleDragEnd = (event: DragEndEvent) => {

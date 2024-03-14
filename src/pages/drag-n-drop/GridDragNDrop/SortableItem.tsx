@@ -147,7 +147,7 @@ export const SortableItem = (props: any) => {
                 padding: '3px 8px',
                 opacity: '50%',
                 border: '3px solid white',
-            }} onClick={() => props.deleteMe()}>
+            }} onClick={() => void props.deleteMe()}>
                 <FontAwesomeIcon icon={cross} />
             </Button>
         </div>

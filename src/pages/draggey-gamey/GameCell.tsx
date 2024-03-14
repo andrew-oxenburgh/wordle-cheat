@@ -26,7 +26,7 @@ const colorCss: Styles = R.reduce(
                 transition: 'border 3s ease',
             },
         }
-        return acc
+        return acc as string[]
     }, {}, colors)
 
 const useStylesClicks = createUseStyles(colorCss)
