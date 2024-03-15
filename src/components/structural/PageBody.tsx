@@ -36,10 +36,10 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
     return (
         <Container className={classes.container} {...args}>
             <PageHeader name={name} desc={header.longDesc} />
-            <AcceptCookies />
             <ErrorBoundary>
                 {children}
             </ErrorBoundary>
+            <AcceptCookies />
         </Container>
     )
 }

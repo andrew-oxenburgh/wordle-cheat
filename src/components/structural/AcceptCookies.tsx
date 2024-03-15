@@ -4,12 +4,11 @@ import { useLocalStorage } from 'usehooks-ts'
 import Toast from 'react-bootstrap/esm/Toast'
 
 const useStyles = createUseStyles({
-    button: {
-        background: 'red',
-        paddingLeft: '0.5em',
-    },
-    text: {
-        marginLeft: '0.2em',
+    toast: {
+        position: 'fixed',
+        bottom: 10,
+        left: 10,
+        width: 'calc(100% - 20px)',
     },
 })
 
@@ -23,15 +22,19 @@ const AcceptCookies = () => {
             ''
             :
             (
-                <Toast>
-                    <Toast.Header>
-                        <p>accept cookies?</p>
+                <Toast className={classes.toast}>
+                    <Toast.Header closeButton={false}>
+                        <p>Accept Cookies</p>
                     </Toast.Header>
                     <Toast.Body>
+                        <p>
+                            The one cookie is a google tracking cookie.
+                        </p>
                         <ButtonWithTooltip
-                            tipText={'click to accept'}
+                            tipText={'click to accept all cookies'}
+                            placement='top'
                             onClick={willAcceptCookies}>
-                            <p>kjhkjshfdkjhkjhsdfkjh</p>
+                            <p>accept cookies?</p>
                         </ButtonWithTooltip>
                     </Toast.Body>
                 </Toast>

@@ -83,7 +83,6 @@ const CopyableText = ({ text, warning, time = 3000 }: CopyableTextProps) => {
         )
     }
 
-
     return (
         <div>
             <div

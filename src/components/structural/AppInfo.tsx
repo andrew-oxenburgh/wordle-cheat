@@ -5,6 +5,8 @@ import { version } from '../../config/config'
 import { getMetaValue } from '#/config/isDevMode'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import dayjs from 'dayjs'
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import { useLocalStorage } from 'usehooks-ts'
 
 export const AppInfo = () => {
     const [show, setShow] = useState(false)
@@ -14,6 +16,9 @@ export const AppInfo = () => {
     const dateInDay = dayjs(new Date(s))
     const buildDateStr = dateInDay.format('ddd YYYY/MM/DD HH:mm:ss')
     const sinceBuild = dateInDay.fromNow()
+
+    const [acceptCookies, setAcceptCookies] = useLocalStorage('accept-cookies', false)
+
     return (
         <>
             <ButtonWithTooltip
@@ -43,6 +48,24 @@ export const AppInfo = () => {
                             <tr>
                                 <td>Version:</td>
                                 <td>{version}</td>
+                            </tr>
+                            <tr>
+                                <td>Cookies are</td>
+                                <td>
+                                    <ToggleButton
+                                        id="toggle-check"
+                                        type="checkbox"
+                                        variant="secondary"
+                                        checked={acceptCookies}
+                                        value="1"
+                                        onChange={(e) => setAcceptCookies(!acceptCookies)}
+                                    >
+                                        {
+                                            acceptCookies ? 'accepted' : 'not accepted'
+                                        }
+                                    </ToggleButton>
+
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
