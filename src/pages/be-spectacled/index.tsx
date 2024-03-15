@@ -16,7 +16,7 @@ const DragNDropWrapper: React.FC = () => {
     const classes = useStyles()
     return (
         <div>
-            <PageBody name="drag-n-drop">
+            <PageBody name="be-spectacled">
                 {/* <div className={classes.demo}>
                     <SimpleDragNDrop />
                 </div> */}

@@ -19,6 +19,7 @@ import {
     faMessage,
     faTrash,
     faEllipsisVertical,
+    faGlasses,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -41,4 +42,5 @@ library.add(
     faMessage,
     faTrash,
     faEllipsisVertical,
+    faGlasses,
 )

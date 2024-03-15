@@ -207,7 +207,7 @@ export const GridDragNDrop = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {items?.length && items.map(
+                        {items?.length ? items.map(
                             (item: any) => {
                                 if (!item) {
                                     return ''
@@ -224,7 +224,7 @@ export const GridDragNDrop = () => {
                                     </tr>
                                 )
                             })
-                        }
+                            : <p>no items</p>}
                     </tbody>
                 </Table>
             </div>

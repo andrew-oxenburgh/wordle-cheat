@@ -59,7 +59,7 @@ export const lazyComponents: LazyComponentType[] = [
         lazyComponent: React.lazy(() => import('./pages/sketch-countdown')),
     },
     {
-        name: 'drag-n-drop',
-        lazyComponent: React.lazy(() => import('./pages/drag-n-drop')),
+        name: 'be-spectacled',
+        lazyComponent: React.lazy(() => import('./pages/be-spectacled')),
     },
 ]

@@ -18,7 +18,7 @@ export type PageNameType =
     | 'open-graph'
     | 'imitation-onion'
     | 'sketch-countdown'
-    | 'drag-n-drop'
+    | 'be-spectacled'
 
 export type PageInfoType = {
     title: string
@@ -91,13 +91,13 @@ Technologies:
         link: '#/open-graph',
     },
     {
-        name: 'drag-n-drop',
-        title: 'Drag and Drop',
+        name: 'be-spectacled',
+        title: 'Be-spectacled',
         height: '80%',
-        icon: 'link',
+        icon: 'glasses',
         longDesc: `
-### Drag and Drop`,
-        link: '#/drag-n-drop',
+### Be Spectacled`,
+        link: '#/be-spectacled',
     },
     {
         name: 'emoji-search',

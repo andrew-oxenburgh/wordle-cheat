@@ -34,7 +34,7 @@ const Navigation = () => {
             <Navbar expanded={expanded} bg="light" style={navBarStyle}>
                 <Navbar.Brand href="#/">Sketches</Navbar.Brand>
                 <AppInfo />
-                <Nav.Link href="/#/drag-n-drop"><i>be-spectacled</i></Nav.Link>
+                <Nav.Link href="/#/be-spectacled"><i>be-spectacled</i></Nav.Link>
                 <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
                     <Nav onSelect={() => { setExpanded(false) }}>
