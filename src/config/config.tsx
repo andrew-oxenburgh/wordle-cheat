@@ -38,7 +38,6 @@ const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageIn
     return acc as PageInfoType[]
 }, [], pageConfig)
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageDefinitions)
 
 export {

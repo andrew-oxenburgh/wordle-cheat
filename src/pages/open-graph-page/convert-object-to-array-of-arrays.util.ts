@@ -1,4 +1,3 @@
-/* eslint @typescript-eslint/no-unsafe-argument: "off" */
 
 import * as R from 'ramda'
 
@@ -24,6 +23,7 @@ export const convertOgObjectToOgArray = (inp: any, prefix = ''): TwoStringColumn
                     return [...convertOgObjectToOgArray(img, prefix + newKey + ':')]
                 }, val)
 
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 acc.push(...sub[0])
             }
         }

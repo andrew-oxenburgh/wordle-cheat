@@ -5,7 +5,7 @@ import { version } from '../../config/config'
 import { getMetaValue } from '#/config/isDevMode'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import dayjs from 'dayjs'
-import ToggleButton from 'react-bootstrap/ToggleButton';
+import ToggleButton from 'react-bootstrap/ToggleButton'
 import { useLocalStorage } from 'usehooks-ts'
 
 export const AppInfo = () => {
@@ -58,7 +58,7 @@ export const AppInfo = () => {
                                         variant="secondary"
                                         checked={acceptCookies}
                                         value="1"
-                                        onChange={(e) => setAcceptCookies(!acceptCookies)}
+                                        onChange={() => setAcceptCookies(!acceptCookies)}
                                     >
                                         {
                                             acceptCookies ? 'accepted' : 'not accepted'

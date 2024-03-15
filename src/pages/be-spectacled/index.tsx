@@ -3,7 +3,7 @@
 import PageBody from '#/components/structural/PageBody'
 import { createUseStyles } from 'react-jss'
 // import { SimpleDragNDrop } from './SimpleDragNDrop'
-import { GridDragNDrop } from './GridDragNDrop/GridDragNDrop'
+import { BeSpectacled } from './BeSpectacled/BeSpectacled'
 
 const useStyles = createUseStyles({
     demo: {
@@ -21,7 +21,7 @@ const DragNDropWrapper: React.FC = () => {
                     <SimpleDragNDrop />
                 </div> */}
                 <div className={classes.demo}>
-                    <GridDragNDrop />
+                    <BeSpectacled />
                 </div>
             </PageBody >
         </div>

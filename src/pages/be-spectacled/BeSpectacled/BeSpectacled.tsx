@@ -16,54 +16,13 @@ import {
     SortableContext,
 } from '@dnd-kit/sortable'
 
-import { SortableItem } from './SortableItem'
+import { AlbumFrame } from './AlbumFrame'
 import { Bin } from './Bin'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { createUseStyles } from 'react-jss'
 import { customCollisionDetectionAlgorithm } from './customCollisionDetectionAlgorithm'
-
-type Item = {
-    id: number
-    text: string
-    hide?: boolean
-    deleting?: boolean
-    img?: string
-}
-
-const _items: Item[] = [
-    {
-        id: 1,
-        text: 'one',
-        deleting: false,
-        hide: false,
-    },
-    {
-        id: 2,
-        text: 'two',
-        hide: false,
-    },
-    {
-        id: 3,
-        text: 'three',
-        hide: false,
-    },
-    {
-        id: 4,
-        text: 'four',
-        hide: false,
-    },
-    // {
-    //     id: 5,
-    //     text: 'five',
-    //     hide: false,
-    // },
-    // {
-    //     id: 6,
-    //     text: 'six',
-    //     hide: false,
-    // },
-]
+import { Item, _items } from './utils'
 
 const useStyles = createUseStyles({
     container: {
@@ -76,7 +35,7 @@ const useStyles = createUseStyles({
     },
 })
 
-export const GridDragNDrop = () => {
+export const BeSpectacled = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
     const [cnt, setCnt] = useState(100)
@@ -86,11 +45,9 @@ export const GridDragNDrop = () => {
 
     const sensor = detectDeviceType.isMobile ? TouchSensor : PointerSensor
 
-
     const sensors = useSensors(
         useSensor(sensor)
     )
-
 
     const findIemIndexById = (id: UniqueIdentifier): number => {
         return R.findIndex((v: Item) => (v.id === id), items) as number
@@ -165,7 +122,7 @@ export const GridDragNDrop = () => {
                         <div className={classes.container}>
                             {items && items.map(
                                 (item: Item) => {
-                                    return (<SortableItem
+                                    return (<AlbumFrame
                                         delete={item.id === deletable}
                                         style={itemStyle}
                                         key={item.id}
@@ -175,14 +132,15 @@ export const GridDragNDrop = () => {
                                     />)
                                 })
                             }
-                            {(items.length < 6) && <SortableItem
+                            {(items.length < 6) && <AlbumFrame
                                 delete={false}
                                 style={itemStyle}
                                 key={'camera'}
                                 id={'camera'}
+                                saveImage={saveImage}
                                 data={{
                                     id: 'camera',
-                                    saveImage,
+                                    img: null,
                                 }}
                             />
                             }
@@ -196,8 +154,10 @@ export const GridDragNDrop = () => {
                 <Button variant="primary" style={{
                     position: 'relative',
                 }} onClick={() => setItems(_items)}>reset grid for testing</Button>
+                <Button variant="primary" style={{
+                    position: 'relative',
+                }} onClick={() => setItems([])}>clear grid</Button>
                 <p>devices = {JSON.stringify(detectDeviceType)}</p>
-
                 <Table striped bordered hover>
                     <thead>
                         <tr>

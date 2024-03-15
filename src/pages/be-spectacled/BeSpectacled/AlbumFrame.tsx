@@ -1,4 +1,3 @@
-/* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { CSS, Transform } from '@dnd-kit/utilities'
 import { useSortable, defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,7 +26,7 @@ type LayoutChanges = {
     wasDragging: boolean
 
 }
-function animateLayoutChanges(args: LayoutChanges) {
+const animateLayoutChanges = (args: LayoutChanges) => {
     const { isSorting, wasDragging } = args
 
     if (isSorting || wasDragging) {
@@ -71,7 +70,17 @@ const useStyles = createUseStyles({
         // width: '100%',
     },
 })
-export const SortableItem = (props: any) => {
+type AlbumFrameType = {
+    data: {
+        id: number | 'camera'
+        img: string | null
+    }
+    style: any
+    deleteMe: () => void
+    saveImage: (img: string) => void
+}
+
+export const AlbumFrame = ({ data, style, deleteMe, saveImage }: AlbumFrameType) => {
     const {
         attributes,
         listeners,
@@ -80,7 +89,7 @@ export const SortableItem = (props: any) => {
         transition,
     } = useSortable({
         animateLayoutChanges,
-        id: props.data.id,
+        id: data.id,
         transition: {
             duration: 1000, // milliseconds
             easing: 'ease-out',
@@ -89,9 +98,9 @@ export const SortableItem = (props: any) => {
 
     const webcamRef = useRef(null)
     const capture = () => {
-        const imageSrc = webcamRef?.current?.getScreenshot()
+        const imageSrc: string = webcamRef?.current?.getScreenshot()
         // console.log(imageSrc)
-        props.data.saveImage(imageSrc)
+        saveImage(imageSrc)
     }
 
     // console.log(CSS.Transform.toString(transform as Transform))
@@ -99,13 +108,13 @@ export const SortableItem = (props: any) => {
     const dynamicCardStyle = {
         transform: CSS.Transform.toString(transform as Transform),
         transition,
-        ...(props.style ? props.style : {}),
+        ...(style ? style : {}),
         position: 'relative',
     }
 
     const classes = useStyles()
 
-    if (props.data.id === 'camera') {
+    if (data.id === 'camera') {
         return (
             <div style={dynamicCardStyle} className={classes.card}>
                 Camera
@@ -132,9 +141,9 @@ export const SortableItem = (props: any) => {
 
     return (
         <div style={dynamicCardStyle} className={classes.card}>
-            {props.data.img && <img className={classes.img} src={props.data.img} />}
+            {data.img && <img className={classes.img} src={data.img} />}
             <span className={classes.ellipsis} ref={setNodeRef} {...attributes} {...listeners}>
-                <h3>{props.data.id}</h3>
+                <h3>{data.id}</h3>
                 <FontAwesomeIcon icon={icon} />
             </span>
             <Button style={{
@@ -147,7 +156,7 @@ export const SortableItem = (props: any) => {
                 padding: '3px 8px',
                 opacity: '50%',
                 border: '3px solid white',
-            }} onClick={() => void props.deleteMe()}>
+            }} onClick={() => void deleteMe()}>
                 <FontAwesomeIcon icon={cross} />
             </Button>
         </div>
