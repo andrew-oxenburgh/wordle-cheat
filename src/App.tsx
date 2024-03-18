@@ -12,16 +12,16 @@ import { lazyComponents } from './lazyComponents'
 
 const App = () => {
     return (
-        <>
+        <div style={{ height: '100%' }}>
             <HashRouter>
-                <header style={{ padding: 0 }}>
+                <header style={{ padding: 0, height: '40px' }}>
                     <Navigation />
                 </header>
-                <main style={{ padding: 0, backgroundColor: '#eae4ff' }}>
+                <main style={{ height: 'calc(100% - 40px)', padding: 0, backgroundColor: '#eae4ff' }}>
                     <WCRoutes lazyComponents={lazyComponents} />
                 </main>
             </HashRouter>
-        </>
+        </div>
     )
 }
 

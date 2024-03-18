@@ -10,18 +10,26 @@ import { GameBoard } from './GameBoard'
 import * as config from './config'
 import { DownloadPanel } from './DownloadPanel'
 import { useState } from 'react'
+import { createUseStyles } from 'react-jss'
 
 export const dragColor = signal<string>(config.colors[1])
-
+const useStyles = createUseStyles({
+    card: {
+        maxWidth: '30em',
+        margin: 'auto',
+    },
+})
 const DraggyGamey: React.FC = () => {
-    effect(()=>{})
+    effect(() => { })
     const [width, setWidth] = useState<number>(config.width)
     const [numColors, setNumColors] = useState<number>(config.numColors)
+    const classes = useStyles()
 
     return (
         <>
             <PageBody name="draggey-gamey">
-                <Card style={{ maxWidth: '30em', margin: 'auto' }}
+                <Card
+                    className={classes.card}
                 >
                     <Card.Header>
                         Let's play a little game
@@ -39,9 +47,9 @@ const DraggyGamey: React.FC = () => {
                                     <Form.Label>size of square grid</Form.Label>
                                     <Form.Control
                                         type="number"
-                                        onChange={(e)=>{
+                                        onChange={(e) => {
                                             const _width = parseInt(e.target.value, 10)
-                                            if(_width >= 4 && _width <= 44){
+                                            if (_width >= 4 && _width <= 44) {
                                                 setWidth(_width)
                                             }
                                         }}
@@ -55,9 +63,9 @@ const DraggyGamey: React.FC = () => {
                                     <Form.Label>number of colors</Form.Label>
                                     <Form.Control
                                         type="number"
-                                        onChange={(e)=>{
+                                        onChange={(e) => {
                                             const _numColors = parseInt(e.target.value, 10)
-                                            if(_numColors >= 1 && _numColors <= config.tileColorList.length){
+                                            if (_numColors >= 1 && _numColors <= config.tileColorList.length) {
                                                 setNumColors(_numColors)
                                             }
                                         }}
@@ -70,7 +78,7 @@ const DraggyGamey: React.FC = () => {
                                 </Form.Group>
                             </Form>
                         </>
-                        <Legend numColors={numColors}/>
+                        <Legend numColors={numColors} />
                         <GameBoard id="game-board" width={width} />
                     </Card.Body>
                     <Card.Footer>
