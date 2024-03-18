@@ -7,6 +7,8 @@ import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import dayjs from 'dayjs'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import { useLocalStorage } from 'usehooks-ts'
+import GithubThing from '../GithubThing'
+import Nav from 'react-bootstrap/Nav'
 
 export const AppInfo = () => {
     const [show, setShow] = useState(false)
@@ -48,6 +50,12 @@ export const AppInfo = () => {
                             <tr>
                                 <td>Version:</td>
                                 <td>{version}</td>
+                            </tr>
+                            <tr>
+                                <td>On Github</td>
+                                <td>
+                                    <a href="https://github.com/andrew-oxenburgh/wordle-cheat">github</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Cookies are</td>

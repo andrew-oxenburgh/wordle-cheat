@@ -2,7 +2,6 @@ import { HashRouter } from 'react-router-dom'
 import './bootstrap.min.css'
 
 // dynamic because possibly big imports
-import PageFooter from './components/structural/PageFooter'
 import Navigation from './components/structural/Navigation'
 import WCRoutes from './WCRoutes'
 
@@ -21,7 +20,6 @@ const App = () => {
                 <main style={{ padding: 0, backgroundColor: '#eae4ff' }}>
                     <WCRoutes lazyComponents={lazyComponents} />
                 </main>
-                <PageFooter />
             </HashRouter>
         </>
     )
