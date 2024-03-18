@@ -9,12 +9,12 @@ const Draggable = (props: any) => {
         id: 'draggable',
     })
 
-    const style = {
+    const txStyle = {
         transform: CSS.Translate.toString(transform as Transform),
     }
 
     return (
-        <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
+        <button ref={setNodeRef} style={txStyle} {...listeners} {...attributes}>
             {props.children}
         </button>
     )
