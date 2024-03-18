@@ -15,27 +15,35 @@ import { appMinMaxWidth } from './structural.config'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { AppInfo } from './AppInfo'
+import { createUseStyles } from 'react-jss'
+
 dayjs.extend(relativeTime)
 
-
-export const navBarStyle = {
-    borderRadius: '3px',
-    ...appMinMaxWidth,
-    margin: 'auto',
-    width: '100%',
-    padding: '0 1em',
-}
+const useStyles = createUseStyles({
+    navBar: {
+        borderRadius: '3px',
+        ...appMinMaxWidth,
+        margin: 'auto',
+        width: '100%',
+        padding: '0 1em',
+    },
+    navBarCollapse: {
+        position: 'absolute',
+        right: '1em',
+    },
+})
 
 const Navigation = () => {
     const [expanded, setExpanded] = useState(false)
     const location: Location = useLocation()
+    const classes = useStyles()
     return (
         <>
-            <Navbar expanded={true} bg="light" style={navBarStyle}>
+            <Navbar expanded={true} bg="light" className={classes.navBar}>
                 <Navbar.Brand href="#/">Sketches</Navbar.Brand>
                 <AppInfo />
                 <Navbar.Toggle onClick={() => { setExpanded(!expanded) }} aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" style={{ position: 'absolute', right: '1em' }}>
+                <Navbar.Collapse id="basic-navbar-nav" className={classes.navBarCollapse}>
                     <Nav onSelect={() => { setExpanded(false) }}>
                         <NavDropdown title="Sketches" id="wordle-cheats">
                             {pageDefinitions.map((page) => {

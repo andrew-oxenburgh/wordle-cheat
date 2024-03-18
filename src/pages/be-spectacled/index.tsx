@@ -2,7 +2,6 @@
 
 import PageBody from '#/components/structural/PageBody'
 import { createUseStyles } from 'react-jss'
-// import { SimpleDragNDrop } from './SimpleDragNDrop'
 import { BeSpectacled } from './BeSpectacled/BeSpectacled'
 
 const useStyles = createUseStyles({

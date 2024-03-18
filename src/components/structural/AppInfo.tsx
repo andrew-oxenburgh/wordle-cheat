@@ -7,8 +7,6 @@ import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import dayjs from 'dayjs'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import { useLocalStorage } from 'usehooks-ts'
-import GithubThing from '../GithubThing'
-import Nav from 'react-bootstrap/Nav'
 
 export const AppInfo = () => {
     const [show, setShow] = useState(false)

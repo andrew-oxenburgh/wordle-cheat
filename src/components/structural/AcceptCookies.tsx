@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss'
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import { useLocalStorage } from 'usehooks-ts'
-import Toast from 'react-bootstrap/esm/Toast'
+import Toast from 'react-bootstrap/Toast'
 
 const useStyles = createUseStyles({
     toast: {
