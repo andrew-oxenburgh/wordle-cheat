@@ -1,12 +1,14 @@
-import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
-import { Item, _items } from './utils';
+import Button from 'react-bootstrap/Button'
+import Table from 'react-bootstrap/Table'
+import { Item, _items } from './utils'
 
-export const EtAl = ({ detectDeviceType, setItems, items }: {
-    detectDeviceType: any;
-    setItems: any;
-    items: Item[];
-}) => {
+type EtAlType = {
+    detectDeviceType: any
+    setItems: any
+    items: Item[]
+}
+
+export const EtAl = ({ detectDeviceType, setItems, items }: EtAlType) => {
     return (<div>
         <h3>About the grid</h3>
         <Button variant="primary" style={{
@@ -27,7 +29,7 @@ export const EtAl = ({ detectDeviceType, setItems, items }: {
             <tbody>
                 {items?.length ? items.map((item: any) => {
                     if (!item) {
-                        return '';
+                        return ''
                     }
 
                     return <tr key={item.id}>
@@ -38,9 +40,9 @@ export const EtAl = ({ detectDeviceType, setItems, items }: {
                                 width: '100px',
                             }} src={item.img} />
                         </td>
-                    </tr>;
+                    </tr>
                 }) : <p>no items</p>}
             </tbody>
         </Table>
-    </div>);
-};
+    </div>)
+}

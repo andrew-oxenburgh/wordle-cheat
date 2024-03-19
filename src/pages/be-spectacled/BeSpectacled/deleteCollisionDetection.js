@@ -5,7 +5,7 @@ import {
     rectIntersection,
 } from '@dnd-kit/core'
 
-export const customCollisionDetectionAlgorithm = ({
+export const deleteCollisionDetection = ({
     droppableContainers, ...args
 }) => {
     // First, let's see if the `trash` droppable rect is intersecting

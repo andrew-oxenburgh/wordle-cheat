@@ -16,13 +16,13 @@ import {
     SortableContext,
 } from '@dnd-kit/sortable'
 
-import { PhotoFrame } from './PhotoFrame'
 import { PhotoBooth } from './PhotoBooth'
 import { Bin } from './Bin'
 import { createUseStyles } from 'react-jss'
-import { customCollisionDetectionAlgorithm } from './customCollisionDetectionAlgorithm'
+import { deleteCollisionDetection } from './deleteCollisionDetection'
 import { Item, _items } from './utils'
 import { EtAl } from './EtAl'
+import { PhotoFrames } from './PhotoFrames'
 
 const useStyles = createUseStyles({
     container: {
@@ -100,7 +100,7 @@ export const BeSpectacled = () => {
             <DndContext
                 // measuring={measuringConfig}
                 sensors={sensors}
-                collisionDetection={customCollisionDetectionAlgorithm}
+                collisionDetection={deleteCollisionDetection}
                 onDragEnd={handleDragEnd}
                 onDragStart={() => { setDragging(true) }}
             >
@@ -109,16 +109,11 @@ export const BeSpectacled = () => {
                         items={items}
                     >
                         <div className={classes.container}>
-                            {items && items.map(
-                                (item: Item) => {
-                                    return (<PhotoFrame
-                                        style={itemStyle}
-                                        key={item.id}
-                                        data={item}
-                                        deleteMe={() => deleteMe(item.id)}
-                                    />)
-                                })
-                            }
+                            <PhotoFrames
+                                items={items}
+                                itemStyle={itemStyle}
+                                deleteMe={deleteMe}
+                            />
                             <PhotoBooth
                                 show={items.length < 6}
                                 style={itemStyle}
