@@ -107,36 +107,38 @@ export const BeSpectacled = () => {
     }
 
     const classes = useStyles()
-    const album = <DndContext
-        // measuring={measuringConfig}
-        sensors={sensors}
-        collisionDetection={deleteCollisionDetection}
-        onDragEnd={handleDragEnd}
-        onDragStart={() => { setDragging(true) }}
-    >
-        <div style={{ position: 'relative' }}>
-            <SortableContext
-                items={items}
-            >
-                <div className={classes.container}>
-                    <PhotoFrames
-                        items={items}
-                        itemStyle={itemStyle}
-                        deleteMe={deleteMe} />
-                    <GotoPhotoBooth
-                        show={items.length < 6}
-                        style={itemStyle}
-                        key={'camera'}
-                        openPhotoBooth={openPhotoBooth} />
-                </div>
-            </SortableContext>
-            <Bin show={dragging} />
-        </div>
-    </DndContext>
+    const Album = () => {
+        return (<DndContext
+            // measuring={measuringConfig}
+            sensors={sensors}
+            collisionDetection={deleteCollisionDetection}
+            onDragEnd={handleDragEnd}
+            onDragStart={() => { setDragging(true) }}
+        >
+            <div style={{ position: 'relative' }}>
+                <SortableContext
+                    items={items}
+                >
+                    <div className={classes.container}>
+                        <PhotoFrames
+                            items={items}
+                            itemStyle={itemStyle}
+                            deleteMe={deleteMe} />
+                        <GotoPhotoBooth
+                            show={items.length < 6}
+                            style={itemStyle}
+                            key={'camera'}
+                            openPhotoBooth={openPhotoBooth} />
+                    </div>
+                </SortableContext>
+                <Bin show={dragging} />
+            </div>
+        </DndContext>)
+    }
 
     return (
         <>
-            {photoBooth ? <Camera onCancel={cancel} saveImage={saveImage} /> : album}
+            {photoBooth ? <Camera onCancel={cancel} saveImage={saveImage} /> : <Album />}
             <EtAl
                 items={items}
                 setItems={setItems}
