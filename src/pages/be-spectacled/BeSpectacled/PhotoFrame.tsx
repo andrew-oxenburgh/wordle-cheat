@@ -1,46 +1,17 @@
-import { useRef } from 'react'
 
-import Webcam from 'react-webcam'
 import Button from 'react-bootstrap/Button'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
 import { faTimes as cross } from '@fortawesome/free-solid-svg-icons/faTimes'
-import { faCamera as camera } from '@fortawesome/free-solid-svg-icons/faCamera'
 
 import { createUseStyles } from 'react-jss'
 
 import { CSS, Transform } from '@dnd-kit/utilities'
-import { useSortable, defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
-import { Active, UniqueIdentifier } from '@dnd-kit/core'
-import { SortableTransition } from '@dnd-kit/sortable/dist/hooks/types'
+import { useSortable } from '@dnd-kit/sortable'
+import { Item, animateLayoutChanges } from './utils'
 
-type LayoutChanges = {
-    active: Active | null
-    containerId: UniqueIdentifier
-    isDragging: boolean
-    isSorting: boolean
-    id: UniqueIdentifier
-    index: number
-    items: UniqueIdentifier[]
-    previousItems: UniqueIdentifier[]
-    previousContainerId: UniqueIdentifier
-    newIndex: number
-    transition: SortableTransition | null
-    wasDragging: boolean
-
-}
-const animateLayoutChanges = (args: LayoutChanges) => {
-    const { isSorting, wasDragging } = args
-
-    if (isSorting || wasDragging) {
-        return defaultAnimateLayoutChanges(args)
-    }
-
-    return true
-}
-
-const useStyles = createUseStyles({
+export const useStyles = createUseStyles({
     card: {
         border: '1px orange solid',
         position: 'relative',
@@ -75,16 +46,12 @@ const useStyles = createUseStyles({
     },
 })
 type AlbumFrameType = {
-    data: {
-        id: number | 'camera'
-        img: string | null
-    }
+    data: Item
     style: any
     deleteMe: () => void
-    saveImage: (img: string) => void
 }
 
-export const AlbumFrame = ({ data, style, deleteMe, saveImage }: AlbumFrameType) => {
+export const PhotoFrame = ({ data, style, deleteMe }: AlbumFrameType) => {
     const {
         attributes,
         listeners,
@@ -100,15 +67,6 @@ export const AlbumFrame = ({ data, style, deleteMe, saveImage }: AlbumFrameType)
         },
     })
 
-    const webcamRef = useRef(null)
-    const capture = () => {
-        const imageSrc: string = webcamRef?.current?.getScreenshot()
-        // console.log(imageSrc)
-        saveImage(imageSrc)
-    }
-
-    // console.log(CSS.Transform.toString(transform as Transform))
-
     const dynamicCardStyle = {
         transform: CSS.Transform.toString(transform as Transform),
         transition,
@@ -117,31 +75,6 @@ export const AlbumFrame = ({ data, style, deleteMe, saveImage }: AlbumFrameType)
     }
 
     const classes = useStyles()
-
-    if (data.id === 'camera') {
-        return (
-            <div style={dynamicCardStyle} className={classes.card}>
-                Camera
-                <Webcam
-                    style={{
-                        width: '100%',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                    }}
-                    audio={false}
-                    // height={'100px'}
-                    ref={webcamRef}
-                    screenshotFormat="image/jpeg"
-                // width={'100em'}
-                // videoConstraints={{}}
-                />
-                <Button className={classes.captureButton} onClick={capture}>
-                    <FontAwesomeIcon icon={camera} />
-                </Button>
-            </div>
-        )
-    }
 
     return (
         <div style={dynamicCardStyle} className={classes.card}>

@@ -1,3 +1,7 @@
+import { Active, UniqueIdentifier } from '@dnd-kit/core'
+import { defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
+import { SortableTransition } from '@dnd-kit/sortable/dist/hooks/types'
+
 export type Item = {
     id: number
     text: string
@@ -39,3 +43,29 @@ export const _items: Item[] = [
     //     hide: false,
     // },
 ]
+
+type LayoutChanges = {
+    active: Active | null
+    containerId: UniqueIdentifier
+    isDragging: boolean
+    isSorting: boolean
+    id: UniqueIdentifier
+    index: number
+    items: UniqueIdentifier[]
+    previousItems: UniqueIdentifier[]
+    previousContainerId: UniqueIdentifier
+    newIndex: number
+    transition: SortableTransition | null
+    wasDragging: boolean
+}
+
+export const animateLayoutChanges = (args: LayoutChanges) => {
+    const { isSorting, wasDragging } = args
+
+    if (isSorting || wasDragging) {
+        return defaultAnimateLayoutChanges(args)
+    }
+
+    return true
+}
+

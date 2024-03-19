@@ -16,13 +16,13 @@ import {
     SortableContext,
 } from '@dnd-kit/sortable'
 
-import { AlbumFrame } from './AlbumFrame'
+import { PhotoFrame } from './PhotoFrame'
+import { PhotoBooth } from './PhotoBooth'
 import { Bin } from './Bin'
-import Button from 'react-bootstrap/Button'
-import Table from 'react-bootstrap/Table'
 import { createUseStyles } from 'react-jss'
 import { customCollisionDetectionAlgorithm } from './customCollisionDetectionAlgorithm'
 import { Item, _items } from './utils'
+import { EtAl } from './EtAl'
 
 const useStyles = createUseStyles({
     container: {
@@ -39,17 +39,14 @@ export const BeSpectacled = () => {
     const [items, setItems] = useState(_items)
     const [dragging, setDragging] = useState(false)
     const [cnt, setCnt] = useState(100)
-    const [deletable, setDeletable] = useState<UniqueIdentifier>('-1')
 
     const detectDeviceType = useMobileDetect()
 
-    const sensor = detectDeviceType.isMobile ? TouchSensor : PointerSensor
-
     const sensors = useSensors(
-        useSensor(sensor)
+        useSensor(detectDeviceType.isMobile ? TouchSensor : PointerSensor)
     )
 
-    const findIemIndexById = (id: UniqueIdentifier): number => {
+    const findItemIndexById = (id: UniqueIdentifier): number => {
         return R.findIndex((v: Item) => (v.id === id), items) as number
     }
 
@@ -58,18 +55,16 @@ export const BeSpectacled = () => {
 
         if (over?.id === 'deleteable') {
             setDragging(true)
-            setDeletable(active.id)
             const newItems: Item[] = R.filter((i: Item) => { return i.id !== active.id }, items)
             setItems(newItems)
         } else if (active.id !== over?.id) {
             setItems((i: Item[]) => {
-                const oldIndex = findIemIndexById(active.id)
-                const newIndex = findIemIndexById((over?.id || -1))
+                const oldIndex = findItemIndexById(active.id)
+                const newIndex = findItemIndexById((over?.id || -1))
                 return arrayMove(i, oldIndex, newIndex)
             })
         }
         setDragging(false)
-        setDeletable(-1)
     }
 
     const itemStyle = {
@@ -78,13 +73,7 @@ export const BeSpectacled = () => {
         height: '50%',
     }
 
-    // const context = {
-    //     position: 'absolute',
-    //     width: '25em',
-    // }
-
     const appendImage = (item: Item) => {
-        // console.log('appendImage item cnt = ' + items.length)
         const newItems: Item[] = R.concat(items, [item])
         setItems(...[newItems])
         setCnt(cnt + 1)
@@ -122,72 +111,30 @@ export const BeSpectacled = () => {
                         <div className={classes.container}>
                             {items && items.map(
                                 (item: Item) => {
-                                    return (<AlbumFrame
-                                        delete={item.id === deletable}
+                                    return (<PhotoFrame
                                         style={itemStyle}
                                         key={item.id}
-                                        id={item.id}
                                         data={item}
                                         deleteMe={() => deleteMe(item.id)}
                                     />)
                                 })
                             }
-                            {(items.length < 6) && <AlbumFrame
-                                delete={false}
+                            <PhotoBooth
+                                show={items.length < 6}
                                 style={itemStyle}
                                 key={'camera'}
-                                id={'camera'}
                                 saveImage={saveImage}
-                                data={{
-                                    id: 'camera',
-                                    img: null,
-                                }}
                             />
-                            }
                         </div>
                     </SortableContext>
                     <Bin show={dragging} />
                 </div>
             </DndContext>
-            <div>
-                <h3>About the grid</h3>
-                <Button variant="primary" style={{
-                    position: 'relative',
-                }} onClick={() => setItems(_items)}>reset grid for testing</Button>
-                <Button variant="primary" style={{
-                    position: 'relative',
-                }} onClick={() => setItems([])}>clear grid</Button>
-                <p>devices = {JSON.stringify(detectDeviceType)}</p>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>txt</th>
-                            <th>img</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {items?.length ? items.map(
-                            (item: any) => {
-                                if (!item) {
-                                    return ''
-                                }
-                                return (
-                                    <tr key={item.id}>
-                                        <td>{item.id}</td>
-                                        <td>{item.text}</td>
-                                        <td>
-                                            <img style={{
-                                                width: '100px',
-                                            }} src={item.img} />
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                            : <p>no items</p>}
-                    </tbody>
-                </Table>
-            </div>
+            <EtAl
+                items={items}
+                setItems={setItems}
+                detectDeviceType={detectDeviceType}
+            />
         </>
     )
 }
