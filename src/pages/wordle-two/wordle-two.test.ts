@@ -10,7 +10,6 @@ const arrayOfBlanks = (width: number): BoardState => R.times(() => {
     }
 }, width)
 
-
 const arrayOfOne = (): Letter[] => arrayOfBlanks(1)
 const arrayOfTwo = (): Letter[] => arrayOfBlanks(2)
 

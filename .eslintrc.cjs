@@ -203,7 +203,11 @@ module.exports = {
         "no-fallthrough": "off",
         "no-invalid-this": "off",
         "no-irregular-whitespace": "error",
-        "no-multiple-empty-lines": "error",
+        "no-multiple-empty-lines": [
+            "error", {
+                "max": 1,
+                "maxEOF": 1
+            }],
         "no-new-wrappers": "error",
         "no-shadow": "off",
         "no-throw-literal": "error",

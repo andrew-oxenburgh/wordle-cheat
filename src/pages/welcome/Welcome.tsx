@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown'
 import PageBody from '#/components/structural/PageBody'
 import Card from 'react-bootstrap/Card'
 
-
 const Welcome = () => {
     return (
         <PageBody name="welcome">
@@ -36,5 +35,4 @@ Like:
 }
 
 export default Welcome
-
 

@@ -64,7 +64,6 @@ test('convert multiple value back to OG format', () => {
     expect(convertOgObjectToOgArray(input)).toStrictEqual(expectedOutput)
 })
 
-
 const spotify = {
     'ogSiteName': 'Spotify',
     'musicDuration': '163',

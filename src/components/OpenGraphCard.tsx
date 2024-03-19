@@ -11,7 +11,6 @@ import {
 } from '../pages/open-graph-page/open-graph.types'
 import Loader from './Loader'
 
-
 /* eslint-disable-next-line */
 const ArticleCard = ({ graph }: { graph: ArticleGraphType }) => {
     return (

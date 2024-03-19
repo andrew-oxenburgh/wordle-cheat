@@ -60,5 +60,4 @@ export const calcCols = (board: BoardState, width = 5): ColsState => {
     return ret
 }
 
-
 export default {}

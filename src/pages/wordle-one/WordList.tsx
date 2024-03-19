@@ -36,4 +36,3 @@ WordList.propTypes = {
 
 export default WordList
 
-

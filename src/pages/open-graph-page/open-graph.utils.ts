@@ -53,7 +53,6 @@ export const normalise = (og: OgObject, url: string): NormalisedType => {
         }
     }
 
-
     return ret
 }
 

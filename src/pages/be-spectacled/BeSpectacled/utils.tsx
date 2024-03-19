@@ -8,7 +8,6 @@ export const findItemIndexById = (id: UniqueIdentifier, items: Item[]): number =
     return R.findIndex((v: Item) => (v.id === id), items) as number
 }
 
-
 export type Item = {
     id: number
     text: string

@@ -35,7 +35,6 @@ export const urlConversions = (s: string): ConversionType[] => {
     return ret
 }
 
-
 // value: `
 // protocol: ${url.protocol},
 
@@ -47,5 +46,4 @@ export const urlConversions = (s: string): ConversionType[] => {
 
 // search: ${url.search},
 //         `
-
 

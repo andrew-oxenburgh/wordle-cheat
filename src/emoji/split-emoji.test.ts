@@ -34,7 +34,6 @@ describe('emoji-main', () => {
             const isComment = line[0] === '#'
             if (isComment) return acc
 
-
         }, [], lines)
 
     })

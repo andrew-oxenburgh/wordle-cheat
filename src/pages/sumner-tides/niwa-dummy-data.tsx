@@ -15,7 +15,6 @@ export type NiwaDataType = {
     }[]
 }
 
-
 const niwaExample: NiwaDataType = {
     'metadata': {
         'latitude': -28.948,

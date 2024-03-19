@@ -57,7 +57,6 @@ const CopyableText = ({ text, warning, time = 3000 }: CopyableTextProps) => {
     const closeAlert = () => setShow(false)
     const showAlert = () => setShow(true)
 
-
     const onCopy = () => {
         const copy = async () => {
             await navigator.clipboard.writeText(text)

@@ -88,7 +88,6 @@ const MyLinks: React.FC = () => {
         void fillCard(url)
     }
 
-
     const cardStyle = { maxWidth: '30em', margin: 'auto' }
 
     return (

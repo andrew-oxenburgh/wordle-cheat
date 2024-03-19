@@ -1,6 +1,5 @@
 // PAGE: password-generator
 
-
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 
@@ -43,7 +42,6 @@ const useStyles = createUseStyles({
         margin: 'auto',
     },
 })
-
 
 function* randomNumberGenerator(): Generator<number> {
     const array = new Uint32Array(10)

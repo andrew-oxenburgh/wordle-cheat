@@ -1,5 +1,4 @@
 
-
 export const appMaxWidth = {
     maxWidth: '900px',
 }
@@ -16,6 +15,5 @@ export const cardStyle = {
     maxWidth: '30em',
     margin: 'auto',
 }
-
 
 export default {}

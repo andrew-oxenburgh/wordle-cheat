@@ -127,7 +127,6 @@ export interface WordleForm {
     position: (PositionEntity)[]
 }
 
-
 export const FORM: WordleForm = {
     unused: '',
     position: [
