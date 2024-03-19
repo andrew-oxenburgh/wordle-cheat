@@ -1,7 +1,7 @@
 import { ButtonWithTooltip } from '../ButtonWithTooltip'
 import { useLocalStorage } from 'usehooks-ts'
 import Toast from 'react-bootstrap/Toast'
-import ToastContainer from 'react-bootstrap/ToastContainer';
+import ToastContainer from 'react-bootstrap/ToastContainer'
 
 const AcceptCookies = () => {
     const [acceptCookies, setAcceptCookies] = useLocalStorage('accept-cookies', false)

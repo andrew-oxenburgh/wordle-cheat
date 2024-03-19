@@ -31,9 +31,6 @@ export type PhotoBoothType = {
 
 export const GotoPhotoBooth = ({ openPhotoBooth, style, show }: PhotoBoothType) => {
     const {
-        attributes,
-        listeners,
-        setNodeRef,
         transform,
         transition,
     } = useSortable({
