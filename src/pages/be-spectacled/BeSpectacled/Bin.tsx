@@ -4,18 +4,15 @@ import { faTrash as icon } from '@fortawesome/free-solid-svg-icons/faTrash'
 import { createUseStyles } from 'react-jss'
 import { DELETEABLE } from './utils'
 
-const defOpacity = 0.05
+const defOpacity = 0.1
 
 const useStyles = createUseStyles({
     bin: {
         position: 'absolute',
-        right: '50%',
+        left: 'calc(50% - 0.5em)',
         bottom: '0',
         fontSize: '300%',
         opacity: defOpacity,
-        // transition: 'opacity 1s ease 1s',
-        // color: 'pink',
-        // background: 'blue',
     },
 })
 
@@ -38,6 +35,4 @@ export const Bin = ({ show }: { show: boolean }) => {
             </span>
         </div>
     )
-
-    return ''
 }

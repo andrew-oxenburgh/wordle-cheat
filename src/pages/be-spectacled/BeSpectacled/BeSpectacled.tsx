@@ -16,13 +16,14 @@ import {
     SortableContext,
 } from '@dnd-kit/sortable'
 
-import { PhotoBooth } from './PhotoBooth'
+import { GotoPhotoBooth } from './GotoPhotoBooth'
 import { Bin } from './Bin'
 import { createUseStyles } from 'react-jss'
 import { deleteCollisionDetection } from './deleteCollisionDetection'
 import { DELETEABLE, Item, _items } from './utils'
 import { EtAl } from './EtAl'
 import { PhotoFrames } from './PhotoFrames'
+import { Camera } from './Camera'
 
 const useStyles = createUseStyles({
     container: {
@@ -32,11 +33,13 @@ const useStyles = createUseStyles({
         display: 'flex',
         border: 'green 7px dashed',
         flexFlow: 'row wrap',
+        position: 'relative',
     },
 })
 
 export const BeSpectacled = () => {
     const [items, setItems] = useState(_items)
+    const [photoBooth, setPhotoBooth] = useState(false)
     const [dragging, setDragging] = useState(false)
     const [cnt, setCnt] = useState(100)
 
@@ -87,6 +90,7 @@ export const BeSpectacled = () => {
                 img,
             })
         }
+        setPhotoBooth(false)
     }
 
     const deleteMe = (id: number) => {
@@ -94,37 +98,45 @@ export const BeSpectacled = () => {
         setItems(newItems)
     }
 
+    const openPhotoBooth = () => {
+        setPhotoBooth(true)
+    }
+
+    const cancel = () => {
+        setPhotoBooth(false)
+    }
+
     const classes = useStyles()
+    const album = <DndContext
+        // measuring={measuringConfig}
+        sensors={sensors}
+        collisionDetection={deleteCollisionDetection}
+        onDragEnd={handleDragEnd}
+        onDragStart={() => { setDragging(true) }}
+    >
+        <div style={{ position: 'relative' }}>
+            <SortableContext
+                items={items}
+            >
+                <div className={classes.container}>
+                    <PhotoFrames
+                        items={items}
+                        itemStyle={itemStyle}
+                        deleteMe={deleteMe} />
+                    <GotoPhotoBooth
+                        show={items.length < 6}
+                        style={itemStyle}
+                        key={'camera'}
+                        openPhotoBooth={openPhotoBooth} />
+                </div>
+            </SortableContext>
+            <Bin show={dragging} />
+        </div>
+    </DndContext>
+
     return (
         <>
-            <DndContext
-                // measuring={measuringConfig}
-                sensors={sensors}
-                collisionDetection={deleteCollisionDetection}
-                onDragEnd={handleDragEnd}
-                onDragStart={() => { setDragging(true) }}
-            >
-                <div style={{ position: 'relative' }}>
-                    <SortableContext
-                        items={items}
-                    >
-                        <div className={classes.container}>
-                            <PhotoFrames
-                                items={items}
-                                itemStyle={itemStyle}
-                                deleteMe={deleteMe}
-                            />
-                            <PhotoBooth
-                                show={items.length < 6}
-                                style={itemStyle}
-                                key={'camera'}
-                                saveImage={saveImage}
-                            />
-                        </div>
-                    </SortableContext>
-                    <Bin show={dragging} />
-                </div>
-            </DndContext>
+            {photoBooth ? <Camera onCancel={cancel} saveImage={saveImage} /> : album}
             <EtAl
                 items={items}
                 setItems={setItems}
