@@ -12,12 +12,12 @@ const useStyles = createUseStyles({
     },
 })
 
-export const Bin = (props: any) => {
+export const Bin = ({ show }: { show: boolean }) => {
     const { isOver, setNodeRef } = useDroppable({
         id: 'deleteable',
     })
     const classes = useStyles()
-    if (props.show) {
+    if (show) {
         return (
             <div className={classes.bin}
                 style={{

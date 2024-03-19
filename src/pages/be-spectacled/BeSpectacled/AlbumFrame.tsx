@@ -1,13 +1,17 @@
-import { CSS, Transform } from '@dnd-kit/utilities'
-import { useSortable, defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
+import { useRef } from 'react'
+
+import Webcam from 'react-webcam'
+import Button from 'react-bootstrap/Button'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical as icon } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical'
 import { faTimes as cross } from '@fortawesome/free-solid-svg-icons/faTimes'
 import { faCamera as camera } from '@fortawesome/free-solid-svg-icons/faCamera'
-import Webcam from 'react-webcam'
-import Button from 'react-bootstrap/Button'
-import { useRef } from 'react'
+
 import { createUseStyles } from 'react-jss'
+
+import { CSS, Transform } from '@dnd-kit/utilities'
+import { useSortable, defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
 import { Active, UniqueIdentifier } from '@dnd-kit/core'
 import { SortableTransition } from '@dnd-kit/sortable/dist/hooks/types'
 

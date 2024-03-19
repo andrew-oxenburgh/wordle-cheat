@@ -1,14 +1,13 @@
 import { HashRouter } from 'react-router-dom'
-import './bootstrap.min.css'
 
 // dynamic because possibly big imports
 import Navigation from './components/structural/Navigation'
 import WCRoutes from './WCRoutes'
+import { lazyComponents } from './lazyComponents'
 
 import './config/firebase'
 import './import-fontawesome-icons'
-
-import { lazyComponents } from './lazyComponents'
+import './bootstrap.min.css'
 
 const App = () => {
     return (
