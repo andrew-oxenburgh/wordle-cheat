@@ -37,13 +37,15 @@ export const Camera = ({ saveImage, onCancel }: {
 }) => {
     const [inited, setInited] = useState(false)
     const classes = useStyles()
-    const webcamRef = useRef(null)
+    const webcamRef = useRef<Webcam>(null)
 
     const capture = () => {
         try {
-            const imageSrc: string = webcamRef?.current?.getScreenshot()
+            const imageSrc = webcamRef?.current?.getScreenshot()
+            if (imageSrc) {
+                saveImage(imageSrc)
+            }
             // console.log(imageSrc)
-            saveImage(imageSrc)
         } catch (e) {
             // eslint-disable-next-line no-console
             console.error('error', e)
