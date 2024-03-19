@@ -33,9 +33,13 @@ export const Camera = ({ saveImage, onCancel }: {
     const webcamRef = useRef(null)
 
     const capture = () => {
-        const imageSrc: string = webcamRef?.current?.getScreenshot()
-        // console.log(imageSrc)
-        saveImage(imageSrc)
+        try {
+            const imageSrc: string = webcamRef?.current?.getScreenshot()
+            // console.log(imageSrc)
+            saveImage(imageSrc)
+        } catch (e) {
+            console.error('error', e)
+        }
     }
 
     return (
