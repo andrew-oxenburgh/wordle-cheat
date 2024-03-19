@@ -2,6 +2,9 @@ import { useDroppable } from '@dnd-kit/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash as icon } from '@fortawesome/free-solid-svg-icons/faTrash'
 import { createUseStyles } from 'react-jss'
+import { DELETEABLE } from './utils'
+
+const defOpacity = 0.05
 
 const useStyles = createUseStyles({
     bin: {
@@ -9,27 +12,32 @@ const useStyles = createUseStyles({
         right: '50%',
         bottom: '0',
         fontSize: '300%',
+        opacity: defOpacity,
+        // transition: 'opacity 1s ease 1s',
+        // color: 'pink',
+        // background: 'blue',
     },
 })
 
 export const Bin = ({ show }: { show: boolean }) => {
     const { isOver, setNodeRef } = useDroppable({
-        id: 'deleteable',
+        id: DELETEABLE,
     })
     const classes = useStyles()
-    if (show) {
-        return (
-            <div className={classes.bin}
-                style={{
-                    color: isOver ? 'green' : undefined,
-                    background: isOver ? 'red' : undefined,
-                }}
-            >
-                <span ref={setNodeRef} >
-                    <FontAwesomeIcon icon={icon} />
-                </span>
-            </div>
-        )
-    }
+    return (
+        <div className={classes.bin}
+            style={{
+                color: isOver ? 'green' : undefined,
+                background: isOver ? 'red' : undefined,
+                opacity: (show ? 1 : defOpacity),
+                transition: 'all 1s ease',
+            }}
+        >
+            <span ref={setNodeRef} >
+                <FontAwesomeIcon icon={icon} />
+            </span>
+        </div>
+    )
+
     return ''
 }

@@ -79,7 +79,11 @@ export const PhotoFrame = ({ data, style, deleteMe }: AlbumFrameType) => {
     return (
         <div style={dynamicCardStyle} className={classes.card}>
             {data.img && <img className={classes.img} src={data.img} />}
-            <span className={classes.ellipsis} ref={setNodeRef} {...attributes} {...listeners}>
+            <span
+                className={classes.ellipsis}
+                ref={setNodeRef}
+                {...attributes}
+                {...listeners}>
                 <h3>{data.id}</h3>
                 <FontAwesomeIcon icon={icon} />
             </span>

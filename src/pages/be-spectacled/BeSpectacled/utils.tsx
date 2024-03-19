@@ -2,6 +2,8 @@ import { Active, UniqueIdentifier } from '@dnd-kit/core'
 import { defaultAnimateLayoutChanges } from '@dnd-kit/sortable'
 import { SortableTransition } from '@dnd-kit/sortable/dist/hooks/types'
 
+export const DELETEABLE = 'deleteable'
+
 export type Item = {
     id: number
     text: string

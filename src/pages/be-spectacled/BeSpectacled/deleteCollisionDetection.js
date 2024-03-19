@@ -4,6 +4,7 @@ import {
     closestCorners,
     rectIntersection,
 } from '@dnd-kit/core'
+import { DELETEABLE } from './utils'
 
 export const deleteCollisionDetection = ({
     droppableContainers, ...args
@@ -11,7 +12,7 @@ export const deleteCollisionDetection = ({
     // First, let's see if the `trash` droppable rect is intersecting
     const rectIntersectionCollisions = rectIntersection({
         ...args,
-        droppableContainers: droppableContainers.filter(({ id }) => id === 'deleteable'),
+        droppableContainers: droppableContainers.filter(({ id }) => id === DELETEABLE),
     })
 
     // Collision detection algorithms return an array of collisions
@@ -23,6 +24,6 @@ export const deleteCollisionDetection = ({
     // Compute other collisions
     return closestCorners({
         ...args,
-        droppableContainers: droppableContainers.filter(({ id }) => id !== 'deleteable'),
+        droppableContainers: droppableContainers.filter(({ id }) => id !== DELETEABLE),
     })
 }

@@ -20,7 +20,7 @@ import { PhotoBooth } from './PhotoBooth'
 import { Bin } from './Bin'
 import { createUseStyles } from 'react-jss'
 import { deleteCollisionDetection } from './deleteCollisionDetection'
-import { Item, _items } from './utils'
+import { DELETEABLE, Item, _items } from './utils'
 import { EtAl } from './EtAl'
 import { PhotoFrames } from './PhotoFrames'
 
@@ -53,7 +53,7 @@ export const BeSpectacled = () => {
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event
 
-        if (over?.id === 'deleteable') {
+        if (over?.id === DELETEABLE) {
             setDragging(true)
             const newItems: Item[] = R.filter((i: Item) => { return i.id !== active.id }, items)
             setItems(newItems)

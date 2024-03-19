@@ -16,7 +16,11 @@ export type PhotoBoothType = {
 
 export const PhotoBooth = ({ saveImage, style, show }: PhotoBoothType) => {
     const {
-        transform, transition,
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
     } = useSortable({
         animateLayoutChanges,
         id: 'camera',
@@ -25,7 +29,6 @@ export const PhotoBooth = ({ saveImage, style, show }: PhotoBoothType) => {
             easing: 'ease-out',
         },
     })
-
     const dynamicCardStyle = {
         transform: CSS.Transform.toString(transform as Transform),
         transition,
@@ -53,7 +56,10 @@ export const PhotoBooth = ({ saveImage, style, show }: PhotoBoothType) => {
                     left: 0,
                 }}
                 audio={false}
-                ref={webcamRef} screenshotFormat="image/jpeg" // width={'100em'}
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+                {...attributes} {...listeners}
+            // width={'100em'}
             />
             <Button className={classes.captureButton} onClick={capture}>
                 <FontAwesomeIcon icon={camera} />
