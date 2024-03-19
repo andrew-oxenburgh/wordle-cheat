@@ -16,9 +16,9 @@ import {
 import { GotoPhotoBooth } from './GotoPhotoBooth'
 import { Bin } from './Bin'
 import { deleteCollisionDetection } from './deleteCollisionDetection'
-import { DELETEABLE, type Item } from './utils'
+import { DELETEABLE, findItemIndexById, type Item } from './utils'
 import { PhotoFrames } from './PhotoFrames'
-import { useStyles, findItemIndexById } from './BeSpectacled'
+import { useStyles } from './BeSpectacled'
 
 export const Album = ({ items, setItems, openPhotoBooth, deleteMe }: {
     items: Item[]

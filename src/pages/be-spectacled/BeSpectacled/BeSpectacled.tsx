@@ -2,10 +2,6 @@ import { useState } from 'react'
 import * as R from 'ramda'
 import useMobileDetect from '@groupher/use-mobile-detect-hook'
 
-import {
-    UniqueIdentifier,
-} from '@dnd-kit/core'
-
 import { createUseStyles } from 'react-jss'
 import { type Item, _items } from './utils'
 import { EtAl } from './EtAl'
@@ -23,10 +19,6 @@ export const useStyles = createUseStyles({
         position: 'relative',
     },
 })
-
-export const findItemIndexById = (id: UniqueIdentifier, items: Item[]): number => {
-    return R.findIndex((v: Item) => (v.id === id), items) as number
-}
 
 export const BeSpectacled = () => {
     const [items, setItems] = useState(_items)
