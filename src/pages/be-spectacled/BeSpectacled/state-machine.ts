@@ -32,6 +32,9 @@ export const createMachine = () => new StateMachine({
         items: [],
     },
     methods: {
+        /*
+        * Lifestyle functions get passed the current machine
+        */
         onAfterRequest: (o: any) => {
             return (o.fsm.items.length < 6)
         },

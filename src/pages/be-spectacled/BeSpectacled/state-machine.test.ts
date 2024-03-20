@@ -114,7 +114,7 @@ describe('state machine', () => {
         expect(fsm.canRequest()).toBeTruthy()
         fsm.items.push({})
         assertAlbumSizeIs(6)
-        expect(fsm.canRequest()).toBeFalsy()
+        expect(fsm.canRequest(), 'can\'t add a final request').toBeFalsy()
     })
     describe('VIEW_ALBUM', () => {
         test('can REQUEST and DELETE', () => {
@@ -125,8 +125,10 @@ describe('state machine', () => {
             assertStateIs(STT_PHOTOBOOTH)
         })
         test('DELETE without id stays in ALBUM', () => {
+            assertAlbumIsEmpty()
             fsm.delete()
             assertStateIs(STT_ALBUM)
+            assertAlbumIsEmpty()
         })
         test('DELETE existing item with id', () => {
             assertAlbumIsEmpty()
