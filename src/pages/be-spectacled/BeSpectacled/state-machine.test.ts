@@ -1,57 +1,21 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 /* eslint-disable no-console */
 import { expect, test, describe, beforeEach } from 'vitest'
-import StateMachine from 'javascript-state-machine'
-import { Item, _items } from './utils'
+import {
+    STT_ACCEPT,
+    STT_ALBUM,
+    STT_PHOTOBOOTH,
+    TX_ACCEPT,
+    TX_CANCEL_ACCEPT,
+    TX_CANCEL_TAKE,
+    TX_DELETE,
+    TX_REQUEST,
+    TX_TAKE,
+    createMachine,
+} from './state-machine'
+
 import * as R from 'ramda'
-
-// states
-const STT_ALBUM = 'album'
-const STT_PHOTOBOOTH = 'photobooth'
-const STT_ACCEPT = 'accept'
-
-// transitions
-const TX_REQUEST = 'request'
-const TX_TAKE = 'take'
-const TX_ACCEPT = 'accept'
-const TX_CANCEL_ACCEPT = 'cancel_accept'
-const TX_CANCEL_TAKE = 'cancel_take'
-const TX_DELETE = 'delete'
-
-const createMachine = () => new StateMachine({
-    init: STT_ALBUM,
-    transitions: [
-        { name: TX_REQUEST, from: STT_ALBUM, to: STT_PHOTOBOOTH },
-        { name: TX_TAKE, from: STT_PHOTOBOOTH, to: STT_ACCEPT },
-        { name: TX_ACCEPT, from: STT_ACCEPT, to: STT_ALBUM },
-        { name: TX_CANCEL_ACCEPT, from: STT_ACCEPT, to: STT_ALBUM },
-        { name: TX_CANCEL_TAKE, from: STT_PHOTOBOOTH, to: STT_ALBUM },
-        { name: TX_DELETE, from: STT_ALBUM, to: STT_ALBUM },
-    ],
-    data: {
-        items: [],
-    },
-    methods: {
-        // onRequest: () => { console.log('request') },
-        // onTake: () => { console.log('take') },
-        onAfterAccept: (o: any, i: Item) => {
-            // console.log('accept')
-            o.fsm.items.push(i)
-        },
-        onAfterDelete: (o: any, id: number) => {
-            if (!id) {
-                return false
-            }
-            o.fsm.items = R.filter((i: Item) => { return i.id !== id }, o.fsm.items)
-        },
-        // onCancelAccept: () => { console.log('cancel accept') },
-        // onCancelTake: () => { console.log('cancel take') },
-        getItems: () => {
-            // clone, for safety
-            return R.clone(fsm.items)
-        },
-    },
-})
+import { Item } from './utils'
 
 let fsm = createMachine()
 
@@ -110,7 +74,26 @@ describe('state machine', () => {
         fsm.cancelAccept()
         assertStateIs(STT_ALBUM)
         assertAlbumIsEmpty()
+    })
+    test('can\'t request more than 6 photos', () => {
+        function addItem(id: number) {
+            fsm.request()
+            fsm.take()
+            fsm.accept({ id, img: '', text: '' })
+        }
+        assertAlbumIsEmpty()
 
+        R.forEach((i: number) => {
+            addItem(i + 10)
+            assertAlbumSizeIs(i)
+
+        }, R.range(1, 7))
+
+        assertAlbumSizeIs(6)
+        assertStateIs(STT_ALBUM)
+
+        expect(fsm.request()).toBeFalsy()
+        assertStateIs(STT_ALBUM)
     })
     describe('VIEW_ALBUM', () => {
         test('can REQUEST and DELETE', () => {
