@@ -18,13 +18,6 @@ const TX_CANCEL_ACCEPT = 'cancel_accept'
 const TX_CANCEL_TAKE = 'cancel_take'
 const TX_DELETE = 'delete'
 
-type ItemsType = {
-    fsm: {
-        items: Item[]
-        getItems: () => Item[]
-    }
-}
-
 const createMachine = () => new StateMachine({
     init: STT_ALBUM,
     transitions: [
@@ -51,14 +44,11 @@ const createMachine = () => new StateMachine({
             }
             o.fsm.items = R.filter((i: Item) => { return i.id !== id }, o.fsm.items)
         },
-        onCancelAccept: () => { console.log('cancel accept') },
-        onCancelTake: () => { console.log('cancel take') },
-        desc() {
-            console.log('items ', this.getItems())
-        },
-        getItems(): Item[] {
+        // onCancelAccept: () => { console.log('cancel accept') },
+        // onCancelTake: () => { console.log('cancel take') },
+        getItems: () => {
             // clone, for safety
-            return R.clone(this.items)
+            return R.clone(fsm.items)
         },
     },
 })
@@ -66,76 +56,116 @@ const createMachine = () => new StateMachine({
 let fsm = createMachine()
 
 describe('state machine', () => {
+    function assertStateIs(s: string) {
+        expect(fsm.state).toEqual(s)
+    }
+
+    function assertAlbumSizeIs(l: number) {
+        expect(fsm.getItems().length).toEqual(l)
+    }
+
+    function assertAlbumIsEmpty() {
+        expect(fsm.getItems().length).toEqual(0)
+    }
+
+    function assertAlbumIs(items: Item[]) {
+        expect(fsm.getItems()).toEqual(items)
+    }
+
+    function assertValidTransactions(txs: string[]) {
+        expect(fsm.transitions()).toEqual(txs)
+    }
+
     beforeEach(() => {
         fsm = createMachine()
     })
     test('straight through - view, take, accept', () => {
-        expect(fsm.state).toEqual(STT_ALBUM)
-        expect(fsm.getItems()).toEqual([])
+        assertStateIs(STT_ALBUM)
+        assertAlbumIsEmpty()
 
-        expect(fsm.request()).toBeTruthy()
-        expect(fsm.state).toEqual(STT_PHOTOBOOTH)
-        expect(fsm.take()).toBeTruthy()
-        expect(fsm.state).toEqual(STT_ACCEPT)
-        expect(fsm.getItems()).toEqual([])
+        fsm.request()
+        assertStateIs(STT_PHOTOBOOTH)
+        fsm.take()
+        assertStateIs(STT_ACCEPT)
+        assertAlbumIsEmpty()
 
-        expect(fsm.accept({ img: 'image', id: 44 })).toBeTruthy()
-        expect(fsm.getItems()).toEqual([{ img: 'image', id: 44 }])
-        expect(fsm.state).toEqual(STT_ALBUM)
+        expect(fsm.accept({ img: 'image', id: 44, text: '' })).toBeTruthy()
+        assertAlbumSizeIs(1)
+        assertAlbumIs([{ img: 'image', id: 44, text: '' }])
+        assertStateIs(STT_ALBUM)
+    })
+    test('straight through - view, take, cancel', () => {
+        assertStateIs(STT_ALBUM)
+        assertAlbumIsEmpty()
+
+        fsm.request()
+        assertStateIs(STT_PHOTOBOOTH)
+        fsm.cancelTake()
+        assertStateIs(STT_ALBUM)
+        assertAlbumIsEmpty()
+    })
+    test('straight through - view, take, accept, cancel', () => {
+        fsm.request()
+        fsm.take()
+        fsm.cancelAccept()
+        assertStateIs(STT_ALBUM)
+        assertAlbumIsEmpty()
+
     })
     describe('VIEW_ALBUM', () => {
         test('can REQUEST and DELETE', () => {
-            expect(fsm.transitions()).toEqual([TX_REQUEST, TX_DELETE])
+            assertValidTransactions([TX_REQUEST, TX_DELETE])
         })
         test('REQUEST goes to PHOTO_BOOTH', () => {
-            expect(fsm.request()).toBeTruthy()
-            expect(fsm.state).toEqual(STT_PHOTOBOOTH)
+            fsm.request()
+            assertStateIs(STT_PHOTOBOOTH)
         })
         test('DELETE without id stays in ALBUM', () => {
-            expect(fsm.delete()).toBeFalsy()
+            fsm.delete()
+            assertStateIs(STT_ALBUM)
         })
         test('DELETE existing item with id', () => {
-            expect(fsm.getItems.length).toEqual(0)
+            assertAlbumIsEmpty()
             fsm.items = [{ img: '', id: 22 }]
-            expect(fsm.getItems().length).toEqual(1)
-            expect(fsm.delete(22)).toBeTruthy()
-            expect(fsm.getItems.length).toEqual(0)
+            assertAlbumSizeIs(1)
+            expect(fsm.delete(22), 'should delete existing item').toBeTruthy()
+            assertAlbumIsEmpty()
         })
         test('do not DELETE non-existing item', () => {
-            expect(fsm.getItems.length).toEqual(0)
+            assertAlbumIsEmpty()
             fsm.items = [{ img: '', id: 22 }]
-            expect(fsm.getItems().length).toEqual(1)
-            expect(fsm.delete(23)).toBeTruthy()
-            expect(fsm.getItems().length).toEqual(1)
+            assertAlbumSizeIs(1)
+            expect(fsm.delete(23), 'should not delete no existing item').toBeTruthy()
+            assertAlbumSizeIs(1)
         })
     })
     describe('TAKE_PHOTO', () => {
         const gotoTake = () => {
-            expect(fsm.state).toEqual(STT_ALBUM)
+            assertStateIs(STT_ALBUM)
             fsm.request()
-            expect(fsm.state).toEqual(STT_PHOTOBOOTH)
+            assertStateIs(STT_PHOTOBOOTH)
         }
         test('can TAKE photo or cancel', () => {
             gotoTake()
-            expect(fsm.transitions()).toEqual([TX_TAKE, TX_CANCEL_TAKE])
+            assertValidTransactions([TX_TAKE, TX_CANCEL_TAKE])
         })
         test('take photo, go to accept page', () => {
             gotoTake()
-            expect(fsm.take()).toBeTruthy()
-            expect(fsm.state).toEqual(STT_ACCEPT)
+            fsm.take()
+            assertStateIs(STT_ACCEPT)
         })
         test('cancel photo, go to album page', () => {
             gotoTake()
-            expect(fsm.cancelTake()).toBeTruthy()
-            expect(fsm.state).toEqual(STT_ALBUM)
+            fsm.cancelTake()
+            assertStateIs(STT_ALBUM)
         })
     })
     describe('ACCEPT_PHOTO', () => {
         const gotoAccept = () => {
-            expect(fsm.state).toEqual(STT_ALBUM)
+            assertStateIs(STT_ALBUM)
             fsm.request()
             fsm.take()
-            expect(fsm.state).toEqual(STT_ACCEPT)
+            assertStateIs(STT_ACCEPT)
         }
         test('can accept photo or cancel', () => {
             gotoAccept()
@@ -144,12 +174,13 @@ describe('state machine', () => {
         test('accept, go to album page', () => {
             gotoAccept()
             expect(fsm.accept()).toBeTruthy()
-            expect(fsm.state).toEqual(STT_ALBUM)
+            assertStateIs(STT_ALBUM)
         })
         test('not accept, go to album page', () => {
             gotoAccept()
             expect(fsm.cancelAccept()).toBeTruthy()
-            expect(fsm.state).toEqual(STT_ALBUM)
+            assertStateIs(STT_ALBUM)
         })
     })
 })
+
