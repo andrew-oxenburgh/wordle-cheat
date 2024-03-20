@@ -86,7 +86,6 @@ describe('state machine', () => {
         R.forEach((i: number) => {
             addItem(i + 10)
             assertAlbumSizeIs(i)
-
         }, R.range(1, 7))
 
         assertAlbumSizeIs(6)
@@ -94,6 +93,28 @@ describe('state machine', () => {
 
         expect(fsm.request()).toBeFalsy()
         assertStateIs(STT_ALBUM)
+    })
+    test('can request photo', () => {
+        assertAlbumSizeIs(0)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(1)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(2)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(3)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(4)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(5)
+        expect(fsm.canRequest()).toBeTruthy()
+        fsm.items.push({})
+        assertAlbumSizeIs(6)
+        expect(fsm.canRequest()).toBeFalsy()
     })
     describe('VIEW_ALBUM', () => {
         test('can REQUEST and DELETE', () => {
