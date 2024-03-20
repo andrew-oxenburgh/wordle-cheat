@@ -14,7 +14,9 @@ export const TX_CANCEL_ACCEPT = 'cancel_accept'
 export const TX_CANCEL_TAKE = 'cancel_take'
 export const TX_DELETE = 'delete'
 
-function checkNumberOfPhotos(): string { return (this.items.length < 6 ? STT_PHOTOBOOTH : STT_ALBUM) }
+const maxNumberOfPhotos = 6
+
+function checkNumberOfPhotos(): string { return (this.items.length < maxNumberOfPhotos ? STT_PHOTOBOOTH : STT_ALBUM) }
 
 export const createMachine = () => new StateMachine({
     init: STT_ALBUM,
@@ -36,17 +38,21 @@ export const createMachine = () => new StateMachine({
         onAfterAccept: (o: any, i: Item) => {
             o.fsm.items.push(i)
         },
-        onAfterDelete(o: any, id: number) {
+        onAfterDelete: (o: any, id: number) => {
             if (!id) {
                 return false
             }
-            this.items = R.filter((i: Item) => { return i.id !== id }, this.items)
+            o.fsm.items = R.filter((i: Item) => { return i.id !== id }, o.fsm.items)
         },
+
+        /*
+         * Non lifecyle functions should be declared old style.
+         */
         getItems(): Item[] {
             return R.clone(this.items)
         },
         canRequest(): boolean {
-            return this.items.length < 6
+            return this.items.length < maxNumberOfPhotos
         },
     },
 })
