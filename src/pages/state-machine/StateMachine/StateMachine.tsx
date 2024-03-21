@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { StyleHTMLAttributes, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
     TX_ACCEPT,
     TX_CANCEL_ACCEPT,
@@ -110,7 +110,7 @@ const StateMachine = () => {
         return 'm-1'
     }
 
-    const stateClass = (state: string): string => {
+    const stateClass = (): string => {
         return 'border border-primary-subtle p-3'
     }
 
