@@ -10,6 +10,7 @@ export const STT_ACCEPT = 'accept'
 export const TX_REQUEST = 'request'
 export const TX_TAKE = 'take'
 export const TX_ACCEPT = 'accept'
+export const TX_CLEAR = 'clear'
 export const TX_CANCEL_ACCEPT = 'cancel_accept'
 export const TX_CANCEL_TAKE = 'cancel_take'
 export const TX_DELETE = 'delete'
@@ -27,6 +28,7 @@ export const createMachine = () => new StateMachine({
         { name: TX_CANCEL_ACCEPT, from: STT_ACCEPT, to: STT_ALBUM },
         { name: TX_CANCEL_TAKE, from: STT_PHOTOBOOTH, to: STT_ALBUM },
         { name: TX_DELETE, from: STT_ALBUM, to: STT_ALBUM },
+        { name: TX_CLEAR, from: STT_ALBUM, to: STT_ALBUM },
     ],
     data: {
         items: [],
@@ -46,6 +48,9 @@ export const createMachine = () => new StateMachine({
                 return false
             }
             o.fsm.items = R.filter((i: Item) => { return i.id !== id }, o.fsm.items)
+        },
+        onAfterClear: (o: any) => {
+            o.fsm.items = []
         },
 
         /*

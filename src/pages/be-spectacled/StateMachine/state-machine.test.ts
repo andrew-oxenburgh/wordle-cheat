@@ -8,6 +8,7 @@ import {
     TX_ACCEPT,
     TX_CANCEL_ACCEPT,
     TX_CANCEL_TAKE,
+    TX_CLEAR,
     TX_DELETE,
     TX_REQUEST,
     TX_TAKE,
@@ -38,6 +39,20 @@ describe('state machine', () => {
 
     function assertValidTransactions(txs: string[]) {
         expect(fsm.transitions()).toEqual(txs)
+    }
+
+    function addItems(j: number) {
+        function addItem(id: number) {
+            fsm.request()
+            fsm.take()
+            fsm.accept({ id, img: '', text: '' })
+        }
+        assertAlbumIsEmpty()
+
+        R.forEach((i: number) => {
+            addItem(i + 10)
+            assertAlbumSizeIs(i)
+        }, R.range(1, 1 + j))
     }
 
     beforeEach(() => {
@@ -76,17 +91,7 @@ describe('state machine', () => {
         assertAlbumIsEmpty()
     })
     test('can\'t request more than 6 photos', () => {
-        function addItem(id: number) {
-            fsm.request()
-            fsm.take()
-            fsm.accept({ id, img: '', text: '' })
-        }
-        assertAlbumIsEmpty()
-
-        R.forEach((i: number) => {
-            addItem(i + 10)
-            assertAlbumSizeIs(i)
-        }, R.range(1, 7))
+        addItems(6)
 
         assertAlbumSizeIs(6)
         assertStateIs(STT_ALBUM)
@@ -118,7 +123,7 @@ describe('state machine', () => {
     })
     describe('VIEW_ALBUM', () => {
         test('can REQUEST and DELETE', () => {
-            assertValidTransactions([TX_REQUEST, TX_DELETE])
+            assertValidTransactions([TX_REQUEST, TX_DELETE, TX_CLEAR])
         })
         test('REQUEST goes to PHOTO_BOOTH', () => {
             fsm.request()
@@ -127,6 +132,25 @@ describe('state machine', () => {
         describe('VIEW_ALBUM CLEAR', () => {
             test('can CLEAR empty ALBUM', () => {
                 assertAlbumIsEmpty()
+                fsm.clear()
+                assertStateIs(STT_ALBUM)
+                assertAlbumIsEmpty()
+            })
+            test('can CLEAR with 1 item', () => {
+                assertAlbumIsEmpty()
+                fsm.request()
+                fsm.take()
+                fsm.accept({ id: 88 })
+                assertAlbumSizeIs(1)
+                fsm.clear()
+                assertStateIs(STT_ALBUM)
+                assertAlbumIsEmpty()
+            })
+            test('can CLEAR with many item', () => {
+                addItems(3)
+                assertStateIs(STT_ALBUM)
+
+                assertAlbumSizeIs(3)
                 fsm.clear()
                 assertStateIs(STT_ALBUM)
                 assertAlbumIsEmpty()
