@@ -15,7 +15,7 @@ export const TX_CANCEL_ACCEPT = 'cancel_accept'
 export const TX_CANCEL_TAKE = 'cancel_take'
 export const TX_DELETE = 'delete'
 export const TX_MOVE = 'move'
-
+export const TX_TAKE_AGAIN = 'take_again'
 const maxNumberOfPhotos = 6
 
 function checkNumberOfPhotos(): string { return (this.items.length < maxNumberOfPhotos ? STT_PHOTOBOOTH : STT_ALBUM) }
@@ -26,6 +26,7 @@ export const createMachine = () => new StateMachine({
         { name: TX_REQUEST, from: STT_ALBUM, to: checkNumberOfPhotos },
         { name: TX_TAKE, from: STT_PHOTOBOOTH, to: STT_ACCEPT },
         { name: TX_ACCEPT, from: STT_ACCEPT, to: STT_ALBUM },
+        { name: TX_TAKE_AGAIN, from: STT_ACCEPT, to: STT_PHOTOBOOTH },
         { name: TX_CANCEL_ACCEPT, from: STT_ACCEPT, to: STT_ALBUM },
         { name: TX_CANCEL_TAKE, from: STT_PHOTOBOOTH, to: STT_ALBUM },
         { name: TX_DELETE, from: STT_ALBUM, to: STT_ALBUM },

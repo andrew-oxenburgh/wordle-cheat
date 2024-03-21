@@ -13,11 +13,12 @@ import {
     TX_MOVE,
     TX_REQUEST,
     TX_TAKE,
+    TX_TAKE_AGAIN,
     createMachine,
 } from './state-machine'
 
 import * as R from 'ramda'
-import { Item } from '../BeSpectacled/utils'
+import { Item } from '#/pages/be-spectacled/BeSpectacled/utils'
 
 let fsm = createMachine()
 
@@ -309,17 +310,24 @@ describe('state machine', () => {
         }
         test('can accept photo or cancel', () => {
             gotoAccept()
-            expect(fsm.transitions()).toEqual([TX_ACCEPT, TX_CANCEL_ACCEPT])
+            expect(fsm.transitions()).toEqual([TX_ACCEPT, TX_TAKE_AGAIN, TX_CANCEL_ACCEPT])
         })
         test('accept, go to album page', () => {
             gotoAccept()
             expect(fsm.accept()).toBeTruthy()
             assertStateIs(STT_ALBUM)
         })
-        test('not accept, go to album page', () => {
+        test('cancel accept, go to album page', () => {
             gotoAccept()
             expect(fsm.cancelAccept()).toBeTruthy()
             assertStateIs(STT_ALBUM)
+        })
+        test('TAKE_AGAIN, go to album page', () => {
+            gotoAccept()
+            assertAlbumIsEmpty()
+            expect(fsm.takeAgain()).toBeTruthy()
+            assertAlbumIsEmpty()
+            assertStateIs(STT_PHOTOBOOTH)
         })
     })
 })
