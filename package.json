@@ -77,7 +77,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-jsdoc": "^48.0.6",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "firebase": "^10.8.0",
+    "firebase": "^10.9.0",
     "firebase-tools": "^13.2.1",
     "html2canvas": "^1.4.1",
     "javascript-state-machine": "^3.1.0",
