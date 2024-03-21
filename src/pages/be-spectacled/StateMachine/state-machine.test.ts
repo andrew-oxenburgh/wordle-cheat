@@ -15,7 +15,7 @@ import {
 } from './state-machine'
 
 import * as R from 'ramda'
-import { Item } from './utils'
+import { Item } from '../BeSpectacled/utils'
 
 let fsm = createMachine()
 
@@ -124,25 +124,35 @@ describe('state machine', () => {
             fsm.request()
             assertStateIs(STT_PHOTOBOOTH)
         })
-        test('DELETE without id stays in ALBUM', () => {
-            assertAlbumIsEmpty()
-            fsm.delete()
-            assertStateIs(STT_ALBUM)
-            assertAlbumIsEmpty()
+        describe('VIEW_ALBUM CLEAR', () => {
+            test('can CLEAR empty ALBUM', () => {
+                assertAlbumIsEmpty()
+                fsm.clear()
+                assertStateIs(STT_ALBUM)
+                assertAlbumIsEmpty()
+            })
         })
-        test('DELETE existing item with id', () => {
-            assertAlbumIsEmpty()
-            fsm.items = [{ img: '', id: 22 }]
-            assertAlbumSizeIs(1)
-            expect(fsm.delete(22), 'should delete existing item').toBeTruthy()
-            assertAlbumIsEmpty()
-        })
-        test('do not DELETE non-existing item', () => {
-            assertAlbumIsEmpty()
-            fsm.items = [{ img: '', id: 22 }]
-            assertAlbumSizeIs(1)
-            expect(fsm.delete(23), 'should not delete no existing item').toBeTruthy()
-            assertAlbumSizeIs(1)
+        describe('VIEW_ALBUM DELETE', () => {
+            test('DELETE without id stays in ALBUM', () => {
+                assertAlbumIsEmpty()
+                fsm.delete()
+                assertStateIs(STT_ALBUM)
+                assertAlbumIsEmpty()
+            })
+            test('DELETE existing item with id', () => {
+                assertAlbumIsEmpty()
+                fsm.items = [{ img: '', id: 22 }]
+                assertAlbumSizeIs(1)
+                expect(fsm.delete(22), 'should delete existing item').toBeTruthy()
+                assertAlbumIsEmpty()
+            })
+            test('do not DELETE non-existing item', () => {
+                assertAlbumIsEmpty()
+                fsm.items = [{ img: '', id: 22 }]
+                assertAlbumSizeIs(1)
+                expect(fsm.delete(23), 'should not delete no existing item').toBeTruthy()
+                assertAlbumSizeIs(1)
+            })
         })
     })
     describe('TAKE_PHOTO', () => {
