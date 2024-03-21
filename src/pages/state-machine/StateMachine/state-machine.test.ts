@@ -10,6 +10,7 @@ import {
     TX_CANCEL_TAKE,
     TX_CLEAR,
     TX_DELETE,
+    TX_MOVE,
     TX_REQUEST,
     TX_TAKE,
     createMachine,
@@ -37,22 +38,36 @@ describe('state machine', () => {
         expect(fsm.getItems()).toEqual(items)
     }
 
+    function assertAlbumIdsAre(ids: number[]) {
+        const actualIds = R.pluck('id', fsm.getItems())
+        expect(actualIds).toEqual(ids)
+    }
+
     function assertValidTransactions(txs: string[]) {
         expect(fsm.transitions()).toEqual(txs)
     }
 
+    function addItem(id: number) {
+        fsm.request()
+        fsm.take()
+        fsm.accept({ id, img: '', text: '' })
+    }
     function addItems(j: number) {
-        function addItem(id: number) {
-            fsm.request()
-            fsm.take()
-            fsm.accept({ id, img: '', text: '' })
-        }
         assertAlbumIsEmpty()
 
         R.forEach((i: number) => {
             addItem(i + 10)
             assertAlbumSizeIs(i)
         }, R.range(1, 1 + j))
+    }
+
+    function addItemsWithIds(ids: number[]) {
+        assertAlbumIsEmpty()
+        ids.forEach((id: number) => {
+            addItem(id)
+        })
+        assertAlbumIdsAre(ids)
+        assertAlbumSizeIs(ids.length)
     }
 
     beforeEach(() => {
@@ -99,7 +114,7 @@ describe('state machine', () => {
         expect(fsm.request()).toBeFalsy()
         assertStateIs(STT_ALBUM)
     })
-    test('can request photo', () => {
+    test('can request photo until we\'re full', () => {
         assertAlbumSizeIs(0)
         expect(fsm.canRequest()).toBeTruthy()
         fsm.items.push({})
@@ -122,12 +137,97 @@ describe('state machine', () => {
         expect(fsm.canRequest(), 'can\'t add a final request').toBeFalsy()
     })
     describe('VIEW_ALBUM', () => {
-        test('can REQUEST and DELETE', () => {
-            assertValidTransactions([TX_REQUEST, TX_DELETE, TX_CLEAR])
+        test('can REQUEST and DELETE and MOVE', () => {
+            assertValidTransactions([TX_REQUEST, TX_DELETE, TX_CLEAR, TX_MOVE])
         })
         test('REQUEST goes to PHOTO_BOOTH', () => {
             fsm.request()
             assertStateIs(STT_PHOTOBOOTH)
+        })
+        describe('VIEW_ALBUM MOVE', () => {
+            test('can MOVE on empty ALBUM', () => {
+                assertAlbumIsEmpty()
+                fsm.move(1, 3)
+                assertAlbumIdsAre([])
+                assertStateIs(STT_ALBUM)
+                assertAlbumIsEmpty()
+            })
+            test('can MOVE with ALBUM of 1', () => {
+                assertAlbumIsEmpty()
+                addItem(9)
+                assertAlbumSizeIs(1)
+                assertAlbumIdsAre([9])
+                fsm.move(0, 0)
+                assertStateIs(STT_ALBUM)
+                assertAlbumSizeIs(1)
+            })
+            test('can MOVE with ALBUM of 2 (backwards)', () => {
+                assertAlbumIsEmpty()
+                addItem(9)
+                addItem(11)
+                assertAlbumIdsAre([9, 11])
+                assertAlbumSizeIs(2)
+                fsm.move(0, 1)
+                assertAlbumIdsAre([11, 9])
+                assertStateIs(STT_ALBUM)
+                assertAlbumSizeIs(2)
+            })
+            test('can MOVE with ALBUM of 2 (forwards)', () => {
+                assertAlbumIsEmpty()
+                addItem(9)
+                addItem(11)
+                assertAlbumIdsAre([9, 11])
+                assertAlbumSizeIs(2)
+                fsm.move(1, 0)
+                assertAlbumIdsAre([11, 9])
+                assertStateIs(STT_ALBUM)
+                assertAlbumSizeIs(2)
+            })
+            test('can MOVE with ALBUM of 4 - swap first 2', () => {
+                addItemsWithIds([7, 11, 13, 17])
+                fsm.move(1, 0)
+                assertAlbumIdsAre([11, 7, 13, 17])
+                assertStateIs(STT_ALBUM)
+                assertAlbumSizeIs(4)
+            })
+            describe('can MOVE with ALBUM of 4', () => {
+                beforeEach(() => {
+                    addItemsWithIds([7, 11, 13, 17])
+                })
+                test('3 to 1 and 1 to 3', () => {
+                    fsm.move(3, 1)
+                    assertAlbumIdsAre([7, 17, 11, 13])
+                    fsm.move(1, 3)
+                    assertAlbumIdsAre([7, 11, 13, 17])
+                })
+                test('to front', () => {
+                    fsm.move(3, 0)
+                    assertAlbumIdsAre([17, 7, 11, 13])
+                    fsm.move(3, 0)
+                    assertAlbumIdsAre([13, 17, 7, 11])
+                    fsm.move(3, 0)
+                    assertAlbumIdsAre([11, 13, 17, 7])
+                })
+                test('to back', () => {
+                    assertAlbumIdsAre([7, 11, 13, 17])
+                    fsm.move(0, 3)
+                    assertAlbumIdsAre([11, 13, 17, 7])
+                    fsm.move(0, 3)
+                    assertAlbumIdsAre([13, 17, 7, 11])
+                    fsm.move(0, 3)
+                    assertAlbumIdsAre([17, 7, 11, 13])
+                })
+                test('middle - 1', () => {
+                    assertAlbumIdsAre([7, 11, 13, 17])
+                    fsm.move(1, 2)
+                    assertAlbumIdsAre([7, 13, 11, 17])
+                })
+                test('middle - 2', () => {
+                    assertAlbumIdsAre([7, 11, 13, 17])
+                    fsm.move(2, 1)
+                    assertAlbumIdsAre([7, 13, 11, 17])
+                })
+            })
         })
         describe('VIEW_ALBUM CLEAR', () => {
             test('can CLEAR empty ALBUM', () => {

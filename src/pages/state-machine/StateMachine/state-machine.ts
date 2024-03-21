@@ -1,5 +1,5 @@
+import { Item } from '#/pages/be-spectacled/BeSpectacled/utils'
 import StateMachine from 'javascript-state-machine'
-import { Item, _items } from './utils'
 import * as R from 'ramda'
 // states
 export const STT_ALBUM = 'album'
@@ -14,6 +14,7 @@ export const TX_CLEAR = 'clear'
 export const TX_CANCEL_ACCEPT = 'cancel_accept'
 export const TX_CANCEL_TAKE = 'cancel_take'
 export const TX_DELETE = 'delete'
+export const TX_MOVE = 'move'
 
 const maxNumberOfPhotos = 6
 
@@ -29,6 +30,7 @@ export const createMachine = () => new StateMachine({
         { name: TX_CANCEL_TAKE, from: STT_PHOTOBOOTH, to: STT_ALBUM },
         { name: TX_DELETE, from: STT_ALBUM, to: STT_ALBUM },
         { name: TX_CLEAR, from: STT_ALBUM, to: STT_ALBUM },
+        { name: TX_MOVE, from: STT_ALBUM, to: STT_ALBUM },
     ],
     data: {
         items: [],
@@ -48,6 +50,9 @@ export const createMachine = () => new StateMachine({
                 return false
             }
             o.fsm.items = R.filter((i: Item) => { return i.id !== id }, o.fsm.items)
+        },
+        onAfterMove: (o: any, from: number, to: number) => {
+            o.fsm.items = R.move(from, to, o.fsm.items)
         },
         onAfterClear: (o: any) => {
             o.fsm.items = []

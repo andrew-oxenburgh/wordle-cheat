@@ -20,6 +20,7 @@ import {
     faTrash,
     faEllipsisVertical,
     faGlasses,
+    faDiagramProject,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -43,4 +44,5 @@ library.add(
     faTrash,
     faEllipsisVertical,
     faGlasses,
+    faDiagramProject,
 )

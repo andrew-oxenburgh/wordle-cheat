@@ -1,24 +1,36 @@
-import { useRef, useState } from 'react'
+/* eslint-disable no-console */
+import { useEffect, useRef, useState } from 'react'
 import {
-    STT_ACCEPT,
-    STT_ALBUM,
-    STT_PHOTOBOOTH,
     TX_ACCEPT,
     TX_CANCEL_ACCEPT,
     TX_CANCEL_TAKE,
     TX_CLEAR,
     TX_DELETE,
+    TX_MOVE,
     TX_REQUEST,
     TX_TAKE,
     createMachine,
 } from './state-machine'
 import { useCounter } from 'usehooks-ts'
 
-const StateMachine = (props: any) => {
+const StateMachine = () => {
     const [machine, setMachine] = useState(createMachine())
+    const [inited, setInited] = useState(false)
     const counter = useCounter(0)
 
     const idRef = useRef(null)
+    const fromRef = useRef(null)
+    const toRef = useRef(null)
+
+    useEffect(() => {
+        if (!inited) {
+            setInited(true)
+            machine.observe('onMove', () => {
+                console.log('move')
+            })
+        }
+    })
+
     const request = () => {
         machine.request()
         setMachine(machine)
@@ -50,10 +62,25 @@ const StateMachine = (props: any) => {
         counter.increment()
     }
     const onDelete = () => {
-        const id: string = idRef.current.value
-        machine.delete(parseInt(id, 10))
-        setMachine(machine)
-        counter.increment()
+        try {
+            const id: string = idRef.current.value
+            machine.delete(parseInt(id, 10))
+            setMachine(machine)
+            counter.increment()
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    const onMove = () => {
+        try {
+            const from: string = fromRef.current.value
+            const to: string = toRef.current.value
+            machine.move(parseInt(from, 10), parseInt(to, 10))
+            setMachine(machine)
+            counter.increment()
+        } catch (e) {
+            //
+        }
     }
 
     const listItems = (
@@ -122,6 +149,16 @@ const StateMachine = (props: any) => {
                     delete
                 </button>
                 <input type="text" ref={idRef} />
+            </p >
+            <p>
+                <button
+                    onClick={onMove}
+                    disabled={machine.transitions().indexOf(TX_MOVE) < 0}
+                >
+                    move
+                </button>
+                <input type="text" ref={fromRef} />
+                <input type="text" ref={toRef} />
             </p >
             <p>
                 <button

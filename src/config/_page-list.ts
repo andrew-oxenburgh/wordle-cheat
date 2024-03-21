@@ -19,6 +19,7 @@ export type PageNameType =
     | 'imitation-onion'
     | 'sketch-countdown'
     | 'be-spectacled'
+    | 'state-machine'
 
 export type PageInfoType = {
     title: string
@@ -98,6 +99,15 @@ Technologies:
         longDesc: `
 ### Be Spectacled`,
         link: '#/be-spectacled',
+    },
+    {
+        name: 'state-machine',
+        title: 'State Machine',
+        height: '80%',
+        icon: 'diagram-project',
+        longDesc: `
+### State Machine Demo`,
+        link: '#/state-machine',
     },
     {
         name: 'emoji-search',

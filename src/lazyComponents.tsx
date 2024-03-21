@@ -62,4 +62,8 @@ export const lazyComponents: LazyComponentType[] = [
         name: 'be-spectacled',
         lazyComponent: React.lazy(() => import('./pages/be-spectacled')),
     },
+    {
+        name: 'state-machine',
+        lazyComponent: React.lazy(() => import('./pages/state-machine')),
+    },
 ]
