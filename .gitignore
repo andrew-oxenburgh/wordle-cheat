@@ -10,3 +10,4 @@ dist/
 storybook-static
 public/sb
 /src/scratch
+package-lock.json
