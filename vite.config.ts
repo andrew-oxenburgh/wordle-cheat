@@ -82,7 +82,7 @@ const config = ({ mode }: { mode: string }) => {
         build: {
             emptyOutDir: true,
             assetsInlineLimit: 150 * 1024,
-            chunkSizeWarningLimit: 1024,
+            // chunkSizeWarningLimit: 1024,
             cssMinify: 'lightningcss',
             manifest: true,
             minify: true,

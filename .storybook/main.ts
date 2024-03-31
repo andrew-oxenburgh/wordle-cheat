@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm"
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -14,9 +15,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+  core: {},
   typescript: {
     reactDocgen: 'react-docgen', // or false if you don't need docgen at all
   },
