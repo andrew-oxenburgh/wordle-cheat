@@ -10,17 +10,15 @@ import { appMinMaxWidth } from './structural.config'
 import AcceptCookies from './AcceptCookies'
 
 const useStyles = createUseStyles({
-    container: {
+    pageBodyContainer: {
         backgroundColor: 'white',
         borderRadius: '3px',
         border: '1px solid black',
         alignContent: 'center',
         justifyContent: 'center',
-        height: '100%',
         cursor: 'default',
         padding: '1em',
         overflow: 'none',
-        minHeight: '35em',
         ...appMinMaxWidth,
     },
 })
@@ -34,7 +32,7 @@ const PageBody: React.FC<ChildrenProps> = ({ children, name, ...args }) => {
     const classes = useStyles()
     const header: PageInfoType = findPageInfo(name)
     return (
-        <Container className={classes.container} {...args}>
+        <Container className={classes.pageBodyContainer} {...args}>
             <PageHeader name={name} desc={header.longDesc} />
             <ErrorBoundary>
                 {children}
