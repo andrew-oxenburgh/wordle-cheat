@@ -7,7 +7,7 @@ import { lazyComponents } from './lazyComponents'
 
 import './config/firebase'
 import './import-fontawesome-icons'
-import './bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const App = () => {
     return (
