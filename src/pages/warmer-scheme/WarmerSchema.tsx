@@ -5,63 +5,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
 import * as R from 'ramda'
-
-type ItemProps = {
-    id: string
-    name: string
-    desc: string
-    alts?: string[]
-}
-
-const items: ItemProps[] = [
-    {
-        id: 'butter-chicken',
-        name: 'butter chicken',
-        alts: [],
-        desc: 'covered in paprika',
-    },
-    {
-        id: 'mince-cheese',
-        name: 'mince & cheese',
-        alts: [
-            'Z special Mince * Cheese Classic',
-        ],
-        desc: 'V hole',
-    },
-    {
-        id: 'mince',
-        name: 'mince',
-        alts: [
-            'Z special Mince Classic',
-        ],
-        desc: '2 holes',
-    },
-    {
-        id: 'steak-cheese',
-        name: 'steak & cheese',
-        alts: [
-            'Z special Steak & Cheese Classic',
-        ],
-        desc: '1 hole',
-    },
-    {
-        id: 'steak-bacon-cheese',
-        name: 'steak, bacon & cheese',
-        alts: [
-            'Z special Steak Bacon & Cheese Classic',
-        ],
-        desc: '4 holes',
-    },
-]
-
-const itemPositions: string[][] = [
-    ['butter-chicken', 'mince-cheese'],
-    ['steak-cheese', 'steak-bacon-cheese'],
-]
-
-type ItemTrayProps = {
-    item: ItemProps
-}
+import { ItemTrayProps } from './item-props'
+import { items, itemPositions } from './items.config'
 
 const itemById = (id: string) => {
     return R.find(R.propEq(id, 'id'))(items)
@@ -95,7 +40,7 @@ const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
     </Card>)
 }
 
-const WarmerScheme = () => {
+const WarmerScheme: React.FC = () => {
     return (
         <PageBody name="warmer-scheme">
             <Container>
