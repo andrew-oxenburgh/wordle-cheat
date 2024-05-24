@@ -99,28 +99,20 @@ const WarmerScheme = () => {
     return (
         <PageBody name="warmer-scheme">
             <Container>
-                <Row>
-                    <Col>
-                        <ItemTray item={itemById('butter-chicken')} />
-                    </Col>
-                    <Col>
-                        <Card>
-                            <ItemTray item={itemById('mince-cheese')} />
-                        </Card>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Card>
-                            <ItemTray item={itemById('mince')} />
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <ItemTray item={itemById('steak-bacon-cheese')} />
-                        </Card>
-                    </Col>
-                </Row>
+                {itemPositions.map((row, rowIndex) => (
+                    <Row key={rowIndex}>
+                        {row.map((item, colIndex) => (
+                            <Col key={colIndex}>
+                                {
+                                    <ItemTray
+                                        item={itemById(item)}
+                                    />
+                                }
+                            </Col>
+                        ))}
+                    </Row>
+                ))}
+
             </Container>
         </PageBody >
     )
