@@ -66,4 +66,8 @@ export const lazyComponents: LazyComponentType[] = [
         name: 'state-machine',
         lazyComponent: React.lazy(() => import('./pages/state-machine')),
     },
+    {
+        name: 'warmer-scheme',
+        lazyComponent: React.lazy(() => import('./pages/warmer-scheme')),
+    },
 ]

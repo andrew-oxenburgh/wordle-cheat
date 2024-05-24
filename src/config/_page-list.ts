@@ -20,6 +20,7 @@ export type PageNameType =
     | 'sketch-countdown'
     | 'be-spectacled'
     | 'state-machine'
+    | 'warmer-scheme'
 
 export type PageInfoType = {
     title: string
@@ -72,6 +73,14 @@ export const _initPageList: Partial<PageInfoType>[] = [
 
         link: '#/welcome',
         icon: 'home',
+    },
+    {
+        name: 'warmer-scheme',
+        title: 'Warmer Scheme',
+        height: '80%',
+        icon: 'link',
+        longDesc: '',
+        link: '#/warmer-scheme',
     },
     {
         name: 'open-graph',
