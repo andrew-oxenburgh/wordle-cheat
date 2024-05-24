@@ -3,9 +3,12 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Image from 'react-bootstrap/Image'
+import * as R from 'ramda'
 
 const w = 2
 const h = 2
+
 type ItemProps = {
     id: string
     name: string
@@ -57,44 +60,60 @@ const items: ItemsProps = [
 ]
 
 type ItemTrayProps = {
-    itemNum: number
+    item: ItemProps
 }
 
-const ItemTray: React.FC<ItemTrayProps> = ({ itemNum }) => {
-    if (!items[itemNum]) {
+const itemById = (id: string) => {
+    return R.find(R.propEq(id, 'id'))(items)
+}
+
+const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
+    if (!item) {
         return (
             <Card>unknown</Card>
         )
     }
+    const id = item.id
+    const name = item.name
+    const desc = item.desc
     return (<Card>
-        <h5>{items[itemNum].name}</h5>
-        {items[itemNum].desc}
-        {/* {items[itemNum].alts[0]} */}
+        <Container>
+            <Row>
+                <Col>
+                    <h5>{name}</h5>
+                    {desc}
+                </Col>
+                <Col>
+                    <Image width="100" src={`/warmer-scheme/img/${id}.png`} alt={name} />
+                </Col>
+            </Row>
+        </Container>
     </Card>)
 }
+
 const WarmerScheme = () => {
     return (
         <PageBody name="warmer-scheme">
             <Container>
                 <Row>
                     <Col>
-                        <ItemTray itemNum={0} />
+                        <ItemTray item={itemById('butter-chicken')} />
                     </Col>
                     <Col>
                         <Card>
-                            <ItemTray itemNum={1} />
+                            <ItemTray item={itemById('mince-cheese')} />
                         </Card>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <Card>
-                            <ItemTray itemNum={2} />
+                            <ItemTray item={itemById('mince')} />
                         </Card>
                     </Col>
                     <Col>
                         <Card>
-                            <ItemTray itemNum={3} />
+                            <ItemTray item={itemById('steak-bacon-cheese')} />
                         </Card>
                     </Col>
                 </Row>
