@@ -2,10 +2,6 @@ import { itemById } from './warmer-schema.utils'
 import { it, expect, describe } from 'vitest'
 
 describe('itemById', () => {
-    const items = [
-        { id: 'butter-chicken', name: 'Butter Chicken', desc: 'Delicious Indian dish' },
-        { id: 'mince-cheese', name: 'Mince and Cheese', desc: 'Classic pie filling' },
-    ]
 
     it('returns the correct item when given a valid id', () => {
         const item = itemById('butter-chicken')

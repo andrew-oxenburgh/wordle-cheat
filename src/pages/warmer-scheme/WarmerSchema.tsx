@@ -3,13 +3,13 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { itemPositions } from './items.config'
-import { itemById, listOfBakes } from './warmer-schema.utils'
+import { expectedLevelByBakeAndItemId, itemById, listOfBakes } from './warmer-schema.utils'
 import { ItemTray } from './ItemTray'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime'
+import { Signal } from '@preact/signals-react'
 
-const BakesDropdown: React.FC = () => {
-    const selectedBake = useSignal(listOfBakes()[0])
+const BakesDropdown = ({ selectedBake }: { selectedBake: Signal<string> }) => {
     useSignals()
     useSignalEffect(() => { })
     return (
@@ -18,8 +18,8 @@ const BakesDropdown: React.FC = () => {
                 {selectedBake.value}
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                {listOfBakes().map((bake, index) => (
-                    <Dropdown.Item key={bake} onClick={() => selectedBake.value = bake}>
+                {listOfBakes().map((bake) => (
+                    <Dropdown.Item key={bake} onClick={() => { selectedBake.value = bake }}>
                         {bake}
                     </Dropdown.Item>
                 ))}
@@ -29,10 +29,13 @@ const BakesDropdown: React.FC = () => {
 }
 
 const WarmerScheme: React.FC = () => {
+    const selectedBake = useSignal(listOfBakes()[0])
+    useSignals()
+    useSignalEffect(() => { })
     return (
         <PageBody name="warmer-scheme">
             <Container className='m-0'>
-                <BakesDropdown />
+                <BakesDropdown selectedBake={selectedBake} />
                 {itemPositions.map((row, rowIndex) => (
                     <Row key={rowIndex} className='m-0'>
                         {row.map((item, colIndex) => (
@@ -40,6 +43,7 @@ const WarmerScheme: React.FC = () => {
                                 {
                                     <ItemTray
                                         item={itemById(item)}
+                                        expectedLevel={expectedLevelByBakeAndItemId(selectedBake.value, item)}
                                     />
                                 }
                             </Col>

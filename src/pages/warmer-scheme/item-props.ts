@@ -7,4 +7,5 @@ export type ItemProps = {
 
 export type ItemTrayProps = {
     item: ItemProps
+    expectedLevel: number
 }

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { ItemTrayProps } from './item-props'
 import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime'
 
-export const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
+export const ItemTray: React.FC<ItemTrayProps> = ({ item, expectedLevel }) => {
     const counter = useSignal(0)
     useSignals()
     useSignalEffect(() => { })
@@ -19,7 +19,7 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
     const id = item.id
     const name = item.name
     const desc = item.desc
-    const h5em = { height: '10em' }
+    const cardHeight = { height: '13em' }
     const w3em = {
         display: 'inline-block',
         width: '3em',
@@ -41,11 +41,13 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
     }
     return (
         <Card className="p-1 m-1" >
-            <Card.Body style={h5em}>
+            <Card.Body style={cardHeight}>
                 <div className="d-flex">
                     <div className='w-75'>
                         <h5 className="w-100">{name}</h5>
                         <i>{desc}</i>
+                        <div>expectedLevel: {expectedLevel}</div>
+                        <div>top up level: {expectedLevel - counter.value}</div>
                         <br />
                         <span className="w-100">
                             <span style={w3em}>{counter.value}</span>

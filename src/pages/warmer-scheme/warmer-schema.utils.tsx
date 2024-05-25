@@ -14,3 +14,7 @@ export const itemById = (id: string): ItemProps => {
 export const listOfBakes = (): string[] => {
     return R.keys(bakes)
 }
+
+export const expectedLevelByBakeAndItemId = (bake: string, itemId: string): number => {
+    return bakes[bake].items[itemId]
+}
