@@ -1,5 +1,4 @@
 import PageBody from '#/components/structural/PageBody'
-import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -10,11 +9,11 @@ import { ItemTray } from './ItemTray'
 const WarmerScheme: React.FC = () => {
     return (
         <PageBody name="warmer-scheme">
-            <Container>
+            <Container className='m-0'>
                 {itemPositions.map((row, rowIndex) => (
-                    <Row key={rowIndex}>
+                    <Row key={rowIndex} className='m-0'>
                         {row.map((item, colIndex) => (
-                            <Col key={colIndex}>
+                            <Col key={colIndex} className="w-50">
                                 {
                                     <ItemTray
                                         item={itemById(item)}
@@ -24,7 +23,6 @@ const WarmerScheme: React.FC = () => {
                         ))}
                     </Row>
                 ))}
-
             </Container>
         </PageBody >
     )
