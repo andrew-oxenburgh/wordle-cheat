@@ -48,7 +48,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@groupher/use-mobile-detect-hook": "^2.0.2",
-    "@preact/signals-react": "^2.0.0",
+    "@preact/signals-react": "^2.0.1",
     "@rollup/plugin-alias": "^5.1.0",
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",

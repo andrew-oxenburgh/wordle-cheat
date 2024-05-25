@@ -2896,7 +2896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preact/signals-react@npm:^2.0.0":
+"@preact/signals-react@npm:^2.0.1":
   version: 2.0.1
   resolution: "@preact/signals-react@npm:2.0.1"
   dependencies:
@@ -4993,7 +4993,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@groupher/use-mobile-detect-hook": "npm:^2.0.2"
-    "@preact/signals-react": "npm:^2.0.0"
+    "@preact/signals-react": "npm:^2.0.1"
     "@rollup/plugin-alias": "npm:^5.1.0"
     "@storybook/addon-essentials": "npm:^8.0.5"
     "@storybook/addon-interactions": "npm:^8.0.5"
