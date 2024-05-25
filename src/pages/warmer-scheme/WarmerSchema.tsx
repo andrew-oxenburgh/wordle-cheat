@@ -3,42 +3,9 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Image from 'react-bootstrap/Image'
-import * as R from 'ramda'
-import { ItemTrayProps } from './item-props'
-import { items, itemPositions } from './items.config'
-
-const itemById = (id: string) => {
-    return R.find(R.propEq(id, 'id'))(items)
-}
-
-const ItemTray: React.FC<ItemTrayProps> = ({ item }) => {
-    if (!item) {
-        return (
-            <Card>unknown</Card>
-        )
-    }
-    const id = item.id
-    const name = item.name
-    const desc = item.desc
-    return (<Card>
-        <Container>
-            <Row>
-                <Col>
-                    <h5>{name}</h5>
-                    {desc}
-                </Col>
-                <Col>
-                    <Image
-                        width="100"
-                        src={`/warmer-scheme/img/${id}.png`}
-                        alt={name}
-                    />
-                </Col>
-            </Row>
-        </Container>
-    </Card>)
-}
+import { itemPositions } from './items.config'
+import { itemById } from './warmer-schema.utils'
+import { ItemTray } from './ItemTray'
 
 const WarmerScheme: React.FC = () => {
     return (
