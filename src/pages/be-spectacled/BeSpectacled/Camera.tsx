@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import Webcam from 'react-webcam'
-import Button from 'react-bootstrap/esm/Button'
+import Button from 'react-bootstrap/Button'
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({

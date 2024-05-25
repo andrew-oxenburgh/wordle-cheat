@@ -45,3 +45,36 @@ export const itemPositions: string[][] = [
     ['butter-chicken', 'mince-cheese'],
     ['steak-cheese', 'steak-bacon-cheese'],
 ]
+
+export const bakes = {
+    'saturday-morning': {
+        name: 'saturday morning',
+        when: 'every saturday ready for 8am',
+        items: {
+            'butter-chicken': '3',
+            'mince-cheese': '2',
+            'steak-cheese': '1',
+            'steak-bacon-cheese': '7',
+        },
+    },
+    'weekday-morning': {
+        name: 'weekday morning',
+        when: 'every weekday ready for 6am',
+        items: {
+            'butter-chicken': '3',
+            'mince-cheese': '2',
+            'steak-cheese': '1',
+            'steak-bacon-cheese': '6',
+        },
+    },
+    'midnight': {
+        name: 'midnight',
+        when: 'every day ready for 12am',
+        items: {
+            'butter-chicken': '7',
+            'mince-cheese': '2',
+            'steak-cheese': '1',
+            'steak-bacon-cheese': '5',
+        },
+    },
+}
