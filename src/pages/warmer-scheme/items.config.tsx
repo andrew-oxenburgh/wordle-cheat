@@ -1,4 +1,4 @@
-import { ItemProps } from './item-props'
+import { Bakes, ItemPositions, ItemProps } from './item-props'
 
 export const items: ItemProps[] = [
     {
@@ -41,40 +41,40 @@ export const items: ItemProps[] = [
     },
 ]
 
-export const itemPositions: string[][] = [
+export const itemPositions: ItemPositions = [
     ['butter-chicken', 'mince-cheese'],
     ['steak-cheese', 'steak-bacon-cheese'],
 ]
 
-export const bakes = {
+export const bakes: Bakes = {
     'saturday-morning': {
         name: 'saturday morning',
         when: 'every saturday ready for 8am',
         items: {
-            'butter-chicken': '1',
-            'mince-cheese': '2',
-            'steak-cheese': '1',
-            'steak-bacon-cheese': '7',
+            'butter-chicken': 1,
+            'mince-cheese': 2,
+            'steak-cheese': 1,
+            'steak-bacon-cheese': 7,
         },
     },
     'weekday-morning': {
         name: 'weekday morning',
         when: 'every weekday ready for 6am',
         items: {
-            'butter-chicken': '2',
-            'mince-cheese': '2',
-            'steak-cheese': '1',
-            'steak-bacon-cheese': '8',
+            'butter-chicken': 2,
+            'mince-cheese': 2,
+            'steak-cheese': 1,
+            'steak-bacon-cheese': 8,
         },
     },
     'midnight': {
         name: 'midnight',
         when: 'every day ready for 12am',
         items: {
-            'butter-chicken': '3',
-            'mince-cheese': '2',
-            'steak-cheese': '1',
-            'steak-bacon-cheese': '9',
+            'butter-chicken': 3,
+            'mince-cheese': 2,
+            'steak-cheese': 1,
+            'steak-bacon-cheese': 9,
         },
     },
 }

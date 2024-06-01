@@ -7,7 +7,6 @@ export const itemById = (id: string): ItemProps => {
         id: 'none',
         name: 'none',
         desc: 'none',
-        alts: [''],
     }
 }
 
