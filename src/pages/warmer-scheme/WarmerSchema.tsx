@@ -72,6 +72,7 @@ const WarmerScheme: React.FC = () => {
             }
             newCounts[itemId] = newCounts[itemId] + inc
             setItemCounts(newCounts)
+            // eslint-disable-next-line no-console
             console.log(newCounts)
         }
     }
