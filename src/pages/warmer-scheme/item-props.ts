@@ -17,6 +17,8 @@ export type ItemProps = {
 export type ItemTrayProps = {
     itemId: string
     selectedBake: string
+    setItemCount: (count: number) => void
+    counter: number
 }
 
 export type ItemOrder = string[]

@@ -2,14 +2,9 @@ import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import { ItemTrayProps } from './item-props'
-import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime'
 import { expectedLevelByBakeAndItemId, itemById } from './warmer-schema.utils'
 
-export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake }) => {
-    const counter = useSignal(0)
-    useSignals()
-    useSignalEffect(() => { })
-
+export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake, setItemCount, counter }) => {
     const item = itemById(itemId)
 
     const expectedLevel = expectedLevelByBakeAndItemId(selectedBake, item.id) || item.defaultLevel
@@ -36,12 +31,10 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake }) => {
         right: '0.5em',
     }
     const add = () => {
-        counter.value++
+        setItemCount(1)
     }
     const subtract = () => {
-        if (counter.value > 0) {
-            counter.value--
-        }
+        setItemCount(-1)
     }
     return (
         <Card >
@@ -52,7 +45,7 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake }) => {
                         <div>level: {expectedLevel}</div>
                         <br />
                         <span className="w-100">
-                            <span style={w3em}>{counter.value}</span>
+                            <span style={w3em}>{counter}</span>
                             <ButtonGroup aria-label="Basic example" className="w-50">
                                 <Button
                                     variant="light"
@@ -64,7 +57,7 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake }) => {
                                 >-</Button>
                             </ButtonGroup>
                         </span>
-                        <div>get: {expectedLevel - counter.value}</div>
+                        <div>get: {expectedLevel - counter}</div>
                     </div>
                     <Card.Img
                         src={`/warmer-scheme/img/${id}.png`}

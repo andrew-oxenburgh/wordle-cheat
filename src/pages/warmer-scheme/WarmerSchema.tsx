@@ -10,6 +10,8 @@ import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/ru
 import { Signal } from '@preact/signals-react'
 import Button from 'react-bootstrap/Button'
 import * as R from 'ramda'
+import { useState } from 'react'
+import { BakeItems } from './item-props'
 
 const BakesDropdown = ({ selectedBake }: { selectedBake: Signal<string> }) => {
     useSignals()
@@ -34,6 +36,27 @@ const WarmerScheme: React.FC = () => {
     const selectedBake = useSignal(listOfBakes()[0])
     useSignals()
     useSignalEffect(() => { })
+
+    const [itemCounts, setItemCounts] = useState<BakeItems[]>([])
+
+    const setItemCount = (itemId: string) => {
+        return (inc: number) => {
+            const newCounts = {...itemCounts}
+            if (!newCounts[itemId]){
+                newCounts[itemId] = 0
+            }
+            newCounts[itemId] = newCounts[itemId] + inc
+            setItemCounts(newCounts)
+            console.log(newCounts)
+        }
+    }
+
+    const pickList = () => {
+        // eslint-disable-next-line no-console
+        console.log('pick list', itemCounts)
+
+    }
+
     const warmerConfig = R.splitEvery(warmerWidth, itemPositions)
     return (
         <PageBody name="warmer-scheme">
@@ -41,12 +64,14 @@ const WarmerScheme: React.FC = () => {
                 <BakesDropdown selectedBake={selectedBake} />
                 {warmerConfig.map((row: string[], rowIndex: number) => (
                     <Row key={rowIndex}>
-                        {row.map((item, colIndex) => (
+                        {row.map((item: string, colIndex) => (
                             <Col key={colIndex} className="p-1">
                                 {
                                     <ItemTray
                                         itemId={item}
                                         selectedBake={selectedBake.value}
+                                        setItemCount={setItemCount(item)}
+                                        counter={itemCounts[item] || 0 }
                                     />
                                 }
                             </Col>
@@ -54,8 +79,7 @@ const WarmerScheme: React.FC = () => {
                     </Row>
                 ))}
                 <Button onClick={() => {
-                    // eslint-disable-next-line no-console
-                    console.log('bake', selectedBake.value)
+                    pickList()
                 }}>create pick list</Button>
             </Container>
         </PageBody >
