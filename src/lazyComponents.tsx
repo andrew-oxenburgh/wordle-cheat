@@ -68,6 +68,6 @@ export const lazyComponents: LazyComponentType[] = [
     },
     {
         name: 'warmer-scheme',
-        lazyComponent: React.lazy(() => import('./pages/warmer-scheme/WarmerSchema')),
+        lazyComponent: React.lazy(() => import('./pages/warmer-scheme')),
     },
 ]

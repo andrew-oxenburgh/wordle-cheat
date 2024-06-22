@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ItemProps } from './item-props'
+import { ItemProps, ItemType } from './item-props'
 import { items, bakes } from './items.config'
 
 export const itemById = (id: string): ItemProps => {
@@ -7,7 +7,20 @@ export const itemById = (id: string): ItemProps => {
         id: 'none',
         name: 'none',
         desc: 'none',
+        defaultLevel: 0,
     }
+}
+
+export const itemsByType = (arg0: ItemType) => {
+    return R.pluck('id', R.filter(R.propEq(arg0, 'type'))(items))
+}
+
+export const allItemIds = () => {
+    return R.pluck('id', items)
+}
+
+export const allItemNames = () => {
+    return R.pluck('name', items)
 }
 
 export const listOfBakes = (): string[] => {
@@ -15,5 +28,5 @@ export const listOfBakes = (): string[] => {
 }
 
 export const expectedLevelByBakeAndItemId = (bake: string, itemId: string): number => {
-    return bakes[bake].items[itemId]
+    return bakes[bake]?.items[itemId]
 }

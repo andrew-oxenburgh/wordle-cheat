@@ -1,16 +1,25 @@
+export type ItemType =
+    'gourmet-pie' |
+    'classic-pie' |
+    'toppa' |
+    'tender' |
+    'bite'
+
 export type ItemProps = {
     id: string
+    type: ItemType
     name: string
     desc: string
     alts?: string[]
+    defaultLevel: number
 }
 
 export type ItemTrayProps = {
-    item: ItemProps
-    expectedLevel: number
+    itemId: string
+    selectedBake: string
 }
 
-export type ItemPositions = string[][]
+export type ItemOrder = string[]
 
 export type BakeItems = {
     [key: string]: number

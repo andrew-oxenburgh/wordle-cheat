@@ -1,6 +1,6 @@
 
 export const appMaxWidth = {
-    maxWidth: '900px',
+    maxWidth: '100%',
 }
 export const appMinWidth = {
     minWidth: '360px',

@@ -3,11 +3,16 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import { ItemTrayProps } from './item-props'
 import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime'
+import { expectedLevelByBakeAndItemId, itemById } from './warmer-schema.utils'
 
-export const ItemTray: React.FC<ItemTrayProps> = ({ item, expectedLevel }) => {
+export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake }) => {
     const counter = useSignal(0)
     useSignals()
     useSignalEffect(() => { })
+
+    const item = itemById(itemId)
+
+    const expectedLevel = expectedLevelByBakeAndItemId(selectedBake, item.id) || item.defaultLevel
 
     if (!item) {
         return (
@@ -19,10 +24,9 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ item, expectedLevel }) => {
     const id = item.id
     const name = item.name
     const desc = item.desc
-    const cardHeight = { height: '13em' }
     const w3em = {
         display: 'inline-block',
-        width: '3em',
+        // width: '3em',
     }
     const sq5em = {
         width: '5em',
@@ -40,14 +44,12 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ item, expectedLevel }) => {
         }
     }
     return (
-        <Card className="p-1 m-1" >
-            <Card.Body style={cardHeight}>
+        <Card >
+            <Card.Body>
                 <div className="d-flex">
                     <div className='w-75'>
                         <h5 className="w-100">{name}</h5>
-                        <i>{desc}</i>
-                        <div>expectedLevel: {expectedLevel}</div>
-                        <div>top up level: {expectedLevel - counter.value}</div>
+                        <div>level: {expectedLevel}</div>
                         <br />
                         <span className="w-100">
                             <span style={w3em}>{counter.value}</span>
@@ -62,11 +64,13 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ item, expectedLevel }) => {
                                 >-</Button>
                             </ButtonGroup>
                         </span>
+                        <div>get: {expectedLevel - counter.value}</div>
                     </div>
                     <Card.Img
                         src={`/warmer-scheme/img/${id}.png`}
                         className="ml-auto"
                         style={sq5em}
+                        alt={desc}
                     />
                 </div>
             </Card.Body>
