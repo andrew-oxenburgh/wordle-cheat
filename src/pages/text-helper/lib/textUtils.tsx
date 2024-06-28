@@ -14,7 +14,7 @@ const isInteger = (s: string): boolean => {
 }
 
 const isUrl = (s: string): boolean => {
-    return URL.canParse(s)
+    return URL.canParse(s) as boolean
 }
 
 export const isLatLong = (s: string): boolean => {

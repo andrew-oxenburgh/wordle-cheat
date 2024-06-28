@@ -3,12 +3,14 @@ import { BoardState, ColsState, Letter, RowsState, LetterState } from './wordle.
 import { calcCols, calcRows } from './wordle.utils'
 import * as R from 'ramda'
 
-const arrayOfBlanks = (width: number): BoardState => R.times(() => {
-    return {
-        letter: '',
-        state: LetterState.NONE,
-    }
-}, width)
+const arrayOfBlanks = (width: number): BoardState => {
+    return R.times(() => {
+        return {
+            letter: '',
+            state: LetterState.NONE,
+        }
+    }, width) as BoardState
+}
 
 const arrayOfOne = (): Letter[] => arrayOfBlanks(1)
 const arrayOfTwo = (): Letter[] => arrayOfBlanks(2)

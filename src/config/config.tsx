@@ -38,7 +38,7 @@ const pageDefinitions: PageInfoType[] = R.reduce((acc: any, page: Partial<PageIn
     return acc as PageInfoType[]
 }, [], pageConfig)
 
-const findPageInfo = (name: string) => R.find(R.propEq(name, 'name'))(pageDefinitions)
+const findPageInfo = (name: string): string => R.find(R.propEq(name, 'name'))(pageDefinitions) as string
 
 export {
     pageDefinitions,

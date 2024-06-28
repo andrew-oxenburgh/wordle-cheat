@@ -13,10 +13,10 @@ export const EtAl = ({ detectDeviceType, setItems, items }: EtAlType) => {
         <h3>About the grid</h3>
         <Button variant="primary" style={{
             position: 'relative',
-        }} onClick={() => setItems(_items)}>reset grid for testing</Button>
+        }} onClick={() => void setItems(_items)}>reset grid for testing</Button>
         <Button variant="primary" style={{
             position: 'relative',
-        }} onClick={() => setItems([])}>clear grid</Button>
+        }} onClick={() => void setItems([])}>clear grid</Button>
         <p>devices = {JSON.stringify(detectDeviceType)}</p>
         <Table striped bordered hover>
             <thead>

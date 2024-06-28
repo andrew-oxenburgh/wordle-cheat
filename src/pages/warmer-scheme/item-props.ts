@@ -3,7 +3,8 @@ export type ItemType =
     'classic-pie' |
     'toppa' |
     'tender' |
-    'bite'
+    'bite' |
+    'none'
 
 export type ItemProps = {
     id: string

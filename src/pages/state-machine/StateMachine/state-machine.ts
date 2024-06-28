@@ -20,7 +20,7 @@ const maxNumberOfPhotos = 6
 
 function checkNumberOfPhotos(): string { return (this.items.length < maxNumberOfPhotos ? STT_PHOTOBOOTH : STT_ALBUM) }
 
-export const createMachine = () => new StateMachine({
+export const createMachine = (): any => new StateMachine({
     init: STT_ALBUM,
     transitions: [
         { name: TX_REQUEST, from: STT_ALBUM, to: checkNumberOfPhotos },
@@ -63,11 +63,10 @@ export const createMachine = () => new StateMachine({
          * Non lifecyle functions should be declared old style.
          */
         getItems(): Item[] {
-            return R.clone(this.items)
+            return R.clone(this.items) as Item[]
         },
         canRequest(): boolean {
-            return this.items.length < maxNumberOfPhotos
+            return (this.items.length < maxNumberOfPhotos)
         },
     },
 })
-

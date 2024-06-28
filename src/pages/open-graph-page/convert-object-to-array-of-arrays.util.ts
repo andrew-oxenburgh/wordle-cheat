@@ -28,7 +28,7 @@ export const convertOgObjectToOgArray = (inp: any, prefix = ''): TwoStringColumn
             }
         }
         return acc
-    }, [] as TwoStringColumns, R.keys(inp))
+    }, [] as TwoStringColumns, R.keys(inp)) as TwoStringColumns
 }
 
 export default {}
