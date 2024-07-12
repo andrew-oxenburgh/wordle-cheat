@@ -22,7 +22,7 @@
     "storybook": "storybook dev",
     "test": "vitest",
     "dev": "vite --host",
-    "lint": "eslint -c .eslintrc.cj≠s --ext .ts,.tsx ./src --fix --format unix --cache",
+    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx ./src --fix --format unix --cache",
     "pre-deploy:build": "vite build",
     "pre-deploy:storybook": "storybook build --docs -o dist/sb",
     "pre-deploy": "yarn pre-deploy:build && yarn pre-deploy:storybook",

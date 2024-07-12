@@ -5,16 +5,16 @@ import Row from 'react-bootstrap/Row'
 import { itemPositions, warmerWidth } from './items.config'
 import { listOfBakes } from './warmer-schema.utils'
 import { ItemTray } from './ItemTray'
-import Dropdown from 'react-bootstrap/Dropdown'
 import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime'
-import { Signal } from '@preact/signals-react'
 import Button from 'react-bootstrap/Button'
 import * as R from 'ramda'
 import { useState } from 'react'
 import { BakeItems } from './item-props'
 import Table from 'react-bootstrap/Table'
+import Form from 'react-bootstrap/Form'
+import BakesDropdown from './BakesDropdown'
 
-const PickList = ({ items }: { items: BakeItems[] }) => {
+const PickList = ({ items }: { items: BakeItems }) => {
     return (
         <Table striped bordered hover>
             <thead>
@@ -25,7 +25,7 @@ const PickList = ({ items }: { items: BakeItems[] }) => {
                 </tr>
             </thead>
             <tbody>
-                {R.keys(items).map((item, index) => (
+                {R.keys(items).map((item: string, index: number) => (
                     <tr key={item}>
                         <td>{index + 1}</td>
                         <td>{item}</td>
@@ -37,36 +37,18 @@ const PickList = ({ items }: { items: BakeItems[] }) => {
     )
 }
 
-const BakesDropdown = ({ selectedBake }: { selectedBake: Signal<string> }) => {
-    useSignals()
-    useSignalEffect(() => { })
-    return (
-        <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {selectedBake.value}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                {listOfBakes().map((bake) => (
-                    <Dropdown.Item key={bake} onClick={() => { selectedBake.value = bake }}>
-                        {bake}
-                    </Dropdown.Item>
-                ))}
-            </Dropdown.Menu>
-        </Dropdown >
-    )
-}
-
 const WarmerScheme: React.FC = () => {
     const selectedBake = useSignal(listOfBakes()[0])
     useSignals()
     useSignalEffect(() => { })
     const [pickList, setShowPickList] = useState<boolean>(false)
+    const [showTrayDetails, setShowTrayDetails] = useState<boolean>(false)
 
-    const [itemCounts, setItemCounts] = useState<BakeItems[]>([])
+    const [itemCounts, setItemCounts] = useState<BakeItems>({})
 
     const setItemCount = (itemId: string) => {
         return (inc: number) => {
-            const newCounts: BakeItems[] = { ...itemCounts }
+            const newCounts: BakeItems = { ...itemCounts }
             if (!newCounts[itemId]) {
                 newCounts[itemId] = 0
             }
@@ -84,7 +66,14 @@ const WarmerScheme: React.FC = () => {
                 <Button onClick={() => {
                     setShowPickList(!pickList)
                 }}>toggle pick list</Button>
-
+                <Form.Check
+                    type="switch"
+                    id="custom-switch"
+                    label="show deatils"
+                    onChange={(evt) => {
+                        setShowTrayDetails(evt.target.checked)
+                    }}
+                />
                 {
                     pickList ? (<PickList items={itemCounts}/>) :
                         (
@@ -96,6 +85,7 @@ const WarmerScheme: React.FC = () => {
                                             <Col key={colIndex} className="p-1">
                                                 {
                                                     <ItemTray
+                                                        showTrayDetails={showTrayDetails}
                                                         itemId={item}
                                                         selectedBake={selectedBake.value}
                                                         setItemCount={setItemCount(item)}

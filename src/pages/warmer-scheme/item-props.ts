@@ -4,6 +4,7 @@ export type ItemType =
     'toppa' |
     'tender' |
     'bite' |
+    'sausage' |
     'none'
 
 export type ItemProps = {
@@ -20,6 +21,7 @@ export type ItemTrayProps = {
     selectedBake: string
     setItemCount: (count: number) => void
     counter: number
+    showTrayDetails: boolean
 }
 
 export type ItemOrder = string[]

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { ItemTrayProps } from './item-props'
 import { expectedLevelByBakeAndItemId, itemById } from './warmer-schema.utils'
 
-export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake, setItemCount, counter }) => {
+export const ItemTray: React.FC<ItemTrayProps> = ({ showTrayDetails, itemId, selectedBake, setItemCount, counter }) => {
     const item = itemById(itemId)
 
     const expectedLevel = expectedLevelByBakeAndItemId(selectedBake, item.id) || item.defaultLevel
@@ -41,9 +41,13 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake, setIte
             <Card.Body>
                 <div className="d-flex">
                     <div className='w-75'>
-                        <h5 className="w-100">{name}</h5>
-                        <div>level: {expectedLevel}</div>
-                        <br />
+                        <b className="w-100">{name}</b>
+                        {showTrayDetails && (
+                            <>
+                                <div>level: {expectedLevel}</div>
+                                <br />
+                            </>
+                        )}
                         <span className="w-100">
                             <span style={w3em}>{counter}</span>
                             <ButtonGroup aria-label="Basic example" className="w-50">
@@ -57,14 +61,18 @@ export const ItemTray: React.FC<ItemTrayProps> = ({ itemId, selectedBake, setIte
                                 >-</Button>
                             </ButtonGroup>
                         </span>
-                        <div>get: {expectedLevel - counter}</div>
+                        {showTrayDetails && (
+                            <div>get: {expectedLevel - counter}</div>)
+                        }
                     </div>
-                    <Card.Img
-                        src={`/warmer-scheme/img/${id}.png`}
-                        className="ml-auto"
-                        style={sq5em}
-                        alt={desc}
-                    />
+                    {showTrayDetails && (
+                        <Card.Img
+                            src={`/warmer-scheme/img/${id}.png`}
+                            className="ml-auto"
+                            style={sq5em}
+                            alt={desc}
+                        />
+                    )}
                 </div>
             </Card.Body>
         </Card>

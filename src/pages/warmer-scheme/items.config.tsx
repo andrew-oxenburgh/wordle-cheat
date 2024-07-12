@@ -26,6 +26,14 @@ export const items: ItemProps[] = [
         defaultLevel: 6,
     },
     {
+        id: 'korean-bites',
+        name: 'korean bites',
+        alts: [],
+        desc: 'very dark with green bits',
+        type: 'bite',
+        defaultLevel: 6,
+    },
+    {
         id: 'chicken-cordon-bleu',
         name: 'chicken cordon bleu',
         alts: [],
@@ -58,12 +66,36 @@ export const items: ItemProps[] = [
         defaultLevel: 2,
     },
     {
+        id: 'bacon-cheese-toppa',
+        name: 'bacon cheese toppa',
+        alts: [],
+        desc: '-',
+        type: 'toppa',
+        defaultLevel: 2,
+    },
+    {
         id: 'butter-chicken',
         name: 'butter chicken',
         alts: [],
         desc: 'covered in paprika',
         type: 'gourmet-pie',
         defaultLevel: 4,
+    },
+    {
+        id: 'bacon-egg',
+        name: 'bacon & egg pie',
+        alts: [],
+        desc: 'round with egg',
+        type: 'gourmet-pie',
+        defaultLevel: 2,
+    },
+    {
+        id: 'pepper-steak',
+        name: 'pepper steak pir',
+        alts: [],
+        desc: 'round, pepper',
+        type: 'gourmet-pie',
+        defaultLevel: 2,
     },
     {
         id: 'mince-cheese',
@@ -83,6 +115,15 @@ export const items: ItemProps[] = [
         ],
         desc: '2 holes',
         type: 'classic-pie',
+        defaultLevel: 2,
+    },
+    {
+        id: 'bratwurst',
+        name: 'bratwurst',
+        alts: [
+        ],
+        desc: 'sausage',
+        type: 'sausage',
         defaultLevel: 2,
     },
     {
@@ -132,26 +173,78 @@ export const items: ItemProps[] = [
         type: 'classic-pie',
         defaultLevel: 2,
     },
+    {
+        id: 'panko-tender',
+        name: 'panko tender',
+        alts: [
+        ],
+        desc: '-',
+        type: 'tender',
+        defaultLevel: 2,
+    },
+    {
+        id: 'southern-tender',
+        name: 'southern tender',
+        alts: [
+        ],
+        desc: '-',
+        type: 'tender',
+        defaultLevel: 2,
+    },
+    {
+        id: 'pepper-shroom',
+        name: 'pepper shroom',
+        alts: [
+        ],
+        desc: '-',
+        type: 'gourmet-pie',
+        defaultLevel: 2,
+    },
 ]
 
 export const itemPositions: ItemOrder = [
-    'butter-chicken',
-    'chicken-cordon-bleu',
-    'jalapeno-bites',
-    'lasagne-toppa',
+    'korean-bites',
     'louisiana-bites',
-    'mac-and-cheese',
-    'mince',
-    'mince-cheese',
-    'southern-toppa',
-    'spinach-feta-roll',
-    'steak-bacon-cheese',
-    'steak-cheese',
+    'jalapeno-bites',
+    'bratwurst',
+    'chicken-cordon-bleu',
+    '-',
+    'lasagne-toppa',
+    '-',
     'vegan-chorizo-roll',
+
+    'panko-tender',
+    'southern-tender',
+    'bacon-cheese-toppa',
+    'southern-toppa',
+    'kransky',
+    'sausage-roll',
+    '-',
+    'spinach-feta-roll',
     'vegan-sausage-roll',
+
+    'mince',
+    'steak-bacon-cheese',
+    '-',
+    'steak-cheese',
+    '-',
+    'mince-cheese',
+    '-',
+    '-',
+    'pepper-shroom',
+
+    'bacon-egg',
+    '-',
+    'pepper-steak',
+    '-',
+    'butter-chicken',
+    '-',
+    '-',
+    'angus-cheese-mustard',
+    '-',
 ]
 
-export const warmerWidth = 5
+export const warmerWidth = 9
 
 export const bakes: Bakes = {
     'saturday-morning': {
