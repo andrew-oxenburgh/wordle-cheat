@@ -6,5 +6,6 @@
     "todo-tree.filtering.scopes": [],
     "vscodemacros.macroFilePath": ".vscode/macro.js",
     "prisma-smart-formatter.typescript.defaultFormatter": "vscode.typescript-language-features",
-    "prisma-smart-formatter.typescriptreact.defaultFormatter": "vscode.typescript-language-features"
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "vscode.typescript-language-features",
+    "workbench.externalBrowser": "edge"
 }

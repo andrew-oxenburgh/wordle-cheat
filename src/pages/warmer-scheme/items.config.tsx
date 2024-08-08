@@ -1,4 +1,4 @@
-import { Bakes, ItemOrder, ItemProps } from './item-props'
+import { Bakes, ItemOrder, ItemProps } from './item.props'
 
 export const items: ItemProps[] = [
     {

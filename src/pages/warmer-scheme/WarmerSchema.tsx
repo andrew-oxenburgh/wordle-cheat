@@ -9,39 +9,17 @@ import { useSignal, useSignalEffect, useSignals } from '@preact/signals-react/ru
 import Button from 'react-bootstrap/Button'
 import * as R from 'ramda'
 import { useState } from 'react'
-import { BakeItems } from './item-props'
+import { BakeItems } from './item.props'
 import Table from 'react-bootstrap/Table'
 import Form from 'react-bootstrap/Form'
 import BakesDropdown from './BakesDropdown'
-
-const PickList = ({ items }: { items: BakeItems }) => {
-    return (
-        <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>count</th>
-                </tr>
-            </thead>
-            <tbody>
-                {R.keys(items).map((item: string, index: number) => (
-                    <tr key={item}>
-                        <td>{index + 1}</td>
-                        <td>{item}</td>
-                        <td>{items[item]}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </Table>
-    )
-}
+import PickList from './PickList'
 
 const WarmerScheme: React.FC = () => {
     const selectedBake = useSignal(listOfBakes()[0])
     useSignals()
     useSignalEffect(() => { })
-    const [pickList, setShowPickList] = useState<boolean>(false)
+    const [showPickList, setShowPickList] = useState<boolean>(false)
     const [showTrayDetails, setShowTrayDetails] = useState<boolean>(false)
 
     const [itemCounts, setItemCounts] = useState<BakeItems>({})
@@ -53,6 +31,9 @@ const WarmerScheme: React.FC = () => {
                 newCounts[itemId] = 0
             }
             newCounts[itemId] = newCounts[itemId] + inc
+
+            // function to subtract newCounts from picklist
+
             setItemCounts(newCounts)
             // eslint-disable-next-line no-console
             console.log(newCounts)
@@ -64,7 +45,7 @@ const WarmerScheme: React.FC = () => {
         <PageBody name="warmer-scheme">
             <Container className='m-0'>
                 <Button onClick={() => {
-                    setShowPickList(!pickList)
+                    setShowPickList(!showPickList)
                 }}>toggle pick list</Button>
                 <Form.Check
                     type="switch"
@@ -75,7 +56,7 @@ const WarmerScheme: React.FC = () => {
                     }}
                 />
                 {
-                    pickList ? (<PickList items={itemCounts}/>) :
+                    showPickList ? (<PickList items={itemCounts}/>) :
                         (
                             <>
                                 <BakesDropdown selectedBake={selectedBake} />

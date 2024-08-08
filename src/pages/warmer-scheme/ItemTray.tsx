@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
-import { ItemTrayProps } from './item-props'
+import { ItemTrayProps } from './item.props'
 import { expectedLevelByBakeAndItemId, itemById } from './warmer-schema.utils'
 
 export const ItemTray: React.FC<ItemTrayProps> = ({ showTrayDetails, itemId, selectedBake, setItemCount, counter }) => {

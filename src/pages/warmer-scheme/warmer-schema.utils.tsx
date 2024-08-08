@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ItemProps, ItemType } from './item-props'
+import { ItemProps, ItemType } from './item.props'
 import { items, bakes } from './items.config'
 
 export const itemById = (id: string): ItemProps => {
