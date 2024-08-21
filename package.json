@@ -87,7 +87,7 @@
     "lodash": "^4.17.21",
     "markdown-it": "^14.0.0",
     "node-fetch": "^3.3.2",
-    "open-graph-scraper": "^6.3.4",
+    "open-graph-scraper": "^6.8.0",
     "pre-commit": "^1.2.2",
     "prop-types": "^15.8.1",
     "ramda": "^0.29.1",

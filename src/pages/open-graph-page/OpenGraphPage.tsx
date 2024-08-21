@@ -1,16 +1,15 @@
 // PAGE: open-graph-page
 
-import { useRef, useState } from 'react'
+import { useRef, useState, EffectCallback, useEffect } from 'react'
 
 import { createUseStyles } from 'react-jss'
-import { useEffectOnce } from 'usehooks-ts'
 
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Accordion from 'react-bootstrap/Accordion'
 import Table from 'react-bootstrap/Table'
 
-import { OgObject } from 'open-graph-scraper/dist/lib/types'
+import type { OgObject } from 'open-graph-scraper/types'
 import JSONPretty from 'react-json-pretty'
 
 import PageBody from '#/components/structural/PageBody'
@@ -24,6 +23,10 @@ import { convertOgObjectToOgArray } from './convert-object-to-array-of-arrays.ut
 import 'react-json-pretty/themes/1337.css'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
+
+export function useEffectOnce(effect: EffectCallback) {
+    useEffect(effect, []);
+}
 
 const regex = /^(https?:\/\/)?/i
 export const removeProtocol = (url: string) => {
